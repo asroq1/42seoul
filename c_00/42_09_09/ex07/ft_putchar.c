@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 12:05:28 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/12 18:45:19 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/14 10:48:57 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/14 11:47:36 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c);
-
-void	ft_putchar(char c)
+void ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write(1, &c, 1);	
 }

@@ -1,6 +1,5 @@
-void ft_putnbr(int nb);
-
+void	ft_putnbr(int c);
 int main()
 {
-	ft_putnbr(-42);	
+	ft_putnbr(-2147483648);
 }
