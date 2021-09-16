@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 22:14:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/12 22:14:57 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/16 10:45:25 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/16 11:39:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_print_comb2(void);
-
-int	main(void)
+char	*ft_strupcase(char *str)
 {
-	ft_print_comb2();
-	return ('0');
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] < 'z')
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

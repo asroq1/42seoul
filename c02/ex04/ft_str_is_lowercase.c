@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 23:52:46 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/16 00:17:05 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/16 10:37:36 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_str_is_lowercase(char *str)
 {
@@ -25,4 +23,5 @@ int	ft_str_is_lowercase(char *str)
 		}
 		i++;
 	}
+	return (0);
 }

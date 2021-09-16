@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 12:05:28 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/12 18:45:19 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/16 12:01:48 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/16 12:10:00 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_putchar(char c)
+char *ft_strcapitalize(char *str)
 {
-	write(1, &c, 1);
+	//2번째 줄을 보면 패턴이 특수문자 뒤에 대문자로 처리된다.
+	//그것을 활용해 보자.
 }

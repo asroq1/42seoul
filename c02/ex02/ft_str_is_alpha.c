@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 21:49:19 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/15 23:17:24 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/15 23:46:08 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_str_is_alpha(char *str)
 {

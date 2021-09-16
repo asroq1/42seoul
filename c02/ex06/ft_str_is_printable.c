@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 16:16:25 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/14 18:09:07 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/16 10:28:27 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/16 11:18:59 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_sort_int_tab(int *tab, int size)
+int	ft_str_is_printable(char *str)
 {
-	int	temp;
 	int	i;
-	int	j;
 
 	i = 0;
-	while (i < size)
+	while (str[i] != '\0')
 	{
-		j = i + 1;
-		while (j < size)
+		if (str[i] <= 32)
 		{
-			if (tab[i] > tab[j])
-			{	
-				temp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = temp;
-			}
-			j++;
+			return (1);
 		}
 		i++;
 	}
+	return (0);
 }

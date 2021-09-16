@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 21:41:52 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/12 23:16:00 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/14 18:20:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,17 @@ void	ft_print_comb2(void)
 	int	j;
 
 	i = 0;
+	j = 0;
 	while (i < 99)
 	{
-		j = 0;
+		j = i + 1;
 		while (j <= 99)
-		{
-			comb_two(i, j);
-			j++;
+		{	
+			if (i < j)
+			{
+				comb_two(i, j);
+				j++;
+			}
 		}
 		i++;
 	}
