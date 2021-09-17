@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:31:35 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/12 20:05:51 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/17 19:44:39 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	ft_is_negative(int n)
 
 	yes = 'Y';
 	no = 'N';
-	if (n < 0)
+	if (n >= 0)
 	{
-		write(1, &no, 1);
+		write(1, &yes, 1);
 	}
 	else
 	{
-		write(1, &yes, 1);
+		write(1, &no, 1);
 	}
 }
