@@ -6,13 +6,13 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 21:41:52 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/17 21:49:31 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/17 22:34:53 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
 #include <unistd.h>
+
+void	ft_putchar(char c);
 
 void	comb_two(char i, char j)
 {
@@ -25,12 +25,16 @@ void	comb_two(char i, char j)
 	first_tens = 48 + (i / 10);
 	second_units = 48 + (j % 10);
 	second_tens = 48 + (j / 10);
-	write(1,&first_tens, 1);
-	write(1,&first_units, 1);
-	write(1," ", 1);
+	write(1, &first_tens, 1);
+	write(1, &first_units, 1);
+	write(1, " ", 1);
 	write(1, &second_tens, 1);
 	write(1, &second_units, 1);
-	write(1,",", 1);
+	 if (!(i == 98 && j == 99))
+	{
+		write(1, ",", 1);
+		write(1, " ", 1);
+	}
 }
 
 void	ft_print_comb2(void)
