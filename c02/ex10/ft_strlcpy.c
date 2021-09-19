@@ -1,56 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 12:01:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/17 21:53:55 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/19 11:56:48 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/19 16:01:45 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-char	trans_to_low(char *str)
+int	ft_strlength(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = str[i] + 32;
-		}
 		i++;
 	}
-	return (*str);
+	return (i);
 }
 
-char	*ft_strcapitalize(char *str)
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	sc;
-
-	sc = 1;
+	int i;
+	int src_length;
+	int dest_length;
+	
 	i = 0;
-	trans_to_low(str);
-	while (str[i] != '\0')
+	src_length = ft_strlength(src);
+	dest_length = ft_strlength(dest);
+
+	while (/* condition */)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			if (sc == 1)
-				str[i] = str[i] - 32;
-			sc = 0;
-		}
-		else if (str[i] >= '0' && str[i] <= '9')
-			sc = 0;
-		else
-			sc = 1;
+		dest[i] = src[i];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	dest[i] = 0;
+	
 }

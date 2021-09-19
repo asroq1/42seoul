@@ -43,6 +43,7 @@ void	ft_print_recursive(int n, int depth, int *arr, int i)
 		ft_print_recursive(n, depth + 1 , arr, i);
 	}
 }
+
 void	ft_print_combn(int n)
 { 
 	int i;
