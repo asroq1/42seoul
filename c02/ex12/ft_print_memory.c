@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/19 18:26:56 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/20 15:08:49 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/20 15:17:16 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/20 15:18:08 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+#include <unistd.h>
 
-	j = 0;
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i + j] = '\0';
+void	*ft_print_memory(void *addr, unsigned int size)
+{
+	write("1");
 }

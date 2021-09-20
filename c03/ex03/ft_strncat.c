@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 18:42:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/19 18:56:35 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 15:15:35 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	{
 		i++;
 	}
-	while (nb != 0)
+	while (nb != 0 && dest[i] != '\0')
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 		nb--;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
