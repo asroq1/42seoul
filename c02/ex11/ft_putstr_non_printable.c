@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 11:39:16 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/20 15:01:51 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 15:35:54 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < ' ' | str[i] > '~')
+		if (str[i] < ' ' || str[i] > '~')
 		{
 			ten_to_sixten(str[i]);
 		}
