@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 23:18:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/15 23:52:17 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 22:50:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int	ft_str_is_numeric(char *str)
 		{
 			return (1);
 		}
-		else if (!str[i] >= '0' && !str[i] <= '9')
-		{
-			return (0);
-		}
 		i++;
 	}
+	return (0);
 }

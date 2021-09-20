@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 15:17:16 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/20 15:18:08 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 23:24:44 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	write("1");
+	write(1, "1", 1);
 }

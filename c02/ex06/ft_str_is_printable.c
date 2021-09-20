@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:28:27 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/16 11:18:59 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 23:19:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] <= 32)
+		if (!(str[i] >= ' ' && str[i] <= '~'))
 		{
-			return (1);
+			return (0);
 		}
 		i++;
 	}
-	return (0);
+	return (1);
 }

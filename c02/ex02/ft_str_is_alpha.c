@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 21:49:19 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/20 11:33:05 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 22:44:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!(str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z'))
+		if (!(('a' <= str[i] && str[i] <= 'z')
+				|| ('A' <= str[i] && str[i] <= 'Z')))
 			return (0);
 		i++;
 	}

@@ -6,11 +6,10 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 11:39:16 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/20 15:35:54 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 23:25:32 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -18,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-char	ten_to_sixten(char c)
+void	ten_to_sixten(char c)
 {
 	char	*hex;
 	char	left;
