@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 20:02:04 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/16 12:17:38 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:34:23 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strcpy(char *dest, char *src)
 {

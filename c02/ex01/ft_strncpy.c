@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 22:01:36 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/15 21:49:26 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:33:01 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {

@@ -6,37 +6,37 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 11:56:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/19 16:01:45 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:34:01 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlength(char *str)
+int	ft_strlen(char *str)
 {
-	int	i;
+	int	cnt;
 
-	i = 0;
-	while (str[i] != '\0')
+	cnt = 0;
+	while (*str != '\0')
 	{
-		i++;
+		str++;
+		cnt++;
 	}
-	return (i);
+	return (cnt);
 }
 
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int i;
-	int src_length;
-	int dest_length;
-	
-	i = 0;
-	src_length = ft_strlength(src);
-	dest_length = ft_strlength(dest);
+	unsigned int	i;
 
-	while (/* condition */)
+	i = 0;
+	while (size > i + 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = 0;
-	
+	dest[i] = '\0';
+	while (src[i] != '\0')
+	{
+		++i;
+	}
+	return (i);
 }

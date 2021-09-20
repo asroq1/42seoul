@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 16:16:25 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/14 18:09:07 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:35:12 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 void	ft_sort_int_tab(int *tab, int size)
 {

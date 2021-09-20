@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 11:41:08 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/16 11:56:39 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:33:33 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 char	*ft_strlowcase(char *str)
 {

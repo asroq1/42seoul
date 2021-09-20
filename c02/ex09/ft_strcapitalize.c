@@ -6,12 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 12:01:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/17 21:53:55 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:34:27 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <unistd.h>
 
 char	trans_to_low(char *str)
 {
