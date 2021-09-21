@@ -6,22 +6,22 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 17:13:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/20 10:17:16 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/21 12:11:51 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	while (*s1 != '\0' || *s2 != '\0' && n != 0)
+	while ((*s1 != '\0' || *s2 != '\0') && n != 0)
 	{	
-		*s1++;
-		*s2++;
+		s1++;
+		s2++;
 		if (*s1 == *s2)
 		{
 			continue ;
 		}
 		else if (*s1 > *s2)
-		{
+		{	
 			return (1);
 		}
 		else if (*s1 < *s2)
