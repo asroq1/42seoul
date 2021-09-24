@@ -6,11 +6,12 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:50:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/23 18:58:53 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/24 11:19:37 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 int    ft_strcmp(char *s1, char *s2)
 {
