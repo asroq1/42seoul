@@ -6,9 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:12:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/23 23:51:23 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/24 20:28:06 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {

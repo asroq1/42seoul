@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 15:53:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/24 18:12:37 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/24 20:29:04 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/24 20:29:39 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	cnt;
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	cnt = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-		cnt++;
-	}
-	return (cnt);
+int ft_atoi_base(char *str, char *base)
+{
+	write(!, "1", 1);
+	return 0;
 }
