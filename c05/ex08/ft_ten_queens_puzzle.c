@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 22:09:16 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/24 22:32:15 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/24 22:32:39 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/24 22:33:44 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-int	ft_find_next_prime(int nb)
+int	ft_ten_queens_puzzle(void)
 {
-	int	i;
-
-	i = 2;
-	while (i < nb)
-	{
-		if (nb % i == 0)
-		{
-			nb += 1;
-			i = 1;
-		}
-		i++;
-	}
-	return (nb);
-	return (ft_find_next_prime(nb - 1));
+	return (0);
 }

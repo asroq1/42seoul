@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 11:34:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/24 22:03:24 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/24 22:09:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_is_prime(int nb)
 {
