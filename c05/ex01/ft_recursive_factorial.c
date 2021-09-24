@@ -6,11 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 22:53:40 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/21 23:02:25 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/24 22:00:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_recursive_factorial(int nb)
 {
@@ -18,5 +16,9 @@ int	ft_recursive_factorial(int nb)
 	{
 		return (1);
 	}
-	return (nb * ft_iterative_factorial(nb - 1));
+	else if (nb <= 0)
+	{
+		return (0);
+	}
+	return (nb * ft_recursive_factorial(nb - 1));
 }
