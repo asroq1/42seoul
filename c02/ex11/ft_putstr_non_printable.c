@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 11:39:16 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/20 23:26:45 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/22 16:55:51 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,11 @@ void	ft_putchar(char c)
 void	ten_to_sixten(char c)
 {
 	char	*hex;
-	char	left;
-	char	mok;
 
 	hex = "0123456789abcdef";
-	mok = c / 16;
-	left = c % 16;
 	ft_putchar('\\');
-	ft_putchar(hex[(unsigned char)mok]);
-	ft_putchar(hex[(unsigned char)left]);
+	ft_putchar(hex[(unsigned char)c / 16]);
+	ft_putchar(hex[(unsigned char)c % 16]);
 }
 
 void	ft_putstr_non_printable(char *str)

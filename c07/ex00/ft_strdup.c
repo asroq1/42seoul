@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 23:30:31 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/24 23:40:43 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/25 10:10:19 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -24,19 +24,18 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char *ft_strdup(char *src)
+char	*ft_strdup(char *src)
 {
-	int i;
-	char *new_src;
-	
+	int		i;
+	char	*new_src;
+
 	i = 0;
-	new_src = malloc(sizeof(char) * ft_strlen(src) + 1); 
+	new_src = malloc(sizeof(char) * ft_strlen(src) + 1);
 	while (src[i] != '\0')
 	{
-		new_src += src[i];	
+		new_src += src[i];
 		i++;
 	}
 	new_src[i] = '\0';
 	return (new_src);
 }
-

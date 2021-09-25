@@ -6,19 +6,22 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 11:14:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/23 11:23:08 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/25 11:25:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-    double x = 0;
-	for (int i = 0; i < 10; i++)
-	{
-		x = ( x + ( nb / x ) ) / 2;
-	}
-	
-	
-	return x;
+	long long	i;
 
+	i = 0;
+	while (i * i < nb)
+	{
+		i++;
+	}
+	if (i * i == nb)
+	{
+		return (i);
+	}
+	return (0);
 }

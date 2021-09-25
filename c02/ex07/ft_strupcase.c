@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:45:25 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/16 11:39:25 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/22 13:48:49 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ char	*ft_strupcase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] < 'z')
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
 			str[i] = str[i] - 32;
 		}
 		i++;
 	}
-	str[i] = '\0';
 	return (str);
 }
