@@ -1,45 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 23:30:31 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/26 18:55:08 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/26 11:40:58 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/26 15:22:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	ft_ultimate_range(int **range, int min, int max)
 {
+	int	*new_arr;
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (min >= max)
 	{
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strdup(char *src)
-{
-	int		i;
-	char	*new_src;
-
-	i = 0;
-	new_src = malloc(sizeof(char) * ft_strlen(src) + 1);
-	if (new_src == 0)
-	{
+		new_arr = 0;
 		return (0);
 	}
-	while (src[i] != '\0')
+	new_arr = malloc(sizeof(int) * (max - min));
+	if (new_arr == 0)
 	{
-		new_src += src[i];
+		return (-1);
+	}
+	i = 0;
+	while (max > min)
+	{
+		new_arr[i] = min;
+		min++;
 		i++;
 	}
-	new_src[i] = '\0';
-	return (new_src);
+	*range = new_arr;
+	return (i);
 }
