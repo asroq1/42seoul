@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 13:01:50 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/26 15:18:11 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/26 21:03:48 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (str == 0)
 		return (0);
 	i = 0;
-	*str = 0;
 	while (i < size)
 	{
 		ft_strcat(str, strs[i]);
