@@ -6,19 +6,20 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 22:09:16 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/24 22:32:15 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/25 18:48:51 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
 int	ft_find_next_prime(int nb)
 {
-	int	i;
+	long long	i;
 
 	i = 2;
-	while (i < nb)
+	if (nb <= 2)
+	{
+		return (2);
+	}
+	while (i * i <= nb)
 	{
 		if (nb % i == 0)
 		{
@@ -28,5 +29,4 @@ int	ft_find_next_prime(int nb)
 		i++;
 	}
 	return (nb);
-	return (ft_find_next_prime(nb - 1));
 }

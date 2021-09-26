@@ -6,23 +6,22 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 23:03:43 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/21 23:20:09 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/25 21:10:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_power(int nb, int power)
 {
-	int	n;
+	int	result;
 
-	n = nb;
+	result = 1;
+	if (power < 0)
+		return (0);
 	if (power == 0)
-	{
 		return (1);
-	}
-	while (power != 1)
+	while (power--)
 	{
-		n *= nb;
-		power--;
+		result *= nb;
 	}
-	return (n);
+	return (result);
 }
