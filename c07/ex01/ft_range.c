@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 23:43:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/26 20:34:50 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/27 10:24:29 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	*ft_range(int min, int max)
 	int	*new_arr;
 	int	i;
 
-	if (min > max)
+	if (min >= max)
 	{
 		return (0);
 	}
