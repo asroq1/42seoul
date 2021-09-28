@@ -6,13 +6,13 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 12:07:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/28 13:52:10 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:03:08 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int			is_charset(char str, char *charset)
+int	is_charset(char str, char *charset)
 {
 	while (*charset)
 	{
@@ -43,21 +43,21 @@ long long	ft_strlen(char *str, char *charset)
 	return (cnt);
 }
 
-void		ft_strcpy(char *dest, char *src, char *last)
+void	ft_strcpy(char *dest, char *src, char *last)
 {
 	while (src < last)
 		*(dest)++ = *(src)++;
 	*dest = 0;
 }
 
-char		**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char *charset)
 {
 	char		**ans;
 	char		*tmp;
 	int			i;
 
 	i = 0;
-	ans = (char**)malloc(sizeof(char*) * ft_strlen(str, charset) + 1);
+	ans = (char **)malloc(sizeof(char *) * ft_strlen(str, charset) + 1);
 	while (*str)
 	{
 		if (!is_charset(*str, charset))
@@ -66,7 +66,7 @@ char		**ft_split(char *str, char *charset)
 			str++;
 			while (!is_charset(*str, charset) && *str)
 				++str;
-			ans[i] = (char*)malloc(str - tmp + 1);
+			ans[i] = (char *)malloc(str - tmp + 1);
 			ft_strcpy(ans[i++], tmp, str);
 		}
 		str++;
