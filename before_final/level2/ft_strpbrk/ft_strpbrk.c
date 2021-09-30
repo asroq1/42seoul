@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 23:11:31 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/30 10:03:14 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/30 18:31:59 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/30 19:40:20 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
 
-int main(int ac, char **av)
+char	*ft_strpbrk(const char *s1, const char *s2)
 {
-	if (ac == 2)
+
+	int i = 0;
+	int j = 0;
+	while (s1[i] != 0)
 	{
-		int i = 0;
-		while (av[1][i] != 0)
+		while (s2[j] != 0)
 		{
-			if ('a' <= av[1][i] && 'm' >= av[1][i] || 'A' <= av[1][i] && 'M' >= av[1][i])
+			if (s1[i] == s2[j])
 			{
-				av[1][i] += 13;
+				return s1[i];
 			}
-			else if('n' <= av[1][i] && 'z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			else if('N' <= av[1][i] && 'Z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			write(1, &av[1][i], 1);
-			i++;
+			j++;
 		}
+	i++;
 	}
-	write(1, "\n", 1);	
+	return 0;
+}
+
+int main()
+{
+	char t[20] = "tet";
+	char t1[20] = "t";
+	printf("mine : %s\n", ft_strpbrk("test", "s"));
+	printf("ori : %s\n", strpbrk("test", "s"));
 }

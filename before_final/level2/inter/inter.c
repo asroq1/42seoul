@@ -1,39 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   inter.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 23:11:31 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/30 10:03:14 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/30 21:30:34 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/30 22:15:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+int check_doubles(char *str, char c, int idx)
+{
+	int i;
+
+	i = 0;
+
+	while (i < idx)
+	{
+		if (str[i] == c)
+		{
+			return 0;
+		}
+		i++;
+	}
+	return 1;
+}
 int main(int ac, char **av)
 {
-	if (ac == 2)
+	int i;
+	int j;
+	
+	i = 0;
+	if (ac == 3)
 	{
-		int i = 0;
 		while (av[1][i] != 0)
 		{
-			if ('a' <= av[1][i] && 'm' >= av[1][i] || 'A' <= av[1][i] && 'M' >= av[1][i])
+			j = 0;
+			while (av[2][j] != 0)
 			{
-				av[1][i] += 13;
+				if (av[1][i] == av[2][j])
+				{
+					if (check_doubles(av[1], av[1][i], i))
+					{
+						write(1, &av[1][i], 1);
+						break;
+					}
+					
+				}
+			j++;	
 			}
-			else if('n' <= av[1][i] && 'z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			else if('N' <= av[1][i] && 'Z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			write(1, &av[1][i], 1);
-			i++;
+		i++;
 		}
 	}
-	write(1, "\n", 1);	
+	write(1, "\n", 1);
+	return 0;
 }

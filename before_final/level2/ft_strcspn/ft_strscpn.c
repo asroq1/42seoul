@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   ft_strscpn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 23:11:31 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/30 10:03:14 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/30 19:48:26 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/30 20:18:59 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
 
-int main(int ac, char **av)
+int	ft_strcspn(const char *s, const char *reject)
 {
-	if (ac == 2)
+	int i = 0;
+	int j = 0;
+	int cnt = 0;
+	while (s[i] != 0)
 	{
-		int i = 0;
-		while (av[1][i] != 0)
+		j = 0;
+		while (reject[j] != 0)
 		{
-			if ('a' <= av[1][i] && 'm' >= av[1][i] || 'A' <= av[1][i] && 'M' >= av[1][i])
+			if (s[i] == reject[j])
 			{
-				av[1][i] += 13;
+				return i;
 			}
-			else if('n' <= av[1][i] && 'z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			else if('N' <= av[1][i] && 'Z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			write(1, &av[1][i], 1);
-			i++;
+			j++;
 		}
+		i++;
 	}
-	write(1, "\n", 1);	
+	return i;	
+}
+int main()
+{
+	char *str = "as@gmai.com";
+	char *str2 = "!@?";
+
+	printf("mine :%ld\n", ft_strcspn(str , str2));	
+	printf("origin :%ld\n", strcspn(str , str2));	
 }

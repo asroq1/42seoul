@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   strcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 23:11:31 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/30 10:03:14 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/30 18:17:09 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/30 18:25:35 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
 
-int main(int ac, char **av)
+int    ft_strcmp(char *s1, char *s2)
 {
-	if (ac == 2)
+	int i = 0;
+	while (s1[i] != 0)
 	{
-		int i = 0;
-		while (av[1][i] != 0)
+		if (s1[i] != s2[i])
 		{
-			if ('a' <= av[1][i] && 'm' >= av[1][i] || 'A' <= av[1][i] && 'M' >= av[1][i])
-			{
-				av[1][i] += 13;
-			}
-			else if('n' <= av[1][i] && 'z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			else if('N' <= av[1][i] && 'Z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			write(1, &av[1][i], 1);
-			i++;
+			return (-1);
 		}
+		i++;		
 	}
-	write(1, "\n", 1);	
+	return (s1 - s2);
+}
+
+int main()
+{
+	printf("mine : %d\n", ft_strcmp("Block!Fmask", "BlockFmask"));
+	printf(" original :%d\n", strcmp("Block!Fmask", "BlockFmask"));
 }

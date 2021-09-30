@@ -1,39 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 23:11:31 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/30 10:03:14 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/09/30 20:38:53 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/09/30 21:23:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-int main(int ac, char **av)
+int ft_strlen(char *str)
 {
-	if (ac == 2)
+	int i = 0;
+	while(str[i] != 0)
 	{
-		int i = 0;
-		while (av[1][i] != 0)
-		{
-			if ('a' <= av[1][i] && 'm' >= av[1][i] || 'A' <= av[1][i] && 'M' >= av[1][i])
-			{
-				av[1][i] += 13;
-			}
-			else if('n' <= av[1][i] && 'z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			else if('N' <= av[1][i] && 'Z' >= av[1][i])
-			{
-				av[1][i] -= 13;
-			}
-			write(1, &av[1][i], 1);
-			i++;
-		}
+		i++;
 	}
-	write(1, "\n", 1);	
+	return i;
+}
+
+char    *ft_strrev(char *str)
+{
+	int i = 0;
+	int start = 0;
+	int end = ft_strlen(str) - 1;
+	char tmp;
+	int size = ft_strlen(str);
+	
+	while (i < size/ 2)
+	{ 
+		tmp = str[start];
+		str[start] = str[end];
+		str[end] = tmp;
+		start++;
+		end--;
+		i++; 
+	}
+	return(str);
+}
+
+int main()
+{
+	char test[50] = "HELLO";
+	printf("%s",ft_strrev(test)); 
 }
