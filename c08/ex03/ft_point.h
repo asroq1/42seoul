@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 23:32:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/09/27 16:58:51 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/09/27 18:07:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ typedef struct s_point
 {
 	int	x;
 	int	y;
-}					t_point;
+}				t_point;
 #endif
