@@ -6,13 +6,13 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:55:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/11/16 19:11:21 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:01:16 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			idx;
 	unsigned char	*mem;

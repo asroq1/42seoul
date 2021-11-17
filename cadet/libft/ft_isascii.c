@@ -6,11 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:03:42 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/11/16 15:27:22 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:01:35 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isascii(int number)
+int	ft_isascii(int number)
 {
 	if (number >= 0 && number <= 127)
 	{

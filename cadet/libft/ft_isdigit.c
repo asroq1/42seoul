@@ -6,11 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:45:46 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/11/16 13:05:27 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:01:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int arg)
+int	ft_isdigit(int arg)
 {
 	if (arg >= 0)
 	{
