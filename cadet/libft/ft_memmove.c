@@ -47,24 +47,32 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 
 int main(void)
 {
-    char str[] = "BlockDMask";
+    // char str[] = "BlockDMask";
  
-    // 메모리 복사 : 메모리 겹침
+    // // 메모리 복사 : 메모리 겹침
  
-    memmove(str, str + 2, sizeof(char) * 4);
-    // source
-	printf("------original-----\n");
-	for (size_t i = 0; i < sizeof(str); i++)
-	{
-		printf("%c", str[i]);
-	}
-	printf("\n");
-	printf("-------mine-----\n");
-    ft_memmove(str, str + 2, sizeof(char) * 4);
-	for (size_t i = 0; i < sizeof(str); i++)
-	{
-		printf("%c", str[i]);
-	}
+    // memmove(str, str + 2, sizeof(char) * 4);
+    // // source
+	// printf("------original-----\n");
+	// for (size_t i = 0; i < sizeof(str); i++)
+	// {
+	// 	printf("%c", str[i]);
+	// }
+	// printf("\n");
+	// printf("-------mine-----\n");
+    // ft_memmove(str, str + 2, sizeof(char) * 4);
+	// for (size_t i = 0; i < sizeof(str); i++)
+	// {
+	// 	printf("%c", str[i]);
+	// }
+	  char array[10];
+        
+        memset(array, 0, sizeof(array));
+        strcpy(array, "test");
+        
+        printf("original : %s\n", array);
+        
+        memmove(array, array+2, strlen("test"));
+        printf("after memmove : %s\n", array);
     return 0;
 }
- 
