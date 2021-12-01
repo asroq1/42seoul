@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:14:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/11/17 19:58:12 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/11/19 12:44:07 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,21 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 	{
 		new_dest = (unsigned char *)dest;
 		new_src = (unsigned char *)src;
+		printf("first if\n");
 		while (idx < size)
 		{
-			*new_dest++ = *new_src;
+			*new_dest++ = *new_src++;
 			idx++;
 		}
 	}
 	else
 	{
+		printf("sec if\n");
 		new_dest = dest + (size - 1);
 		new_src = src + (size - 1);
 		while (idx < size)
 		{
-			*new_dest-- = *new_src--;
+			new_dest[size - 1] = new_src[size - 1];
 			idx++;
 		}
 	}
@@ -47,24 +49,20 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 
 int main(void)
 {
-    char str[] = "BlockDMask";
- 
-    // 메모리 복사 : 메모리 겹침
- 
-    memmove(str, str + 2, sizeof(char) * 4);
-    // source
-	printf("------original-----\n");
-	for (size_t i = 0; i < sizeof(str); i++)
-	{
-		printf("%c", str[i]);
-	}
-	printf("\n");
-	printf("-------mine-----\n");
-    ft_memmove(str, str + 2, sizeof(char) * 4);
-	for (size_t i = 0; i < sizeof(str); i++)
-	{
-		printf("%c", str[i]);
-	}
+     char array[10];
+        
+        memset(array, 0, sizeof(array));
+        strcpy(array, "test");
+        
+        printf("original : %s\n", array);
+        
+        // memmove(array, array+2, strlen("test"));
+        // printf("after memmove : %s\n", array);
+
+        ft_memmove(array, array+2, strlen("test"));
+        printf("my memmove : %s\n", array);
+        
+        return 0;
     return 0;
 }
  
