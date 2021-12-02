@@ -6,12 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 12:27:10 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/11/17 19:38:47 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:39:32 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t size)
 {

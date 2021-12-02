@@ -6,9 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:13:02 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/11/17 18:01:24 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:39:36 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint( int number)
 {

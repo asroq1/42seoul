@@ -6,9 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:07:12 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/11/16 16:22:11 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:39:49 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int arg)
 {

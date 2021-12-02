@@ -6,11 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:14:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/01 17:42:23 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:39:27 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
