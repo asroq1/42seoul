@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 15:31:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/02 18:25:39 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/02 19:50:57 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/02 19:54:35 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*memchr(const void	*ptr, int value, size_t n)
 {
-	size_t	i;
-	size_t	cnt;
+	
+	return (0);
+}
 
-	i = 0;
-	cnt = 0;
-	while (str[i] != 0)
-	{
-		i++;
-		cnt++;
-	}
-	return (cnt);
+int main() {
+  char* pch;
+  char str[] = "Example string";
+  pch = (char*)memchr(str, 'p', strlen(str));
+
+  if (pch != NULL)
+    printf("'p' found at position %d.\n", pch - str + 1);
+  else
+    printf("'p' not found.\n");
+
+  return 0;
 }

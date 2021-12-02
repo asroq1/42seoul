@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 15:31:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/02 18:25:39 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/02 18:29:21 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/02 19:05:54 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *str, int c)
 {
-	size_t	i;
-	size_t	cnt;
+	size_t	idx;
 
-	i = 0;
-	cnt = 0;
-	while (str[i] != 0)
+	idx = 0;
+	while (str[idx] != 0)
 	{
-		i++;
-		cnt++;
+		if (str[idx] == c)
+		{
+			return ((char *)&str[idx]);
+		}
+		idx++;
 	}
-	return (cnt);
+	return (0);
 }
