@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 19:50:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/06 12:46:13 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/06 14:45:25 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/06 18:42:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void	*ptr, int value, size_t n)
+char	*ft_strnstr(const char *str, const char *substr, size_t n)
 {
-	size_t			idx;
-	unsigned char	*tmp;
+	size_t			i;
+	size_t			j;
 
-	idx = 0;
-	tmp = ptr;
-	while (n != 0)
+	i = 0;
+	if (*substr == 0)
 	{
-		if (*tmp == value)
+		return ((char *)str);
+	}
+	while (str[i] != 0 && i < n)
+	{
+		j = 0;
+		while (str[i + j] == substr[j] && i + j < n)
 		{
-			return (tmp);
-		}
-		tmp++;
-		idx++;
-		n--;
+			j++;
+			if (substr[j] == 0)
+			{
+				return ((char *)&str[i]);
+			}
+		}	
+		i++;
 	}
 	return (0);
 }

@@ -4,6 +4,8 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
+# include <ctype.h>
 
 void	ft_bzero(void *s, size_t n);
 
@@ -23,5 +25,8 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *s, int c);
 int		strncmp(const char	*str1, const char	*str2, size_t n);
 void	*memchr(const void	*ptr, int value, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
+char	*ft_strnstr(const char *str, const char *substr, size_t n);
+int		ft_atoi(const char *str);
 
 #endif
