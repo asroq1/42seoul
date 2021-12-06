@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 19:50:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/06 12:46:13 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/06 19:07:11 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/06 19:48:58 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void	*ptr, int value, size_t n)
+int	ft_atoi(const char *str)
 {
-	size_t			idx;
-	unsigned char	*tmp;
+	size_t	sign;
+	size_t	value;
 
-	idx = 0;
-	tmp = ptr;
-	while (n != 0)
+	sign = 1;
+	value = 0;
+	if (isspace(*str))
+		str++;
+	while (*str != 0)
 	{
-		if (*tmp == value)
+		if (*str == '-')
 		{
-			return (tmp);
+			sign = -1;
+			str++;
 		}
-		tmp++;
-		idx++;
-		n--;
+		else if ((*str >= '0') && (*str < '9'))
+		{
+			value = (value * 10) + (*str - '0');
+			str++;
+		}
+		else
+			break ;
 	}
-	return (0);
+	return (value * sign);
 }

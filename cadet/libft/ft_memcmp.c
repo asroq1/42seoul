@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 19:50:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/06 12:46:13 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/06 12:47:51 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/06 14:42:53 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void	*ptr, int value, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 	size_t			idx;
-	unsigned char	*tmp;
 
 	idx = 0;
-	tmp = ptr;
-	while (n != 0)
+	tmp1 = (unsigned char *)str1;
+	tmp2 = (unsigned char *)str2;
+	while (idx < n)
 	{
-		if (*tmp == value)
+		if (tmp1[idx] > tmp2[idx])
 		{
-			return (tmp);
+			return (1);
 		}
-		tmp++;
+		else if (tmp1[idx] < tmp2[idx])
+		{
+			return (-1);
+		}
 		idx++;
-		n--;
 	}
 	return (0);
 }
