@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 13:16:23 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/07 14:36:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/07 17:48:03 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char	*ft_strdup(const char *s1)
 	while (s1[i] != 0)
 	{
 		tmp[i] = s1[i];
-		printf("s1[%c]\n", s1[i]);
 		i++;
 	}
 	return (tmp);
