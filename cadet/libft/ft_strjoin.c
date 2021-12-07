@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 13:16:23 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/07 14:36:04 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/07 16:06:53 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/07 17:14:51 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
-{	
-	size_t			i;
-	unsigned char	*tmp;
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*new_str;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	tmp = malloc(ft_strlen(s1) * sizeof(char));
-	while (s1[i] != 0)
+	j = 0;
+	if (s1 == 0 || s2 == 0)
+		return (0);
+	new_str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (new_str == 0)
+		return (0);
+	while (i < ft_strlen(s1))
 	{
-		tmp[i] = s1[i];
-		printf("s1[%c]\n", s1[i]);
+		new_str[i] = s1[i];
+		j = 0;
 		i++;
 	}
-	return (tmp);
+	while (j <= ft_strlen(s2))
+	{
+		new_str[i] = s2[j];
+		j++;
+		i++;
+	}
+	printf("total len : %d\n", ft_strlen(new_str));
+	return (new_str);
 }

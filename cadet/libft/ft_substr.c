@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 13:16:23 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/07 14:36:04 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/07 14:38:14 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/07 16:07:57 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
-{	
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	unsigned char	*new_str;
 	size_t			i;
-	unsigned char	*tmp;
+	size_t			j;
 
-	i = 0;
-	tmp = malloc(ft_strlen(s1) * sizeof(char));
-	while (s1[i] != 0)
+	i = start;
+	j = 0;
+	if (s == 0)
 	{
-		tmp[i] = s1[i];
-		printf("s1[%c]\n", s1[i]);
-		i++;
+		return (0);
 	}
-	return (tmp);
+	new_str = malloc(len * sizeof(char));
+	while (j < len && s != 0)
+	{
+		new_str[j] = s[i];
+		i++;
+		j++;
+	}
+	new_str[j] = 0;
+	return (new_str);
 }
