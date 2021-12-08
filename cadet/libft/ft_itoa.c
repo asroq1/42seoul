@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 12:44:02 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/08 16:18:56 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/08 16:19:49 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,4 @@ char	*ft_itoa(int n)
 		value /= 10;
 	}
 	return (new_str);
-}
-
-int main()
-{
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(987654321));
-	printf("%s\n", ft_itoa(-123456789));
 }
