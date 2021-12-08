@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:10:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/02 16:40:30 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:45:40 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,11 @@ size_t	ft_strlcpy(char	*dest, const char *src, size_t size)
 	{
 		dest[i] = src[i];
 		i++;
-		printf("i == %d\n", i);
 	}
 	dest[i] = '\0';
 	while (src[i] != '\0')
 	{
 		++i;
-		printf("after : %d \n", i);
 	}
 	return (i);
 }
