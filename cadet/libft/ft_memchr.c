@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 19:50:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/06 12:46:13 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/09 18:47:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_memchr(const void	*ptr, int value, size_t n)
 	unsigned char	*tmp;
 
 	idx = 0;
-	tmp = ptr;
+	tmp = (unsigned char *)ptr;
 	while (n != 0)
 	{
-		if (*tmp == value)
+		if (*tmp == (unsigned char)value)
 		{
 			return (tmp);
 		}

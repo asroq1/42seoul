@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 18:29:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/02 19:05:54 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/09 19:57:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	size_t	idx;
+	size_t	i;
 
-	idx = 0;
-	while (str[idx] != 0)
+	i = 0;
+	while (str[i] != 0)
 	{
-		if (str[idx] == c)
+		if (str[i] == (char)c)
 		{
-			return ((char *)&str[idx]);
+			return ((char *)&str[i]);
 		}
-		idx++;
+		i++;
+	}
+	if (str[i] == c)
+	{
+		return ((char *)&str[i]);
 	}
 	return (0);
 }

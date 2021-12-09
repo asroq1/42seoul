@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:38:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/07 17:56:38 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/09 19:15:06 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*new_str;
+	char			*new_str;
 	size_t			i;
 	size_t			j;
 

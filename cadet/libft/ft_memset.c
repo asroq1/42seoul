@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:55:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/02 16:39:25 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/09 19:38:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t			idx;
+	size_t			i;
 	unsigned char	*mem;
 
-	idx = 0;
+	i = 0;
 	mem = (unsigned char *)b;
-	while (len != 0)
+	while (i < len)
 	{
-		mem[idx] = c;
-		idx++;
-		len--;
+		mem[i] = c;
+		i++;
 	}
+	return (b);
 }

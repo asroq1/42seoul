@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 13:16:23 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/07 17:48:03 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/09 19:14:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *s1)
 {	
 	size_t			i;
-	unsigned char	*tmp;
+	char			*tmp;
 
 	i = 0;
 	tmp = malloc(ft_strlen(s1) * sizeof(char));

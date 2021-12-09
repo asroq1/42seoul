@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 16:06:53 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/07 17:14:51 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:23:44 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 		i++;
 	}
-	printf("total len : %d\n", ft_strlen(new_str));
 	return (new_str);
 }
