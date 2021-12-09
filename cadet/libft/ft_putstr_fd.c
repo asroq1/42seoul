@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 15:31:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/09 12:44:51 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/09 13:51:11 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/09 14:07:19 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
+void	ft_putstr_fd(char *s, int fd)
+{	
 	size_t	i;
-	size_t	cnt;
+	size_t	length;
 
 	i = 0;
-	cnt = 0;
-	while (str[i] != 0)
+	length = ft_strlen(s);
+	if (s == 0 || fd < 0)
 	{
-		i++;
-		cnt++;
+		return ;
 	}
-	return (cnt);
+	while (i < length)
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

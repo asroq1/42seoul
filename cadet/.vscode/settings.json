@@ -12,6 +12,9 @@
 		"unordered_map": "cpp",
 		"utility": "cpp",
 		"vector": "cpp",
-		"libft.h": "c"
+		"libft.h": "c",
+		"__locale": "c",
+		"__string": "c",
+		"chrono": "c"
 	}
 }

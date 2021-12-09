@@ -1,63 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 12:44:02 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/09 11:52:44 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/09 12:04:06 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/09 12:59:40 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_int_length(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	length;
-
-	if (n == 0)
-	{
-		return (1);
-	}
-	length = 0;
-	if (n < 0)
-	{
-		length++;
-	}
-	while (n != 0)
-	{
-		n /= 10;
-		length++;
-	}
-	return (length);
-}
-
-char	*ft_itoa(int n)
-{
-	int		value;
-	size_t	length;
+	size_t	i;
 	char	*new_str;
 
-	length = ft_int_length(n);
-	value = n;
+	i = 0;
+	length = ft_strlen(s);
 	new_str = malloc(length * sizeof(char) + 1);
 	if (new_str == 0)
+	{
 		return (0);
-	if (value < 0)
-	{
-		new_str[0] = '-';
-		value *= -1;
 	}
-	if (value == 0)
-		new_str[0] = '0';
-	new_str[length] = 0;
-	length -= 1;
-	while (value != 0)
+	if (!s || !f)
 	{
-		new_str[length] = '0' + value % 10;
-		length--;
-		value /= 10;
+		return (0);
 	}
+	while (i < length)
+	{
+		new_str[i] = s[i];
+		i++;
+	}
+	new_str[i] = 0;
 	return (new_str);
 }
