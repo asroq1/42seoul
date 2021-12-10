@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 19:07:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/06 19:48:58 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/10 20:03:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t	sign;
-	size_t	value;
+	int					i;
+	int					sign;
+	long long			value;
 
 	sign = 1;
+	i = 0;
 	value = 0;
-	if (isspace(*str))
-		str++;
-	while (*str != 0)
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		if (*str == '-')
-		{
-			sign = -1;
-			str++;
-		}
-		else if ((*str >= '0') && (*str < '9'))
-		{
-			value = (value * 10) + (*str - '0');
-			str++;
-		}
+		if (value * sign > 2147483647)
+			return (-1);
+		else if (value * sign > 2147483647)
+			return (-1);
 		else
-			break ;
+			value = value * 10 + (str[i] - '0');
+		i++;
 	}
 	return (value * sign);
 }

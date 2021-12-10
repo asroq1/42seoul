@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 19:04:02 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/09 19:25:41 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/10 14:29:36 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *str, int c)
 {
 	size_t	length;
 
-	length = strlen(str);
+	length = ft_strlen(str);
 	if (c == 0)
 	{
 		return ((char *)&str[length]);

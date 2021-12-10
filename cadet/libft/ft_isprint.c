@@ -6,20 +6,20 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:13:02 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/02 16:39:36 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/10 12:55:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint( int number)
+int	ft_isprint(int number)
 {
 	if (number >= 32 && number <= 126)
 	{
-		return (0);
+		return (1);
 	}
 	else
 	{
-		return (1);
+		return (0);
 	}
 }

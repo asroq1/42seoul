@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:15:55 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/08 12:38:14 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/10 19:45:57 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		back = ft_strlen(s1);
 		while (s1[front] && ft_strchr(set, s1[front]))
 			front++;
-		while (s1[back - 1] && ft_strchr(set, s1[back - 1]))
+		while (s1[back - 1] && ft_strchr(set, s1[back - 1]) && back > front)
 			back--;
-		new_str = malloc((back - front + 1) * sizeof(char));
+		new_str = malloc((back - front + 1) * sizeof(char) + 1);
 	}
 	if (new_str != 0)
 	{

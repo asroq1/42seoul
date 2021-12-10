@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:38:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/09 19:15:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/10 19:32:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		return (0);
 	}
-	new_str = malloc(len * sizeof(char));
+	new_str = malloc(len * sizeof(char) + 1);
 	while (j < len && s != 0)
 	{
 		new_str[j] = s[i];

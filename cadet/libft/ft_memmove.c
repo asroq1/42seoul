@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:14:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/09 16:31:46 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/10 16:38:11 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 {
 	unsigned char	*new_dest;
 	unsigned char	*new_src;
-	size_t			idx;
 
-	idx = 0;
-	if (dest <= src)
+	new_dest = (unsigned char *)dest;
+	new_src = (unsigned char *)src;
+	if (dest == 0 || src == 0)
+		return (0);
+	if (dest < src)
 	{
-		new_dest = (unsigned char *)dest;
-		new_src = (unsigned char *)src;
-		while (idx++ < size)
+		while (size--)
 		{
 			*new_dest++ = *new_src++;
 		}
@@ -32,10 +32,8 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 	{
 		new_dest = (unsigned char *)dest + (size - 1);
 		new_src = (unsigned char *)src + (size - 1);
-		while (idx++ < size)
-		{
-			new_dest[size - 1] = new_src[size - 1];
-		}
+		while (size--)
+			*new_dest-- = *new_src--;
 	}
 	return (dest);
 }
