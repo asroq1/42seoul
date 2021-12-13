@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 12:44:02 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/09 11:52:44 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:03:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_int_length(int n)
 
 char	*ft_itoa(int n)
 {
-	int		value;
+	long	value;
 	size_t	length;
 	char	*new_str;
 

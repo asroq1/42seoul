@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:04:06 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/09 12:59:40 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/13 14:23:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	while (i < length)
 	{
-		new_str[i] = s[i];
+		new_str[i] = f(i, s[i]);
 		i++;
 	}
 	new_str[i] = 0;
