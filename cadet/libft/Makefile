@@ -42,7 +42,7 @@ SRCS    = ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isalnum.c \
             ft_strrchr.c ft_strlcat.c ft_strchr.c \
             ft_calloc.c ft_bzero.c ft_atoi.c ft_itoa.c ft_strtrim.c \
             ft_substr.c ft_strjoin.c ft_atoi.c ft_strmapi.c  \
-            ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
+            ft_putchar_fd.c ft_split.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
             ft_striteri.c
 SRCS_BN = ft_lstnew.c ft_lstsize.c ft_lstlast.c \
             ft_lstadd_front.c ft_lstadd_back.c ft_lstdelone.c \
