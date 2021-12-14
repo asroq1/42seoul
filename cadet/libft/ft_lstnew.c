@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inyancat <inyancat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created  2016/11/11 16:47:32 by inyancat          #+#    #+#             */
-/*   Updated  2016/11/12 20:21:42 by inyancat         ###   ########.fr       */
+/*   Created: 2021/12/14 18:44:46 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/14 19:33:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include <stdarg.h>
-extern int g_log_fd;
+#include "libft.h"
 
-void error(int code, int a, const char *pattern, ...)
+t_list	*ft_lstnew(void *content)
 {
-	va_list	va;
+	t_list	*new_node;
 
-	va_start(va, pattern);
-	(void)a;
-	vdprintf(g_log_fd, pattern, va);
-	dprintf(g_log_fd, "\n");
-	va_end(va);
-	exit(code);
+	new_node = malloc(sizeof(t_list));
+	new_node->content = content;
+	new_node->next = (0);
+	return (new_node);
 }

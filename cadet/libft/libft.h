@@ -8,7 +8,6 @@
 # include <ctype.h>
 
 void	ft_bzero(void *s, size_t n);
-
 int		ft_isalpha(int arg);
 int		ft_isalnum(int arg);
 int		ft_isascii(int number);
@@ -42,4 +41,10 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 #endif

@@ -3,7 +3,7 @@ $> hostname; uname -msr
 c7r8s4.42seoul.kr
 Darwin 19.6.0 x86_64
 $> date
-Tue Dec 14 16:04:31 KST 2021
+Tue Dec 14 19:36:35 KST 2021
 $> gcc --version
 Apple clang version 12.0.0 (clang-1200.0.32.28)
 Target: x86_64-apple-darwin19.6.0
@@ -94,10 +94,11 @@ gcc   -Wall -Wextra -Werror -c ft_putstr_fd.c -o ft_putstr_fd.o -Iincludes
 gcc   -Wall -Wextra -Werror -c ft_putnbr_fd.c -o ft_putnbr_fd.o -Iincludes
 gcc   -Wall -Wextra -Werror -c ft_putendl_fd.c -o ft_putendl_fd.o -Iincludes
 gcc   -Wall -Wextra -Werror -c ft_striteri.c -o ft_striteri.o -Iincludes
-make: *** No rule to make target `ft_lstnew.o', needed by `bonus'.  Stop.
+gcc   -Wall -Wextra -Werror -c ft_lstnew.c -o ft_lstnew.o -Iincludes
+make: *** No rule to make target `ft_lstsize.o', needed by `bonus'.  Stop.
 
 $> ls -la libft.a
--rw-r--r--  1 hyunjung  2021_seoul  33888 Dec 14 16:04 /Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/dirlibft/libft.a
+-rw-r--r--  1 hyunjung  2021_seoul  33888 Dec 14 19:36 /Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/dirlibft/libft.a
 
 = Part1_functions ==============================================================
 
@@ -1322,7 +1323,25 @@ Diff OK :D
 $> norminette ft_lstnew_bonus.c | grep -E '(Error|Warning)'
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstnew.c main.c libft.a -o user_exe
 
-clang: error: no such file or directory: '/Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/dirlibft//ft_lstnew.c'
+/Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/tests/Bonus_functions/ft_lstnew/main.c:49:16: error: implicit declaration of function 'ft_lstnew' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                if (!(elem = ft_lstnew(str)))
+                             ^
+/Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/tests/Bonus_functions/ft_lstnew/main.c:49:14: error: incompatible integer to pointer conversion assigning to 't_list *' (aka 'struct s_list *') from 'int' [-Werror,-Wint-conversion]
+                if (!(elem = ft_lstnew(str)))
+                           ^ ~~~~~~~~~~~~~~
+/Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/tests/Bonus_functions/ft_lstnew/main.c:71:16: error: implicit declaration of function 'ft_lstnew' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                if (!(elem = ft_lstnew(&i)))
+                             ^
+/Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/tests/Bonus_functions/ft_lstnew/main.c:71:14: error: incompatible integer to pointer conversion assigning to 't_list *' (aka 'struct s_list *') from 'int' [-Werror,-Wint-conversion]
+                if (!(elem = ft_lstnew(&i)))
+                           ^ ~~~~~~~~~~~~~
+/Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/tests/Bonus_functions/ft_lstnew/main.c:90:16: error: implicit declaration of function 'ft_lstnew' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                if (!(elem = ft_lstnew(NULL)))
+                             ^
+/Users/hyunjung/42seoul/cadet/Libft/libft-war-machine/tests/Bonus_functions/ft_lstnew/main.c:90:14: error: incompatible integer to pointer conversion assigning to 't_list *' (aka 'struct s_list *') from 'int' [-Werror,-Wint-conversion]
+                if (!(elem = ft_lstnew(NULL)))
+                           ^ ~~~~~~~~~~~~~~~
+6 errors generated.
 
 = ft_lstdelone_bonus.c =========================================================
 $> norminette ft_lstdelone_bonus.c | grep -E '(Error|Warning)'

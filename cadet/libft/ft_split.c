@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:29:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/14 17:31:58 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:01:37 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	**ft_free(char **str)
 	return (0);
 }
 
-static char	**ft_seperator(char **new_str, char const *s, char c, size_t count)
+static char	**do_split(char **new_str, char const *s, char c, size_t count)
 {
 	size_t	i;
 	size_t	j;
@@ -42,7 +42,7 @@ static char	**ft_seperator(char **new_str, char const *s, char c, size_t count)
 			while (s[next] != 0 && s[next] != c)
 				next++;
 			new_str[j] = ft_substr(s, i, next - i);
-			if (!new_str[j])
+			if (new_str[j] == 0)
 				return (ft_free(new_str));
 			j++;
 			i = next;
@@ -78,6 +78,6 @@ char	**ft_split(char const *s, char c)
 	new_str = malloc(sizeof(char *) * word_count + 1);
 	if (new_str == 0)
 		return (0);
-	ft_seperator(new_str, s, c, word_count);
+	do_split(new_str, s, c, word_count);
 	return (new_str);
 }
