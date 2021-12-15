@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 18:44:46 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/15 12:39:37 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/15 16:05:02 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/15 16:34:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libfh.h";
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*new_node;
+	t_list	*cur;
+	t_list	*next;
 
-	new_node = malloc(sizeof(t_list));
-	new_node->content = content;
-	new_node->next = (0);
-	return (new_node);
+	cur = *lst;
+	while (cur != 0)
+	{
+		next = cur->next;
+		ft_lstdelone(cur, del);
+		cur = next;
+	}
+	*lst = NULL;
 }
