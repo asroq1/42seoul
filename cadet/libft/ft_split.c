@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:29:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/14 19:01:37 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:52:27 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 		else
 			i++;
 	}
-	new_str = malloc(sizeof(char *) * word_count + 1);
+	new_str = malloc(sizeof(char *) * (word_count + 1));
 	if (new_str == 0)
 		return (0);
 	do_split(new_str, s, c, word_count);
