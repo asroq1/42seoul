@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 13:36:40 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/15 13:51:38 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/16 11:39:07 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 11:40:52 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	size_t = size;
+	size_t	size;
+
 	size = 0;
 	while (lst != 0)
 	{
