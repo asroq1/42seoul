@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:18:13 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/16 17:21:21 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/21 12:20:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	ft_putendl_fd(char *s, int fd)
 	size_t	length;
 
 	i = 0;
-	length = ft_strlen(s);
 	if (s == 0 || fd < 0)
 	{
 		return ;
 	}
+	length = ft_strlen(s);
 	while (i < length)
 	{
 		write(fd, &s[i], 1);

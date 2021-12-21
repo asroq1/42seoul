@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 19:07:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2021/12/16 15:15:14 by hyunjung         ###   ########.fr       */
+/*   Updated: 2021/12/21 11:17:40 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 	{
 		if (value * sign > 2147483647)
 			return (-1);
-		else if (value * sign > 2147483647)
+		else if (value * sign < -2147483648)
 			return (0);
 		else
 			value = value * 10 + (str[i] - '0');
