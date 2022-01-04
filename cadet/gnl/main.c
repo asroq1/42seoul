@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:27:01 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/03 13:09:42 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/01/04 13:21:57 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,22 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-int	main(void)
+int main(int argc, char **argv)
 {
-	int		tmp;
-	int		fd;
-	char	*line;
+    char *line;
+    int fd;
 
-	fd = open("test.txt", O_RDONLY);
-	while ((tmp = (get_next_line(fd) > 0)))
-	{
-		printf("%s\n", line);
-		free(line);
-	}
-	printf("%w \n", line);
-	free(line);
-	close(fd);
-	return (0);
+    (void)argc;
+    (void)argv;
+    line = NULL;
+    fd = open(argv[1], O_RDONLY);
+    //fd = 111;
+    while ((line = get_next_line(fd)) != NULL)
+    {
+        printf("READ:%s", line);
+        free(line);
+        line = NULL;
+    }
+    close(fd);
+    return 0;
 }
