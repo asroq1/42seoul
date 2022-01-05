@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/05 16:07:09 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/01/05 16:31:34 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,34 @@ char	*ft_left_lstr(char *lstr)
 
 char	*ft_split_lstr(char *lstr)
 {
-	
+	char	*tmp;
+	int		i;
+
+	tmp = malloc(sizeof(char) * ft_strlen(lstr) - ft_strlen(str) + 1);
 }
 
 char	*ft_get_lstr(int fd, char *lstr)
 {
-    
+	char	*buffer;
+	int		result;
+
+	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (buffer == 0)
+	{
+		return (0);
+	}
+	result = 1;
+	while (ft_strchr(lstr, '\n') && result != 0)
+	{	
+		result = read(fd, lstr, BUFFER_SIZE);
+		if (result == -1)
+		{
+			free(buffer);
+		}
+		lstr = ft_strjoin(lstr, buffer);
+	}
+	free(buffer)
+	return (lstr);
 }
 
 char	*get_next_line(int fd)
