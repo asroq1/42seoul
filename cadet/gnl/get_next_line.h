@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:30 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/06 16:01:30 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/01/06 17:14:30 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
-# if OPEN_MAX > 12800
-#  define ARRAY_MAX OPEN_MAX
-# endif
+// # if OPEN_MAX > 12800
+// #  define ARRAY_MAX OPEN_MAX
+// # endif
 
-# if OPEN_MAX <= 12800
-#  define ARRAY_MAX 12800
-# endif
+// # if OPEN_MAX <= 12800
+// #  define ARRAY_MAX 12800
+// # endif
 
-int		ft_strlen(char *str);
-char	*ft_strchr(char *str, int c);
-char	*ft_strjoin(char *s1, char *s2);
-char	*how_to_read(int fd, char *static_buffer);
-char	*put_line(char *static_buffer);
-char	*new_buffer(char *static_buffer);
+size_t	ft_strlen(const char *str);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_get_lstr(int fd, char *lstr);
+char	*ft_get_line(char *lstr);
+char	*ft_reset_lstr(char *lstr);
 char	*get_next_line(int fd);
 
 #endif
