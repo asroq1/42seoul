@@ -6,23 +6,64 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/05 16:31:34 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/01/06 16:27:48 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_left_lstr(char *lstr)
+char	*ft_set_lstr(char *lstr)
 {
-	
+	int		i;
+	int		j;
+	char	*tmp;
+
+	while (lstr[i] != 0 && lstr[i] != '\n')
+	{
+		i++;
+	}
+	tmp = malloc(sizeof(char) * strlen(lstr) - i + 1);
+	if (tmp == 0)
+	{
+		return (0);
+	}
+	i++;
+	lstr[i] = '\n';
+	tmp = 0;
+	while (lstr[i] != 0)
+	{
+		tmp[j++] = lstr[i++];
+	}
+	j++;
+	tmp[j] == '0';
+	free(lstr);
+	return (tmp);
 }
 
-char	*ft_split_lstr(char *lstr)
+char	*ft_get_line(char *lstr)
 {
 	char	*tmp;
 	int		i;
 
-	tmp = malloc(sizeof(char) * ft_strlen(lstr) - ft_strlen(str) + 1);
+	i = 0;
+	tmp = malloc(sizeof(char) * (ft_strlen(lstr) - BUFFER_SIZE + 2));
+	if (tmp == 0)
+	{
+		return (0);
+	}
+	while (lstr[i] != 0 && lstr[i] != '\n')
+	{
+		tmp[i] = lstr[i];
+		i++;
+	}
+	i++;
+	if (lstr[i] == '\n')
+	{
+		tmp[i] == '\n';
+	}
+	i++;
+	tmp[i] == '0';
+	return (tmp);
 }
 
 char	*ft_get_lstr(int fd, char *lstr)
@@ -52,21 +93,18 @@ char	*ft_get_lstr(int fd, char *lstr)
 char	*get_next_line(int fd)
 {	
 	static char	*lstr;
-	char		*str;
+	char		line;
 
 	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE < 0)
 	{
 		return (-1);
 	}
-    /* \n를 만나거나 eof가 나오기 전까지 읽고 lstr에 저장 */
 	lstr = ft_get_lstr(fd, lstr);
 	if (lstr == 0)
 	{
 		return (0);
 	}
-    // \n 이전의 문자열을 str에 저장
-	str = ft_split_lstr(lstr);
-    // lstr에  str이후의 문자를 남기기
-	lstr = ft_left_lstr(lstr);
-	return (str);
+	line = ft_get_line(lstr);
+	lstr = ft_set_lstr(lstr);
+	return (line);
 }
