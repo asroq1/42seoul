@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/06 17:14:46 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:20:45 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ char	*ft_reset_lstr(char *lstr)
 
 	i = 0;
 	while (lstr[i] != 0 && lstr[i] != '\n')
-	{
 		i++;
+	if (lstr[i] == 0)
+	{
+		free(lstr);
+		return (0);
 	}
 	tmp = malloc(sizeof(char) * ft_strlen(lstr) - i + 1);
 	if (tmp == 0)
-	{
 		return (0);
-	}
 	i++;
 	j = 0;
 	while (lstr[i] != 0)
 	{
 		tmp[j++] = lstr[i++];
 	}
-	j++;
-	tmp[j] = '0';
+	tmp[j] = '\0';
 	free(lstr);
 	return (tmp);
 }
@@ -50,22 +50,21 @@ char	*ft_get_line(char *lstr)
 	{
 		i++;
 	}
-	tmp = malloc(sizeof(char) * (ft_strlen(lstr) - i + 2));
+	tmp = malloc(sizeof(char) * (i + 2));
 	if (tmp == 0)
-	{
 		return (0);
-	}
 	i = 0;
 	while (lstr[i] != 0 && lstr[i] != '\n')
 	{
 		tmp[i] = lstr[i];
 		i++;
 	}
-	i++;
 	if (lstr[i] == '\n')
-		tmp[i] = '\n';
-	i++;
-	tmp[i] = '0';
+	{
+		tmp[i] = lstr[i];
+		i++;
+	}
+	tmp[i] = '\0';
 	return (tmp);
 }
 
@@ -80,14 +79,14 @@ char	*ft_get_lstr(int fd, char *lstr)
 		return (0);
 	}
 	result = 1;
-	while (ft_strchr(lstr, '\n') && result != 0)
+	while (ft_strchr(lstr, '\n') == 0 && result != 0)
 	{	
 		result = read(fd, buffer, BUFFER_SIZE);
 		if (result == -1)
 		{
 			free(buffer);
 		}
-		buffer[result] = '0';
+		buffer[result] = '\0';
 		lstr = ft_strjoin(lstr, buffer);
 	}
 	free(buffer);

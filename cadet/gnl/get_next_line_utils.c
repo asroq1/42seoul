@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:28 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/06 16:54:42 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/01/07 15:48:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ char	*ft_strchr(const char *str, int c)
 	size_t	i;
 
 	i = 0;
+	if (str == 0)
+	{
+		return (0);
+	}
 	while (str[i] != 0)
 	{
-		if (str[i] == (char)c)
+		if (str[i] == c)
 		{
 			return ((char *)&str[i]);
 		}
@@ -47,30 +51,29 @@ size_t	ft_strlen(const char *str)
 	return (cnt);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*new_str;
-	size_t	i;
-	size_t	j;
+	char	*str;
+	int		i;
+	int		j;
 
-	i = 0;
-	j = 0;
+	if (!s1)
+	{
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
+	}
 	if (s1 == 0 || s2 == 0)
 		return (0);
-	new_str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (new_str == 0)
+	i = -1;
+	j = 0;
+	str = malloc (sizeof(char) * ((int)ft_strlen(s1) + (int)ft_strlen(s2) + 1));
+	if (!str)
 		return (0);
-	while (i < ft_strlen(s1))
-	{
-		new_str[i] = s1[i];
-		j = 0;
-		i++;
-	}
-	while (j <= ft_strlen(s2))
-	{
-		new_str[i] = s2[j];
-		j++;
-		i++;
-	}
-	return (new_str);
+	while (s1[++i] != 0)
+		str[i] = s1[i];
+	while (s2[j] != 0)
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	free(s1);
+	return (str);
 }
