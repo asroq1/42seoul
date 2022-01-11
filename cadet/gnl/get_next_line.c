@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/07 16:20:45 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/01/11 12:26:32 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ char	*ft_get_line(char *lstr)
 	int		i;
 
 	i = 0;
+	if (lstr[i] == 0)
+		return (0);
 	while (lstr[i] != 0 && lstr[i] != '\n')
-	{
 		i++;
-	}
 	tmp = malloc(sizeof(char) * (i + 2));
 	if (tmp == 0)
 		return (0);
@@ -85,8 +85,9 @@ char	*ft_get_lstr(int fd, char *lstr)
 		if (result == -1)
 		{
 			free(buffer);
+			return (0);
 		}
-		buffer[result] = '\0';
+		buffer[result] = 0;
 		lstr = ft_strjoin(lstr, buffer);
 	}
 	free(buffer);
@@ -98,7 +99,7 @@ char	*get_next_line(int fd)
 	static char	*lstr;
 	char		*line;
 
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE < 0)
+	if (fd < 0 || BUFFER_SIZE < 0)
 	{
 		return (0);
 	}
