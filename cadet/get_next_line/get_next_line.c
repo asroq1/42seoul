@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 13:45:50 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/01/11 17:03:29 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/27 14:21:17 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/01/12 16:50:07 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 char	*ft_reset_lstr(char *lstr)
 {
@@ -96,19 +96,19 @@ char	*ft_get_lstr(int fd, char *lstr)
 
 char	*get_next_line(int fd)
 {	
-	static char	*lstr[OPEN_MAX];
+	static char	*lstr;
 	char		*line;
 
-	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		return (0);
 	}
-	lstr[fd] = ft_get_lstr(fd, lstr[fd]);
-	if (lstr[fd] == 0)
+	lstr = ft_get_lstr(fd, lstr);
+	if (lstr == 0)
 	{
 		return (0);
 	}
-	line = ft_get_line(lstr[fd]);
-	lstr[fd] = ft_reset_lstr(lstr[fd]);
+	line = ft_get_line(lstr);
+	lstr = ft_reset_lstr(lstr);
 	return (line);
 }
