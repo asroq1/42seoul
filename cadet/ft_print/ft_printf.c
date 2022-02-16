@@ -6,25 +6,44 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/15 15:06:26 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:14:33 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_str_reader(char c, va_list ap)
-{
-	if (c == 'c')
+int	ft_str_reader(const char **str, va_list ap)
+{	
+	int	str_length;
+	int	i;
+
+	str_length = 0;
+	if (**str == 'c')
 	{
-		//함수로 쪼개서 만들기.
-		char	a;
-		a = va_arg(ap, int);
-		write(1, &a, 1);
+		i = va_arg(ap, int);
+		write(1, &i, 1);
+		(*str)++;
+		str_length++;
 	}
-	// 이후 다른 조건문도 추가
-	return (1);
+	else if (**str == 's')
+		return (ft_print_str(str, ap));
+	// else if (**str == 'p')
+
+	// else if (**str == 'd' || **str == 'i')
+
+	// else if (**str == 'x')
+
+	// else if (**str == 'X')
+
+	// else if (**str == '%')
+
+	// else //지정된 서식지정자가 아니라면 %a등 그대로 출력하고 length만큼 추가해준다. 그냥 문자열로 취급
+	// {
+	// 	// write(1, &str, 1);
+	// 	(*str)++;
+	// 	str_length++;	
+	// }
+	return (str_length);
 }
 
 int	ft_printf(const char *str, ...)
@@ -33,13 +52,13 @@ int	ft_printf(const char *str, ...)
 	va_list	ap;
 
 	str_length = 0;
-	va_start(ap, (int)str);
+	va_start(ap, str);
 	while (*str != 0)
 	{
 		if (*str == '%')
 		{
-			ft_str_reader(*(++str), ap);
 			str++;
+			str_length += ft_str_reader(&str, ap);
 		}
 		else
 		{
@@ -53,6 +72,6 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
-	ft_printf("my grade is %c", 'A');
+	ft_printf("my grade is %c %c %c %s", 'A', 'B', 'C', "alphabet");
 	 return (0);
 }
