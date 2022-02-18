@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/16 16:14:33 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/18 11:57:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,5 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	ft_printf("my grade is %c %c %c %s", 'A', 'B', 'C', "alphabet");
-	 return (0);
+	return (0);
 }
