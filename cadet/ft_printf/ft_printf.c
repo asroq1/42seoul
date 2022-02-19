@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/18 16:27:22 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/19 10:41:14 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(void)
 	// ft_printf("my eng is %c %c %c %s", 'A', 'B', 'C', "alphabet");
 	
 	// numbers tester
-	ft_printf("my number is %d %i", 100, 0);
+	ft_printf("my number is %d %d %d", 100, 200, 300);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:38:10 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/18 16:27:16 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/19 10:44:05 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,16 @@
 int	ft_print_num(const char **str, va_list ap)
 {
 	int		i;
-	int		tmp;
+	int		n;
+	char	*tmp;
 
 	i = 0;
-	tmp = va_arg(ap, int);
+	n = va_arg(ap, int);
+	tmp = ft_itoa(n);
+	while (tmp[i] != 0)
+	{
+		write(1, &tmp[i], 1);
+		i++;
+	}
 	(*str)++;
-	printf("look at this => %d", tmp);
-
-	// while (tmp != 0)
-	// {	
-	// 	ft_putchar(tmp);
-	// 	i++;
-	// }
 }
-
-
-
