@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:05:04 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/19 10:18:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/19 11:24:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,19 @@ char	*ft_itoa(int n)
 		value /= 10;
 	}
 	return (new_str);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+	size_t	cnt;
+
+	i = 0;
+	cnt = 0;
+	while (str[i] != 0)
+	{
+		i++;
+		cnt++;
+	}
+	return (cnt);
 }

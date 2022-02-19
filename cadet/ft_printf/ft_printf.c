@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/19 10:41:14 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/19 11:24:59 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	ft_str_reader(const char **str, va_list ap)
 
 	// else if (**str == 'X')
 
-	// else if (**str == '%')
-
+	else if (**str == '%')
+		return (ft_print_perc(str));
 	// else //지정된 서식지정자가 아니라면 %a등 그대로 출력하고 length만큼 추가해준다. 그냥 문자열로 취급
 	// {
 	// 	// write(1, &str, 1);
@@ -76,7 +76,10 @@ int	main(void)
 	// ft_printf("my eng is %c %c %c %s", 'A', 'B', 'C', "alphabet");
 	
 	// numbers tester
-	ft_printf("my number is %d %d %d", 100, 200, 300);
-
+	// ft_printf("%d %d %d", 100, 200, 300);
+	
+	// percent tester
+	printf("ori => %% is percent\n");
+	ft_printf("my => %% is percent");
 	return (0);
 }
