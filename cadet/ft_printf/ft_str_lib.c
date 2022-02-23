@@ -1,55 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_tool.c                                   :+:      :+:    :+:   */
+/*   ft_str_lib.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 16:05:04 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/23 15:49:03 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/02/23 15:53:43 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/02/23 16:50:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
-{	
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int n)
+void	ft_putnbr_base(unsigned int n, char *base)
 {
-	if (n <= 9 && n >= 0)
-	{
-		ft_putchar(n + '0');
-	}
-	else if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-	}
-	else if (n < 0 && n != -2147483648)
-	{
-		ft_putchar('-');
-		ft_putnbr(n * (-1));
-	}
-	else
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-	size_t	cnt;
+	int	i;
+	int	size_base;
+	int	nbox[100];
 
 	i = 0;
-	cnt = 0;
-	while (str[i] != 0)
+	size_base = 0;
+	if (n < 0)
 	{
-		i++;
-		cnt++;
+		n = -n;
+		ft_putchar('-');
 	}
-	return (cnt);
+	while (base[size_base] != 0)
+	{
+		size_base++;
+	}
+	while (n != 0)
+	{
+		nbox[i] = n % size_base;
+		n = n / size_base;
+		i++;
+	}
+	while (--i >= 0)
+	{
+		printf("nbox[%d]\n", nbox[i]);
+		ft_putchar(base[nbox[i]]);
+	}
 }

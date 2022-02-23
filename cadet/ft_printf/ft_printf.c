@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/23 12:37:11 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:39:04 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int	main(void)
 	// ft_printf("my => %u", -4294967295);
 	
 	// hexadecimal tester
-	
+	printf("origin hex => %x %X\n", -1, 10);
+	ft_printf("ft hex => %x %X", -1, 10);
 	return (0);
 }
