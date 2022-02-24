@@ -6,35 +6,38 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 13:11:49 by devicii           #+#    #+#              #
-#    Updated: 2022/02/24 13:05:08 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/02/24 13:14:17 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = 	ft_printf.c \
-		ft_printf_tool.c \
-		ft_print_num.c \
-		ft_print_str.c \
-		ft_print_hex.c \
-		ft_nun_lib.c \
-		ft_str_lib.c
+NAME		= libftprintf.a
 
-FLAGS = -c -Wall -Wextra -Werror
-AR_FLAGS = -rcs
-INCLUDE = -I./include
+CC			= gcc
+CFLAG	    = -Wall -Wextra -Werror
 
-OBJS = $(SRCS:.c=.o)
+RM			= rm -f
 
-$(NAME) : $(OBJS)
-	ar $(AR_FLAGS) $(NAME) $(OBJS)
+AR			= ar
+ARFLAGS     = crs
+
+SRCS		= ft_printf.c ft_printf_tool.c ft_num_lib.c ft_str_lib.c ft_printf_hex.c ft_printf_str.c ft_printf_num.c	
+
+OBJS		= $(SRCS:.c=.o)
 
 all : $(NAME)
 
+${NAME}:	${OBJS}
+		${AR} ${ARFLAGS} ${NAME} ${OBJS}
+
+%.o : %.c
+	$(CC) $(CFLAG) -c $< -o $@
+
 clean :
-	rm -f $(OBJS)
+	$(RM) $(RMFLAG) $(OBJS)
 
 fclean : clean
-	rm -f $(NAME)
+	$(RM) $(RMFLAG) $(NAME)
 
 re : fclean all
 
-.PHONY : all clean fclean re
+ .PHONY : all clean fclean re

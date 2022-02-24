@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/24 13:01:23 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/24 17:02:04 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,9 @@ int	ft_printf(const char *str, ...)
 	return (str_length);
 }
 
-int	main(void)
-{
-	size_t i;
-	// i = 7;
-	//char string tester
-	// ft_printf("my eng is %c %c %c %s", 'A', 'B', 'C', "alphabet");
-	
-	// numbers tester
-	// ft_printf("%d %d %d", 100, 200, 300);
-	
-	// percent tester
-	// ft_printf("my => %% %%%% %%%");
+// int main(void)
+// {
+// 	printf("ORIGIN %x %X\n", 0, 0);
+// 	ft_printf("FT %x %X", 0 , 0);
 
-	// decimal tester
-	// printf("origin => %u\n", -4294967295);
-	// ft_printf("my => %u", -4294967295);
-	
-	// hexadecimal tester
-	// printf("origin hex => %x %X\n", -2, 2015);
-	// ft_printf("ft hex => %x %X", -2, 2015);\
-
-	// address tester
-	printf("oirign addr => %p\n", i);
-	ft_printf("ft addr => %p", i);
-	return (0);
-}
+// }

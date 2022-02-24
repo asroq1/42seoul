@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/24 12:53:15 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:52:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char			*ft_dtoa(unsigned int n);
 size_t			ft_int_length(int n);
 size_t			ft_unsinged_length(unsigned int n);
 size_t			ft_strlen(const char *str);
-void			ft_putnbr_base(unsigned int n, char *base);
-void			ft_putnbr_addr(size_t n, char *base);
+int				ft_putnbr_base(unsigned int n, char *base);
+int				ft_putnbr_addr(size_t n, char *base);
 
 #endif
