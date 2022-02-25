@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/25 21:27:06 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,3 @@ int	ft_printf(const char *str, ...)
 	va_end(ap);
 	return (str_length);
 }
-
-// int main(void)
-// {
-// 	printf("ORIGIN %x %X\n", 0, 0);
-// 	ft_printf("FT %x %X", 0 , 0);
-
-// }

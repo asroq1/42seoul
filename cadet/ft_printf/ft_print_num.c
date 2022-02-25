@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:38:10 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/23 15:52:30 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/25 21:26:31 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_print_num(const char **str, va_list ap)
 		i++;
 	}
 	str_length = ft_strlen(tmp);
+	free(tmp);
 	(*str)++;
 	return (str_length);
 }
@@ -50,6 +51,7 @@ int	ft_print_dec(const char **str, va_list ap)
 		i++;
 	}
 	str_length = ft_strlen(tmp);
+	free(tmp);
 	(*str)++;
 	return (str_length);
 }

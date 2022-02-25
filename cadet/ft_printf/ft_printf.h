@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/24 16:52:25 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/02/25 21:26:45 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 
