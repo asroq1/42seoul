@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_num.c                                     :+:      :+:    :+:   */
+/*   ft_printf_num.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:38:10 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/23 15:52:30 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:10:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	ft_print_num(const char **str, va_list ap)
 	}
 	str_length = ft_strlen(tmp);
 	(*str)++;
+	free(tmp);
 	return (str_length);
 }
 
@@ -51,5 +52,6 @@ int	ft_print_dec(const char **str, va_list ap)
 	}
 	str_length = ft_strlen(tmp);
 	(*str)++;
+	free(tmp);
 	return (str_length);
 }
