@@ -6,11 +6,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Fri Feb 18 15:37:40 2022
+# Make data base, printed on Tue Mar  1 17:09:45 2022
 
 # Variables
 
+# environment
+VSCODE_GIT_ASKPASS_MAIN = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/19772D8F-5947-4CCE-9FB1-FA65876DF45E/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -24,9 +27,11 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/devicii/42seoul/cadet/ft_print
+CURDIR := /Users/devicii/42subjects/cadet/ft_printf
 # makefile
 SHELL = /bin/sh
+# makefile (from `Makefile', line 18)
+RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -34,17 +39,22 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
+ 
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-9b6af8de-8475-4907-bcda-af156c278e06.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-e2ca7b35-1298-429f-afc3-53942b08da5e.sock
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/devicii/42subjects/cadet/ft_printf
 # environment
 PATH = /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `Makefile', line 21)
+ARFLAGS = crs
+# makefile (from `Makefile', line 20)
+AR = ar
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -52,13 +62,15 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.6JThGs9m1o/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.iUYu9HqlFf/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 VSCODE_PIPE_LOGGING = true
+# makefile (from `Makefile', line 25)
+OBJS = $(SRCS:.c=.o)
 # environment
-PWD = /Users/devicii/42seoul/cadet/ft_print
+PWD = /Users/devicii/42subjects/cadet/ft_printf
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -75,30 +87,46 @@ LOGNAME = devicii
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 ZSH = /Users/devicii/.oh-my-zsh
+# makefile (from `Makefile', line 16)
+CFLAG = -Wall -Wextra -Werror
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
+MAKELEVEL := 0
+# environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
+# makefile (from `Makefile', line 23)
+SRCS = ft_printf.c ft_printf_tool.c ft_num_lib.c ft_printf_hex.c ft_printf_str.c ft_printf_num.c	
 # environment
-SHLVL = 1
+SHLVL = 2
+# makefile (from `Makefile', line 15)
+CC = gcc
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = devicii
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 13)
+NAME = libftprintf.a
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# environment
+VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
+# environment
+TERM_PROGRAM = vscode
 # default
 .VARIABLES := 
 # environment
@@ -107,6 +135,8 @@ TMPDIR = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /Users/devicii/Library/Application Support/Code/1.63.2-main.sock
+# environment
+VSCODE_GIT_ASKPASS_NODE = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/19772D8F-5947-4CCE-9FB1-FA65876DF45E/d/Visual Studio Code.app/Contents/MacOS/Electron
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -114,7 +144,9 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498
+TERM_PROGRAM_VERSION = 1.63.2
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498.F9B020F6-743E-4D7A-926C-9F55C0C04CB3
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -123,6 +155,8 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
+# environment
+GIT_ASKPASS = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/19772D8F-5947-4CCE-9FB1-FA65876DF45E/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
 # default
 MAKEFILES := 
 # automatic
@@ -136,13 +170,15 @@ LC_ALL = C
 # default
 SUFFIXES := 
 # environment
-MAKELEVEL := 0
+VSCODE_GIT_IPC_HANDLE = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-git-30d549e7b6.sock
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1279
+TERM = xterm-256color
+# environment
+VSCODE_PID = 783
 # variable set hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=1/87=1%
+# Load=82/1024=8%, Rehash=0, Collisions=7/113=6%
 
 # Pattern-specific Variable Values
 
@@ -150,24 +186,70 @@ VSCODE_PID = 1279
 
 # Directories
 
-# . (device 16777233, inode 1872280): 9 files, no impossibilities.
+# . (device 16777229, inode 1995596): 11 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+%.o: %.c
+#  commands to execute (from `Makefile', line 33):
+	$(CC) $(CFLAG) -c $< -o $@
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-# Not a target:
-all:
+ 
+all: libftprintf.a
+#  Phony target (prerequisite of .PHONY).
 #  Command-line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_printf_str.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_printf.o: ft_printf.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `ft_printf'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := ft_printf.o
+# automatic
+# % := 
+# automatic
+# * := ft_printf
+# automatic
+# + := ft_printf.c
+# automatic
+# | := 
+# automatic
+# < := ft_printf.c
+# automatic
+# ^ := ft_printf.c
+# automatic
+# ? := ft_printf.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/14=21%
+#  commands to execute (from `Makefile', line 33):
+	$(CC) $(CFLAG) -c $< -o $@
+	
 
 # Not a target:
 .SUFFIXES:
@@ -178,11 +260,41 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-18 11:57:03
+#  Last modified 2022-03-01 17:07:59
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_printf_hex.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 39):
+	$(RM) $(RMFLAG) $(NAME)
+	
+
+# Not a target:
+ft_printf.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-01 17:03:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+ft_num_lib.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -190,8 +302,46 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+ft_printf_num.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 36):
+	$(RM) $(RMFLAG) $(OBJS)
+	
+
+# Not a target:
+ft_printf_tool.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libftprintf.a: ft_printf.o ft_printf_tool.o ft_num_lib.o ft_printf_hex.o ft_printf_str.o ft_printf_num.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+#  commands to execute (from `Makefile', line 30):
+	${AR} ${ARFLAGS} ${NAME} ${OBJS}
+	
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/16=0%
+# Load=16/1024=2%, Rehash=0, Collisions=0/46=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -203,8 +353,6 @@ Makefile:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Feb 18 15:37:40 2022
+# Finished Make data base on Tue Mar  1 17:09:45 2022
 
- 
-make: *** No rule to make target `all'.  Stop.
  
