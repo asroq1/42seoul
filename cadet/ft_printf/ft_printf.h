@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/25 21:26:45 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/03 11:48:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 int				ft_printf(const char *str, ...);
 int				ft_str_reader(const char **str, va_list ap);
+int				ft_printf_char(const char **str, va_list ap);
 int				ft_print_str(const char **str, va_list ap);
 int				ft_print_perc(const char **str);
 int				ft_print_num(const char **str, va_list ap);

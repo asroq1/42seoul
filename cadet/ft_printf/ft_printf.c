@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/25 21:27:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/03 11:52:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 int	ft_str_reader(const char **str, va_list ap)
 {	
-	int	i;
-
 	if (**str == 'c')
-	{
-		i = va_arg(ap, int);
-		write(1, &i, 1);
-		(*str)++;
-		return (1);
-	}
+		return (ft_printf_char(str, ap));
 	else if (**str == 's')
 		return (ft_print_str(str, ap));
 	else if (**str == 'p')
