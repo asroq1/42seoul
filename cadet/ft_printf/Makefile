@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/27 13:11:49 by devicii           #+#    #+#              #
-#    Updated: 2022/02/24 13:14:17 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/03/01 17:07:59 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM			= rm -f
 AR			= ar
 ARFLAGS     = crs
 
-SRCS		= ft_printf.c ft_printf_tool.c ft_num_lib.c ft_str_lib.c ft_printf_hex.c ft_printf_str.c ft_printf_num.c	
+SRCS		= ft_printf.c ft_printf_tool.c ft_num_lib.c ft_printf_hex.c ft_printf_str.c ft_printf_num.c	
 
 OBJS		= $(SRCS:.c=.o)
 

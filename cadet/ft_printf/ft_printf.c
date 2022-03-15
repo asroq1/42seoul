@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 13:14:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/02/24 17:02:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/15 14:06:27 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 int	ft_str_reader(const char **str, va_list ap)
 {	
-	int	i;
-
 	if (**str == 'c')
-	{
-		i = va_arg(ap, int);
-		write(1, &i, 1);
-		(*str)++;
-		return (1);
-	}
+		return (ft_printf_char(str, ap));
 	else if (**str == 's')
 		return (ft_print_str(str, ap));
 	else if (**str == 'p')
@@ -31,9 +24,7 @@ int	ft_str_reader(const char **str, va_list ap)
 		return (ft_print_num(str, ap));
 	else if (**str == 'u')
 		return (ft_print_dec(str, ap));
-	else if (**str == 'x')
-		return (ft_print_hex(str, ap));
-	else if (**str == 'X')
+	else if (**str == 'x' || **str == 'X')
 		return (ft_print_hex(str, ap));
 	else if (**str == '%')
 		return (ft_print_perc(str));
@@ -64,10 +55,3 @@ int	ft_printf(const char *str, ...)
 	va_end(ap);
 	return (str_length);
 }
-
-// int main(void)
-// {
-// 	printf("ORIGIN %x %X\n", 0, 0);
-// 	ft_printf("FT %x %X", 0 , 0);
-
-// }
