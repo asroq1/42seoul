@@ -6,45 +6,47 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/16 19:26:59 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:27:13 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int parentProc()
-{
+// void	parentProc()
+// {
 
-}
+// }
 
-int parentProc()
-{
+// void	parentProc()
+// {
 
-}
+// }
+
 int	main(int argc, char **argv, char **envp)
 {
 	pid_t	pid;
 	int		fd[2];
 
-	proc = fork();
-	pid = pipe(pid);
-	if (argc == 5)
-	{
+	// if (argc == 5)
+	// {
+			printf("pid is => %d", pid);
+			
+		if (pipe(pid) == -1)
+			// errorMessage();
+			printf("error!");
 		if (pid == -1)
-			errorMessage();
-		pid = pork();
-		if (pid == -1)
-			errorMessage();
-		if (pid == 1)
+			// errorMessage();
+		if (pid == 0)
 		{
-			childProc();
+			printf("success!");
+			// childProc();
 		}
-		waitpid();
-		parentProc();
-	}
-	else
-	{
-
-	}
+		// waitpid();
+		// parentProc();
+	// }
+	// else
+	// {
+	// 		printf("else error!");
+	// }
 	return (0);
 }
