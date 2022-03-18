@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/17 18:27:13 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/18 19:01:34 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,22 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	pid_t	pid;
 	int		fd[2];
+	pid_t	pid;
 
-	// if (argc == 5)
-	// {
-			printf("pid is => %d", pid);
-			
-		if (pipe(pid) == -1)
-			// errorMessage();
-			printf("error!");
+	if (argc == 5)
+	{
+		if(pipe(fd) == -1)
+		{
+			printf("err");
+		}
 		if (pid == -1)
-			// errorMessage();
+			printf("err");
 		if (pid == 0)
 		{
-			printf("success!");
-			// childProc();
+			printf("success fork\n");
+			printf("argv => %s envp => %s", argv[1], envp[0]);
 		}
-		// waitpid();
-		// parentProc();
-	// }
-	// else
-	// {
-	// 		printf("else error!");
-	// }
+	}
 	return (0);
 }
