@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 17:19:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/22 19:00:18 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/16 11:20:53 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 14:44:00 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <sys/wait.h>
-# include <stdio.h>
-# include <sys/wait.h>
-# include <fcntl.h>
-# include <stdlib.h>
-void	execute(char *argv, char **envp);
-void	childProc(char **argv, char **envp, int *fd);
-void	parentProc(char **argv, char **envp, int *fd);
-void	error(void);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*tmp;
+	t_list	*new_list;
 
-#endif
+	if (lst == 0 || f == 0)
+	{
+		return (0);
+	}
+	new_list = 0;
+	while (lst != 0)
+	{
+		tmp = ft_lstnew(f(lst->content));
+		if (tmp == 0)
+		{
+			ft_lstclear(&new_list, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_list, tmp);
+		lst = lst->next;
+	}
+	return (new_list);
+}

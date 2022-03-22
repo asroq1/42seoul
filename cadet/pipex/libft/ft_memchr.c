@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 17:19:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/22 19:00:18 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/02 19:50:57 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 16:31:29 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <sys/wait.h>
-# include <stdio.h>
-# include <sys/wait.h>
-# include <fcntl.h>
-# include <stdlib.h>
-void	execute(char *argv, char **envp);
-void	childProc(char **argv, char **envp, int *fd);
-void	parentProc(char **argv, char **envp, int *fd);
-void	error(void);
+void	*ft_memchr(const void	*ptr, int value, size_t n)
+{
+	unsigned char	*tmp;
 
-#endif
+	tmp = (unsigned char *)ptr;
+	while (n != 0)
+	{
+		if (*tmp == (unsigned char)value)
+		{
+			return (tmp);
+		}
+		tmp++;
+		n--;
+	}
+	return (0);
+}

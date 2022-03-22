@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 17:19:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/22 19:00:18 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/09 13:51:11 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/20 16:39:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <sys/wait.h>
-# include <stdio.h>
-# include <sys/wait.h>
-# include <fcntl.h>
-# include <stdlib.h>
-void	execute(char *argv, char **envp);
-void	childProc(char **argv, char **envp, int *fd);
-void	parentProc(char **argv, char **envp, int *fd);
-void	error(void);
+void	ft_putstr_fd(char *s, int fd)
+{	
+	size_t	i;
+	size_t	length;
 
-#endif
+	if (s == 0 || fd < 0)
+	{
+		return ;
+	}
+	i = 0;
+	length = ft_strlen(s);
+	while (i < length)
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+}

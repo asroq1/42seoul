@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 17:19:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/22 19:00:18 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/14 18:44:46 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 12:36:02 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <sys/wait.h>
-# include <stdio.h>
-# include <sys/wait.h>
-# include <fcntl.h>
-# include <stdlib.h>
-void	execute(char *argv, char **envp);
-void	childProc(char **argv, char **envp, int *fd);
-void	parentProc(char **argv, char **envp, int *fd);
-void	error(void);
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new_node;
 
-#endif
+	new_node = malloc(sizeof(t_list));
+	if (new_node == 0)
+	{
+		return (0);
+	}
+	new_node->content = content;
+	new_node->next = (0);
+	return (new_node);
+}

@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 17:19:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/22 19:00:18 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/11/17 12:27:10 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/21 11:12:37 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <sys/wait.h>
-# include <stdio.h>
-# include <sys/wait.h>
-# include <fcntl.h>
-# include <stdlib.h>
-void	execute(char *argv, char **envp);
-void	childProc(char **argv, char **envp, int *fd);
-void	parentProc(char **argv, char **envp, int *fd);
-void	error(void);
+void	*ft_memcpy(void *dest, const void *src, size_t size)
+{
+	unsigned char	*new_dest;
+	unsigned char	*new_src;
+	size_t			idx;
 
-#endif
+	if (dest == 0 && src == 0)
+	{
+		return (0);
+	}
+	new_dest = dest;
+	new_src = (unsigned char *)src;
+	idx = 0;
+	while (idx < size)
+	{
+		new_dest[idx] = new_src[idx];
+		idx++;
+	}
+	return (dest);
+}

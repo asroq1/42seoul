@@ -6,21 +6,68 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/19 18:24:18 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/22 18:54:56 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-// void	childProc()
-// {
+void	execute(char *argv, char **envp)
+{
+	char	**command;
+	char	*path;
+	int		i;
 
-// }
+	i = -1;
+	printf("execute worked !");
+	command = ft_split(argv, ' ');
+	path = get_path(command[0], envp);
+	if (path != 0)
+	{
+		while (command[++i])
+		{
+			free(command[i]);
+		}
+		free(command);
+		error();
+	}
+	if (execve(path, command, envp) == -1)
+	{
+		error();
+	}
+}
 
-// void	parentProc()
-// {
+void	childProc(char **argv, char **envp, int *pipe)
+{
+	int	infile;
 
-// }
+	infile = open(argv[1], O_RDONLY, 0777);
+	if (infile == -1)
+	{
+		error();
+	}
+	printf("child worked");
+	dup2(infile, STDIN_FILENO);
+	dup2(pipe[1], STDOUT_FILENO);
+	close(pipe[0]);
+	execute(argv[2], envp);
+}
+
+void	parentProc(char **argv, char **envp, int *pipe)
+{
+	int	outfile;
+
+	outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0777);
+	if (outfile == -1)
+	{
+		error();
+	}
+	printf("parents worked\n");
+	dup2(pipe[0], STDIN_FILENO);
+	dup2(outfile, STDOUT_FILENO);
+	close(pipe[1]);
+	execute(argv[3], envp);
+}
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -31,53 +78,20 @@ int	main(int argc, char **argv, char **envp)
 	{
 		if (pipe(fd) == -1)
 		{
-			printf("err");
+			error();
 		}
 		pid = fork();
 		if (pid == -1)
-			printf("err");
+		{
+			error();
+		}
 		if (pid == 0)
 		{
-			// childProc(argv, envp, fd);
-			printf("argv => %s envp => %s\n", argv[1], envp[0]);
+			printf("into child\n");
+			childProc(argv, envp, fd);
 		}
+		waitpid(pid, 0, 0);
+		parentProc(argv, envp, fd);
 	}
 	return (0);
-}
-
-
-
-int main(void){
-        int fd1, ret;
-        char message[32]={"STDERR from fd1\n"};
-
-        //그림 1번
-        fd1=open("made_by_fd1",O_RDWR|O_CREAT, S_IRUSR|S_IWUSR);
-        if(fd1<0){
-                printf("file open error\n");
-                exit(0);
-        }
-        //표준 입출력으로 print됨
-        printf("file open\n");
-
-        //fd1의 파일 디스크립터가 명시한 STDOUT_FILENO의 파일 디스크립터로
-        //복제됨,
-        //그림 2번
-        ret=dup2(fd1,STDOUT_FILENO);
-
-        //fd1으로 출력됨
-        printf("fd1 :%d, ret:%d\n",fd1,ret);
-
-        //STDERR_FILENO 디스크립터가 명시된 fd1으로 복제됨
-        //그림 3번
-        ret=dup2(STDERR_FILENO,fd1);
-
-        //fd1은 에러로 출력됨
-        write(fd1,message,strlen(message));
-
-        //stdout이 file로 써짐
-        printf("printf를 썼지만 파일에 기록됨 \n");
-
-        close(fd1);
-
 }
