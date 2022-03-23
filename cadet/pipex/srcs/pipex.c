@@ -6,47 +6,22 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/22 18:54:56 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:53:33 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-void	execute(char *argv, char **envp)
-{
-	char	**command;
-	char	*path;
-	int		i;
-
-	i = -1;
-	printf("execute worked !");
-	command = ft_split(argv, ' ');
-	path = get_path(command[0], envp);
-	if (path != 0)
-	{
-		while (command[++i])
-		{
-			free(command[i]);
-		}
-		free(command);
-		error();
-	}
-	if (execve(path, command, envp) == -1)
-	{
-		error();
-	}
-}
 
 void	childProc(char **argv, char **envp, int *pipe)
 {
 	int	infile;
 
 	infile = open(argv[1], O_RDONLY, 0777);
+	printf("infile is => %d\n", infile);
 	if (infile == -1)
 	{
 		error();
 	}
-	printf("child worked");
 	dup2(infile, STDIN_FILENO);
 	dup2(pipe[1], STDOUT_FILENO);
 	close(pipe[0]);
@@ -62,7 +37,6 @@ void	parentProc(char **argv, char **envp, int *pipe)
 	{
 		error();
 	}
-	printf("parents worked\n");
 	dup2(pipe[0], STDIN_FILENO);
 	dup2(outfile, STDOUT_FILENO);
 	close(pipe[1]);
@@ -73,7 +47,18 @@ int	main(int argc, char **argv, char **envp)
 {
 	int		fd[2];
 	pid_t	pid;
+	int		i;
 
+	// i = 0;
+	// while (i < argc)
+	// {
+	// 	printf("path => %s\n", envp[i]);
+	// 	printf("\n");
+	// 	i++;
+	// }
+	// char *arr[] = {"ls", "-al", NULL};
+	// int returnv = execve("/bin/ls", arr, envp);
+	// printf("value = %d\n", returnv);
 	if (argc == 5)
 	{
 		if (pipe(fd) == -1)
@@ -87,7 +72,6 @@ int	main(int argc, char **argv, char **envp)
 		}
 		if (pid == 0)
 		{
-			printf("into child\n");
 			childProc(argv, envp, fd);
 		}
 		waitpid(pid, 0, 0);
