@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:16:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/23 18:19:48 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:06:37 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static char	**do_split(char **new_str, char const *s, char c, int count)
 	return (new_str);
 }
 
-char	*ft_substr(char const *s, unsigned int start, int len)
+char	*ft_substr(char const *s, int start, int len)
 {
 	char			*new_str;
 	int				i;

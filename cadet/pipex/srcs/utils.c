@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 15:57:55 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/23 18:55:28 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:06:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ void	error(void)
 
 void	execute(char *argv, char **envp)
 {
+	printf("execute worked ...\n");
 	char	**command;
 	char	*path;
 	int		i;
 
 	i = -1;
+	printf("argv => %s\n", argv);
 	command = ft_split(argv, ' ');
-	printf("command => %c\n", command);
 	path = get_path(command[0], envp);
 	if (command == 0)
 	{
@@ -39,42 +40,19 @@ void	execute(char *argv, char **envp)
 
 char	*get_path(char *command, char **envp)
 {
-	// char	**paths;
-	// char	*path;
-	// char	*part_path;
-	// int		i;
-
-	// i = 0;
-	// while (ft_strnstr(envp[i], "PATH", 4) == 0)
-	// 	i++;
-	// paths = ft_split(envp[i] + 5, ':');
-	// i = 0;
-	// while (paths[i])
-	// {
-	// 	part_path = ft_strjoin(paths[i], "/");
-	// 	path = ft_strjoin(part_path, command);
-	// 	free(part_path);
-	// 	if (access(path, F_OK) == 0)
-	// 		return (path);
-	// 	free(path);
-	// 	i++;
-	// }
-	// i = -1;
-	// while (paths[++i])
-	// 	free(paths[i]);
-	// free(paths);
-	// return (0);
+	printf("get path worked...\n");
+	
 	char	**paths;
 	char	*path;
 	char	*temp;
 	int		i;
 
 	i = 0;
-	while (ft_strnstr(envp[i], "PATH", 4) == 0)
+	while (ft_strnstr(envp[i], "PATH", 6) == 0)
 		++i;
 	paths = ft_split(envp[i] + 5, ':');
-	// if (paths == 0)
-	// 	error(ERR);
+	if (paths == 0)
+		printf("doesn't exist paths...\n");
 	i = 0;
 	while (paths[i] != 0)
 	{

@@ -1,7 +1,6 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/hyunjung/42subjects/cadet/ref/pipex_ref'
 gcc -Wall -Wextra -Werror -g -Iincludes -c srcs/pipex.c -o srcs/pipex.o
- 
 gcc -Wall -Wextra -Werror -g -Iincludes -c srcs/utils.c -o srcs/utils.o
 echo "\033[33m----Compiling lib----"
 make re -C ./libft
