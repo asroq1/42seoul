@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:16:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/24 15:06:37 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/25 12:45:20 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,3 +135,5 @@ char	**ft_split(char const *s, char c)
 	do_split(new_str, s, c, word_count);
 	return (new_str);
 }
+
+// < infile ls -l | wc -l > outiflec

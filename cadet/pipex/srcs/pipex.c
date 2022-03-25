@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/24 15:06:11 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/25 12:48:08 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	childProc(char **argv, char **envp, int *pipe)
 	{
 		error();
 	}
-	dup2(pipe[1], STDOUT_FILENO);
 	dup2(infile, STDIN_FILENO);
+	dup2(pipe[1], STDOUT_FILENO);
 	close(pipe[0]);
 	execute(argv[2], envp);
 }

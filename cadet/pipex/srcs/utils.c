@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 15:57:55 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/24 15:06:50 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/25 13:17:02 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,9 @@ void	error(void)
 
 void	execute(char *argv, char **envp)
 {
-	printf("execute worked ...\n");
 	char	**command;
 	char	*path;
-	int		i;
 
-	i = -1;
-	printf("argv => %s\n", argv);
 	command = ft_split(argv, ' ');
 	path = get_path(command[0], envp);
 	if (command == 0)
@@ -38,10 +34,36 @@ void	execute(char *argv, char **envp)
 	}
 }
 
+char	*ft_substr(char const *s, int start, int len)
+{
+	char			*new_str;
+	int				i;
+	int				j;
+
+	i = start;
+	j = 0;
+	if (s == 0)
+		return (0);
+	new_str = malloc(sizeof(char) * (len + 1));
+	if (new_str == 0)
+		return (0);
+	if (start >= ft_strlen(s))
+	{
+		new_str[0] = 0;
+		return (new_str);
+	}
+	while (j < len && s != 0)
+	{
+		new_str[j] = s[i];
+		i++;
+		j++;
+	}
+	new_str[j] = 0;
+	return (new_str);
+}
+
 char	*get_path(char *command, char **envp)
 {
-	printf("get path worked...\n");
-	
 	char	**paths;
 	char	*path;
 	char	*temp;
