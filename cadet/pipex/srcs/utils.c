@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 15:57:55 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/25 13:17:02 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:22:57 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	execute(char *argv, char **envp)
 	char	*path;
 
 	command = ft_split(argv, ' ');
+	printf("command argv => %s\n", command);
 	path = get_path(command[0], envp);
 	if (command == 0)
 	{
@@ -32,34 +33,6 @@ void	execute(char *argv, char **envp)
 	{
 		error();
 	}
-}
-
-char	*ft_substr(char const *s, int start, int len)
-{
-	char			*new_str;
-	int				i;
-	int				j;
-
-	i = start;
-	j = 0;
-	if (s == 0)
-		return (0);
-	new_str = malloc(sizeof(char) * (len + 1));
-	if (new_str == 0)
-		return (0);
-	if (start >= ft_strlen(s))
-	{
-		new_str[0] = 0;
-		return (new_str);
-	}
-	while (j < len && s != 0)
-	{
-		new_str[j] = s[i];
-		i++;
-		j++;
-	}
-	new_str[j] = 0;
-	return (new_str);
 }
 
 char	*get_path(char *command, char **envp)
