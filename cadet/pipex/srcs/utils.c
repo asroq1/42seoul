@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 15:57:55 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/29 12:11:17 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/29 12:15:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,20 @@ char	*get_path(char *command, char **envp)
 	int		i;
 
 	i = 0;
-	//1. strnstr을 통해서 환경변수에 PATH 문자열을 찾을 때까지 i++
 	while (ft_strnstr(envp[i], "PATH", 6) == 0)
 		++i;
-	// 2.envp[i] + 5를 통해서 앞의 PATH=부분을 넘기고 :를 만나면 문자열을 잘라 paths에 담는다
 	paths = ft_split(envp[i] + 5, ':');
 	if (paths == 0)
 		error();
 	i = 0;
 	while (paths[i] != 0)
 	{
-		// 3. 명령어 앞에 /를 붙여준다
 		temp = ft_strjoin("/", command);
-		// 4. 경로인 paths 끝에 temp를 붙여준다.
 		path = ft_strjoin(paths[i], temp);
 		free(temp);
-		// 5. 만약 path가 올바른 경로라면 접근한다.
 		if (access(path, X_OK) == 0)
 			return (path);
 		++i;
-		//leaks을 방지하기 위해 malloc 한 것들을 다 free한다.
 		ft_str_free(path);
 	}
 	return (0);
