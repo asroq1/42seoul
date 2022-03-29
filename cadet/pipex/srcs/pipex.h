@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:19:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/24 14:15:54 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/29 11:12:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			**ft_split(char const *s, char c);
 char			*ft_substr(char const *s, int start, int len);
 int				ft_strlen(const char *str);
+void			ft_str_free(char *str);
 
 #endif

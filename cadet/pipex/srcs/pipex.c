@@ -6,11 +6,30 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/28 12:31:18 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/29 11:14:18 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+void	execute(char *argv, char **envp)
+{
+	char	**command;
+	char	*path;
+	// 1.argv를 통해서 들어온 커맨드를 split해서 command[0], command[1]에 담아준다.
+	command = ft_split(argv, ' ');
+	// 2. command[0]인 ls의 실행 경로를 get_path함수를 통해 추출해 path에 담아준다.
+	path = get_path(command[0], envp);
+	if (command == 0)
+	{
+		error();
+	}
+	// 3. execve함수를 통해 해당 명령어를 실행시켜준다.
+	if (execve(path, command, envp) == -1)
+	{
+		error();
+	}
+}
 
 void	childProc(char **argv, char **envp, int *pipe)
 {
