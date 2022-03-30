@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/03/29 12:17:00 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/03/30 20:36:19 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	execute(char *argv, char **envp)
 	}
 }
 
-void	childProc(char **argv, char **envp, int *pipe)
+void	child_proc(char **argv, char **envp, int *pipe)
 {
 	int	infile;
 
@@ -44,7 +44,7 @@ void	childProc(char **argv, char **envp, int *pipe)
 	execute(argv[2], envp);
 }
 
-void	parentProc(char **argv, char **envp, int *pipe)
+void	parent_proc(char **argv, char **envp, int *pipe)
 {
 	int	outfile;
 
@@ -77,10 +77,10 @@ int	main(int argc, char **argv, char **envp)
 		}
 		if (pid == 0)
 		{
-			childProc(argv, envp, fd);
+			child_proc(argv, envp, fd);
 		}
 		waitpid(pid, 0, 0);
-		parentProc(argv, envp, fd);
+		parent_proc(argv, envp, fd);
 	}
 	return (0);
 }
