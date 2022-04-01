@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
- 
 
-# Make data base, printed on Wed Mar 30 20:34:53 2022
+# Make data base, printed on Fri Apr  1 16:54:55 2022
 
 # Variables
 
@@ -20,6 +17,8 @@ VSCODE_GIT_ASKPASS_MAIN = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+LC_CTYPE = UTF-8
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -43,13 +42,15 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-e5301afc-d295-4df1-8441-f472c7b978de.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-d2ceb07e-9778-46a4-a9f7-a362126b8c2e.sock
 # environment
 VSCODE_CWD = /Users/devicii/42subjects/cadet/pipex
 # environment
 PATH = /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+LaunchInstanceID = A9A5CF55-096F-4680-AC81-C0EB653B1062
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -86,14 +87,17 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 MAKELEVEL := 0
+ 
+make: *** No rule to make target `all'.  Stop.
+
 # environment
 XPC_FLAGS = 0x0
 # environment
 COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
+# environment
+LC_TERMINAL = iTerm2
 # environment
 SHLVL = 5
 # default
@@ -102,6 +106,10 @@ MAKE_VERSION := 3.81
 USER = devicii
 # makefile
 .DEFAULT_GOAL := 
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:008E145D-5834-44AB-B44B-B5FC29C63B41
 # environment
 LESS = -R
 # automatic
@@ -131,11 +139,17 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 1.63.2
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498.FA54C542-1F3D-4FCA-8DE1-A9B63C9397E7
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498.98D9841E-2AC6-4B80-870F-EF1D10284EBE
+# environment
+LC_TERMINAL_VERSION = 3.4.15
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
+# environment
+ITERM_SESSION_ID = w0t0p0:008E145D-5834-44AB-B44B-B5FC29C63B41
+# environment
+COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
@@ -147,23 +161,27 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
+ITERM_PROFILE = Default
+# environment
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186b2
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
 # environment
-VSCODE_GIT_IPC_HANDLE = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-git-875d86234d.sock
+VSCODE_GIT_IPC_HANDLE = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-git-f5b73094f5.sock
 # environment
 LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 7548
+VSCODE_PID = 2940
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=3/94=3%
+# Load=83/1024=8%, Rehash=0, Collisions=6/103=6%
 
 # Pattern-specific Variable Values
 
@@ -171,7 +189,7 @@ VSCODE_PID = 7548
 
 # Directories
 
-# . (device 16777229, inode 3069525): 4 files, no impossibilities.
+# . (device 16777231, inode 3069525): 4 files, no impossibilities.
 
 # 4 files, no impossibilities in 1 directories.
 
@@ -245,6 +263,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Wed Mar 30 20:34:53 2022
+# Finished Make data base on Fri Apr  1 16:54:55 2022
 
  
