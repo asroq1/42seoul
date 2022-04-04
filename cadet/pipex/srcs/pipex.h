@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:19:05 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/01 16:55:10 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/04 16:44:10 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <sys/wait.h>
 # include <stdio.h>
-# include <sys/wait.h>
 # include <fcntl.h>
 # include <stdlib.h>
 
