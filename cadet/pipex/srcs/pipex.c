@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/01 17:01:14 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/05 17:17:41 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,8 @@ void	execute(char *argv, char **envp)
 	}
 }
 
-void	child_proc(char **argv, char **envp, int *pipe)
+void	child_proc(char **argv, char **envp, int *pipe, int infile)
 {
-	int	infile;
-
-	infile = open(argv[1], O_RDONLY, 0777);
 	if (infile == -1)
 	{
 		error();
@@ -44,11 +41,8 @@ void	child_proc(char **argv, char **envp, int *pipe)
 	execute(argv[2], envp);
 }
 
-void	parent_proc(char **argv, char **envp, int *pipe)
+void	parent_proc(char **argv, char **envp, int *pipe, int outfile)
 {
-	int	outfile;
-
-	outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0777);
 	if (outfile == -1)
 	{
 		error();
@@ -62,25 +56,23 @@ void	parent_proc(char **argv, char **envp, int *pipe)
 int	main(int argc, char **argv, char **envp)
 {
 	int		fd[2];
+	int		outfile;
+	int		infile;
 	pid_t	pid;
 
+	infile = open(argv[1], O_RDONLY, 0777);
+	outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0777);
 	if (argc == 5)
 	{
 		if (pipe(fd) == -1)
-		{
 			error();
-		}
 		pid = fork();
 		if (pid == -1)
-		{
 			error();
-		}
 		if (pid == 0)
-		{
-			child_proc(argv, envp, fd);
-		}
+			child_proc(argv, envp, fd, infile);
 		waitpid(pid, 0, 0);
-		parent_proc(argv, envp, fd);
+		parent_proc(argv, envp, fd, outfile);
 	}
 	return (0);
 }
