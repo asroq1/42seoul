@@ -1,6 +1,7 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/devicii/42subjects/cadet/pipex'
-make: Leaving directory `/Users/devicii/42subjects/cadet/pipex'
+make: Entering directory `/goinfre/hyunjung/42subjects/cadet/pipex'
+ 
+make: Leaving directory `/goinfre/hyunjung/42subjects/cadet/pipex'
  
 make: *** No targets specified and no makefile found.  Stop.
 

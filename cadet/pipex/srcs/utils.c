@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 15:57:55 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/01 17:01:03 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/06 11:42:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(void)
 {
-	perror("Error");
+	perror("Error ");
 	exit(EXIT_FAILURE);
 }
 

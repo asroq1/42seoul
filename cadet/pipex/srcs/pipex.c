@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/05 17:17:41 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/06 12:56:48 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ void	execute(char *argv, char **envp)
 
 void	child_proc(char **argv, char **envp, int *pipe, int infile)
 {
-	if (infile == -1)
-	{
-		error();
-	}
 	dup2(infile, STDIN_FILENO);
 	dup2(pipe[1], STDOUT_FILENO);
 	close(pipe[0]);
@@ -43,10 +39,6 @@ void	child_proc(char **argv, char **envp, int *pipe, int infile)
 
 void	parent_proc(char **argv, char **envp, int *pipe, int outfile)
 {
-	if (outfile == -1)
-	{
-		error();
-	}
 	dup2(pipe[0], STDIN_FILENO);
 	dup2(outfile, STDOUT_FILENO);
 	close(pipe[1]);
@@ -56,12 +48,14 @@ void	parent_proc(char **argv, char **envp, int *pipe, int outfile)
 int	main(int argc, char **argv, char **envp)
 {
 	int		fd[2];
-	int		outfile;
 	int		infile;
+	int		outfile;
 	pid_t	pid;
 
 	infile = open(argv[1], O_RDONLY, 0777);
 	outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0777);
+	if (infile == -1 || outfile == -1)
+		error();
 	if (argc == 5)
 	{
 		if (pipe(fd) == -1)
