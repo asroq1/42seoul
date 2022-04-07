@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/06 12:56:48 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:49:34 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv, char **envp)
 			error();
 		if (pid == 0)
 			child_proc(argv, envp, fd, infile);
-		waitpid(pid, 0, 0);
+		waitpid(pid, 0, WNOHANG);
 		parent_proc(argv, envp, fd, outfile);
 	}
 	return (0);
