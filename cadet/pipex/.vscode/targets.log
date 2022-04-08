@@ -10,8 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Wed Apr  6 11:42:09 2022
- 
+# Make data base, printed on Thu Apr  7 16:06:52 2022
 
 # Variables
 
@@ -26,7 +25,7 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /goinfre/hyunjung/42subjects/cadet/pipex
+CURDIR := /Users/hyunjung/42subjects/cadet/pipex
 # makefile
 SHELL = /bin/sh
 # environment
@@ -36,19 +35,19 @@ _ = /usr/bin/make
 # makefile
 MAKEFILE_LIST := 
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = 
+VSCODE_NODE_CACHED_DATA_DIR = /Users/hyunjung/Library/Application Support/Code/CachedData/6ab598523be7a800d7f3eb4d92d7ab9a66069390
 # environment
 VERBOSE_LOGGING = true
 # environment
-VSCODE_LOGS = /Users/hyunjung/Library/Application Support/Code/logs/20220406T113835
+VSCODE_LOGS = /Users/hyunjung/Library/Application Support/Code/logs/20220407T160638
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/vscode-ipc-a529bef7-37f8-45ff-9367-3d97678fb395.sock
-# environment
-VSCODE_CWD = /goinfre/hyunjung/42subjects/cadet/pipex
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/vscode-ipc-4ecbceaf-b240-43f0-9500-55d5f45fd3c3.sock
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
+LSCOLORS = exfxcxdxbxbxbxbxbxbxbx
+# environment
+LaunchInstanceID = 7AAC61B7-B79F-4385-99F4-9EBFB8EA5EB3
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -56,11 +55,13 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.tzdT2Xg9jC/Listeners
+LS_COLORS = di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=31;40:cd=31;40:su=31;40:sg=31;40:tw=31;40:ow=31;40:
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.okrtQClTnE/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /goinfre/hyunjung/42subjects/cadet/pipex
+PWD = /Users/hyunjung/42subjects/cadet/pipex
 # environment
 HOME = /Users/hyunjung
 # default
@@ -77,8 +78,6 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -101,8 +100,6 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
-# environment
-TERM_PROGRAM = vscode
 # default
 .VARIABLES := 
 # environment
@@ -118,15 +115,15 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 1.39.2
-# environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2144
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x19355:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -135,6 +132,8 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -146,11 +145,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 21249
+VSCODE_PID = 1020
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=2/88=2%
+# Load=66/1024=6%, Rehash=0, Collisions=2/87=2%
 
 # Pattern-specific Variable Values
 
@@ -158,7 +155,7 @@ VSCODE_PID = 21249
 
 # Directories
 
-# . (device 16777220, inode 1152921500312874715): 5 files, no impossibilities.
+# . (device 16777225, inode 10188281): 5 files, no impossibilities.
 
 # 5 files, no impossibilities in 1 directories.
 
@@ -166,7 +163,6 @@ VSCODE_PID = 21249
 
 # No implicit rules.
 
- 
 # Files
 
 # Not a target:
@@ -233,6 +229,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Wed Apr  6 11:42:09 2022
+# Finished Make data base on Thu Apr  7 16:06:52 2022
 
  
