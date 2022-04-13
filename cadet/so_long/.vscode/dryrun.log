@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/devicii/42subjects/cadet/so_long'
+arch -x86_64 gcc -Wall -Werror -Wextra -c so_long.c -I./ -o so_long.o
+arch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit so_long.c ./a.out
+make: Leaving directory `/Users/devicii/42subjects/cadet/so_long'
+ 
