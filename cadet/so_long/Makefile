@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 15:34:52 by hyunjung          #+#    #+#              #
-#    Updated: 2022/04/14 16:36:18 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/04/14 16:47:33 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME)	: $(OBJS)
-		arch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit so_long.c map.c get_next_line get_next_line_utils
+		arch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit so_long.c map.c get_next_line.c get_next_line_utils.c
 %.o: %.c
 	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
 
