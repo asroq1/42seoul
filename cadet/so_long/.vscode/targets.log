@@ -8,19 +8,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Apr 13 17:06:35 2022
+# Make data base, printed on Thu Apr 14 16:18:11 2022
 
 # Variables
 
-# environment
-VSCODE_GIT_ASKPASS_MAIN = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/EF5F74A8-3D6F-42EF-B2A2-524085180E9C/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -28,7 +23,8 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/devicii/42subjects/cadet/so_long
+CURDIR := /Users/hyunjung/42subjects/cadet/so_long
+ 
 # makefile
 SHELL = /bin/sh
 # environment
@@ -38,17 +34,23 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_VERBOSE_LOGGING = true
+VSCODE_NODE_CACHED_DATA_DIR = 
 # environment
-__CFBundleIdentifier = com.microsoft.VSCode
+VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-9ba08901-661e-4e7f-826d-d0ec6723f16a.sock
+VSCODE_LOGS = /Users/hyunjung/Library/Application Support/Code/logs/20220414T132410
+# makefile (from `Makefile', line 17)
+OBJS = $(SRCS:%.c=%.o)
 # environment
-VSCODE_CWD = /Users/devicii/42subjects/cadet/so_long
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/vscode-ipc-21373f43-65d7-4b1d-9d55-b2ae777dd479.sock
 # environment
-PATH = /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+VSCODE_CWD = /Users/hyunjung/42subjects/cadet/so_long
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+LaunchInstanceID = AFA7AB27-42BE-453A-8E9D-EF339743A7FA
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -56,37 +58,25 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.e9AtWhFCH4/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.s3Fd7N4mL8/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_PIPE_LOGGING = true
-# makefile (from `Makefile', line 17)
-OBJS = $(SRCS:%.c=%.o)
+PWD = /Users/hyunjung/42subjects/cadet/so_long
 # environment
-PWD = /Users/devicii/42subjects/cadet/so_long
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = undefined
-# environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
-# environment
-HOME = /Users/devicii
+HOME = /Users/hyunjung
 # default
-MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/devicii/Library/Application Support/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
-# environment
-LOGNAME = devicii
+LOGNAME = hyunjung
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
-ZSH = /Users/devicii/.oh-my-zsh
+ZSH = /Users/hyunjung/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# environment
-MAKELEVEL := 0
 # environment
 XPC_FLAGS = 0x0
 # environment
@@ -96,39 +86,39 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # makefile (from `Makefile', line 15)
-SRCS = so_long.c
+SRCS = so_long.c \ map.c \ get_next_line.c \ get_next_line_utils.c
 # environment
-SHLVL = 3
+SHLVL = 1
 # makefile (from `Makefile', line 19)
 CC = clang
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = devicii
+AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+USER = hyunjung
 # makefile
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 13)
 NAME = a.out
 # environment
+PIPE_LOGGING = true
+# environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
-MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # environment
 TERM_PROGRAM = vscode
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/devicii/Library/Application Support/Code/1.63.2-main.sock
-# environment
-VSCODE_GIT_ASKPASS_NODE = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/EF5F74A8-3D6F-42EF-B2A2-524085180E9C/d/Visual Studio Code.app/Contents/MacOS/Electron
+VSCODE_IPC_HOOK = /Users/hyunjung/Library/Application Support/Code/1.39.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -136,19 +126,17 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 1.63.2
+TERM_PROGRAM_VERSION = 1.39.2
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498.1761AAE3-D7E7-4E97-AFA4-5D2B13C42059
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+__CF_USER_TEXT_ENCODING = 0x19355:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
-# environment
-GIT_ASKPASS = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/EF5F74A8-3D6F-42EF-B2A2-524085180E9C/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
 # default
 MAKEFILES := 
 # automatic
@@ -157,22 +145,26 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
 # makefile (from `Makefile', line 20)
 FLAGS = -Wall -Werror -Wextra
+# default
+.INCLUDE_DIRS = /usr/local/include
 # environment
-VSCODE_GIT_IPC_HANDLE = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-git-e188d2d4d6.sock
+MAKELEVEL := 0
 # environment
 LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 864
+VSCODE_PID = 740
 # variable set hash-table stats:
-# Load=79/1024=8%, Rehash=0, Collisions=7/109=6%
+# Load=75/1024=7%, Rehash=0, Collisions=6/106=6%
 
 # Pattern-specific Variable Values
 
@@ -180,9 +172,9 @@ VSCODE_PID = 864
 
 # Directories
 
-# . (device 16777229, inode 3265630): 8 files, no impossibilities.
+# . (device 16777225, inode 10218348): 16 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -191,6 +183,7 @@ VSCODE_PID = 864
 	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
 	
 
+ 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
@@ -213,7 +206,7 @@ all: a.out
 # Not a target:
 so_long.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-13 17:01:58
+#  Last modified 2022-04-14 16:10:21
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -228,13 +221,13 @@ so_long.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-13 17:06:23
+#  Last modified 2022-04-14 16:17:23
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-a.out: so_long.o
+a.out: so_long.o  map.o  get_next_line.o  get_next_line_utils.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -242,7 +235,35 @@ a.out: so_long.o
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 #  commands to execute (from `Makefile', line 25):
-	arch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit so_long.c ./a.out
+	arch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit so_long.c
+	
+
+ map.o: map.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: ` map'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ :=  map.o
+# automatic
+# % := 
+# automatic
+# * :=  map
+# automatic
+# + := map.c
+# automatic
+# | := 
+# automatic
+# < := map.c
+# automatic
+# ^ := map.c
+# automatic
+# ? := map.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  commands to execute (from `Makefile', line 27):
+	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
 	
 
 bonus:
@@ -259,6 +280,12 @@ fclean:
 #  commands to execute (from `Makefile', line 33):
 	rm -rf $(NAME)
 	
+
+# Not a target:
+ get_next_line_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -281,36 +308,35 @@ clean:
 	rm -rf $(OBJS)
 	
 
+# Not a target:
+map.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 16:09:07
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 so_long.o: so_long.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `so_long'
-#  File does not exist.
+#  Last modified 2022-04-14 16:10:23
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := so_long.o
-# automatic
-# % := 
-# automatic
-# * := so_long
-# automatic
-# + := so_long.c
-# automatic
-# | := 
-# automatic
-# < := so_long.c
-# automatic
-# ^ := so_long.c
-# automatic
-# ? := so_long.c
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 27):
 	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
 	
 
+# Not a target:
+ get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/37=0%
+# Load=16/1024=2%, Rehash=0, Collisions=0/47=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -322,6 +348,6 @@ so_long.o: so_long.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Apr 13 17:06:35 2022
+# Finished Make data base on Thu Apr 14 16:18:11 2022
 
  
