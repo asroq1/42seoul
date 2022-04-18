@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:30 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/14 16:30:54 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:45:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_get_line(char *lstr);
 char	*ft_reset_lstr(char *lstr);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
+int		ft_strlcpy(char *dest, char *src, int size);
 
 #endif

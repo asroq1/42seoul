@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:28 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/14 16:29:03 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/18 17:38:06 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,28 +54,25 @@ size_t	ft_strlen(const char *str)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
-	int		i;
-	int		j;
+	int		s1_length;
+	int		s2_length;
 
 	if (s1 == 0)
 	{
 		s1 = malloc(sizeof(char) * 1);
 		s1[0] = '\0';
 	}
-	if (s1 == 0 || s2 == 0)
-		return (0);
-	i = -1;
-	j = 0;
-	str = malloc (sizeof(char) * ((int)ft_strlen(s1) + (int)ft_strlen(s2) + 1));
+	if (s1 == 0)
+		return (ft_strdup(s2));
+	else if (s2 == 0)
+		return (ft_strdup(s1));
+	s1_length = ft_strlen(s1);
+	s2_length = ft_strlen(s2);
+	str = malloc(s1_length + s2_length);
 	if (str == 0)
 		return (0);
-	while (s1[++i] != 0)
-		str[i] = s1[i];
-	while (s2[j] != 0)
-		str[i++] = s2[j++];
-	str[i] = '\0';
-	free(s1);
-	s1 = 0;
+	ft_strlcpy(str, s1, s1_length + 1);
+	ft_strlcpy(str + s1_length, s2, s2_length + 1);
 	return (str);
 }
 
@@ -92,11 +89,33 @@ char	*ft_strdup(const char *s1)
 	{
 		return (0);
 	}
-	while (i < length)
+	while (s1[i] != 0 && s1[i] != '\n')
 	{
 		tmp[i] = s1[i];
 		i++;
 	}
 	tmp[i] = 0;
 	return (tmp);
+}
+
+int	ft_strlcpy(char *dest, char *src, int size)
+{
+	int	i;
+	int	length;
+
+	length = 0;
+	i = 0;
+	while (src[length] != 0)
+	length++;
+	if (size == 0)
+		return (length);
+	while (i < size - 1 && *src != 0 && *src != '\n')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		i++;
+	}
+	*dest = '\0';
+	return (length);
 }

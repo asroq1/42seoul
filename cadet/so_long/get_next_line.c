@@ -6,12 +6,13 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/14 16:33:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:48:33 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #define BUFFER_SIZE 1
+
 char	*ft_reset_lstr(char *lstr)
 {
 	int		i;

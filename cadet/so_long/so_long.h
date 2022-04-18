@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:02:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/14 16:29:29 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:45:03 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,33 @@
 # define S		1
 # define D		2
 
-typedef struct s_param
+typedef struct s_img
 {
-	int	x;
-	int	y;
-}	t_param;
+	int		img_width;
+	int		img_height;
+	void	*dest;
+	void	*obj;
+	void	*robot;
+	void	*road;
+	void	*wall;
 
-typedef struct g_game
-{
+}	t_img;
+
+typedef struct s_game
+{	
+	void	*mlx;
+	void	*window;
 	int		x;
 	int		y;
 	char	*str;
+	t_img	img;
+	int		all_col;
+	int		col_cnt;
 }	t_game;
 
-void	param_init(t_param *param);
-void	map_reader(char *filename, t_game *game);
-
+void	game_init(t_game *game);
+void	get_map(char *filename, t_game *game);
+void	put_map(t_game *game, int width, int height);
+void	set_map(t_game *game);
+t_img	get_image(void *mlx);
 #endif
