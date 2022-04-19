@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:34:54 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/18 17:24:59 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/19 12:09:10 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	start_game(t_game *game, char *map)
 {
 	game->mlx = mlx_init();
 	game->img = get_image(game->mlx);
-	get_map(map, game);
-	game->window = mlx_new_window(game->mlx, game->x * 64, game->y * 64, "so_long");
+	download_map(map, game);
+	game->win = mlx_new_window(game->mlx, game->x * 64, game->y * 64, "so_long");
 	set_map(game);
 }
        
@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 		printf("map error");
 	}
 	start_game(&game, argv[1]);
-	mlx_hook(game.window, KEY_RELEASED, 0, &on_key_press, &game);
+	mlx_hook(game.win, KEY_RELEASED, 0, &on_key_press, &game);
 	mlx_loop(game.mlx);
 	return (0);
 }

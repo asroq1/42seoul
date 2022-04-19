@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 15:34:52 by hyunjung          #+#    #+#              #
-#    Updated: 2022/04/18 15:40:43 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/04/19 11:51:09 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS = so_long.c \
  		map.c \
 		get_next_line.c \
 		get_next_line_utils.c \
-		image.c
+		image.c \
+		utils.c
 
 OBJS = $(SRCS:%.c=%.o)
 
@@ -26,7 +27,7 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME)	: $(OBJS)
-		arch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit so_long.c map.c get_next_line.c get_next_line_utils.c image.c
+		arch -x86_64 gcc -L./mlx -lmlx -framework OpenGL -framework AppKit so_long.c map.c get_next_line.c get_next_line_utils.c image.c utils.c
 %.o: %.c
 		arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
 clean :

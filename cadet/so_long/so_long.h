@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:02:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/18 16:45:03 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/19 12:08:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_img
 typedef struct s_game
 {	
 	void	*mlx;
-	void	*window;
+	void	*win;
 	int		x;
 	int		y;
 	char	*str;
@@ -53,8 +53,12 @@ typedef struct s_game
 }	t_game;
 
 void	game_init(t_game *game);
-void	get_map(char *filename, t_game *game);
+void	download_map(char *filename, t_game *game);
 void	put_map(t_game *game, int width, int height);
 void	set_map(t_game *game);
 t_img	get_image(void *mlx);
+int		utils_strlcpy(char *dest, char *src, int length);
+char	*utils_strjoin(char *s1, char *s2);
+char	*utils_strdup(char *str);
+
 #endif
