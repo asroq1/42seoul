@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:02:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/19 12:08:28 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:46:39 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ typedef struct s_game
 	char	*str;
 	t_img	img;
 	int		all_col;
-	int		col_cnt;
+	int		step_cnt;
+	int		obj_cnt;
+	int		total_obj;
 }	t_game;
 
 void	game_init(t_game *game);
@@ -60,5 +62,11 @@ t_img	get_image(void *mlx);
 int		utils_strlcpy(char *dest, char *src, int length);
 char	*utils_strjoin(char *s1, char *s2);
 char	*utils_strdup(char *str);
+
+/* key.c */ 
+void	key_w(t_game *game);
+void	key_s(t_game *game);
+void	key_d(t_game *game);
+void	key_a(t_game *game);
 
 #endif

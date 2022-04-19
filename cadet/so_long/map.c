@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:21:56 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/19 12:08:30 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:39:42 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	download_map(char *filename, t_game *game)
 {
+	int		i;
 	int		fd;
 	char	*line;
 
+	i = 0;
 	fd = open(filename, O_RDONLY);
 	if (fd <= 0)
 	{
@@ -36,8 +38,12 @@ void	download_map(char *filename, t_game *game)
 			game->str = utils_strjoin(game->str, line);
 		}
 	}
+	while (game->str[i++] != 0)
+	{
+		if (game->str[i] == 'C')
+			game->total_obj++;
+	}
 	close(fd);
-	printf("%s \n", game->str);
 }
 
 void	put_map(t_game *g, int w, int h)
@@ -64,43 +70,22 @@ void	put_map(t_game *g, int w, int h)
 	}
 }
 
-// void	set_map(t_game *game)
-// {
-// 	int	width;
-// 	int	height;
-
-// 	height = 0;
-// 	while (height < game->y)
-// 	{
-// 		width = 0;
-// 		while (width < game->x)
-// 		{
-// 			put_map(game, width, height);
-// 			width++;
-// 		}
-// 		printf("width : %d", width);
-// 		height++;
-// 	}
-// 	printf("height : %d", height);
-// }
-
-
 void	set_map(t_game *game)
 {
-	int		hei;
-	int		wid;
+	int		i;
+	int		height;
+	int		width;
 
-	hei = 0;
-	while (hei < game->y)
+	i = 0;
+	height = 0;
+	while (height < game->y)
 	{
-		wid = 0;
-		while (wid < game->x)
+		width = 0;
+		while (width < game->x)
 		{
-			put_map(game, wid, hei);
-			wid++;
+			put_map(game, width, height);
+			width++;
 		}
-		printf("width : %d\n", wid);
-		hei++;
+		height++;
 	}
-	printf("height : %d\n", hei);
 }
