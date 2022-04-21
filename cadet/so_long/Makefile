@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 15:34:52 by hyunjung          #+#    #+#              #
-#    Updated: 2022/04/21 14:08:28 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/04/21 17:50:37 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ SRCS = so_long.c \
  		map.c \
 		get_next_line.c \
 		get_next_line_utils.c \
-		image.c \
 		utils.c \
-		key.c
+		key.c \
+		error.c
 
 OBJS = $(SRCS:%.c=%.o)
 
@@ -36,7 +36,7 @@ $(NAME)	: $(OBJS)
 clean :
 	rm -rf $(OBJS)
 
-fclean :
+fclean :	clean
 	rm -rf $(NAME)
 
 re : fclean all

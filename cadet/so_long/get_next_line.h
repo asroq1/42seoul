@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:21:30 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/19 13:37:29 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:38:37 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <limits.h>
 
-size_t	ft_strlen(const char *str);
+int		ft_strlen(const char *str);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_get_lstr(int fd, char *lstr);
