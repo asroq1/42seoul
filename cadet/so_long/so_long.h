@@ -6,14 +6,14 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:02:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/19 16:46:39 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/21 13:38:16 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./mlx/mlx.h"
+# include "./mlx_beta/mlx.h"
 # include "./get_next_line.h"
 # include <stdio.h>
 # include <stdlib.h>

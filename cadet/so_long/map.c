@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:21:56 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/19 17:39:42 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/21 13:09:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,9 @@ void	put_map(t_game *g, int w, int h)
 
 void	set_map(t_game *game)
 {
-	int		i;
 	int		height;
 	int		width;
 
-	i = 0;
 	height = 0;
 	while (height < game->y)
 	{
