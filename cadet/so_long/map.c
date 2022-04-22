@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:21:56 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/22 11:55:36 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/22 16:47:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	put_map(t_game *g, int w, int h)
 	}
 	else if (g->str[g->x * h + w] == 'E' && g->obj_cnt == g->total_obj)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.robot, w * 64, h * 64);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.dest, w * 64, h * 64);
 	}
 	else if (g->str[g->x * h + w] == 'E')
 	{

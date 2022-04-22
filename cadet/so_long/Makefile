@@ -6,11 +6,11 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 15:34:52 by hyunjung          #+#    #+#              #
-#    Updated: 2022/04/22 12:03:46 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/04/22 16:48:09 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = so_long
 
 SRCS = so_long.c \
  		map.c \
