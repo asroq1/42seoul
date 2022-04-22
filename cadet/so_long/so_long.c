@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:34:54 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/21 18:12:28 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/22 12:05:15 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	on_key_press(int evt, t_game *game)
 	{
 		exit(EXIT_SUCCESS);
 	}
-	printf("Step is %d !\n", game->step_cnt);
+	printf("%d Step!\n", game->step_cnt);
 	return (0);
 }
 

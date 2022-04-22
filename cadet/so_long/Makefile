@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 15:34:52 by hyunjung          #+#    #+#              #
-#    Updated: 2022/04/21 17:50:37 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/04/22 12:03:46 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME)	: $(OBJS)
-			gcc *.c libmlx.dylib
+			gcc -o $(NAME) $(OBJS) -L./mlx -lmlx -framework OpenGL -framework AppKit
 
 %.o: %.c
-		arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
+		gcc $(FLAGS) -c $^ -I./ -o $@
 
 clean :
 	rm -rf $(OBJS)
