@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:34:54 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/22 16:55:40 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:59:41 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	start_game(t_game *game, char *map)
 	game->img = get_image(game->mlx);
 	download_map(map, game);
 	validate_map(game);
-	game->win = mlx_new_window(game->mlx, game->x * 64, game->y * 64, "so_");
+	game->win = mlx_new_window(game->mlx, game->x * 32, game->y * 32, "so_");
 	set_map(game);
 }
 

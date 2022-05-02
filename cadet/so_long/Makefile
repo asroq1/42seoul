@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 15:34:52 by hyunjung          #+#    #+#              #
-#    Updated: 2022/04/22 16:48:09 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/05/02 14:20:02 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = so_long.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
-CC = clang
+CC = cc
 FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
