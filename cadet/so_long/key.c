@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 12:24:01 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/22 12:06:23 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/04/22 17:20:11 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ void	key_w(t_game *game)
 	while (i++ < ft_strlen(game->str))
 	{
 		if (game->str[i] == 'P')
+		{
+			printf("i == %d \n", i);
 			break ;
+		}
 	}
 	if (game->str[i - game->x] == 'C')
 	{
+		printf("x == %d \n", game->x);
 		game->obj_cnt++;
 	}
 	if (game->str[i - game->x] == 'E' && game->total_obj == game->obj_cnt)
