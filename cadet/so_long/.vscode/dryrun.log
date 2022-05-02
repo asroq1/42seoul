@@ -1,5 +1,12 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/devicii/42subjects/cadet/so_long'
-gcc *.c -I. -Lmlx_beta -lmlx -framework Metal -framework Metalkit
-make: Leaving directory `/Users/devicii/42subjects/cadet/so_long'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/hyunjung/42subjects/cadet/so_long'
+gcc -Wall -Werror -Wextra -c so_long.c -I./ -o so_long.o
+gcc -Wall -Werror -Wextra -c map.c -I./ -o map.o
+gcc -Wall -Werror -Wextra -c get_next_line.c -I./ -o get_next_line.o
+gcc -Wall -Werror -Wextra -c get_next_line_utils.c -I./ -o get_next_line_utils.o
+gcc -Wall -Werror -Wextra -c utils.c -I./ -o utils.o
+gcc -Wall -Werror -Wextra -c key.c -I./ -o key.o
+gcc -Wall -Werror -Wextra -c error.c -I./ -o error.o
+gcc -o so_long so_long.o map.o get_next_line.o get_next_line_utils.o utils.o key.o error.o -L./mlx -lmlx -framework OpenGL -framework AppKit
+make: Leaving directory `/Users/hyunjung/42subjects/cadet/so_long'
  

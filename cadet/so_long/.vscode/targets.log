@@ -6,21 +6,15 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Thu Apr 21 13:36:07 2022
+# Make data base, printed on Mon May  2 14:43:00 2022
 
 # Variables
 
-# environment
-VSCODE_GIT_ASKPASS_MAIN = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/735300F3-675F-4C33-8A3C-3082DDB078B5/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-VSCODE_LOG_NATIVE = false
- 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -28,7 +22,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/devicii/42subjects/cadet/so_long
+CURDIR := /Users/hyunjung/42subjects/cadet/so_long
 # makefile
 SHELL = /bin/sh
 # environment
@@ -38,15 +32,19 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_VERBOSE_LOGGING = true
+VSCODE_NODE_CACHED_DATA_DIR = 
 # environment
-__CFBundleIdentifier = com.microsoft.VSCode
+VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-dff136f2-6536-4713-a354-a517dcdef2bc.sock
+VSCODE_LOGS = /Users/hyunjung/Library/Application Support/Code/logs/20220502T104405
+# makefile (from `Makefile', line 23)
+OBJS = $(SRCS:%.c=%.o)
 # environment
-VSCODE_CWD = /Users/devicii/42subjects/cadet/so_long
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/vscode-ipc-1e8dfa73-4b88-41fc-a392-e2af91bf64d7.sock
 # environment
-PATH = /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+VSCODE_CWD = /Users/hyunjung/42subjects/cadet/so_long
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -56,79 +54,73 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.mIE530i3Yp/Listeners
+LS_COLORS = no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=41;33;01:ex=00;32:*.cmd=00;32:*.exe=01;32:*.com=01;32:*.bat=01;32:*.btm=01;32:*.dll=01;32:*.tar=00;31:*.tbz=00;31:*.tgz=00;31:*.rpm=00;31:*.deb=00;31:*.arj=00;31:*.taz=00;31:*.lzh=00;31:*.lzma=00;31:*.zip=00;31:*.zoo=00;31:*.z=00;31:*.Z=00;31:*.gz=00;31:*.bz2=00;31:*.tb2=00;31:*.tz2=00;31:*.tbz2=00;31:*.avi=01;35:*.bmp=01;35:*.fli=01;35:*.gif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mng=01;35:*.mov=01;35:*.mpg=01;35:*.pcx=01;35:*.pbm=01;35:*.pgm=01;35:*.png=01;35:*.ppm=01;35:*.tga=01;35:*.tif=01;35:*.xbm=01;35:*.xpm=01;35:*.dl=01;35:*.gl=01;35:*.wmv=01;35:*.aiff=00;32:*.au=00;32:*.mid=00;32:*.mp3=00;32:*.ogg=00;32:*.voc=00;32:*.wav=00;32:
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.AvwSz81zbW/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_PIPE_LOGGING = true
-# makefile (from `Makefile', line 23)
-OBJS = $(SRCS:%.c=%.o)
+PWD = /Users/hyunjung/42subjects/cadet/so_long
 # environment
-PWD = /Users/devicii/42subjects/cadet/so_long
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = undefined
-# environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
-# environment
-HOME = /Users/devicii
+HOME = /Users/hyunjung
 # default
-MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/devicii/Library/Application Support/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
-# environment
-LOGNAME = devicii
+LOGNAME = hyunjung
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
-ZSH = /Users/devicii/.oh-my-zsh
+ZSH = /Users/hyunjung/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# environment
-MAKELEVEL := 0
 # environment
 XPC_FLAGS = 0x0
 # environment
 COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
-# makefile (from `Makefile', line 15)
-SRCS = so_long.c map.c get_next_line.c get_next_line_utils.c image.c utils.c key.c
 # environment
-SHLVL = 2
+LC_TERMINAL = iTerm2
+# makefile (from `Makefile', line 15)
+SRCS = so_long.c map.c get_next_line.c get_next_line_utils.c utils.c key.c error.c
+# environment
+SHLVL = 1
 # makefile (from `Makefile', line 25)
-CC = clang
+CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = devicii
+AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+USER = hyunjung
 # makefile
 .DEFAULT_GOAL := all
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:8491B9EC-4927-4416-A020-638E7DB24978
 # makefile (from `Makefile', line 13)
-NAME = a.out
+NAME = so_long
+# environment
+PIPE_LOGGING = true
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
-MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # environment
 TERM_PROGRAM = vscode
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/
+TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/devicii/Library/Application Support/Code/1.63.2-main.sock
-# environment
-VSCODE_GIT_ASKPASS_NODE = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/735300F3-675F-4C33-8A3C-3082DDB078B5/d/Visual Studio Code.app/Contents/MacOS/Electron
+VSCODE_IPC_HOOK = /Users/hyunjung/Library/Application Support/Code/1.39.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -136,23 +128,27 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 1.63.2
+TERM_PROGRAM_VERSION = 1.39.2
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498.A071D4AA-E9E8-4BA1-8BF7-E428F47BA2AA
+XPC_SERVICE_NAME = com.microsoft.VSCode.1188
+# environment
+LC_TERMINAL_VERSION = 3.3.7
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+ITERM_SESSION_ID = w0t0p0:8491B9EC-4927-4416-A020-638E7DB24978
 # environment
-COMMAND_MODE = unix2003
+COLORFGBG = 7;0
 # environment
-GIT_ASKPASS = /private/var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/AppTranslocation/735300F3-675F-4C33-8A3C-3082DDB078B5/d/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+__CF_USER_TEXT_ENCODING = 0x19355:0x0:0x0
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# environment
+ITERM_PROFILE = Default
 # environment
 PAGER = less
 # environment
@@ -163,16 +159,18 @@ LC_ALL = C
 SUFFIXES := 
 # makefile (from `Makefile', line 26)
 FLAGS = -Wall -Werror -Wextra
+# default
+.INCLUDE_DIRS = /usr/local/include
 # environment
-VSCODE_GIT_IPC_HANDLE = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-git-6b0869da1d.sock
+MAKELEVEL := 0
 # environment
 LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 1084
+VSCODE_PID = 97899
 # variable set hash-table stats:
-# Load=79/1024=8%, Rehash=0, Collisions=7/108=6%
+# Load=79/1024=8%, Rehash=0, Collisions=9/110=8%
 
 # Pattern-specific Variable Values
 
@@ -180,31 +178,22 @@ VSCODE_PID = 1084
 
 # Directories
 
-# . (device 16777234, inode 4051627): 24 files, no impossibilities.
+# . (device 16777225, inode 10313968): 17 files, no impossibilities.
 
-# 24 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c
 #  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
+	gcc $(FLAGS) -c $^ -I./ -o $@
 	
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-# Not a target:
-image.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-21 13:06:20
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-all: a.out
+all: so_long
 #  Phony target (prerequisite of .PHONY).
 #  Command-line target.
 #  Implicit rule search has not been done.
@@ -212,17 +201,7 @@ all: a.out
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
-
-# Not a target:
-utils.c:
-#  Implicit rule search has been done.
- 
-#  Last modified 2022-04-21 13:06:20
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
 
 .PHONY: all clean fclean re bonus
 #  Implicit rule search has not been done.
@@ -232,16 +211,7 @@ utils.c:
 # Not a target:
 so_long.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-21 13:06:20
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-get_next_line.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-21 13:06:20
+#  Last modified 2022-05-02 13:59:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -256,61 +226,23 @@ get_next_line.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-21 13:35:58
+#  Last modified 2022-05-02 14:20:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-key.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-21 13:06:20
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-a.out: so_long.o map.o get_next_line.o get_next_line_utils.o image.o utils.o key.o
+error.o:
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: `'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := a.out
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
- 
-# + := so_long.o map.o get_next_line.o get_next_line_utils.o image.o utils.o key.o
-# automatic
-# | := 
-# automatic
-# < := so_long.o
-# automatic
-# ^ := so_long.o map.o get_next_line.o get_next_line_utils.o image.o utils.o key.o
-# automatic
-# ? := so_long.o map.o get_next_line.o get_next_line_utils.o image.o utils.o key.o
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/10=10%
-#  commands to execute (from `Makefile', line 31):
-	gcc *.c -I. -Lmlx_beta -lmlx -framework Metal -framework Metalkit
-	
+#  Modification time never checked.
+#  File has not been updated.
 
-map.o: map.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `map'
-#  Last modified 2022-04-21 13:09:30
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
-	
+# Not a target:
+map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 bonus:
 #  Phony target (prerequisite of .PHONY).
@@ -318,7 +250,7 @@ bonus:
 #  File does not exist.
 #  File has not been updated.
 
-fclean:
+fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -327,17 +259,11 @@ fclean:
 	rm -rf $(NAME)
 	
 
-get_next_line_utils.o: get_next_line_utils.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `get_next_line_utils'
-#  Last modified 2022-04-21 13:09:30
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
-	
+# Not a target:
+get_next_line_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -351,18 +277,6 @@ re: fclean all
 #  File does not exist.
 #  File has not been updated.
 
-image.o: image.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `image'
-#  Last modified 2022-04-21 13:09:30
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
-	
-
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -373,74 +287,65 @@ clean:
 	
 
 # Not a target:
-map.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-21 13:09:26
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-utils.o: utils.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `utils'
- 
-#  Last modified 2022-04-21 13:09:30
+so_long: so_long.o map.o get_next_line.o get_next_line_utils.o utils.o key.o error.o
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
+# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
+#  commands to execute (from `Makefile', line 31):
+ 
+	gcc -o $(NAME) $(OBJS) -L./mlx -lmlx -framework OpenGL -framework AppKit
 	
 
 so_long.o: so_long.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `so_long'
-#  Last modified 2022-04-21 13:06:58
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := so_long.o
+# automatic
+# % := 
+# automatic
+# * := so_long
+# automatic
+# + := so_long.c
+# automatic
+# | := 
+# automatic
+# < := so_long.c
+# automatic
+# ^ := so_long.c
+# automatic
+# ? := so_long.c
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
 #  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
+	gcc $(FLAGS) -c $^ -I./ -o $@
 	
 
 # Not a target:
-get_next_line_utils.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-04-21 13:06:20
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-get_next_line.o: get_next_line.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `get_next_line'
-#  Last modified 2022-04-21 13:09:30
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
-	
-
-key.o: key.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `key'
-#  Last modified 2022-04-21 13:09:30
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 34):
-	arch -x86_64 gcc $(FLAGS) -c $^ -I./ -o $@
-	
+# Not a target:
+key.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=24/1024=2%, Rehash=0, Collisions=0/74=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/50=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -452,6 +357,6 @@ key.o: key.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Apr 21 13:36:07 2022
+# Finished Make data base on Mon May  2 14:43:00 2022
 
  
