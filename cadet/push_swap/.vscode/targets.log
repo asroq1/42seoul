@@ -7,17 +7,22 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `all'.  Stop.
+make: *** No rule to make target `push_swap.o', needed by `PUSH_SWAP'.  Stop.
 
 
-# Make data base, printed on Thu Apr 14 13:24:17 2022
+# Make data base, printed on Thu May  5 14:53:16 2022
 
 # Variables
 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+LC_CTYPE = UTF-8
+# environment
+VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -25,9 +30,11 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/hyunjung/42subjects/cadet/push_swap
+CURDIR := /Users/devicii/42subjects/cadet/push_swap
 # makefile
 SHELL = /bin/sh
+# makefile (from `Makefile', line 18)
+RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -35,19 +42,17 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = 
+VSCODE_VERBOSE_LOGGING = true
 # environment
-VERBOSE_LOGGING = true
+__CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_LOGS = /Users/hyunjung/Library/Application Support/Code/logs/20220414T132410
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-b1e9546a-b1d5-406c-98e6-b15d964365c3.sock
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/vscode-ipc-4e2f8a15-989b-4d0f-a6a6-d0be5c48ecd7.sock
+VSCODE_CWD = /Users/devicii/42subjects/cadet/push_swap
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+PATH = /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/devicii/.fig/bin:/Users/devicii/.local/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-LaunchInstanceID = AFA7AB27-42BE-453A-8E9D-EF339743A7FA
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -55,57 +60,88 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.s3Fd7N4mL8/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.SE5OD3uYSe/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/hyunjung/42subjects/cadet/push_swap
+TTY = /dev/ttys004
 # environment
-HOME = /Users/hyunjung
+VSCODE_PIPE_LOGGING = true
+# makefile (from `Makefile', line 21)
+OBJS = $(SRCS:.c=.o)
+# environment
+FIG_PID = 6848
+# environment
+PWD = /Users/devicii/42subjects/cadet/push_swap
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /Users/devicii
 # default
-MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-LOGNAME = hyunjung
+VSCODE_CODE_CACHE_PATH = /Users/devicii/Library/Application Support/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+# environment
+LOGNAME = devicii
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
-ZSH = /Users/hyunjung/.oh-my-zsh
+ZSH = /Users/devicii/.oh-my-zsh
+# makefile (from `Makefile', line 16)
+CFLAG = -Wall -Wextra -Werror
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
 # environment
-SHLVL = 1
+ 
+LC_TERMINAL = iTerm2
+# makefile (from `Makefile', line 20)
+SRCS = push_swap.c
+# environment
+SHLVL = 2
+# environment
+FIG_TERM = 1
+# makefile (from `Makefile', line 15)
+CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
-AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+USER = devicii
 # environment
-USER = hyunjung
-# makefile
-.DEFAULT_GOAL := 
+FIG_TERM_VERSION = 4.3.0
+# default
+MAKECMDGOALS := all
 # environment
-PIPE_LOGGING = true
+TERM_SESSION_ID = w0t0p0:0E1C95BA-E217-4385-B966-716C613B152F
+# makefile (from `Makefile', line 13)
+NAME = PUSH_SWAP
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+# environment
+FIG_INTEGRATION_VERSION = 8
 # default
-MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# environment
+TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cl_m0034tn/T/
+TMPDIR = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/hyunjung/Library/Application Support/Code/1.39.2-main.sock
+VSCODE_IPC_HOOK = /Users/devicii/Library/Application Support/Code/1.63.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -113,13 +149,21 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+TERM_PROGRAM_VERSION = 3.4.15
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498.D01A8695-098B-4BBA-9773-7AD85EB19A21
+# environment
+LC_TERMINAL_VERSION = 3.4.15
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x19355:0x0:0x0
+ITERM_SESSION_ID = w0t0p0:0E1C95BA-E217-4385-B966-716C613B152F
+# environment
+COLORFGBG = 15;0
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
 # default
@@ -127,50 +171,63 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
+ITERM_PROFILE = Default
+# environment
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# default
-.INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
+# makefile
+.DEFAULT_GOAL := all
 # environment
 LANG = C
 # environment
-VSCODE_PID = 740
+TERM = xterm-256color
+# environment
+VSCODE_PID = 6465
 # variable set hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=2/88=2%
+# Load=87/1024=8%, Rehash=0, Collisions=10/114=9%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
 # Directories
+ 
 
-# . (device 16777225, inode 10220748): 4 files, no impossibilities.
+# . (device 16777233, inode 4313680): 6 files, no impossibilities.
 
-# 4 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+%.o : %.c
+#  commands to execute (from `Makefile', line 28):
+	$(CC)	$(CFLAG) -c $< -o $@
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-# Not a target:
-all:
+all: PUSH_SWAP
+#  Phony target (prerequisite of .PHONY).
 #  Command-line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .SUFFIXES:
@@ -181,11 +238,27 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-08 16:15:29
+#  Last modified 2022-05-05 14:53:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+PUSH_SWAP: push_swap.o
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 34):
+	$(RM) $(NAME)
+	
 
 # Not a target:
 .DEFAULT:
@@ -193,8 +266,33 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 38):
+	
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 31):
+	$(RM) $(OBJS)
+	
+
+# Not a target:
+push_swap.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/16=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/32=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -206,6 +304,6 @@ Makefile:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Apr 14 13:24:17 2022
+# Finished Make data base on Thu May  5 14:53:16 2022
 
  

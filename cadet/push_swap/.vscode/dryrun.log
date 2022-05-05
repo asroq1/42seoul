@@ -1,6 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/hyunjung/42subjects/cadet/push_swap'
-make: Leaving directory `/Users/hyunjung/42subjects/cadet/push_swap'
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/devicii/42subjects/cadet/push_swap'
+cc    -c -o push_swap.o push_swap.c
+make: Leaving directory `/Users/devicii/42subjects/cadet/push_swap'
  
-make: *** No targets.  Stop.
-
