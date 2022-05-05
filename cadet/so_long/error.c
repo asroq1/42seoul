@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 15:28:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/21 18:04:49 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:27:39 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	occur_error(void)
 {
-	perror("Error");
+	perror("Error \n");
 	exit(EXIT_SUCCESS);
 }
 
@@ -30,7 +30,7 @@ void	validate_wall(t_game *game)
 			if (game->str[i] != '1')
 				occur_error();
 		}
-		else if (i % game->str[i] == 0 || i % game->x == game->x - 1)
+		else if (i % game->x == 0 || i % game->x == game->x - 1)
 		{
 			if (game->str[i] != '1')
 				occur_error();
@@ -64,7 +64,7 @@ void	validate_count(t_game *game)
 		else if (game->str[i] == 'C')
 			game->total_obj++;
 	}
-	if (end_point == 0 || player == 0 || game->total_obj == 0)
+	if (end_point == 0 || player != 1 || game->total_obj == 0)
 		occur_error();
 }
 

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:21:56 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/22 16:47:50 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:40:00 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ t_img	get_image(void *mlx)
 	int		x;
 	int		y;
 
-	i.robot = mlx_xpm_file_to_image(mlx, "./images/robot.xpm", &x, &y);
-	i.dest = mlx_xpm_file_to_image(mlx, "./images/dest.xpm", &x, &y);
-	i.road = mlx_xpm_file_to_image(mlx, "./images/road.xpm", &x, &y);
-	i.wall = mlx_xpm_file_to_image(mlx, "./images/wall.xpm", &x, &y);
-	i.obj = mlx_xpm_file_to_image(mlx, "./images/obj.xpm", &x, &y);
+	i.p = mlx_xpm_file_to_image(mlx, "./images/p.xpm", &x, &y);
+	i.e = mlx_xpm_file_to_image(mlx, "./images/e.xpm", &x, &y);
+	i.zero = mlx_xpm_file_to_image(mlx, "./images/0.xpm", &x, &y);
+	i.one = mlx_xpm_file_to_image(mlx, "./images/1.xpm", &x, &y);
+	i.c = mlx_xpm_file_to_image(mlx, "./images/c.xpm", &x, &y);
 	return (i);
 }
 
@@ -54,27 +54,27 @@ void	put_map(t_game *g, int w, int h)
 {
 	if (g->str[g->x * h + w] == '1')
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.wall, w * 64, h * 64);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.one, w * 32, h * 32);
 	}
 	else if (g->str[g->x * h + w] == 'C')
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.obj, w * 64, h * 64);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.c, w * 32, h * 32);
 	}
 	else if (g->str[g->x * h + w] == 'E' && g->obj_cnt == g->total_obj)
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.dest, w * 64, h * 64);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.e, w * 32, h * 32);
 	}
 	else if (g->str[g->x * h + w] == 'E')
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.dest, w * 64, h * 64);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.e, w * 32, h * 32);
 	}
 	else if (g->str[g->x * h + w] == 'P')
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.robot, w * 64, h * 64);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.p, w * 32, h * 32);
 	}
 	else if (g->str[g->x * h + w] == '0')
 	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.road, w * 64, h * 64);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.zero, w * 32, h * 32);
 	}
 }
 

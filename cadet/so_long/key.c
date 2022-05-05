@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 12:24:01 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/22 12:06:23 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:48:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void	key_w(t_game *game)
 	while (i++ < ft_strlen(game->str))
 	{
 		if (game->str[i] == 'P')
+		{
 			break ;
+		}
 	}
 	if (game->str[i - game->x] == 'C')
 	{

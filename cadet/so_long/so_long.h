@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:02:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/22 16:49:11 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:39:16 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ typedef struct s_img
 {
 	int		img_width;
 	int		img_height;
-	void	*dest;
-	void	*obj;
-	void	*robot;
-	void	*road;
-	void	*wall;
+	void	*e;
+	void	*c;
+	void	*one;
+	void	*zero;
+	void	*p;
 
 }	t_img;
 
