@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/11/16 14:13:02 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/10 12:55:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_isprint(int number)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
-
-	arr_size = 0;
-	if (argc < 2)
+	if (number >= 32 && number <= 126)
 	{
-		occur_error();
+		return (1);
 	}
-	input_validater(argv);
+	else
+	{
+		return (0);
+	}
 }

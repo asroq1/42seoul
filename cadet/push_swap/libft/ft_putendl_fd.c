@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/09 14:18:13 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/21 12:20:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_putendl_fd(char *s, int fd)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t	i;
+	size_t	length;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	if (s == 0 || fd < 0)
 	{
-		occur_error();
+		return ;
 	}
-	input_validater(argv);
+	length = ft_strlen(s);
+	while (i < length)
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }

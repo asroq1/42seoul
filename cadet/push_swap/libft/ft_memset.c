@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/11/16 18:55:57 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 15:34:44 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	*ft_memset(void *b, int c, size_t len)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t			i;
+	unsigned char	*mem;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	mem = (unsigned char *)b;
+	while (i < len)
 	{
-		occur_error();
+		mem[i] = c;
+		i++;
 	}
-	input_validater(argv);
+	return (b);
 }

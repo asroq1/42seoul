@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/06 12:47:51 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/20 11:43:29 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t			i;
+	unsigned char	*new_str1;
+	unsigned char	*new_str2;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	if (n == 0)
 	{
-		occur_error();
+		return (0);
 	}
-	input_validater(argv);
+	new_str1 = (unsigned char *)str1;
+	new_str2 = (unsigned char *)str2;
+	while (i < n)
+	{
+		if (new_str1[i] != new_str2[i])
+		{
+			return (new_str1[i] - new_str2[i]);
+		}
+		i++;
+	}
+	return (0);
 }

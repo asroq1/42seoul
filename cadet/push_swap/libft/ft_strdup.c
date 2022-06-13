@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/07 13:16:23 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/21 14:24:31 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
-{
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+char	*ft_strdup(const char *s1)
+{	
+	size_t			i;
+	size_t			length;
+	char			*tmp;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	length = ft_strlen(s1);
+	tmp = malloc(length * sizeof(char) + 1);
+	if (tmp == 0)
 	{
-		occur_error();
+		return (0);
 	}
-	input_validater(argv);
+	while (i < length)
+	{
+		tmp[i] = s1[i];
+		i++;
+	}
+	tmp[i] = 0;
+	return (tmp);
 }

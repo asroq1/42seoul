@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/06 14:45:25 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/06 18:42:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+char	*ft_strnstr(const char *str, const char *substr, size_t n)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t			i;
+	size_t			j;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	if (*substr == 0)
 	{
-		occur_error();
+		return ((char *)str);
 	}
-	input_validater(argv);
+	while (str[i] != 0 && i < n)
+	{
+		j = 0;
+		while (str[i + j] == substr[j] && i + j < n)
+		{
+			j++;
+			if (substr[j] == 0)
+			{
+				return ((char *)&str[i]);
+			}
+		}	
+		i++;
+	}
+	return (0);
 }

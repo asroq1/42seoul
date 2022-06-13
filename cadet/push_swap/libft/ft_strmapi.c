@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/09 12:04:06 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/21 12:28:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t	length;
+	size_t	i;
+	char	*new_str;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	if (!s || !f)
 	{
-		occur_error();
+		return (0);
 	}
-	input_validater(argv);
+	length = ft_strlen(s);
+	new_str = malloc(length * sizeof(char) + 1);
+	if (new_str == 0)
+	{
+		return (0);
+	}
+	while (i < length)
+	{
+		new_str[i] = f(i, s[i]);
+		i++;
+	}
+	new_str[i] = 0;
+	return (new_str);
 }

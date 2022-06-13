@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/05/05 17:09:48 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:03:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft/libft.h"
 
 typedef struct s_info
 {
@@ -29,12 +30,11 @@ typedef struct s_info
 
 typedef struct s_node
 {
-	struct s_node	*prev;
 	struct s_node	*next;
 	int				content;
 }	t_node;
 
-  /* utils.c */
-void	occur_error(void)
-
+void	occur_error(void);
+void	input_validater(char *argv[]);
+int		ft_atoall(const char *str);
 #endif 

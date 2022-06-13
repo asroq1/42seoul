@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/11/16 11:45:35 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/17 16:07:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_isalpha(int arg)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
-
-	arr_size = 0;
-	if (argc < 2)
+	if (arg >= 65 && arg <= 90)
 	{
-		occur_error();
+		return (1);
 	}
-	input_validater(argv);
+	else if (arg >= 97 && arg <= 122)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

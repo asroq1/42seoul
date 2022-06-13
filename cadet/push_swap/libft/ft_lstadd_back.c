@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/15 14:06:06 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 13:06:57 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
-
-	arr_size = 0;
-	if (argc < 2)
+	if (lst == 0 || new == 0)
 	{
-		occur_error();
+		return ;
 	}
-	input_validater(argv);
+	if (*lst == 0)
+	{
+		*lst = new;
+	}
+	else
+	{
+		ft_lstlast(*lst)->next = new;
+	}
 }

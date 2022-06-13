@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/02 17:55:02 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/09 17:50:41 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_tolower(int c)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
-
-	arr_size = 0;
-	if (argc < 2)
+	if (c >= 65 && c <= 90)
 	{
-		occur_error();
+		c += 32;
 	}
-	input_validater(argv);
+	return (c);
 }

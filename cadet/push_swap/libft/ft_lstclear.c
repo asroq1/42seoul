@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/15 16:05:02 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 11:58:45 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	t_list	*now;
+	t_list	*next;
 
-	arr_size = 0;
-	if (argc < 2)
+	now = *lst;
+	while (now != 0)
 	{
-		occur_error();
+		next = now->next;
+		ft_lstdelone(now, del);
+		now = next;
 	}
-	input_validater(argv);
+	*lst = 0;
 }

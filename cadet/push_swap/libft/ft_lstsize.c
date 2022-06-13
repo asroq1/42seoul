@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/16 11:39:07 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 11:40:52 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_lstsize(t_list *lst)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t	size;
 
-	arr_size = 0;
-	if (argc < 2)
+	size = 0;
+	while (lst != 0)
 	{
-		occur_error();
+		lst = lst->next;
+		size++;
 	}
-	input_validater(argv);
+	return (size);
 }

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/09 13:01:16 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/21 12:23:04 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t	length;
+	size_t	i;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	if (s == 0 || f == 0)
 	{
-		occur_error();
+		return ;
 	}
-	input_validater(argv);
+	length = ft_strlen(s);
+	while (i < length)
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

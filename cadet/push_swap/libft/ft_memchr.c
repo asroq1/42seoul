@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/02 19:50:57 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/16 16:31:29 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	*ft_memchr(const void	*ptr, int value, size_t n)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	unsigned char	*tmp;
 
-	arr_size = 0;
-	if (argc < 2)
+	tmp = (unsigned char *)ptr;
+	while (n != 0)
 	{
-		occur_error();
+		if (*tmp == (unsigned char)value)
+		{
+			return (tmp);
+		}
+		tmp++;
+		n--;
 	}
-	input_validater(argv);
+	return (0);
 }

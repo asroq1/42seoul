@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/07 12:18:15 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/07 13:15:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	*ft_calloc(size_t count, size_t size)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	void	*tmp;
 
-	arr_size = 0;
-	if (argc < 2)
+	tmp = malloc(count * size);
+	if (tmp == 0)
 	{
-		occur_error();
+		return (0);
 	}
-	input_validater(argv);
+	ft_memset(tmp, 0, count * size);
+	return (tmp);
 }

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 15:48:24 by hyunjung         ###   ########.fr       */
+/*   Created: 2021/12/02 15:10:21 by hyunjung          #+#    #+#             */
+/*   Updated: 2021/12/21 11:21:32 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+size_t	ft_strlcpy(char	*dest, const char *src, size_t size)
 {
-	t_node	*node;
-	int		arr_size;
-	int		*num_arr;
+	size_t	i;
 
-	arr_size = 0;
-	if (argc < 2)
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (size > i + 1 && src[i] != '\0')
 	{
-		occur_error();
+		dest[i] = src[i];
+		i++;
 	}
-	input_validater(argv);
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }
