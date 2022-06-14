@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 14:49:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/06/13 18:02:58 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/06/14 17:07:32 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAG	= -Wall -Wextra -Werror
 RM		= rm -f
 
 SRCS	= push_swap.c \
-		  validater.c
+		  validater.c \
 
 OBJS	= $(SRCS:.c=.o)
 LIBC	= ar rc

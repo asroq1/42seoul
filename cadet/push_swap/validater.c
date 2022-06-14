@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/13 18:46:24 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:39:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@ void	occur_error(void)
 	exit(1);
 }
 
+int	ft_isspace(char c)
+{
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
+	{
+		printf("passed \n");
+		return (1);
+	}
+	return (0);
+}
+
 void	input_validater(char *argv[])
 {	
 	int	i;
@@ -26,8 +37,8 @@ void	input_validater(char *argv[])
 	i = 0;
 	while (argv[i] != 0)
 	{
-		ft_atoall(argv[i]);
-		printf("%s\n", argv[i]);
+		check_numbers(argv[i + 1]);
+		printf("%s\n", argv[i + 1]);
 		i++;
 	}
 }
@@ -40,20 +51,19 @@ void	input_validater(char *argv[])
 // 	}
 // }
 
-int	ft_atoall(const char *str)
+int	check_numbers(const char *str)
 {
 	int					i;
 	int					sign;
-	int					marker;
+	int					digit_checker;
 	long long			value;
 
 	sign = 1;
 	i = 0;
+	digit_checker = 0;
 	value = 0;
-	marker = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
+	while (ft_isspace(*str))
+		str++;
 	if (str[i] == '-')
 		sign = -1;
 	if (str[i] == '-' || str[i] == '+')
@@ -62,11 +72,15 @@ int	ft_atoall(const char *str)
 	{
 		value = value * 10 + (str[i] - '0');
 		i++;
-		marker++;
+		digit_checker++;
 	}
-		printf("value ==> %lld\n", value);
-		value = value * sign;
-		if (str[i] != '\0' || marker > 10 || value > 2147483647 || value < -2147483647)
+	if (value * sign > 2147483647 || value * sign < -2147483648
+		|| digit_checker == 0)
 		occur_error();
-	return (int)(value);	
+	return (value * sign);
+}
+
+void	check_array(int *arr, int size, int i)
+{
+	
 }

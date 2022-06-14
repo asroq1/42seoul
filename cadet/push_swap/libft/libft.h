@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/14 16:51:19 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/06/14 16:58:05 by hyunjung         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define  LIBFT_H
 
@@ -15,6 +27,7 @@ int		ft_isalpha(int arg);
 int		ft_isalnum(int arg);
 int		ft_isascii(int number);
 int		ft_isdigit(int arg);
+int		ft_isspace(char c);
 int		ft_isprint( int number);
 void	*ft_memcpy(void *dest, const void *src, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t size);
