@@ -1,5 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/devicii/42subjects/cadet/push_swap'
-cc    -c -o push_swap.o push_swap.c
+make all -C libft/
+gcc	-o push_swap push_swap.o validater.o utils.o -Llibft	-lft
 make: Leaving directory `/Users/devicii/42subjects/cadet/push_swap'
  

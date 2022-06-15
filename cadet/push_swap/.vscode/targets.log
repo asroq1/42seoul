@@ -7,22 +7,18 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `push_swap.o', needed by `PUSH_SWAP'.  Stop.
 
-
-# Make data base, printed on Thu May  5 14:53:16 2022
+# Make data base, printed on Wed Jun 15 16:02:18 2022
 
 # Variables
 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
 # environment
-LC_CTYPE = UTF-8
-# environment
 VSCODE_LOG_NATIVE = false
+ 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -33,7 +29,7 @@ VSCODE_LOG_NATIVE = false
 CURDIR := /Users/devicii/42subjects/cadet/push_swap
 # makefile
 SHELL = /bin/sh
-# makefile (from `Makefile', line 18)
+# makefile (from `Makefile', line 20)
 RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
@@ -46,9 +42,9 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-b1e9546a-b1d5-406c-98e6-b15d964365c3.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/mc/3lhp1phs0w7_zqnt0pj633380000gn/T/vscode-ipc-1c96a148-8296-4a95-8ca6-55d85dc29863.sock
 # environment
-VSCODE_CWD = /Users/devicii/42subjects/cadet/push_swap
+VSCODE_CWD = /
 # environment
 PATH = /opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/devicii/.fig/bin:/Users/devicii/.local/bin
 # environment
@@ -60,17 +56,17 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.SE5OD3uYSe/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.AJYX0hiy76/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-TTY = /dev/ttys004
+TTY = not a tty
 # environment
 VSCODE_PIPE_LOGGING = true
-# makefile (from `Makefile', line 21)
+# makefile (from `Makefile', line 26)
 OBJS = $(SRCS:.c=.o)
 # environment
-FIG_PID = 6848
+FIG_PID = 2122
 # environment
 PWD = /Users/devicii/42subjects/cadet/push_swap
 # environment
@@ -89,7 +85,7 @@ LOGNAME = devicii
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 ZSH = /Users/devicii/.oh-my-zsh
-# makefile (from `Makefile', line 16)
+# makefile (from `Makefile', line 18)
 CFLAG = -Wall -Wextra -Werror
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -97,43 +93,32 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `Makefile', line 22)
+SRCS = push_swap.c validater.c utils.c
 # environment
- 
-LC_TERMINAL = iTerm2
-# makefile (from `Makefile', line 20)
-SRCS = push_swap.c
-# environment
-SHLVL = 2
-# environment
-FIG_TERM = 1
-# makefile (from `Makefile', line 15)
+SHLVL = 1
+# makefile (from `Makefile', line 14)
+LIBFT = libft
+# makefile (from `Makefile', line 17)
 CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = devicii
-# environment
-FIG_TERM_VERSION = 4.3.0
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:0E1C95BA-E217-4385-B966-716C613B152F
+# makefile
+.DEFAULT_GOAL := all
 # makefile (from `Makefile', line 13)
-NAME = PUSH_SWAP
+NAME = push_swap
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# environment
-FIG_INTEGRATION_VERSION = 8
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -149,19 +134,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.15
-# environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498.D01A8695-098B-4BBA-9773-7AD85EB19A21
-# environment
-LC_TERMINAL_VERSION = 3.4.15
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.313492.313498
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 15)
+LIBFT_A = libft.a
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:0E1C95BA-E217-4385-B966-716C613B152F
-# environment
-COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
@@ -171,60 +150,56 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
-ITERM_PROFILE = Default
-# environment
 PAGER = less
 # environment
 LC_ALL = C
+# makefile (from `Makefile', line 27)
+LIBC = ar rc
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
 # environment
 MAKELEVEL := 0
-# makefile
-.DEFAULT_GOAL := all
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 6465
+VSCODE_PID = 2116
 # variable set hash-table stats:
-# Load=87/1024=8%, Rehash=0, Collisions=10/114=9%
+# Load=76/1024=7%, Rehash=0, Collisions=7/109=6%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
 # Directories
- 
 
-# . (device 16777233, inode 4313680): 6 files, no impossibilities.
+# . (device 16777232, inode 6514607): 12 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o : %.c
-#  commands to execute (from `Makefile', line 28):
-	$(CC)	$(CFLAG) -c $< -o $@
+#  commands to execute (from `Makefile', line 36):
+	$(CC)	$(CFLAG) -c $^	-I./ -o $@
 	
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-all: PUSH_SWAP
+all: push_swap
 #  Phony target (prerequisite of .PHONY).
 #  Command-line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -238,26 +213,28 @@ all: PUSH_SWAP
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-05 14:53:09
+#  Last modified 2022-06-15 16:01:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-PUSH_SWAP: push_swap.o
-#  Implicit rule search has been done.
+bonus:
+#  Phony target (prerequisite of .PHONY).
+ 
+#  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 34):
-	$(RM) $(NAME)
+#  commands to execute (from `Makefile', line 43):
+	$(RM) -f $(NAME)
+	$(RM) -f $(LIBFT_A)
+	make fclean -C $(LIBFT)
 	
 
 # Not a target:
@@ -271,7 +248,7 @@ re: fclean all
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 38):
+#  commands to execute (from `Makefile', line 49):
 	
 
 clean:
@@ -279,20 +256,69 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 31):
-	$(RM) $(OBJS)
+#  commands to execute (from `Makefile', line 39):
+	$(RM) -f $(OBJS)
+	make clean -C $(LIBFT)
 	
+
+# Not a target:
+validater.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 16:02:02
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 push_swap.o:
 #  Implicit rule search has been done.
+#  Last modified 2022-06-15 16:02:02
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+push_swap: push_swap.o validater.o utils.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := push_swap
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := push_swap.o validater.o utils.o
+# automatic
+# | := 
+# automatic
+# < := push_swap.o
+# automatic
+# ^ := push_swap.o validater.o utils.o
+# automatic
+# ? := push_swap.o validater.o utils.o
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/14=14%
+#  commands to execute (from `Makefile', line 32):
+	make all -C $(LIBFT)/
+	gcc	-o $(NAME) $(OBJS) -Llibft	-lft
+	
+
+# Not a target:
+utils.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 16:02:02
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/32=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/39=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -304,6 +330,6 @@ push_swap.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu May  5 14:53:16 2022
+# Finished Make data base on Wed Jun 15 16:02:18 2022
 
  

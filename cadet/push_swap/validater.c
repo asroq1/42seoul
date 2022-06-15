@@ -6,29 +6,23 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/14 17:39:09 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:02:32 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void	occur_error(void)
-{
-	write(2, "Error\n", 7);
-	exit(1);
-}
 
-int	ft_isspace(char c)
-{
-	if (c == '\t' || c == '\n' || c == '\v'
-		|| c == '\f' || c == '\r' || c == ' ')
-	{
-		printf("passed \n");
-		return (1);
-	}
-	return (0);
-}
+// int	ft_isspace(char c)
+// {
+// 	if (c == '\t' || c == '\n' || c == '\v'
+// 		|| c == '\f' || c == '\r' || c == ' ')
+// 	{
+// 		printf("passed \n");
+// 		return (1);
+// 	}
+// 	return (0);
+// }
 
 void	input_validater(char *argv[])
 {	
@@ -80,7 +74,7 @@ int	check_numbers(const char *str)
 	return (value * sign);
 }
 
-void	check_array(int *arr, int size, int i)
-{
+// void	check_array(int *arr, int size, int i)
+// {
 	
-}
+// }

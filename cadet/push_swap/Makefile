@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 14:49:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/06/14 17:07:32 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/06/15 16:01:58 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ RM		= rm -f
 
 SRCS	= push_swap.c \
 		  validater.c \
+		  utils.c
 
 OBJS	= $(SRCS:.c=.o)
 LIBC	= ar rc

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/14 18:13:36 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:11:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,48 @@ t_stack_data	*get_new_stacks(void)
 	return (new_mem);
 }
 
+int	get_arr_size(int argc, char *argv[])
+{
+	int		i;
+	int		j;
+	int		size;
+	char	**str;
+
+	i = 0;
+	size = 0;
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j] != 0)
+		{
+			if (!ft_isspace(argv[i][j]))
+				break ;
+			j++;
+		}
+		if (argv[i][j] == '\0')
+		{
+			occur_error();
+		}
+		str = ft_split(argv[i], ' ');
+		size += get_str_size(str);
+		free_str(str);
+		i++;
+	}
+	return (size - 1);
+}
+
+int	get_str_size(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != 0)
+	{
+		i++;
+	}
+	return (i);
+}
+
 int	main(int argc, char *argv[])
 {
 	int				arr_size;
@@ -50,7 +92,7 @@ int	main(int argc, char *argv[])
 	{
 		occur_error();
 	}
-	stack_data = get_new_stacks();
-	arr_size = get_arr_size();
-	input_validater(argv);
+	// stack_data = get_new_stacks();
+	arr_size = get_arr_size(argc, argv);
+	// input_validater(argv);
 }
