@@ -6,38 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/15 16:11:26 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/17 21:30:53 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_node	*make_new_stack(void)
-{
-	t_node	*new_mem;
-
-	new_mem = NULL;
-	new_mem = malloc(sizeof(t_node));
-	new_mem->content = 0;
-	new_mem->next = NULL;
-	return (new_mem);
-}
-
-t_stack_data	*get_new_stacks(void)
-{
-	t_stack_data	*new_mem;
-	t_node			*stack_a;
-
-	new_mem = NULL;
-	new_mem = malloc(sizeof(t_stack_data));
-	stack_a = make_new_stack();
-	new_mem->arr = NULL;
-	new_mem->size_a = 0;
-	new_mem->a_top = stack_a;
-	new_mem->a_bottom = stack_a;
-	new_mem->size_b = 0;
-	return (new_mem);
-}
 
 int	get_arr_size(int argc, char *argv[])
 {
@@ -58,9 +31,7 @@ int	get_arr_size(int argc, char *argv[])
 			j++;
 		}
 		if (argv[i][j] == '\0')
-		{
 			occur_error();
-		}
 		str = ft_split(argv[i], ' ');
 		size += get_str_size(str);
 		free_str(str);
@@ -81,6 +52,44 @@ int	get_str_size(char **str)
 	return (i);
 }
 
+int	get_new_arr(int argc, char *argv[], int size)
+{
+	char	**str;
+	int		argc_count;
+	int		arr_count;
+	int		*new_arr;
+
+	argc_count = 1;
+	arr_count = 0;
+	new_arr = malloc(sizeof(int) * size);
+	if (new_arr == 0)
+		occur_error();
+	while (argc_count < argc)
+	{
+		str = ft_split(argv[argc_count], ' ');
+		set_str_to_arr(new_arr, str, arr_count);
+		free_str(str);
+		argc_count++;
+	}
+	new_arr[arr_count] = '\0';
+	return (new_arr);
+}
+
+void	set_str_to_arr(int *arr, char **str, int *arr_count)
+{
+	int	i;
+	int	tmp;
+
+	i = 0;
+	while (str[i] != 0)
+	{
+		tmp = check_numbers(str[i]);
+		arr[*arr_count] = tmp;
+		(*arr_count)++;
+		i++;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	int				arr_size;
@@ -92,7 +101,12 @@ int	main(int argc, char *argv[])
 	{
 		occur_error();
 	}
-	// stack_data = get_new_stacks();
+	// 1. 새로운 스택을 만들어준다.
+	stack_data = get_new_stacks();
+	// 2. 입력값으로 들어온 인자의 배열 사이즈를 구해준다.
 	arr_size = get_arr_size(argc, argv);
-	// input_validater(argv);
+	// 3. 사이즈를 바탕으로 배열을 동적할당 해준다.
+	num_arr = get_new_arr(argc, argv, arr_size);
+	input_validater(argv);
 }
+

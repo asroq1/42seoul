@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/15 16:01:07 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/17 21:31:33 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,16 @@ typedef struct s_stack_data
 	struct s_node	*b_bottom;
 }	t_stack_data;
 
-void	occur_error(void);
-void	input_validater(char *argv[]);
-int		check_numbers(const char *str);
-int		ft_isspace(char c);
-int		get_str_size(char **str);
-int		get_arr_size(int argc, char *argv[]);
-void	free_str(char **str);
+t_node			*make_new_stack(void);
+t_stack_data	*get_new_stacks(void);
+void			occur_error(void);
+void			input_validater(char *argv[]);
+int				check_numbers(const char *str);
+int				ft_isspace(char c);
+int				get_str_size(char **str);
+int				get_arr_size(int argc, char *argv[]);
+void			free_str(char **str);
+void			set_str_to_arr(int *arr, char **str, int *arr_count);
+int				get_new_arr(int argc, char *argv[], int size);
 
 #endif 
