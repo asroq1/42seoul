@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/17 21:31:33 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:01:01 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int				get_str_size(char **str);
 int				get_arr_size(int argc, char *argv[]);
 void			free_str(char **str);
 void			set_str_to_arr(int *arr, char **str, int *arr_count);
-int				get_new_arr(int argc, char *argv[], int size);
-
+int				*get_new_arr(int argc, char *argv[], int size);
+void			change_to_stack(t_stack_data *stack_data, int *arr, int size);
+void			validate_arr(int *arr, int i, int size);
+void			sort_stack(t_stack_data *stack_data);
 #endif 

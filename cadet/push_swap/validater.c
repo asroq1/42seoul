@@ -6,23 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/17 21:10:22 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:36:00 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
-// int	ft_isspace(char c)
-// {
-// 	if (c == '\t' || c == '\n' || c == '\v'
-// 		|| c == '\f' || c == '\r' || c == ' ')
-// 	{
-// 		printf("passed \n");
-// 		return (1);
-// 	}
-// 	return (0);
-// }
 
 void	input_validater(char *argv[])
 {	
@@ -36,14 +24,6 @@ void	input_validater(char *argv[])
 		i++;
 	}
 }
-
-// void	empty_validarer(char argv[])
-// {
-// 	if (argv ==)
-// 	{
-// 		/* code */
-// 	}
-// }
 
 int	check_numbers(const char *str)
 {
@@ -73,8 +53,3 @@ int	check_numbers(const char *str)
 		occur_error();
 	return (value * sign);
 }
-
-// void	check_array(int *arr, int size, int i)
-// {
-	
-// }
