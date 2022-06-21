@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:07:41 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/21 11:30:54 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:20:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@ void	occur_error(int err)
 		ft_putstr_fd("command error\n", 1);
 		exit(1);
 	}
+}
+
+int	get_str_size(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != 0)
+	{
+		i++;
+	}
+	return (i);
 }
 
 void	free_str(char **str)
