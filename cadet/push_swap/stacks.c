@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 21:08:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/20 18:18:08 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:05:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void	validate_arr(int *arr, int i, int size)
 {
 	int	j;
 	int	tmp;
-	int	checker;
+	int	bomb;
 
-	checker = 0;
+	bomb = 0;
 	while (i < size)
 	{
 		j = 0;
@@ -74,17 +74,14 @@ void	validate_arr(int *arr, int i, int size)
 				tmp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = tmp;
-				checker++;
+				bomb++;
 			}
 		j++;
 		}
 		if (arr[i] == arr[i + 1])
-		{
-			printf("1 1 1 1 1\n");
-			occur_error();
-		}
+			occur_error(1);
 		i++;
 	}
-	if (checker == 0)
-		occur_error();
+	if (bomb == 0)
+		occur_error(1);
 }

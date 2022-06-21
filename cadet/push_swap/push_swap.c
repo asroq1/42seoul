@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/20 17:59:21 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:35:27 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	get_arr_size(int argc, char *argv[])
 			j++;
 		}
 		if (argv[i][j] == '\0')
-			occur_error();
+			occur_error(1);
 		str = ft_split(argv[i], ' ');
 		size += get_str_size(str);
 		free_str(str);
@@ -63,7 +63,7 @@ int	*get_new_arr(int argc, char *argv[], int size)
 	arr_count = 0;
 	new_arr = (int *)malloc(sizeof(int) * size);
 	if (new_arr == 0)
-		occur_error();
+		occur_error(1);
 	while (argc_count < argc)
 	{
 		str = ft_split(argv[argc_count], ' ');
@@ -99,7 +99,7 @@ int	main(int argc, char *argv[])
 	arr_size = 0;
 	if (argc < 2)
 	{
-		occur_error();
+		occur_error(1);
 	}
 	stack_data = get_new_stacks();
 	printf("// 1. 새로운 스택을 만들어준다.\n");
@@ -115,10 +115,10 @@ int	main(int argc, char *argv[])
 	printf("// 4. 받아온 배열을 스택으로 변환한다.\n");
 	// 5.배열의 정령을 확인한다.
 	validate_arr(num_arr, 0, arr_size);
-	printf("// 5.배열의 정령을 확인한다.\n");
+	printf("// 5.배열을 정렬해준다.\n");
 	// 6. 스택 내의 배열을 채워줌
 	stack_data->arr = num_arr;
-	printf("// 6. 스택 내의 배열을 채워줌\n");
+	printf("// 6. 정렬된 배열을 스택에 채워준다.\n");
 	int i = 0;
 	while (stack_data->arr[i] != 0)
 	{

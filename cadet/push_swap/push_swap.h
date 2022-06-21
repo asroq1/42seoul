@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/20 17:01:01 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:27:14 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_stack_data
 
 t_node			*make_new_stack(void);
 t_stack_data	*get_new_stacks(void);
-void			occur_error(void);
+void			occur_error(int err);
 void			input_validater(char *argv[]);
 int				check_numbers(const char *str);
 int				ft_isspace(char c);
@@ -49,4 +49,15 @@ int				*get_new_arr(int argc, char *argv[], int size);
 void			change_to_stack(t_stack_data *stack_data, int *arr, int size);
 void			validate_arr(int *arr, int i, int size);
 void			sort_stack(t_stack_data *stack_data);
+void			sa(t_stack_data *a);
+void			sb(t_stack_data *b);
+void			ss(t_stack_data *stacks);
+void			pa(t_stack_data *node);
+void			ra(t_stack_data *a);
+void			rb(t_stack_data *b);
+void			rr(t_stack_data *stacks);
+void			rra(t_stack_data *a);
+void			rrb(t_stack_data *b);
+void			rrr(t_stack_data *stacks);
+
 #endif 

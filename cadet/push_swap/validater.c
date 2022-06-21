@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/20 15:36:00 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:04:56 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int	check_numbers(const char *str)
 	}
 	if (value * sign > 2147483647 || value * sign < -2147483648
 		|| digit_checker == 0)
-		occur_error();
+		occur_error(1);
 	return (value * sign);
 }
