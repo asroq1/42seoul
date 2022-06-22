@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/21 16:19:13 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:26:36 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,14 @@ int	main(int argc, char *argv[])
 		printf("stack_data->arr is %d\n", stack_data->arr[i]);
 		i++;
 	}
-	
-	// 7. 스택을 정렬해준다.
-	// sort_stack(stack_data);
-	// printf("// 7. 스택을 정렬해준다. \n");
+	printf("// 7. 스택을 정렬해준다. \n");
+	sort_stack(stack_data);
+	i = 0;
+	printf("-----------after soring ---------\n");
+	while (stack_data->arr[i] != 0)
+	{
+		printf("stack_data->arr is %d\n", stack_data->arr[i]);
+		i++;
+	}
 	return (0);
 }

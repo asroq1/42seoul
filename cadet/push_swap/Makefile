@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 14:49:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/06/21 14:20:59 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/06/22 12:35:42 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS	= main.c \
 		  validater.c \
 		  utils.c \
 		  stacks.c \
-		  sort.c \
+		  sort.c sort_utils.c\
 		  array.c \
 		  command.c command_rot.c command_rerot.c \
 

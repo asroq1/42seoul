@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/21 12:27:14 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:22:09 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,15 @@ void			sa(t_stack_data *a);
 void			sb(t_stack_data *b);
 void			ss(t_stack_data *stacks);
 void			pa(t_stack_data *node);
+void			pb(t_stack_data *node);
 void			ra(t_stack_data *a);
 void			rb(t_stack_data *b);
 void			rr(t_stack_data *stacks);
 void			rra(t_stack_data *a);
 void			rrb(t_stack_data *b);
 void			rrr(t_stack_data *stacks);
+void			get_pivot_info(t_stack_data *a);
+void			use_pivot(t_stack_data *a, int p1, int p2);
+void			ft_get_bigger(int a, int b, int a_pos, int b_pos);
 
 #endif 

@@ -3,6 +3,7 @@
 	"files.associations": {
 		"stdlib.h": "c",
 		"unistd.h": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"algorithm": "c"
 	}
 }

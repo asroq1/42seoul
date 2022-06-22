@@ -1,6 +1,16 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/devicii/42subjects/cadet/push_swap'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/hyunjung/42subjects/cadet/push_swap'
+cc    -c -o main.o main.c
+cc    -c -o validater.o validater.c
+cc    -c -o utils.o utils.c
+cc    -c -o stacks.o stacks.c
+cc    -c -o sort.o sort.c
+cc    -c -o sort_utils.o sort_utils.c
+cc    -c -o array.o array.c
+cc    -c -o command.o command.c
+cc    -c -o command_rot.o command_rot.c
+cc    -c -o command_rerot.o command_rerot.c
 make all -C libft/
-gcc	-o push_swap push_swap.o validater.o utils.o -Llibft	-lft
-make: Leaving directory `/Users/devicii/42subjects/cadet/push_swap'
+gcc	-o push_swap main.o validater.o utils.o stacks.o sort.o sort_utils.o array.o command.o command_rot.o command_rerot.o -Llibft	-lft
+make: Leaving directory `/Users/hyunjung/42subjects/cadet/push_swap'
  
