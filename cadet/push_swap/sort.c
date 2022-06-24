@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:43:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/22 17:31:17 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:12:05 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	small_case(t_stack_data *a)
 		rra(a);
 }
 
-void	large_case(t_stack_data *a)
+void	large_case(t_stack_data *stack)
 {
 	int	a;
 	int	b;
@@ -50,26 +50,31 @@ void	large_case(t_stack_data *a)
 	// 1 4 2 5의 경우 아래와 같이 값이 담겨있다.
 	// a = [4 , 5]
 	// b = [2 , 1]
-	get_pivot_info(a);
-	while (a->size_a > 3)
-		pb(a);
-	if (a->size_a == 2)
+	get_pivot_info(stack);
+	while (stack->size_a > 3)
+		pb(stack);
+	if (stack->size_a == 2)
 	{
-		if (a->a_top->content > a->a_top->next->content)
-			sa(a);
+		if (stack->a_top->content > stack->a_top->next->content)
+			sa(stack);
 	}
-	if (a->size_a == 3)
-		small_case(a);
+	if (stack->size_a == 3)
+		small_case(stack);
 	// //위의 예외를 통해서 다시 한 번 정렬을 해준다.
 	// 현재 a스택의 경우에는 정렬이 잘된 상태라서 그대로이다.
 	// a = [4 , 5]
 	// b = [2 , 1]
-	while (a->size_b != 0)
+	while (stack->size_b != 0)
 	{
 		a = 0;
 		b = 0;
-		get_min_rotate(a, &a, &b);
+		get_min_rotate(stack, &a, &b);
+		get_rotate_same(stack, &a, &b);
+		get_rotate_a(stack, a);
+		get_rotage_b(stack, b);
+		pa(stack);
 	}
+	last_sorting(stack);
 	// 루프를 돌리고 나면 a스택에 [1 ,2, 4, 5] 순으로 정렬이 돼있다.
 }
 

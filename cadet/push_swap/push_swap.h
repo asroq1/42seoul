@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/22 16:22:09 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:11:35 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,11 @@ void			rrr(t_stack_data *stacks);
 void			get_pivot_info(t_stack_data *a);
 void			use_pivot(t_stack_data *a, int p1, int p2);
 void			ft_get_bigger(int a, int b, int a_pos, int b_pos);
+int				get_stack_min(t_node *a);
+int				get_stack_max(t_node *a);
+int				set_a_position(int n, t_stack_data *stack);
+int				set_a_position_min(t_stack_data *stack);
+int				set_a_position_mid(t_stack_data *stack);
+int				set_a_position_max(t_stack_data *stack);
 
 #endif 

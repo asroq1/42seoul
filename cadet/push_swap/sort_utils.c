@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:13:07 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/22 17:22:12 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:13:29 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,36 +47,22 @@ void	get_pivot_info(t_stack_data *a)
 	}	
 }
 
-int	set_a_location(int n, t_stack_data *stack)
+// b스택의 탑의 값을 가져와 최적의 값을 구하기 위한 함수이다. 
+int	set_a_position(int n, t_stack_data *stack)
 {
-	int	ret;
+	int	result;
 
 	if (n < get_stack_min(stack->a_top))
 	{
-		ret = set_a_location_mid(n, stack);
+		result = set_a_position_min(stack);
 	}
-	return (ret);
-}
-
-int	set_a_location_mid(int n, t_stack_data *stack)
-{
-	int		ret;
-	t_node	*a;
-
-	a = stack->a_top;
-	ret = 1;
-	while (a->next != NULL)
+	else if (n > get_stack_max(stack->a_top))
 	{
-		if (n > a->content && n < a->next->content)
-		{
-			break ;
-		}
-		ret++;
-		a = a->next;
+		result = set_a_position_max(stack);
 	}
-	if (ret >= (stack->size_b + 1) / 2)
+	else
 	{
-		ret = (stack->size_b - ret) * -1;
+		result = set_a_position_mid(stack);
 	}
-	return (ret);
+	return (result);
 }
