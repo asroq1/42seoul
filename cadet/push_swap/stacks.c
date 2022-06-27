@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 21:08:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/21 15:41:11 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:17:02 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ t_stack_data	*get_new_stacks(void)
 	return (new_node);
 }
 
+void	make_b_stack(t_stack_data *stack)
+{
+	t_stack_data	*b;
+
+	b = NULL;
+	b = malloc(sizeof(stack));
+	if (b->arr == 0)
+	{
+		occur_error(1);
+	}
+	b->size_b = stack->size_a;
+}
+
 void	change_to_stack(t_stack_data *stack_data, int *arr, int size)
 {
 	int		i;
@@ -50,7 +63,6 @@ void	change_to_stack(t_stack_data *stack_data, int *arr, int size)
 		new = make_new_stack();
 		stack_data->size_a += 1;
 		stack_data->a_bottom->content = (int)arr[i];
-		printf("arr[i] is ===> %d\n", (int)arr[i]);
 		stack_data->a_bottom->next = new;
 		stack_data->a_bottom = new;
 		i++;

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/22 13:26:36 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:22:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,27 @@ int	main(int argc, char *argv[])
 	printf("// 4. 받아온 배열을 스택에 담아준다.\n");
 	change_to_stack(stack_data, num_arr, arr_size);
 	printf("// 5.배열을 재정렬해준다.\n");
-	validate_arr(num_arr, 0, arr_size);
+	printf("============Before indexing==============\n");
+	printf("size %d\n", stack_data->size_a);
+	printf("stack a => %d\n", stack_data->a_top->content);
+	printf("stack a => %d\n", stack_data->a_top->next->content);
+	printf("stack a => %d\n", stack_data->a_top->next->next->content);
+	printf("stack a => %d\n", stack_data->a_top->next->next->next->content);
+	indexing_arr(stack_data);
+	printf("!!!!!!!!!!!\n");
 	printf("6. 스택 내의 배열을 정렬된 배열로 바꿔줌\n");
 	stack_data->arr = num_arr;
-	printf("stack_Data->arr =====> %d\n", stack_data->arr[0]);
-	printf("stack_Data->arr =====> %d\n", stack_data->arr[1]);
-	printf("stack_Data->arr =====> %d\n", stack_data->arr[2]);
-	printf("// 6. 정렬된 배열을 스택에 채워준다.\n");
 	int i = 0;
-	while (stack_data->arr[i] != 0)
-	{
-		printf("stack_data->arr is %d\n", stack_data->arr[i]);
-		i++;
-	}
+	make_b_stack(stack_data);
+	// printf("stack bbb => %d\n", stack_data->b_top->content);
+
+	printf("============BBBBBBB==============\n");
+	// printf("stack bbb => %d\n", stack_data->b_top->content);
+	// printf("stack bbb => %d\n", stack_data->b_top->next->content);
+	// printf("stack bbb => %d\n", stack_data->b_top->next->next->content);
+	// printf("stack bbb => %d\n", stack_data->b_top->next->next->next->content);
+
 	printf("// 7. 스택을 정렬해준다. \n");
 	sort_stack(stack_data);
-	i = 0;
-	printf("-----------after soring ---------\n");
-	while (stack_data->arr[i] != 0)
-	{
-		printf("stack_data->arr is %d\n", stack_data->arr[i]);
-		i++;
-	}
 	return (0);
 }

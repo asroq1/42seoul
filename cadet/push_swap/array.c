@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:19:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/22 11:55:21 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:32:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ int	*get_new_arr(int argc, char *argv[], int size)
 	arr_count = 0;
 	new_arr = (int *)malloc(sizeof(int) * size);
 	if (new_arr == 0)
+	{
 		occur_error(1);
+	}
 	while (argc_count < argc)
 	{
 		str = ft_split(argv[argc_count], ' ');
@@ -78,31 +80,40 @@ void	set_str_to_arr(int *arr, char **str, int *arr_count)
 	}
 }
 
-void	validate_arr(int *arr, int i, int size)
+void	indexing_arr(t_stack_data *a)
 {
+	int	i;
 	int	j;
-	int	tmp;
-	int	bomb;
+	int	*tmp;
+	int	arr_tmp;
 
-	bomb = 0;
-	while (i < size)
+	i = 0;
+	tmp = (int *)malloc(sizeof(int) * a->size_a);
+	if (tmp == 0)
+	{
+		occur_error(1);
+	}
+	while (i < a->size_a)
 	{
 		j = 0;
-		while (j < size - 1)
+		tmp[i] = 0;
+		arr_tmp = a->a_top->next->content;
+		printf("arr_tmp %d\n",arr_tmp);
+
+		while (j < a->size_a)
 		{
-			if (arr[j] > arr[j + 1])
+		printf("a->a_top->content => %d\n", a->a_top->content);
+			arr_tmp = a->a_top->next->content;
+			if (a->a_top->content > arr_tmp)
 			{
-				tmp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = tmp;
-				bomb++;
+				tmp[i]++;
 			}
-		j++;
+			j++;
 		}
-		if (arr[i] == arr[i + 1])
-			occur_error(1);
+		printf("tmp[%d] => %d\n", i, tmp[i]);
 		i++;
 	}
-	if (bomb == 0)
-		occur_error(1);
+	free(a->arr);
+	a->arr = NULL;
+	a->arr = tmp;
 }
