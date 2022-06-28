@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 14:49:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/06/27 12:49:11 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/06/28 17:33:04 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS	= main.c \
 		  stacks.c \
 		  sort.c \
 		  array.c \
-		  command.c command_rot.c command_rerot.c \
+		  command.c command_rot.c command_rerot.c command_utils.c\
 
 OBJS	= $(SRCS:.c=.o)
 LIBC	= ar rc

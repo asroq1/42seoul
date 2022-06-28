@@ -6,22 +6,35 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/21 12:04:56 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/28 18:55:49 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	input_validater(char *argv[])
+void	input_validater(t_stack_data *stack, char *argv[])
 {	
-	int	i;
+	char		**arr;
+	int			i;
+	int			j;
+	long long	value;
 
-	i = 0;
-	while (argv[i] != 0)
+	i = 1;
+	while (argv[i] != NULL)
 	{
-		check_numbers(argv[i + 1]);
-		printf("%s\n", argv[i + 1]);
-		i++;
+		j = 0;
+		arr = ft_split(argv[i++], ' ');
+		if (arr[j] == NULL)
+		{
+			occur_error(1);
+		}
+		while (arr[j] != 0)
+		{
+			value = check_numbers(arr[j]);
+			get_a(stack, (int)value);
+			j++;
+		}
+		free_str(arr);
 	}
 }
 
