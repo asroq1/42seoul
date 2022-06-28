@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/27 15:10:52 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:12:53 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void			free_str(char **str);
 void			set_str_to_arr(int *arr, char **str, int *arr_count);
 int				*get_new_arr(int argc, char *argv[], int size);
 void			change_to_stack(t_stack_data *stack_data, int *arr, int size);
-void			indexing_arr(t_stack_data *a);
-void			sort_stack(t_stack_data *stack_data);
+void			indexing_arr(t_stack_data *a, int *arr, int count);
+void			sort_stack(t_stack_data *a, t_stack_data *b);
 void			sa(t_stack_data *a);
 void			sb(t_stack_data *b);
 void			ss(t_stack_data *stacks);
@@ -60,8 +60,6 @@ void			rr(t_stack_data *stacks);
 void			rra(t_stack_data *a);
 void			rrb(t_stack_data *b);
 void			rrr(t_stack_data *stacks);
-void			get_pivot_info(t_stack_data *a);
-void			use_pivot(t_stack_data *a, int p1, int p2);
 int				ft_get_bigger(int a, int b, int a_pos, int b_pos);
 int				get_stack_min(t_node *a);
 int				get_stack_max(t_node *a);
@@ -72,6 +70,6 @@ int				get_stack_max(t_node *a);
 void			a_to_b(t_stack_data *a, t_stack_data *b, int chunk, int i);
 void			b_to_a(t_stack_data *b, t_stack_data *a);
 void			sort_b(t_stack_data *b, int size);
-void			make_b_stack(t_stack_data *stack);
+void			make_b_stack(t_stack_data *b);
 
 #endif 

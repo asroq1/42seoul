@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:19:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/27 17:32:50 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:14:20 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,40 +80,38 @@ void	set_str_to_arr(int *arr, char **str, int *arr_count)
 	}
 }
 
-void	indexing_arr(t_stack_data *a)
+void	free_arr(t_stack_data *a, int *tmp)
 {
-	int	i;
-	int	j;
-	int	*tmp;
-	int	arr_tmp;
-
-	i = 0;
-	tmp = (int *)malloc(sizeof(int) * a->size_a);
-	if (tmp == 0)
-	{
-		occur_error(1);
-	}
-	while (i < a->size_a)
-	{
-		j = 0;
-		tmp[i] = 0;
-		arr_tmp = a->a_top->next->content;
-		printf("arr_tmp %d\n",arr_tmp);
-
-		while (j < a->size_a)
-		{
-		printf("a->a_top->content => %d\n", a->a_top->content);
-			arr_tmp = a->a_top->next->content;
-			if (a->a_top->content > arr_tmp)
-			{
-				tmp[i]++;
-			}
-			j++;
-		}
-		printf("tmp[%d] => %d\n", i, tmp[i]);
-		i++;
-	}
 	free(a->arr);
 	a->arr = NULL;
 	a->arr = tmp;
+}
+
+void	indexing_arr(t_stack_data *a, int *arr, int count)
+{
+	int	i;
+	int	j;
+	int	k;
+	int	*tmp;
+
+	i = 0;
+	tmp = (int *)malloc(sizeof(int) * a->size_a);
+	if (tmp == NULL)
+		occur_error(1);
+	while (i < count)
+	{
+		j = 0;
+		k = 0;
+		while (j < count)
+		{
+			if (arr[i] == arr[j] && i != j)
+				occur_error(1);
+			if (arr[i] > arr[j])
+				k++;
+			j++;
+		}
+		i++;
+		tmp[i - 1] = k;
+	}
+	free_arr(a, tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 21:08:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/27 15:17:02 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/28 15:18:42 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ t_stack_data	*get_new_stacks(void)
 	return (new_node);
 }
 
-void	make_b_stack(t_stack_data *stack)
+void	make_b_stack(t_stack_data *b)
 {
-	t_stack_data	*b;
+	t_stack_data	*stack;
 
 	b = NULL;
-	b = malloc(sizeof(stack));
-	if (b->arr == 0)
+	b = malloc(sizeof(int) * stack->size_a);
+	if (b == 0)
 	{
 		occur_error(1);
 	}
