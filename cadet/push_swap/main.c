@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/28 18:53:51 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:39:33 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,9 @@ int	main(int argc, char *argv[])
 	get_stack(&a);
 	printf("// 2. 입력값 유효성 검사 및 a스택 만들기\n");
 	input_validater(&a, argv);
-// 	arr_size = get_arr_size(argc, argv);
-// 	printf("// 3. 사이즈를 바탕으로 배열을 동적할당 해준다.\n");
-// 	arr = get_new_arr(argc, argv, arr_size);
-// // 4. 받아온 배열을 스택에 담아준다.\n");	printf("
-// 	change_to_stack(a, arr, arr_size);
-// 	indexing_arr(a, arr, arr_size);
-// 	// a->arr = arr;
-// 	make_b_stack(b);
-// 	sort_stack(a, b);
+	printf("// 3. 값들을 인덱싱 해줌\n");
+	indexing_arr(&a);
+	printf("// 4. b스택을 생성해준다.\n");
+	get_b(&b, a.total);
+	sort_stack(&a, &b);
 }

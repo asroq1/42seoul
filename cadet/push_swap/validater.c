@@ -6,11 +6,56 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/28 18:55:49 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:41:04 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_input(t_stack_data *stack)
+{
+	int	i;
+	int	length;
+
+	i = 0;
+	length = stack->length - 1;
+	while (i < length)
+	{	
+		if (stack->arr[i] < stack->arr[i + 1])
+		{
+			printf("test %d\n", i);
+			printf("i %d  i+1 %d\n", stack->arr[i], stack->arr[i + 1]);
+
+			return ;
+		}
+		i++;
+	}
+	exit(1);
+}
+
+void	check_duplicate(t_stack_data *stack)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = 0;
+	j = 0;
+	while (i < stack->length)
+	{
+		j = i + 1;
+		tmp = stack->arr[i];
+		while (j < stack->length)
+		{
+			if (stack->arr[j] == tmp)
+			{
+				occur_error(1);
+			}
+			j++;
+		}
+		i++;
+	}
+}
 
 void	input_validater(t_stack_data *stack, char *argv[])
 {	
@@ -36,6 +81,8 @@ void	input_validater(t_stack_data *stack, char *argv[])
 		}
 		free_str(arr);
 	}
+	check_input(stack);
+	check_duplicate(stack);
 }
 
 int	check_numbers(const char *str)

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/28 18:56:27 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:17:07 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_stack_data
 {
 	int	*arr;
-	int	size;
+	int	length;
 	int	total;
 }	t_stack_data;
 
@@ -31,21 +31,29 @@ void			occur_error(int err);
 void			free_str(char **str);
 
 /* validter.c */
+void			check_input(t_stack_data *stack);
+void			check_duplicate(t_stack_data *stack);
 void			free_arr(char **arr);
 void			input_validater(t_stack_data *stack, char *argv[]);
 int				check_numbers(const char *str);
 long long		ps_atoi(char *arr);
 
 /* stack.c */
-void			get_stack(t_stack_data *a);
-void			get_a(t_stack_data *a, int n);
+void			get_stack(t_stack_data *stack);
+void			get_a(t_stack_data *stack, int n);
+void			get_b(t_stack_data *stack, int length);
+
+/* sort.c */
+
+void			small_command(t_stack_data *a, t_stack_data *b);
+void			large_command(t_stack_data *a, t_stack_data *b);
 
 
-// int				get_str_size(char **str);
-// int				get_arr_size(int argc, char *argv[]);
-// void			free_str(char **str);
-// void			set_str_to_arr(int *arr, char **str, int *arr_count);
-// int				*get_new_arr(int argc, char *argv[], int size);
+/* array.c */
+
+void			indexing_arr(t_stack_data *a);
+void			sort_stack(t_stack_data *a, t_stack_data *b);
+
 // void			change_to_stack(t_stack_data *stack_data, int *arr, int size);
 // void			indexing_arr(t_stack_data *a, int *arr, int count);
 // void			sort_stack(t_stack_data *a, t_stack_data *b);

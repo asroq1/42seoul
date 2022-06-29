@@ -6,21 +6,21 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:43:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/28 18:38:58 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:39:38 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	top_stack(t_stack_data *stack)
-// {
-// 	return (stack->arr[stack->size_a - 1]);
-// }
+int	top_stack(t_stack_data *stack)
+{
+	return (stack->arr[stack->length - 1]);
+}
 
-// int	bot_stack(t_stack_data *stack)
-// {
-// 	return (stack->arr[0]);
-// }
+int	bot_stack(t_stack_data *stack)
+{
+	return (stack->arr[0]);
+}
 
 // void	small_case(t_stack_data *a)
 // {
@@ -122,45 +122,63 @@
 // 	}
 // }
 
-// void	large_case(t_stack_data *a, t_stack_data *b)
+// void	small_command(t_stack_data *a, t_stack_data *b)
+// {
+// 	while (a->length > 3)
+// 	{
+// 		while (/* condition */)
+// 		{
+// 			ra(a);
+// 		}
+// 		pb(a, b);
+// 	}
+// 	if (a->length == 2 || a->length == 3)
+// 	{
+// 		sort();
+// 	}
+// 	while (b->size > 0)
+// 	{
+// 		pa(a, b);
+// 	}
+// 	if (/* condition */)
+// 	{
+// 		sa(a);
+// 	}
+// }
+
+// void	large_command(t_stack_data *a, t_stack_data *b)
 // {
 // 	int				chunk;
 // 	int				i;
 // 	int				x;
 
 // 	i = 0;
-// 	x = a->size_a;
+// 	x = a->length;
 // 	chunk = 0.000000053 * (x * x) + 0.03 * x + 14.5;
-// 	printf("before timer....\n");
-// 	printf("stack a => %d\n", a->a_top->content);
-// 	printf("stack a => %d\n", a->a_top->next->content);
-// 	printf("stack a => %d\n", a->a_top->next->next->content);
-// 	printf("stack a => %d\n", a->a_top->next->next->next->content);
-// 	printf("=----------------------------------=-\n");
-// 	printf("a arr[0] => %d\n", a->arr[0]);
-// 	printf("a arr[1] => %d\n", a->arr[1]);
-// 	printf("a arr[2] => %d\n", a->arr[2]);
-// 	printf("a arr[3] => %d\n", a->arr[3]);
 // 	a_to_b(a, b, chunk, i);
 // 	b_to_a(b, a);
 // }
 
-// void	sort_stack(t_stack_data *a, t_stack_data *b)
-// {
-// 	if (a->size_a == 2)
-// 	{
-// 		if (a->a_top->content > a->a_top->next->content)
-// 		{
-// 			sa(a);
-// 		}
-// 	}
-// 	else if (a->size_a == 3)
-// 	{
-// 		small_case(a);
-// 	}
-// 	else
-// 	{
-// 			//2 ~ 3개보다 더 큰 인자들은 피봇을 통해 다시 재분류.
-// 			large_case(a, b);
-// 	}
-// }
+void	sort_stack(t_stack_data *a, t_stack_data *b)
+{
+	int i = 0;
+	printf("=======sorting ..... =============\n");
+		printf("a->arr[0] ====> %d\n", a->arr[0]);
+		printf("a->arr[1] ====> %d\n", a->arr[1]);
+		printf("a->arr[2] ====> %d\n", a->arr[2]);
+		printf("a->arr[3] ====> %d\n", a->arr[3]);
+	// while (a->arr[i] != 0)
+	// {
+	// 	printf("a->arr[%d] ====> %d\n", i, a->arr[i]);
+	// 	i++;
+	// }
+	
+	// if (a->length <= 5)
+	// {
+	// 	small_command(a, b);
+	// }
+	// else
+	// {
+	// 	large_command(a, b);
+	// }
+}

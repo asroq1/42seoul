@@ -6,47 +6,58 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 21:08:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/28 18:50:33 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:30:31 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_stack(t_stack_data *a)
+void	get_stack(t_stack_data *stack)
 {
 	int	n;
 
 	n = 500;
-	a->arr = malloc(sizeof(int) * n);
-	if (a->arr == NULL)
+	stack->arr = malloc(sizeof(int) * n);
+	if (stack->arr == NULL)
 	{
 		occur_error(1);
 	}
-	a->size = 0;
-	a->total = n;
+	stack->length = 0;
+	stack->total = n;
 }
 
-void	get_a(t_stack_data *a, int n)
+void	get_a(t_stack_data *stack, int n)
 {
 	int	*temp;
 	int	i;
 
-	i = a->size;
-	if (a->size >= a->total)
+	i = stack->length;
+	if (stack->length >= stack->total)
 	{
-		temp = malloc(sizeof(int) * (a->total * 2));
+		temp = malloc(sizeof(int) * (stack->total * 2));
 		if (temp == 0)
 			occur_error(1);
-		ft_memcpy(temp, a->arr, (a->size * sizeof(int)));
-		free(a->arr);
-		a->arr = temp;
-		a->total *= 2;
+		ft_memcpy(temp, stack->arr, (stack->length * sizeof(int)));
+		free(stack->arr);
+		stack->arr = temp;
+		stack->total *= 2;
 	}
 	while (i > 0)
 	{
-		a->arr[i] = a->arr[i - 1];
+		stack->arr[i] = stack->arr[i - 1];
 		i--;
 	}
-	a->arr[0] = n;
-	a->size++;
+	stack->arr[0] = n;
+	stack->length++;
+}
+
+void	get_b(t_stack_data *stack, int length)
+{
+	stack->arr = malloc(sizeof(int) * length);
+	if (stack->arr == 0)
+	{
+		occur_error(1);
+	}
+	stack->length = 0;
+	stack->total = length;
 }
