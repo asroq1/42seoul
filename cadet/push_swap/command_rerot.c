@@ -6,51 +6,54 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:06:59 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/28 18:40:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 10:59:06 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	rra(t_stack_data *a)
-// {
-// 	t_node	*tmp;
+int	rerotate(t_stack_data *stack)
+{
+	int	i;
+	int	tmp;
 
-// 	if (a->size_a < 2)
-// 		occur_error(2);
-// 	tmp = a->a_bottom;
-// 	a->a_bottom->next = NULL;
-// 	tmp->next = a->a_top;
-// 	a->a_top = tmp;
-// 	ft_putstr_fd("rra\n", 1);
-// }
+	i = 0;
+	tmp = get_bot(stack);
+	while (i < stack->length - 1)
+	{
+		stack->arr[i] = stack->arr[i + 1];
+		i++;
+	}
+	stack->arr[stack->length - 1] = tmp;
+	return (0);
+}
 
-// void	rrb(t_stack_data *b)
-// {
-// 	t_node	*tmp;
+int	rra(t_stack_data *stack)
+{
+	if (rerotate(stack) == 0)
+	{
+		ft_putstr_fd("rra\n", 1);
+		return (0);
+	}
+	return (1);
+}
 
-// 	if (b->size_b < 2)
-// 		occur_error(2);
-// 	tmp = b->b_bottom;
-// 	b->b_bottom->next = NULL;
-// 	tmp->next = b->b_top;
-// 	b->b_top = tmp;
-// 	ft_putstr_fd("rra\n", 1);
-// }
+int	rrb(t_stack_data *stack)
+{
+	if (rerotate(stack) == 0)
+	{
+		ft_putstr_fd("rrb \n", 1);
+		return (0);
+	}
+	return (1);
+}
 
-// void	rrr(t_stack_data *stacks)
-// {
-// 	t_node	*tmp;
-
-// 	if (stacks->size_a < 2 || stacks->size_b < 2)
-// 		occur_error(2);
-// 	tmp = stacks->a_bottom;
-// 	stacks->a_bottom->next = NULL;
-// 	tmp->next = stacks->a_top;
-// 	stacks->a_top = tmp;
-// 	tmp = stacks->b_bottom;
-// 	stacks->b_bottom->next = NULL;
-// 	tmp->next = stacks->b_top;
-// 	stacks->b_top = tmp;
-// 	ft_putstr_fd("rrr\n", 1);
-// }
+int	rrr(t_stack_data *a, t_stack_data *b)
+{
+	if (rerotate(a) == 0 || rerotate(b) == 0)
+	{
+		ft_putstr_fd("rrr\n", 1);
+		return (0);
+	}
+	return (1);
+}

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/29 17:17:07 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 10:57:30 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void			occur_error(int err);
 void			free_str(char **str);
 
 /* validter.c */
-void			check_input(t_stack_data *stack);
+int				check_input(t_stack_data *stack);
 void			check_duplicate(t_stack_data *stack);
 void			free_arr(char **arr);
 void			input_validater(t_stack_data *stack, char *argv[]);
@@ -44,55 +44,40 @@ void			get_a(t_stack_data *stack, int n);
 void			get_b(t_stack_data *stack, int length);
 
 /* sort.c */
-
+int				get_top(t_stack_data *stack);
+int				get_mid(t_stack_data *stack);
+int				get_bot(t_stack_data *stack);
+void			sort_two_three(t_stack_data *stack);
 void			small_command(t_stack_data *a, t_stack_data *b);
 void			large_command(t_stack_data *a, t_stack_data *b);
-
+void			a_to_b(t_stack_data *a, t_stack_data *b, int chunk, int i);
+void			b_to_a(t_stack_data *b, t_stack_data *a);
+void			sort_b(t_stack_data *b, int size);
 
 /* array.c */
 
 void			indexing_arr(t_stack_data *a);
 void			sort_stack(t_stack_data *a, t_stack_data *b);
 
-// void			change_to_stack(t_stack_data *stack_data, int *arr, int size);
-// void			indexing_arr(t_stack_data *a, int *arr, int count);
-// void			sort_stack(t_stack_data *a, t_stack_data *b);
-// void			sa(t_stack_data *a);
-// void			sb(t_stack_data *b);
-// void			ss(t_stack_data *stacks);
-// void			pa(t_stack_data *node);
-// void			pb(t_stack_data *node);
-// void			ra(t_stack_data *a);
-// void			rb(t_stack_data *b);
-// void			rr(t_stack_data *stacks);
-// void			rra(t_stack_data *a);
-// void			rrb(t_stack_data *b);
-// void			rrr(t_stack_data *stacks);
-// int				push(t_stack_data *from, t_stack_data *to);
-// int				swap(t_stack_data *from);
-// int				pa(t_stack_data *a, t_stack_data *b);
-// int				pb(t_stack_data *a, t_stack_data *b);
-// int				sa(t_stack_data *a);
-// int				sb(t_stack_data *b);
-// int				ss(t_stack_data *a, t_stack_data *b);
+/* command.c */
+int				swap(t_stack_data *stack);
+int				push(t_stack_data *a, t_stack_data *b);
+int				pa(t_stack_data *a, t_stack_data *b);
+int				pb(t_stack_data *a, t_stack_data *b);
+int				sa(t_stack_data *stack);
+int				sb(t_stack_data *stack);
+int				ss(t_stack_data *a, t_stack_data *b);
 
+/* command_rot.c */
+int				rotate(t_stack_data *stack);
+int				ra(t_stack_data *stack);
+int				rb(t_stack_data *stack);
+int				rr(t_stack_data *a, t_stack_data *b);
 
-// int				set_a_position(int n, t_stack_data *stack);
-// int				set_a_position_min(t_stack_data *stack);
-// int				set_a_position_mid(t_stack_data *stack);
-// int				set_a_position_max(t_stack_data *stack);
-// void			a_to_b(t_stack_data *a, t_stack_data *b, int chunk, int i);
-// void			b_to_a(t_stack_data *b, t_stack_data *a);
-// void			sort_b(t_stack_data *b, int size);
-// void			make_b_stack(t_stack_data *b);
-// int				top_stack(t_stack_data *stack);
-// int				bot_stack(t_stack_data *stack);
-// int				rroate(t_stack_data *from);
-// int				rotate(t_stack_data *from);
-// int				ra(t_stack_data *a);
-// int				rb(t_stack_data *b);
-// int				rra(t_stack_data *a);
-// int				rrb(t_stack_data *b);
-// int				rr(t_stack_data *a, t_stack_data *b);
+/* command_rerot.c */
+int				rerotate(t_stack_data *stack);
+int				rra(t_stack_data *stack);
+int				rrb(t_stack_data *stack);
+int				rrr(t_stack_data *a, t_stack_data *b);
 
 #endif 

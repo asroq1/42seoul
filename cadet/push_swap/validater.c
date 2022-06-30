@@ -6,13 +6,13 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/29 17:41:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 13:27:49 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_input(t_stack_data *stack)
+int	check_input(t_stack_data *stack)
 {
 	int	i;
 	int	length;
@@ -23,10 +23,7 @@ void	check_input(t_stack_data *stack)
 	{	
 		if (stack->arr[i] < stack->arr[i + 1])
 		{
-			printf("test %d\n", i);
-			printf("i %d  i+1 %d\n", stack->arr[i], stack->arr[i + 1]);
-
-			return ;
+			return (0);
 		}
 		i++;
 	}

@@ -6,179 +6,196 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:43:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/29 17:39:38 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 13:44:36 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	top_stack(t_stack_data *stack)
+int	get_top(t_stack_data *stack)
 {
 	return (stack->arr[stack->length - 1]);
 }
 
-int	bot_stack(t_stack_data *stack)
+int	get_mid(t_stack_data *stack)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	while (i < stack->length)
+	{
+		j = 0;
+		k = 0;
+		while (j < stack->length)
+		{
+			if (stack->arr[j] - stack->arr[i] > 0)
+			{
+				k++;
+			}
+			j++;
+		}
+		if (k == 2)
+		{
+			return (stack->arr[i]);
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	get_bot(t_stack_data *stack)
 {
 	return (stack->arr[0]);
 }
 
-// void	small_case(t_stack_data *a)
-// {
-// 	// int	top;
-// 	// int	mid;
-// 	// int	bot;
+void	sort_two_three(t_stack_data *stack)
+{
+	if (check_input(stack))
+		return ;
+	if (stack->length == 2)
+		sa(stack);
+	else if (stack->arr[0] > stack->arr[2] && stack->arr[1] > stack->arr[0])
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else if (stack->arr[2] > stack->arr[1] && stack->arr[0] > stack->arr[2])
+		sa(stack);
+	else if (stack->arr[2] > stack->arr[0] && stack->arr[1] > stack->arr[2])
+		rra(stack);
+	else if (stack->arr[0] > stack->arr[1] && stack->arr[2] > stack->arr[0])
+		ra(stack);
+	else
+	{
+		sa(stack);
+		rra(stack);
+	}
+}
 
-// 	// top = a->a_top->content;
-// 	// mid = a->a_top->next->content;
-// 	// bot = a->a_top->next->next->content;
-// 	// if (top > mid && mid > bot && top > bot)
-// 	// {
-// 	// 	sa(a);
-// 	// 	rra(a);
-// 	// }
-// 	// else if (top > mid && bot > mid && top > bot)
-// 	// {
-// 	// 	ra(a);
-// 	// }
-// 	// else if (mid > top && mid > bot && bot > top)
-// 	// {
-// 	// 	sa(a);
-// 	// 	ra(a);
-// 	// }
-// 	// else if (top > mid && bot > mid && bot > top)
-// 	// 	sa(a);
-// 	// else if (mid > top && mid > bot && top > bot)
-// 	// 	rra(a);
-// }
+void	small_command(t_stack_data *a, t_stack_data *b)
+{
+	while (a->length > 3)
+	{
+		while (get_top(a) >= get_mid(a))
+		{
+			ra(a);
+		}
+		pb(a, b);
+	}
+	if (a->length == 2 || a->length == 3)
+	{
+		sort_two_three(a);
+	}
+	while (b->length > 0)
+	{
+		pa(a, b);
+	}
+	if (get_top(a) > a->arr[a->length - 2])
+	{
+		sa(a);
+	}
+}
 
-// void	a_to_b(t_stack_data *a, t_stack_data *b, int chunk, int i)
-// {
-// 	int	size;
-// 	printf("@@@ a->arr[0] = %d\n", a->arr[0]);
-// 	printf("@@@ a->arr[1] = %d\n", a->arr[1]);
-// 	printf("@@@ a->arr[2] = %d\n", a->arr[2]);
-// 	printf("@@@ a->arr[3] = %d\n", a->arr[3]);
-// 	printf("@@@ a->arr[4] = %d\n", a->arr[4]);
-// 	printf("@@@ a->arr[5] = %d\n", a->arr[5]);
-// 	size = a->size_a - 1;
-// 	while (size != 0)
-// 	{
-// 		printf("size %d \n", size);
-// 		printf("hey !!top_stack %d\n", top_stack(a));
-// 		if (top_stack(a) <= i)
-// 		{
-// 			pb(a, b);
-// 			i++;
-// 		}
-// 		else if (top_stack(a) > i && top_stack(a) <= i + chunk)
-// 		{
-// 			pb(a, b);
-// 			rb(b);
-// 			i++;
-// 		}
-// 		else if (top_stack(a) > (i + chunk))
-// 		{
-// 			if (i < a->size_a / 2 && i >= 0)
-// 				rra(a);
-// 			else
-// 				ra(a);
-// 		}
-// 		size--;
-// 	}
-// }
+void	a_to_b(t_stack_data *a, t_stack_data *b, int chunk, int i)
+{
+	int	length;
 
-// void	b_to_a(t_stack_data *b, t_stack_data *a)
-// {
-// 	int	size;
+	length = a->length - 1;
+	while (a->length != 0)
+	{
+		/* 1. a의 top이 i보다 작다면 b스택으로 넘긴다. */
+		if (get_top(a) <= i)
+		{
+			pb(a, b);
+			i++;
+		}
+		/* 2. a의 top이 i보다 크지만 i + chunk보다 작다면 b의 스택으로 옮기고, rb로 인덱스를 ++한다.*/
+		else if (get_top(a) > i && get_top(a) <= i + chunk)
+		{
+			pb(a, b);
+			rb(b);
+			i++;
+		}
+		/* 3. a의 top이 i + chunk보다 크다면 a의 스택에 유지한다. */
+		else if (get_top(a) > (i + chunk))
+		{
+			if (i < a->length / 2 && i >= 0)
+				rra(a);
+			else
+				ra(a);
+		}
+		length--;
+	}
+}
 
-// 	size = b->size_b - 1;
-// 	printf("b _ to _ a\n");
-// 	while (b->size_a != 0)
-// 	{
-// 		sort_b(b, size);
-// 		pa(a, b);
-// 		size--;
-// 	}
-// }
- 
-// void	sort_b(t_stack_data *b, int size)
-// {
-// 	int	i;
+void	sort_b(t_stack_data *b, int length)
+{
+	int	i;
 
-// 	i = 0;
-// 	while (i < b->size_b && b->size_b != size)
-// 	{
-// 		i++;
-// 	}
-// 	while (i < b->size_b / 2 & i >= 0)
-// 	{
-// 		rrb(b);
-// 		i--;
-// 	}
-// 	while (i >= b->size_b / 2 && i < b->size_b - 1)
-// 	{
-// 		rb(b);
-// 		i++;
-// 	}
-// }
+	i = 0;
+	/* 1. i가 length보다 작고, arr의 값이 length가 아닐 때는 i++ */
+	while (i < b->length && b->arr[i] != length)
+	{
+		i++;
+	}
+	/* 2. length을 반으로 자르고, i가 반으로 잘린 것보다 작고, i가 0이거나 0보다 클때  */
+	while (i < b->length / 2 && i >= 0)
+	{
+		rrb(b);
+		i--;
+	}
+	/* 3. length를 반 자르고, i가 그거보다 크거나 같지만 i가 len - 1보단 작을때 rb*/
+	while (i >= b->length / 2 && i < b->length - 1)
+	{
+		rb(b);
+		i++;
+	}
+}
 
-// void	small_command(t_stack_data *a, t_stack_data *b)
-// {
-// 	while (a->length > 3)
-// 	{
-// 		while (/* condition */)
-// 		{
-// 			ra(a);
-// 		}
-// 		pb(a, b);
-// 	}
-// 	if (a->length == 2 || a->length == 3)
-// 	{
-// 		sort();
-// 	}
-// 	while (b->size > 0)
-// 	{
-// 		pa(a, b);
-// 	}
-// 	if (/* condition */)
-// 	{
-// 		sa(a);
-// 	}
-// }
+void	b_to_a(t_stack_data *b, t_stack_data *a)
+{
+	int	length;
 
-// void	large_command(t_stack_data *a, t_stack_data *b)
-// {
-// 	int				chunk;
-// 	int				i;
-// 	int				x;
+	length = b-> length - 1;
+	while (b->length != 0)
+	{
+		sort_b(b, length);
+		pa(a, b);
+		length--;
+	}
+}
 
-// 	i = 0;
-// 	x = a->length;
-// 	chunk = 0.000000053 * (x * x) + 0.03 * x + 14.5;
-// 	a_to_b(a, b, chunk, i);
-// 	b_to_a(b, a);
-// }
+void	large_command(t_stack_data *a, t_stack_data *b)
+{
+	int				i;
+	int				x;
+	int				chunk;
+
+	i = 0;
+	x = a->length;
+	chunk = 0.000000053 * (x * x) + 0.03 * x + 14.5;
+	a_to_b(a, b, chunk, i);
+	b_to_a(b, a);
+}
 
 void	sort_stack(t_stack_data *a, t_stack_data *b)
 {
-	int i = 0;
-	printf("=======sorting ..... =============\n");
-		printf("a->arr[0] ====> %d\n", a->arr[0]);
-		printf("a->arr[1] ====> %d\n", a->arr[1]);
-		printf("a->arr[2] ====> %d\n", a->arr[2]);
-		printf("a->arr[3] ====> %d\n", a->arr[3]);
+	// int i = 0;
 	// while (a->arr[i] != 0)
 	// {
-	// 	printf("a->arr[%d] ====> %d\n", i, a->arr[i]);
+	// 	printf("a->arr[%d] === %d\n", i, a->arr[i]);
 	// 	i++;
 	// }
-	
-	// if (a->length <= 5)
-	// {
-	// 	small_command(a, b);
-	// }
-	// else
-	// {
-	// 	large_command(a, b);
-	// }
+	// 	printf("a->arr[5] === %d\n",a->arr[5]);
+	// 	printf("top stack is ==> %d\n", get_top(a));
+	if (a->length <= 5)
+	{
+		small_command(a, b);
+	}
+	else
+	{
+		large_command(a, b);
+	}
 }
