@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 10:57:30 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 18:02:05 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			sort_stack(t_stack_data *a, t_stack_data *b);
 
 /* command.c */
 int				swap(t_stack_data *stack);
-int				push(t_stack_data *a, t_stack_data *b);
+int				push(t_stack_data *from, t_stack_data *dest);
 int				pa(t_stack_data *a, t_stack_data *b);
 int				pb(t_stack_data *a, t_stack_data *b);
 int				sa(t_stack_data *stack);
@@ -80,4 +80,6 @@ int				rra(t_stack_data *stack);
 int				rrb(t_stack_data *stack);
 int				rrr(t_stack_data *a, t_stack_data *b);
 
+
+int	is_empty(t_stack_data *stack);
 #endif 

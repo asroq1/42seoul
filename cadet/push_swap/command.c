@@ -6,22 +6,22 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:32:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 13:42:27 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 18:05:29 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push(t_stack_data *a, t_stack_data *b)
+int	push(t_stack_data *from, t_stack_data *dest)
 {
 	int	tmp;
 
-	tmp = get_top(a);
-	if (a != 0)
+	tmp = get_top(from);
+	if (from->length != 0)
 	{
-		a->length--;
-		b->arr[b->length] = tmp;
-		b->length++;
+		from->length--;
+		dest->arr[dest->length] = tmp;
+		dest->length++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:43:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 13:44:36 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 18:29:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,11 +154,11 @@ void	sort_b(t_stack_data *b, int length)
 	}
 }
 
-void	b_to_a(t_stack_data *b, t_stack_data *a)
+void	b_to_a(t_stack_data *a, t_stack_data *b)
 {
 	int	length;
 
-	length = b-> length - 1;
+	length = b->length - 1;
 	while (b->length != 0)
 	{
 		sort_b(b, length);
@@ -177,19 +177,11 @@ void	large_command(t_stack_data *a, t_stack_data *b)
 	x = a->length;
 	chunk = 0.000000053 * (x * x) + 0.03 * x + 14.5;
 	a_to_b(a, b, chunk, i);
-	b_to_a(b, a);
+	b_to_a(a, b);
 }
 
 void	sort_stack(t_stack_data *a, t_stack_data *b)
 {
-	// int i = 0;
-	// while (a->arr[i] != 0)
-	// {
-	// 	printf("a->arr[%d] === %d\n", i, a->arr[i]);
-	// 	i++;
-	// }
-	// 	printf("a->arr[5] === %d\n",a->arr[5]);
-	// 	printf("top stack is ==> %d\n", get_top(a));
 	if (a->length <= 5)
 	{
 		small_command(a, b);

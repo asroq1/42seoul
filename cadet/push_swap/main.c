@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 13:43:13 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 16:32:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		occur_error(1);
+		exit(1);
 	}
 	// printf("// 1. 새로운 스택을 만들어준다.\n");
 	get_stack(&a);
