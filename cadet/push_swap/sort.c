@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:43:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 18:29:25 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:01:11 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,28 +130,17 @@ void	a_to_b(t_stack_data *a, t_stack_data *b, int chunk, int i)
 	}
 }
 
-void	sort_b(t_stack_data *b, int length)
+void	large_command(t_stack_data *a, t_stack_data *b)
 {
-	int	i;
+	int				i;
+	int				x;
+	int				chunk;
 
 	i = 0;
-	/* 1. i가 length보다 작고, arr의 값이 length가 아닐 때는 i++ */
-	while (i < b->length && b->arr[i] != length)
-	{
-		i++;
-	}
-	/* 2. length을 반으로 자르고, i가 반으로 잘린 것보다 작고, i가 0이거나 0보다 클때  */
-	while (i < b->length / 2 && i >= 0)
-	{
-		rrb(b);
-		i--;
-	}
-	/* 3. length를 반 자르고, i가 그거보다 크거나 같지만 i가 len - 1보단 작을때 rb*/
-	while (i >= b->length / 2 && i < b->length - 1)
-	{
-		rb(b);
-		i++;
-	}
+	x = a->length;
+	chunk = 0.000000053 * (x * x) + 0.03 * x + 14.5;
+	a_to_b(a, b, chunk, i);
+	b_to_a(a, b);
 }
 
 void	b_to_a(t_stack_data *a, t_stack_data *b)
@@ -167,17 +156,25 @@ void	b_to_a(t_stack_data *a, t_stack_data *b)
 	}
 }
 
-void	large_command(t_stack_data *a, t_stack_data *b)
+void	sort_b(t_stack_data *b, int length)
 {
-	int				i;
-	int				x;
-	int				chunk;
+	int	i;
 
 	i = 0;
-	x = a->length;
-	chunk = 0.000000053 * (x * x) + 0.03 * x + 14.5;
-	a_to_b(a, b, chunk, i);
-	b_to_a(a, b);
+	while (i < b->length && b->arr[i] != length)
+	{
+		i++;
+	}
+	while (i < b->length / 2 && i >= 0)
+	{
+		rrb(b);
+		i--;
+	}
+	while (i >= b->length / 2 && i < b->length - 1)
+	{
+		rb(b);
+		i++;
+	}
 }
 
 void	sort_stack(t_stack_data *a, t_stack_data *b)

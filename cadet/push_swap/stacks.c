@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 21:08:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/29 17:30:31 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 19:07:04 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	get_stack(t_stack_data *stack)
 
 	n = 500;
 	stack->arr = malloc(sizeof(int) * n);
-	if (stack->arr == NULL)
+	if (stack->arr == 0)
 	{
 		occur_error(1);
 	}

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 18:02:05 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:21:30 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,26 +60,41 @@ void			indexing_arr(t_stack_data *a);
 void			sort_stack(t_stack_data *a, t_stack_data *b);
 
 /* command.c */
-int				swap(t_stack_data *stack);
-int				push(t_stack_data *from, t_stack_data *dest);
-int				pa(t_stack_data *a, t_stack_data *b);
-int				pb(t_stack_data *a, t_stack_data *b);
-int				sa(t_stack_data *stack);
-int				sb(t_stack_data *stack);
-int				ss(t_stack_data *a, t_stack_data *b);
+// int				swap(t_stack_data *stack);
+// int				push(t_stack_data *from, t_stack_data *dest);
+// int				pa(t_stack_data *a, t_stack_data *b);
+// int				pb(t_stack_data *a, t_stack_data *b);
+// int				sa(t_stack_data *stack);
+// int				sb(t_stack_data *stack);
+// int				ss(t_stack_data *a, t_stack_data *b);
 
 /* command_rot.c */
-int				rotate(t_stack_data *stack);
-int				ra(t_stack_data *stack);
-int				rb(t_stack_data *stack);
-int				rr(t_stack_data *a, t_stack_data *b);
+// int				rotate(t_stack_data *stack);
+// int				ra(t_stack_data *stack);
+// int				rb(t_stack_data *stack);
+// int				rr(t_stack_data *a, t_stack_data *b);
 
 /* command_rerot.c */
-int				rerotate(t_stack_data *stack);
-int				rra(t_stack_data *stack);
-int				rrb(t_stack_data *stack);
-int				rrr(t_stack_data *a, t_stack_data *b);
+// int				rerotate(t_stack_data *stack);
+// int				rra(t_stack_data *stack);
+// int				rrb(t_stack_data *stack);
+// int				rrr(t_stack_data *a, t_stack_data *b);
 
+/* tmp */
 
-int	is_empty(t_stack_data *stack);
+int	sa(t_stack_data *a);
+int	sb(t_stack_data *b);
+int	ss(t_stack_data *a, t_stack_data *b);
+int	pa(t_stack_data *a, t_stack_data *b);
+int	pb(t_stack_data *a, t_stack_data *b);
+int	ra(t_stack_data *a);
+int	rb(t_stack_data *b);
+int	rr(t_stack_data *a, t_stack_data *b);
+int	rra(t_stack_data *a);
+int	rrb(t_stack_data *b);
+int	swap(t_stack_data *from);
+int	push(t_stack_data *from, t_stack_data *to);
+int	reverse_rotate(t_stack_data *from);
+int	rotate(t_stack_data *from);
+
 #endif 
