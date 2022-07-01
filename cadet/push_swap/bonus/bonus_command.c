@@ -1,41 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command_rerot.c                                    :+:      :+:    :+:   */
+/*   bonus_command.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:06:59 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 16:25:44 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/07/01 17:28:33 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/07/01 17:37:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	rra(t_stack_data *a)
+int	bonus_sa(t_stack_data *a)
 {
-	if (reverse_rotate(a) == 0)
+	if (swap(a) == 0)
 	{
-		ft_putstr_fd("rra\n", 1);
 		return (0);
 	}
 	return (1);
 }
 
-int	rrb(t_stack_data *b)
+int	bonus_sb(t_stack_data *b)
 {
-	if (reverse_rotate(b) == 0)
+	if (swap(b) == 0)
 	{
-		ft_putstr_fd("rrb\n", 1);
 		return (0);
 	}
 	return (1);
 }
 
-int	rrr(t_stack_data *a, t_stack_data *b)
+int	bonus_ss(t_stack_data *a, t_stack_data *b)
 {
-	reverse_rotate(a);
-	reverse_rotate(b);
-	ft_putstr_fd("rrr\n", 1);
-	return (0);
+	if (swap(a) == 0 || swap(b) == 0)
+	{
+		return (0);
+	}
+	return (1);
+}
+
+int	bonus_pa(t_stack_data *a, t_stack_data *b)
+{
+	if (push(b, a) == 0)
+	{
+		return (0);
+	}
+	return (1);
+}
+
+int	bonus_pb(t_stack_data *a, t_stack_data *b)
+{
+	if (push(a, b) == 0)
+	{
+		return (0);
+	}
+	return (1);
 }

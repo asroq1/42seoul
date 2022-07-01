@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 14:49:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/07/01 12:09:10 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/07/01 17:40:01 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS_B = checker.c \
 		 validater.c \
 		 utils.c \
 		 get_next_line.c get_next_line_utils.c\
+		 bonus/bonus_command.c bonus/bonus_command_rerot.c bonus/bonus_command_rot.c
 		
 OBJS	= $(SRCS:.c=.o)
 OBJS_B	= $(SRCS_B:.c=.o)
@@ -52,7 +53,7 @@ all : $(NAME)
 
 $(NAME):	$(OBJECTS)
 			make all -C $(LIBFT)/
-			$(CC) -o $(NAME) $(OBJS) -Llibft	-lft
+			$(CC) -o $(NAME) $(OBJECTS) -Llibft	-lft
 
 %.o	: %.c
 			$(CC)	$(CFLAG) -c $^	-I./ -o $@

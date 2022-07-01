@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 12:09:29 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:37:42 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 # include "../libft/libft.h"
 
 typedef struct s_stack_data
@@ -89,6 +90,18 @@ char			*get_command(int fd);
 void			command_bonus(t_stack_data *a, t_stack_data *b, char *command);
 void			print_result(t_stack_data *a, t_stack_data *b);
 
+/* bonus_cmd.c */
+int				bonus_sa(t_stack_data *a);
+int				bonus_sb(t_stack_data *b);
+int				bonus_ss(t_stack_data *a, t_stack_data *b);
+int				bonus_pa(t_stack_data *a, t_stack_data *b);
+int				bonus_pb(t_stack_data *a, t_stack_data *b);
+int				bonus_ra(t_stack_data *a);
+int				bonus_rb(t_stack_data *b);
+int				bonus_rr(t_stack_data *a, t_stack_data *b);
+int				bonus_rra(t_stack_data *a);
+int				bonus_rrb(t_stack_data *b);
+int				bonus_rrr(t_stack_data *a, t_stack_data *b);
 
 /* GNL */
 # if OPEN_MAX <= 12800

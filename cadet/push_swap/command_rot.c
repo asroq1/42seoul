@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:16:18 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 11:27:37 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:23:19 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	rb(t_stack_data *b)
 
 int	rr(t_stack_data *a, t_stack_data *b)
 {
-	if (rotate(a) == 0 || rotate(b) == 0)
+	if (rotate(a) == 0 && rotate(b) == 0)
 	{
 		ft_putstr_fd("rr\n", 1);
 		return (0);
