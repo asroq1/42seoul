@@ -6,11 +6,21 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:07:41 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 19:12:31 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/01 11:55:48 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	compare_command(const char *str1, const char *str2)
+{
+	int		i;
+
+	i = 0;
+	while (*(str1 + i) && *(str1 + i) == *(str2 + i))
+		i++;
+	return (*((unsigned char *)str1 + i) - *((unsigned char *)str2 + i));
+}
 
 void	occur_error(int err)
 {	

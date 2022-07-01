@@ -6,13 +6,14 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 14:49:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/06/28 17:33:04 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/07/01 12:09:10 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 LIBFT	=	libft
 LIBFT_A	=	libft.a
+BONUS	=	checker
 
 CC		= cc
 CFLAG	= -Wall -Wextra -Werror
@@ -23,32 +24,51 @@ SRCS	= main.c \
 		  validater.c \
 		  utils.c \
 		  stacks.c \
-		  sort.c \
+		  sort.c sort_utils.c\
 		  array.c \
 		  command.c command_rot.c command_rerot.c command_utils.c\
 
+SRCS_B = checker.c \
+		 sort.c sort_utils.c \
+		 stacks.c \
+		 array.c \
+		 command.c command_rot.c command_rerot.c command_utils.c \
+		 validater.c \
+		 utils.c \
+		 get_next_line.c get_next_line_utils.c\
+		
 OBJS	= $(SRCS:.c=.o)
+OBJS_B	= $(SRCS_B:.c=.o)
 LIBC	= ar rc
+
+ifdef WITH_BONUS
+	NAME = $(BONUS)
+	OBJECTS = $(OBJS_B)
+else
+	OBJECTS = $(OBJS)
+endif
 
 all : $(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJECTS)
 			make all -C $(LIBFT)/
-			gcc	-o $(NAME) $(OBJS) -Llibft	-lft
+			$(CC) -o $(NAME) $(OBJS) -Llibft	-lft
 
-%.o\	: %.c
+%.o	: %.c
 			$(CC)	$(CFLAG) -c $^	-I./ -o $@
 
+bonus	:
+		make WITH_BONUS=1 all
 clean	:
-		$(RM) -f $(OBJS)
+		$(RM) -f $(OBJS) $(OBJS_B)
 		make clean -C $(LIBFT)
 
 fclean	: clean
 		$(RM) -f $(NAME)
 		$(RM) -f $(LIBFT_A)
+		$(RM) -f $(BONUS)
 		make fclean -C $(LIBFT)
 
 re : fclean all
 
-	
 .PHONY : all clean fclean re bonus
