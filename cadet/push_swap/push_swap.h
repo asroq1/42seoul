@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 17:37:42 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/01 19:23:03 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 # include "../libft/libft.h"
 
 typedef struct s_stack_data

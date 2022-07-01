@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:44:58 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 15:10:01 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/01 18:49:54 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ void	input_validater(t_stack_data *stack, char *argv[])
 		}
 		free_str(arr);
 	}
-	check_input(stack);
+	if (check_input(stack) != 0)
+		exit(1);
 	check_duplicate(stack);
 }
 

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:54:13 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 17:37:50 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/01 18:34:04 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	command_bonus(t_stack_data *a, t_stack_data *b, char *command)
 		bonus_rrb(b);
 	else if (compare_command(command, "rrr") == 0)
 		bonus_rrr(a, b);
+	else
+		occur_error(1);
 }
 
 void	check_command(t_stack_data *a, t_stack_data *b)
