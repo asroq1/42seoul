@@ -1,16 +1,17 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/hyunjung/42subjects/cadet/push_swap'
-cc    -c -o main.o main.c
-cc    -c -o validater.o validater.c
-cc    -c -o utils.o utils.c
-cc    -c -o stacks.o stacks.c
-cc    -c -o sort.o sort.c
-cc    -c -o array.o array.c
-cc    -c -o command.o command.c
-cc    -c -o command_rot.o command_rot.c
-cc    -c -o command_rerot.o command_rerot.c
-cc    -c -o command_utils.o command_utils.c
+cc	-Wall -Wextra -Werror -c main.c	-I./ -o main.o
+cc	-Wall -Wextra -Werror -c validater.c	-I./ -o validater.o
+cc	-Wall -Wextra -Werror -c utils.c	-I./ -o utils.o
+cc	-Wall -Wextra -Werror -c stacks.c	-I./ -o stacks.o
+cc	-Wall -Wextra -Werror -c sort.c	-I./ -o sort.o
+cc	-Wall -Wextra -Werror -c sort_utils.c	-I./ -o sort_utils.o
+cc	-Wall -Wextra -Werror -c array.c	-I./ -o array.o
+cc	-Wall -Wextra -Werror -c command.c	-I./ -o command.o
+cc	-Wall -Wextra -Werror -c command_rot.c	-I./ -o command_rot.o
+cc	-Wall -Wextra -Werror -c command_rerot.c	-I./ -o command_rerot.o
+cc	-Wall -Wextra -Werror -c command_utils.c	-I./ -o command_utils.o
 make all -C libft/
-gcc	-o push_swap main.o validater.o utils.o stacks.o sort.o array.o command.o command_rot.o command_rerot.o command_utils.o -Llibft	-lft
+cc -o push_swap main.o validater.o utils.o stacks.o sort.o sort_utils.o array.o command.o command_rot.o command_rerot.o command_utils.o -Llibft	-lft
 make: Leaving directory `/Users/hyunjung/42subjects/cadet/push_swap'
  

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:43:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 18:16:28 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/05 14:44:38 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ void	a_to_b(t_stack_data *a, t_stack_data *b, int chunk, int i)
 		}
 		else if (get_top(a) > (i + chunk))
 		{
-			//if (i < a->length / 2 && i >= 0)
-			//	rra(a);
-			//else
+			if (i < a->length / 2 && i >= 0)
+				rra(a);
+			else
 				ra(a);
 		}
 		length--;
