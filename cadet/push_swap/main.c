@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/06/30 20:21:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:35:54 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,7 @@ int	main(int argc, char *argv[])
 	indexing_arr(&a);
 	get_b(&b, a.total);
 	sort_stack(&a, &b);
+	free(a.arr);
+	free(b.arr);
+	return (0);
 }
