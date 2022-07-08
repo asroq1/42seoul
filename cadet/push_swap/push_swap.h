@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 19:23:43 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/05 15:14:20 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 # include "../libft/libft.h"
 
 typedef struct s_stack_data
@@ -51,7 +52,7 @@ void			sort_b(t_stack_data *b, int size);
 
 /* sort_utils.c */
 int				get_top(t_stack_data *stack);
-int				get_mid(t_stack_data *stack);
+int				get_mid_result(t_stack_data *stack);
 int				get_bot(t_stack_data *stack);
 void			sort_two_three(t_stack_data *stack);
 

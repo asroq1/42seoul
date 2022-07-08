@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:59:26 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 11:27:08 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/05 17:39:49 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	get_top(t_stack_data *stack)
 	return (stack->arr[stack->length - 1]);
 }
 
-int	get_mid(t_stack_data *stack)
+int	get_mid_result(t_stack_data *stack)
 {
 	int	i;
 	int	j;

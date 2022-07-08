@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:07:41 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 16:30:44 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:35:25 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	occur_error(int err)
 {	
 	if (err == 1)
 	{
-		ft_putstr_fd("Error\n", 1);
+		ft_putstr_fd("Error\n", 2);
 		exit(1);
 	}
 	if (err == 2)
 	{
-		ft_putstr_fd("command error\n", 1);
+		ft_putstr_fd("command error\n", 2);
 		exit(1);
 	}
 }

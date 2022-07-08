@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:43:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/05 14:44:38 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/05 17:40:02 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	small_command(t_stack_data *a, t_stack_data *b)
 {
 	while (a->length > 3)
 	{
-		while (get_top(a) >= get_mid(a))
+		while (get_top(a) >= get_mid_result(a))
 		{
 			ra(a);
 		}

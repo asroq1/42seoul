@@ -5,25 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 14:44:33 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/05 19:12:39 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/07/08 17:52:41 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/07/08 18:27:50 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "./philo.h"
 
 int	main(int argc, char *argv[])
 {
-	t_stack_data	a;
-	t_stack_data	b;
+	t_input	input;
+	t_philo	*philo;
+	int		error;
 
-	if (argc < 2)
+	if (argc != 5 && argc != 6)
 	{
-		exit(1);
+		return (occur_error("error input", 3));
 	}
-	get_stack(&a);
-	input_validater(&a, argv);
-	indexing_arr(&a);
-	get_b(&b, a.total);
-	sort_stack(&a, &b);
+	memset(&input, 0, sizeof(t_input));
+	error = ft_arg_init(&input, argc, argv);
+	if (error)
+	{
+		return (occur_error("error input init", error));
+	}
+	error = ft_philo_init(&philo, &input);
+	if (error)
+	{
+		return (occur_error("error philo init", error));
+	}
+	error = ft_philo_start(&input, philo);
+	if (error)
+	{
+		return (occur_error("error philo start", error));
+	}
+	return (0);	
 }
