@@ -6,11 +6,12 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:19:14 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/05 19:30:01 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/11 16:19:17 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	indexing_arr(t_stack_data *a)
 {
