@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/hyunjung/42subjects/cadet/exam/exam2_ref/ExamRank_02'
+make: Leaving directory `/Users/hyunjung/42subjects/cadet/exam/exam2_ref/ExamRank_02'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
