@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:30:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/11 18:14:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:46:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,11 +143,38 @@
 //	return (0);
 //}
 
+//int main(int argc, char *argv[])
+//{
+//	int used[255] = {0};
+//	int i = 0;
+//	int j = 0;
+
+//	if (argc == 3)
+//	{
+//		while (argv[1][i])
+//		{
+//			j = 0;
+//			while (argv[2][j])
+//			{
+//				if (used[(int)argv[1][i]] == 0 && argv[1][i] == argv[2][j])
+//				{
+//					write(1, &argv[1][i], 1);
+//					used[(int)argv[1][i]] = 1;
+//				}
+//				j++;
+//			}
+//			i++;
+//		}		
+//	}	
+//	write(1, "\n", 1);
+//	return (0);
+//}
+
 int main(int argc, char *argv[])
-{
-	int used[255] = {0};
+{	
 	int i = 0;
 	int j = 0;
+	int used[255] = {0};
 
 	if (argc == 3)
 	{
@@ -164,8 +191,8 @@ int main(int argc, char *argv[])
 				j++;
 			}
 			i++;
-		}		
-	}	
+		}
+	}
 	write(1, "\n", 1);
-	return (0);
+	return 0;
 }
