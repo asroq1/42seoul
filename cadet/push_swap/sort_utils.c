@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 10:59:26 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/11 18:08:55 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/13 15:06:30 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,18 +81,15 @@ void	sort_b(t_stack_data *b, int length)
 	i = 0;
 	while (i < b->length && b->arr[i] != length)
 	{
-		printf("i ==> %d\n", i);
 		i++;
 	}
 	while (i < b->length / 2 && i >= 0)
 	{
-		printf("rrb i ==> %d\n", i);
 		rrb(b);
 		i--;
 	}
 	while (i >= b->length / 2 && i < b->length - 1)
 	{
-		printf("rb i ==> %d\n", i);
 		rb(b);
 		i++;
 	}

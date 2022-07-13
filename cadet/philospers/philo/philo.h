@@ -6,16 +6,23 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/08 18:33:02 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/13 16:17:53 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef  PHILO_H
 # define PHILO_H
 
+/* usleep */
 # include <unistd.h>
+
+/* pthread func */
 # include <pthread.h>
-//ㅌㅔ스트용 stdio.h
+
+/* gettimeofday - get date and time */
+# include <<sys/time.h>
+
+//테스트용 stdio.h
 # include <stdio.h>
 
 typedef struct s_philo

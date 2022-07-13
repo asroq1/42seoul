@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:52:41 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/08 18:27:50 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/13 17:44:11 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	main(int argc, char *argv[])
 	{
 		return (occur_error("error philo start", error));
 	}
-	return (0);	
+	return (0);
 }
