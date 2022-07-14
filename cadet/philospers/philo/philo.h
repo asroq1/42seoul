@@ -6,12 +6,17 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/13 16:17:53 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/14 16:56:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef  PHILO_H
 # define PHILO_H
+
+# define  SUCCESS 	1
+# define  FAILURE 	1
+# define  BASIC		5
+# define  OPTIONAL 	6
 
 /* usleep */
 # include <unistd.h>
@@ -20,7 +25,7 @@
 # include <pthread.h>
 
 /* gettimeofday - get date and time */
-# include <<sys/time.h>
+# include <sys/time.h>
 
 //테스트용 stdio.h
 # include <stdio.h>
@@ -41,12 +46,14 @@ typedef struct s_input
 	int			time_to_die;
 	int			time_to_eat;
 	int			time_to_sleep;
-	int			eat_times;
+	int			cnt_of_must_eat;
 	int			finish;
 	int			finish_to_eat;
 	long long	start;
 }				t_input;
 
-int	occur_error(char *str, int no);
+int		print_error(char *str, int code);
+int		ft_atoi(const char *str);
+int		init_input(t_input *input, int argc, char *argv);
 
 #endif
