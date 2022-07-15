@@ -1,6 +1,9 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/hyunjung/42subjects/cadet/philospers/philo'
 cc -Wall -Wextra -Werror -c main.c -I./	-o main.o
-gcc -o philo main.o
+cc -Wall -Wextra -Werror -c init.c -I./	-o init.o
+ 
+cc -Wall -Wextra -Werror -c utils.c -I./	-o utils.o
+gcc -o philo main.o init.o utils.o
 make: Leaving directory `/Users/hyunjung/42subjects/cadet/philospers/philo'
  

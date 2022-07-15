@@ -6,13 +6,15 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:52:50 by hyunjung          #+#    #+#              #
-#    Updated: 2022/07/14 15:30:09 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/07/15 13:17:04 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
 SRCS =	main.c \
+		init.c \
+		utils.c \
 
 OBJS = $(SRCS:%.c=%.o)
 

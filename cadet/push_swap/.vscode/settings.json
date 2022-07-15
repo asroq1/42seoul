@@ -12,6 +12,8 @@
 		"string_view": "c",
 		"sstream": "c",
 		"stack": "c",
-		"random": "c"
+		"random": "c",
+		"cstdlib": "c",
+		"locale": "c"
 	}
 }

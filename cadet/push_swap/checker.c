@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 09:54:13 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/01 18:34:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/15 11:46:30 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,14 @@ void	print_result(t_stack_data *a, t_stack_data *b)
 		free(a->arr);
 		free(b->arr);
 		ft_putstr_fd("OK\n", 1);
-		exit(0);
+		exit(SUCCESS);
 	}
 	else
 	{
 		free(a->arr);
 		free(b->arr);
 		ft_putstr_fd("KO\n", 1);
-		exit(1);
+		exit(FAILURE);
 	}
 }
 

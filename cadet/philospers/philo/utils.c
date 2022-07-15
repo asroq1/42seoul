@@ -6,16 +6,35 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:30:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/14 16:56:39 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/15 13:54:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./philo.h"
 
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != 0)
+	{
+		i++;
+	}
+	return (i);
+}
+
 int	print_error(char *str, int code)
 {
-	printf("%s", &str);
+	int	i;
+
+	i = 0;
+	while (i < ft_strlen(str))
+	{
+		write(1, &str[i++], 1);
+	}
 	exit(code);
+	return (0);
 }
 
 int	ft_atoi(const char *str)

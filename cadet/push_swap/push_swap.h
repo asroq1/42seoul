@@ -6,13 +6,14 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:44:44 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/05 15:14:20 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/15 11:46:21 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
+# define SUCCESS
+# define FAILURE
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>

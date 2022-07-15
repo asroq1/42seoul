@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/14 16:56:47 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/15 14:41:54 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@
 /* gettimeofday - get date and time */
 # include <sys/time.h>
 
+/* memeset */
+# include <string.h>
+
+/* exit */
+# include <stdlib.h>
+
 //테스트용 stdio.h
 # include <stdio.h>
 
@@ -42,7 +48,7 @@ typedef struct s_philo
 
 typedef struct s_input
 {
-	int			philo_num;
+	int			cnt_of_philo;
 	int			time_to_die;
 	int			time_to_eat;
 	int			time_to_sleep;
@@ -54,6 +60,7 @@ typedef struct s_input
 
 int		print_error(char *str, int code);
 int		ft_atoi(const char *str);
-int		init_input(t_input *input, int argc, char *argv);
+int		init_input(t_input *input, int argc, char *argv[]);
+int		ft_strlen(char *str);
 
 #endif

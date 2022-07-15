@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:43:34 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/14 16:55:36 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/15 14:12:21 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,26 @@
    2. 옵션 인자도 있는지 확인해보고 있다면 구조체에 넣어준다.
    3. 뮤텍스 만드는 함수도 만들어준다.
 */
-int	init_input(t_input *input, int argc, char *argv)
+int	init_input(t_input *input, int argc, char *argv[])
 {
-	input->philo_num = ft_atoi(argv[1]);
+	input->cnt_of_philo = ft_atoi(argv[1]);
 	input->time_to_die = ft_atoi(argv[2]);
 	input->time_to_eat = ft_atoi(argv[3]);
 	input->time_to_sleep = ft_atoi(argv[4]);
 	if (argc == 6)
 	{
 		input->cnt_of_must_eat = ft_atoi(argv[5]);
-		if (input->cnt_of_must_eat >= 0)
+		if (input->cnt_of_must_eat <= 0)
 		{
 			return (FAILURE);
 		}
 	}
-	if (input->philo_num <= 0 || input->time_to_die < 0
+	if (input->cnt_of_philo <= 0 || input->time_to_die < 0
 		|| input->time_to_eat < 0 || input->time_to_sleep < 0)
 	{
 		return (FAILURE);
 	}
+	printf("Validate Suceess ");
 	return (0);
 }
 
