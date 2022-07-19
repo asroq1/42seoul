@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/15 14:41:54 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/19 11:52:52 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PHILO_H
 
 # define  SUCCESS 	1
-# define  FAILURE 	1
+# define  FAILURE 	0
 # define  BASIC		5
 # define  OPTIONAL 	6
 
@@ -43,19 +43,22 @@ typedef struct s_philo
 	int				right;
 	int				left;
 	long long		last_food_time;
-	int				eat_counter;
+	int				cnt_of_eat;
+	pthread_t		thread;
 }				t_philo;
 
 typedef struct s_input
 {
-	int			cnt_of_philo;
-	int			time_to_die;
-	int			time_to_eat;
-	int			time_to_sleep;
-	int			cnt_of_must_eat;
-	int			finish;
-	int			finish_to_eat;
-	long long	start;
+	int				cnt_of_philo;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				cnt_of_must_eat;
+	int				finish;
+	int				finish_to_eat;
+	long long		start;
+	pthread_mutex_t	print;
+	pthread_mutex_t	*fork;
 }				t_input;
 
 int		print_error(char *str, int code);

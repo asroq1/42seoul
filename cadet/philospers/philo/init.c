@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:43:34 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/15 14:12:21 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/19 11:52:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int	init_input(t_input *input, int argc, char *argv[])
 		return (FAILURE);
 	}
 	printf("Validate Suceess ");
+	return (0);
+}
+
+int	init_mutext(t_input *input)
+{
+	
 	return (0);
 }
 
