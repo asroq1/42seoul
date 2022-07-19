@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:30:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/19 11:24:43 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/19 17:38:34 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,9 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (value * sign);
+}
+
+int	get_time(void)
+{
+	return (0);
 }

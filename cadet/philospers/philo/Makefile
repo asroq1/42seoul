@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:52:50 by hyunjung          #+#    #+#              #
-#    Updated: 2022/07/15 13:17:04 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/07/19 17:42:31 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,12 @@ $(NAME)	:	$(OBJS)
 %.o	:	%.c
 	cc $(FLAGS) -c $^ -I./	-o $@
 
-clean	: rm -f $(OBJS)
+clean	: 
+		rm -f $(OBJS)
 
-fclean	: clean
-			rm -f (NAME)
+fclean	: 	clean
+		rm -f $(NAME)
+
 re : fclean all
 
 .PHONY	: all clean fclean re bonus
