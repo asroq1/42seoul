@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/19 17:38:52 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:24:02 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ int		get_time(void);
 /* init.c */
 int		init_info(t_info *input, int argc, char *argv[]);
 int		init_mutex(t_info *info);
-int		init_philo(t_philo **philo, t_info *info);
+int		init_philo(t_info *info, t_philo **philo);
+int		init_thread(t_info *info, t_philo *philo);
+
+/* philo.c */
+void	*get_thread(void *argv);
+int		execute_philo(t_info *info, t_philo *philo);
 
 #endif

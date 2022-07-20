@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:52:41 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/19 17:02:51 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/20 14:58:16 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char *argv[])
 	error = init_mutex(&info);
 	if (error != 0)
 		return (print_error("Error mutex init", error));
-	error = init_philo(&philo, &info);
+	error = init_philo(&info, &philo);
 	if (error != 0)
 		return (print_error("Error philo init", error));
 	// error = philo_start(&info, philo);

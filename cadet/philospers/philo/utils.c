@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:30:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/19 17:38:34 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:50:27 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,14 @@ int	ft_atoi(const char *str)
 	return (value * sign);
 }
 
+/* ms초를 기준으로 하기 때문에 tv_sec(초) * 1000을 해서 ms(밀리초)를 구하고, tv_usec(마이크로초)를 더해서 현재의 밀리초를 구한다. */
 int	get_time(void)
 {
-	return (0);
+	struct timeval	time;
+
+	if (gettimeofday(&time, NULL) == -1)
+	{
+		return (1);
+	}
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
 }
