@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:52:50 by hyunjung          #+#    #+#              #
-#    Updated: 2022/07/20 15:05:26 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/07/21 16:58:44 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS =	main.c \
 		init.c \
 		utils.c \
 		philo.c \
+		thread.c \
 
 OBJS = $(SRCS:%.c=%.o)
 

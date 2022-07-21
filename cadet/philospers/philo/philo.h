@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/20 17:24:02 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:52:58 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,14 @@ int		init_philo(t_info *info, t_philo **philo);
 int		init_thread(t_info *info, t_philo *philo);
 
 /* philo.c */
-void	*get_thread(void *argv);
+// void	get_passed_time(long long wait_time, t_info *info);
+int		print_state(t_info *info, char *str, int id);
 int		execute_philo(t_info *info, t_philo *philo);
+
+/* thread.c */
+void	check_even_odd(int id);
+void	*get_thread(void *philo);
+int		execute_thread(t_info *info, t_philo *philo);
+void	free_thread(t_info *info, t_philo *philo);
 
 #endif

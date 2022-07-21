@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:52:41 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/20 14:58:16 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:45:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ int	main(int argc, char *argv[])
 	int		error;
 
 	if (argc != 5 && argc != 6)
-		return (print_error("Error input", 3));
+		return (print_error("Input counts Error", 3));
 	error = init_info(&info, argc, argv);
 	if (error != 0)
-		return (print_error("Error input init", error));
+		return (print_error("init_info Error", error));
 	error = init_mutex(&info);
 	if (error != 0)
-		return (print_error("Error mutex init", error));
+		return (print_error("mutext init Error", error));
 	error = init_philo(&info, &philo);
 	if (error != 0)
-		return (print_error("Error philo init", error));
-	// error = philo_start(&info, philo);
-	// if (error)
-	// 	return (print_error("Error philo start", error));
+		return (print_error("init_philo Error", error));
+	error = execute_thread(&info, philo);
+	if (error)
+		return (print_error("Error philo start", error));
 	return (0);
 }
