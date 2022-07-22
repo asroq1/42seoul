@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/21 17:52:58 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/22 18:03:08 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct s_info
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				cnt_of_must_eat;
-	int				finish;
+	int				death;
 	int				finish_to_eat;
 	long long		time_to_start;
 	pthread_mutex_t	print;
@@ -62,7 +62,7 @@ typedef struct s_info
 /* utils.c */
 int		print_error(char *str, int code);
 int		ft_atoi(const char *str);
-int		ft_strlen(char *str);
+void	check_death(t_info *info, t_philo *philo);
 int		get_time(void);
 
 /* init.c */

@@ -6,35 +6,16 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:30:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/21 13:46:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/22 18:34:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./philo.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != 0)
-	{
-		i++;
-	}
-	return (i);
-}
-
 int	print_error(char *str, int code)
 {
-	int	i;
-
-	i = 0;
-	while (i < ft_strlen(str))
-	{
-		write(1, &str[i++], 1);
-	}
-	exit(code);
-	return (0);
+	printf("%s", str);
+	return (code);
 }
 
 int	ft_atoi(const char *str)
@@ -49,10 +30,17 @@ int	ft_atoi(const char *str)
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
 		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '+')
 		i++;
+	if (ft_is_digit(str[i] != 0))
+	{
+		printf("here \n");
+		return (1);
+	}
+	else
+	{
+		i++;
+	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		if (value * sign > 2147483647)
@@ -76,4 +64,29 @@ int	get_time(void)
 		return (1);
 	}
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
+}
+
+void	check_death(t_info *info, t_philo *philo)
+{
+	int			i;
+	long long	now;	
+
+	i = 0;
+	while (info->death == 0)
+	{
+		if ((info->time_to_eat != 0) && (info->cnt_of_philo == info->finish_to_eat))
+		{
+			info->death = 1;
+		}
+		while (i < info->cnt_of_philo)
+		{
+			now = get_time();
+			if ((now - philo[i].last_food_time) >= info->time_to_die)
+			{
+				print_state(info, "died", i);
+				info->death = 1;
+			}
+			i++;
+		}
+	}
 }

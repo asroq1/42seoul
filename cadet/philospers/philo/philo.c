@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:05:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/21 17:50:03 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/22 17:57:52 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	print_state(t_info *info, char *str, int id)
 		return (1);
 	}
 	pthread_mutex_lock(&(info->print));
-	if (info->finish == 0)
+	if (info->death == 0)
 	{
 		printf("%lld %d %s \n", now - info->time_to_start, id + 1, str);
 	}
@@ -65,8 +65,8 @@ int	execute_philo(t_info *info, t_philo *philo)
 		philo->last_food_time = get_time();
 		philo->cnt_of_eat = philo->cnt_of_eat++;
 		// get_passed_time((long long)info->time_to_eat, info);
-		pthread_mutex_lock(&(info->fork[philo->right]));
-		pthread_mutex_lock(&(info->fork[philo->left]));
+		pthread_mutex_unlock(&(info->fork[philo->right]));
+		pthread_mutex_unlock(&(info->fork[philo->left]));
 	}
 	return (0);
 }

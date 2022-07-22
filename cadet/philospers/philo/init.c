@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:43:34 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/21 13:09:47 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/22 18:25:19 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	init_info(t_info *info, int argc, char *argv[])
 	info->time_to_die = ft_atoi(argv[2]);
 	info->time_to_eat = ft_atoi(argv[3]);
 	info->time_to_sleep = ft_atoi(argv[4]);
+	if (info->cnt_of_philo <= 0 || info->time_to_die < 0
+		|| info->time_to_eat < 0 || info->time_to_sleep < 0)
+	{
+		return (1);
+	}
 	if (argc == 6)
 	{
 		info->cnt_of_must_eat = ft_atoi(argv[5]);
@@ -29,11 +34,6 @@ int	init_info(t_info *info, int argc, char *argv[])
 		{
 			return (1);
 		}
-	}
-	if (info->cnt_of_philo <= 0 || info->time_to_die < 0
-		|| info->time_to_eat < 0 || info->time_to_sleep < 0)
-	{
-		return (1);
 	}
 	printf("Validate Suceess\n");
 	return (0);
