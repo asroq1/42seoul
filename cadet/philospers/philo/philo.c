@@ -6,35 +6,40 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:05:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/22 17:57:52 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/23 18:01:20 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./philo.h"
 
-// void	get_passed_time(long long wait_time, t_info *info)
-// {
-// 	long long	now;	
-// 	long long	start;
 
-// 	start = get_time();
-// 	while (info->finish == 0)
-// 	{
-// 		now = get_time();
-// 		if ((now - start) >= wait_time)
-// 		{
-// 			break ;
-// 		}
-// 		usleep(10);
-// 	}
-// }
+/* 
+	usleep 밀림 방지 함수
+*/ 
+
+void	get_passed_time(long long wait_time, t_info *info)
+{
+	long long	now;	
+	long long	start;
+
+	start = get_time();
+	while (info->death != 0)
+	{
+		now = get_time();
+		if ((now - start) >= wait_time)
+		{
+			break ;
+		}
+		usleep(10);
+	}
+}
 
 int	print_state(t_info *info, char *str, int id)
 {
 	long long	now;
 
 	now = get_time();
-	if (now != 0)
+	if (now == 1)
 	{
 		return (1);
 	}
@@ -46,6 +51,10 @@ int	print_state(t_info *info, char *str, int id)
 	pthread_mutex_unlock(&(info->print));
 	return (0);
 }
+	/* 
+		철학자 수가 1명이면 끝나지 않기에 따로 예외처리를 해준다. 
+		왼쪽부터 집고 오른쪽을 집고 먹은 다음에 오른쪽부터 내려준다.
+	*/
 
 int	execute_philo(t_info *info, t_philo *philo)
 {
@@ -64,7 +73,7 @@ int	execute_philo(t_info *info, t_philo *philo)
 		print_state(info, "is eating", philo->id);
 		philo->last_food_time = get_time();
 		philo->cnt_of_eat = philo->cnt_of_eat++;
-		// get_passed_time((long long)info->time_to_eat, info);
+		get_passed_time((long long)info->time_to_eat, info);
 		pthread_mutex_unlock(&(info->fork[philo->right]));
 		pthread_mutex_unlock(&(info->fork[philo->left]));
 	}

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/22 18:03:08 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/23 15:52:41 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ typedef struct s_info
 	int				time_to_die;
 	int				time_to_eat;
 	int				time_to_sleep;
+	long long		time_to_start;
+	int				finish_to_eat;
 	int				cnt_of_must_eat;
 	int				death;
-	int				finish_to_eat;
-	long long		time_to_start;
 	pthread_mutex_t	print;
 	pthread_mutex_t	*fork;
 }				t_info;
@@ -64,15 +64,16 @@ int		print_error(char *str, int code);
 int		ft_atoi(const char *str);
 void	check_death(t_info *info, t_philo *philo);
 int		get_time(void);
+int		ft_isdigit(int arg);
 
 /* init.c */
-int		init_info(t_info *input, int argc, char *argv[]);
+int		init_info(t_info *info, int argc, char *argv[], int err);
 int		init_mutex(t_info *info);
 int		init_philo(t_info *info, t_philo **philo);
 int		init_thread(t_info *info, t_philo *philo);
 
 /* philo.c */
-// void	get_passed_time(long long wait_time, t_info *info);
+void	get_passed_time(long long wait_time, t_info *info);
 int		print_state(t_info *info, char *str, int id);
 int		execute_philo(t_info *info, t_philo *philo);
 
