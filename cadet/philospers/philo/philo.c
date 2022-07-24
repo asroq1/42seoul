@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:05:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/23 18:01:20 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:38:57 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	get_passed_time(long long wait_time, t_info *info)
 	long long	start;
 
 	start = get_time();
-	while (info->death != 0)
+	while (info->death == 0)
 	{
 		now = get_time();
 		if ((now - start) >= wait_time)

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 15:08:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/23 18:02:16 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/24 18:19:16 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,14 @@ void	check_even_odd(int id)
 	{
 		usleep(1000);
 	}
+	else
+	{
+		usleep(500);
+	}
 }
 
 	/* 
+		get_thread 함수는 실행된 쓰레드의  death가 1이 아닐 떄까지 계속 동작한다.
 		1. 인자값으로 void타입밖에 적용이 안되기에 다시 타입을 바꿔준다.
 		2. check_even_odd 함수를 통해 홀수부터 재우고, 짝수부터 밥을 먹인다 (데드락 방지).
 		3. 반드시 먹어야 하는 횟수랑, 철학자가 먹은 횟수가 같다면 다 먹은 횟수(finish_to_eat)을 ++
@@ -57,7 +62,7 @@ void	*get_thread(void *philo)
 			break ;
 		}
 		print_state(tmp_info, "is sleeping", tmp_philo->id);
-		get_passed_time((long long)tmp_info->time_to_sleep, tmp_info);
+		// get_passed_time((long long)tmp_info->time_to_sleep, tmp_info);
 		print_state(tmp_info, "is thinking", tmp_philo->id);
 	}
 	return (0);
