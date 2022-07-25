@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:52:50 by hyunjung          #+#    #+#              #
-#    Updated: 2022/07/21 16:58:44 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/07/25 19:59:31 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,15 @@ SRCS =	main.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
-LIBC = ar rc
-
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror 
 
 all	: $(NAME)
 
 $(NAME)	:	$(OBJS)
-		gcc -o $(NAME) $(OBJS)
+		cc $(FLAGS)  -o $(NAME) $(OBJS)
 
 %.o	:	%.c
-	cc $(FLAGS) -c $^ -I./	-o $@
+	cc $(FLAGS) -c $^ -I./
 
 clean	: 
 		rm -f $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:30:57 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/24 18:10:23 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:31:20 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,13 @@ void	check_death(t_info *info, t_philo *philo)
 	int			i;
 	long long	now;	
 
-	i = 0;
 	while (info->death == 0)
 	{
 		if ((info->time_to_eat != 0) && (info->cnt_of_philo == info->finish_to_eat))
 		{
 			info->death = 1;
 		}
+		i = 0;
 		while (i < info->cnt_of_philo)
 		{
 			now = get_time();

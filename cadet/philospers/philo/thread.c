@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 15:08:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/24 18:19:16 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:01:45 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	*get_thread(void *philo)
 			break ;
 		}
 		print_state(tmp_info, "is sleeping", tmp_philo->id);
-		// get_passed_time((long long)tmp_info->time_to_sleep, tmp_info);
+		get_passed_time((long long)tmp_info->time_to_sleep, tmp_info);
 		print_state(tmp_info, "is thinking", tmp_philo->id);
 	}
 	return (0);
@@ -82,12 +82,16 @@ int	execute_thread(t_info *info, t_philo *philo)
 	{
 		philo[i].last_food_time = get_time();
 		if (pthread_create(&(philo[i].thread), NULL, get_thread, &(philo[i])))
-		{
+		{	
 			return (1);
 		}
 		i++;
 	}
 	check_death(info, philo);
+	if (info->cnt_of_philo == 1)
+	{
+		pthread_mutex_unlock(&(info->fork[philo->left]));
+	}
 	i = 0;
 	while (i < info->cnt_of_philo)
 	{
@@ -95,6 +99,5 @@ int	execute_thread(t_info *info, t_philo *philo)
 		i++;
 	}
 	free_thread(info, philo);
-	printf("execute thread Success\n");
 	return (0);
 }

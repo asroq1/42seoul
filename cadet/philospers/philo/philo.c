@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:05:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/24 17:38:57 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:01:29 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 
 /* 
-	usleep 밀림 방지 함수
-*/ 
+	새로운_슬립_함수(대기시간)
+{
+    목표시각=대기시간 + 현재시각();
+    while(목표시각 > 현재시각())
+    {usleep(100)}
+}
+*/
 
 void	get_passed_time(long long wait_time, t_info *info)
 {
@@ -58,24 +63,15 @@ int	print_state(t_info *info, char *str, int id)
 
 int	execute_philo(t_info *info, t_philo *philo)
 {
-	if (info->cnt_of_philo == 1)
-	{
-		pthread_mutex_lock(&(info->fork[philo->left]));
-		print_state(info, "has taken a fork", philo->id);
-		pthread_mutex_unlock(&(info->fork[philo->left]));
-	}
-	else
-	{
 		pthread_mutex_lock(&(info->fork[philo->left]));
 		print_state(info, "has taken a fork", philo->id);
 		pthread_mutex_lock(&(info->fork[philo->right]));
 		print_state(info, "has taken a fork", philo->id);
 		print_state(info, "is eating", philo->id);
 		philo->last_food_time = get_time();
-		philo->cnt_of_eat = philo->cnt_of_eat++;
+		philo->cnt_of_eat += 1;
 		get_passed_time((long long)info->time_to_eat, info);
 		pthread_mutex_unlock(&(info->fork[philo->right]));
 		pthread_mutex_unlock(&(info->fork[philo->left]));
-	}
 	return (0);
 }
