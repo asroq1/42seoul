@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 15:08:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/25 20:01:45 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/26 16:39:57 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,33 @@ void	*get_thread(void *philo)
 	tmp_philo = philo;
 	tmp_info = tmp_philo->info;
 	check_even_odd(tmp_philo->id);
-	while (tmp_info->death == 0)
+	routine(tmp_info, tmp_philo);
+	return (0);
+}
+
+void	routine(t_info *tmp_info, t_philo *tmp_philo)
+{
+	int		life;
+
+	while (1)
 	{
+		pthread_mutex_lock(&(tmp_info->check_death));
+		life = tmp_info->death;
+		pthread_mutex_unlock(&(tmp_info->check_death));
+		if (life == 1)
+			break ;
 		execute_philo(tmp_info, tmp_philo);
 		if (tmp_info->cnt_of_must_eat == tmp_philo->cnt_of_eat)
 		{
+			pthread_mutex_lock(&(tmp_info->check_eat_cnt));
 			tmp_info->finish_to_eat++;
+			pthread_mutex_unlock(&(tmp_info->check_eat_cnt));
 			break ;
 		}
 		print_state(tmp_info, "is sleeping", tmp_philo->id);
-		get_passed_time((long long)tmp_info->time_to_sleep, tmp_info);
+		new_sleep((long long)tmp_info->time_to_sleep);
 		print_state(tmp_info, "is thinking", tmp_philo->id);
 	}
-	return (0);
 }
 
 	/*

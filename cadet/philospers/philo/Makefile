@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/08 17:52:50 by hyunjung          #+#    #+#              #
-#    Updated: 2022/07/25 19:59:31 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/07/26 17:29:27 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS =	main.c \
 
 OBJS = $(SRCS:%.c=%.o)
 
-FLAGS	= -Wall -Wextra -Werror 
+FLAGS	= -Wall -Wextra -Werror
 
 all	: $(NAME)
 

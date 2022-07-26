@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:43:34 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/25 17:33:18 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/26 16:28:46 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ int	init_mutex(t_info *info)
 
 	i = 0;
 	if (pthread_mutex_init(&info->print, NULL) != 0)
-	{
 		return (1);
-	}
+	if (pthread_mutex_init(&info->check_death, NULL) != 0)
+		return (1);
+	if (pthread_mutex_init(&info->check_last_food, NULL) != 0)
+		return (1);
+	if (pthread_mutex_init(&info->check_eat_cnt, NULL) != 0)
+		return (1);
 	info->fork = malloc(sizeof(pthread_mutex_t) * info->cnt_of_philo);
 	if (info->fork == 0)
 	{
@@ -58,6 +62,7 @@ int	init_info(t_info *info, int argc, char *argv[], int err)
 	info->time_to_eat = ft_atoi(argv[3]);
 	info->time_to_sleep = ft_atoi(argv[4]);
 	info->time_to_start = get_time();
+	info->death = 0;
 	if (info->cnt_of_philo <= 0 || info->time_to_die < 0
 		|| info->time_to_eat < 0 || info->time_to_sleep < 0)
 	{
@@ -71,7 +76,6 @@ int	init_info(t_info *info, int argc, char *argv[], int err)
 			return (1);
 		}
 	}
-	printf("Validate Suceess\n");
 	return (0);
 }
 
@@ -103,6 +107,5 @@ int	init_philo(t_info *info, t_philo **philo)
 		(*philo)[i].cnt_of_eat = 0;
 		i++;
 	}
-	printf("init philo Suceess\n");
 	return (0);
 }

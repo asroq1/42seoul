@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/25 19:10:28 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:27:15 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 /* exit */
 # include <stdlib.h>
 
-//테스트용 stdio.h
+/* printf */
 # include <stdio.h>
 
 typedef struct s_philo
@@ -55,6 +55,9 @@ typedef struct s_info
 	int				finish_to_eat;
 	int				cnt_of_must_eat;
 	int				death;
+	pthread_mutex_t	check_eat_cnt;
+	pthread_mutex_t	check_last_food;
+	pthread_mutex_t	check_death;
 	pthread_mutex_t	print;
 	pthread_mutex_t	*fork;
 }				t_info;
@@ -73,14 +76,16 @@ int		init_philo(t_info *info, t_philo **philo);
 int		init_thread(t_info *info, t_philo *philo);
 
 /* philo.c */
-void	get_passed_time(long long wait_time, t_info *info);
+void	new_sleep(long long wait_time);
 int		print_state(t_info *info, char *str, int id);
 int		execute_philo(t_info *info, t_philo *philo);
+void	check_all_philo(int i, t_info *info, t_philo *philo);
 
 /* thread.c */
 void	check_even_odd(int id);
 void	*get_thread(void *philo);
 int		execute_thread(t_info *info, t_philo *philo);
 void	free_thread(t_info *info, t_philo *philo);
+void	routine(t_info *info, t_philo *philo);
 
 #endif
