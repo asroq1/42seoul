@@ -6,20 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:05:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/26 17:27:35 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/28 14:15:23 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./philo.h"
-
-/* 
-	새로운_슬립_함수(대기시간)
-{
-    목표시각=대기시간 + 현재시각();
-    while(목표시각 > 현재시각())
-    {usleep(100)}
-}
-*/
 
 void	new_sleep(long long wait_time)
 {
@@ -34,7 +25,7 @@ void	new_sleep(long long wait_time)
 		{
 			break ;
 		}
-		usleep(10);
+		usleep(100);
 	}
 }
 
@@ -43,26 +34,22 @@ int	print_state(t_info *info, char *str, int id)
 	long long	now;
 	int			life;
 
+	pthread_mutex_lock(&(info->print));
 	pthread_mutex_lock(&(info->check_death));
 	life = info->death;
 	pthread_mutex_unlock(&(info->check_death));
-	now = get_time();
-	if (now == 1)
-	{
-		return (1);
-	}
-	pthread_mutex_lock(&(info->print));
 	if (life == 0)
 	{
+		now = get_time();
+		if (now == 1)
+		{
+			return (1);
+		}
 		printf("%lld %d %s \n", now - info->time_to_start, id + 1, str);
 	}
 	pthread_mutex_unlock(&(info->print));
 	return (0);
 }
-	/* 
-		철학자 수가 1명이면 끝나지 않기에 따로 예외처리를 해준다. 
-		왼쪽부터 집고 오른쪽을 집고 먹은 다음에 오른쪽부터 내려준다.
-	*/
 
 int	execute_philo(t_info *info, t_philo *philo)
 {
@@ -92,11 +79,11 @@ void	check_all_philo(int i, t_info *info, t_philo *philo)
 	pthread_mutex_unlock(&(info->check_last_food));
 	if (left_time >= info->time_to_die)
 	{
+		pthread_mutex_lock(&info->print);
 		pthread_mutex_lock(&info->check_death);
 		info->death = 1;
 		pthread_mutex_unlock(&info->check_death);
-		pthread_mutex_lock(&info->print);
-		printf("%lld %d died\n", (get_time() - start_time), philo->id + 1);
+		printf("%lld %d died\n", (get_time() - start_time), philo[i].id + 1);
 		pthread_mutex_unlock(&info->print);
 	}
 	i++;

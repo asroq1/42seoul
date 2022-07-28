@@ -6,15 +6,12 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 18:03:48 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/26 17:27:15 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/07/28 13:32:05 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef  PHILO_H
 # define PHILO_H
-
-# define  BASIC		5
-# define  OPTIONAL 	6
 
 /* usleep */
 # include <unistd.h>
@@ -82,7 +79,7 @@ int		execute_philo(t_info *info, t_philo *philo);
 void	check_all_philo(int i, t_info *info, t_philo *philo);
 
 /* thread.c */
-void	check_even_odd(int id);
+void	check_even_odd(int id, t_info *info);
 void	*get_thread(void *philo);
 int		execute_thread(t_info *info, t_philo *philo);
 void	free_thread(t_info *info, t_philo *philo);
