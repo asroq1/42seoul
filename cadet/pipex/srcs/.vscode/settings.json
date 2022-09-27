@@ -1,7 +1,18 @@
 {
-	"makefile.extensionOutputFolder": "./.vscode",
-	"files.associations": {
-		"fcntl.h": "c",
-		"stdio.h": "c"
-	}
+	// "makefile.extensionOutputFolder": "./.vscode",
+	// "files.associations": {
+	// 	"fcntl.h": "c",
+	// 	"stdio.h": "c"
+	// },
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/Users/devicii/42subjects/cadet/pipex/srcs",
+			"binaryPath": "/Users/devicii/42subjects/cadet/pipex/srcs/pipex",
+			"binaryArgs": [
+				"infile",
+				"ls",
+				"wc",
+				"outifle"]
+		}
+	]
 }

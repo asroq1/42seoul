@@ -6,12 +6,12 @@
 #    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/15 17:17:35 by hyunjung          #+#    #+#              #
-#    Updated: 2022/04/05 17:19:14 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/08/04 12:59:11 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror -g
 
 NAME =  pipex
 SRCS =	pipex.c \

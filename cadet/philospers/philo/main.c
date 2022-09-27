@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:52:41 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/07/27 18:24:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/08/19 14:19:41 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int	main(int argc, char *argv[])
 	error = execute_thread(&info, philo);
 	if (error)
 		return (print_error("Error philo start", error));
+	while (1)
+	{
+	}
 	return (0);
 }

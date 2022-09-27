@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:17:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/04/07 15:03:44 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/08/16 15:48:43 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	child_proc(char **argv, char **envp, int *pipe, int infile)
 	dup2(infile, STDIN_FILENO);
 	dup2(pipe[1], STDOUT_FILENO);
 	close(pipe[0]);
+	write(1, "hello\n", 7);
 	execute(argv[2], envp);
 }
 
@@ -66,6 +67,7 @@ int	main(int argc, char **argv, char **envp)
 		if (pid == 0)
 			child_proc(argv, envp, fd, infile);
 		waitpid(pid, 0, WNOHANG);
+		write(1, "hello\n", 7);
 		parent_proc(argv, envp, fd, outfile);
 	}
 	return (0);

@@ -1,8 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make all --dry-run --keep-going --print-directory
 make: Entering directory `/Users/devicii/42subjects/cadet/pipex/srcs'
-gcc -Wall -Wextra -Werror  -c pipex.c -o pipex.o
-gcc -Wall -Wextra -Werror  -c utils.c -o utils.o
-gcc -Wall -Wextra -Werror  -c str_utils.c -o str_utils.o
-gcc -Wall -Wextra -Werror  -o pipex pipex.o utils.o str_utils.o
+make: Nothing to be done for `all'.
 make: Leaving directory `/Users/devicii/42subjects/cadet/pipex/srcs'
  
