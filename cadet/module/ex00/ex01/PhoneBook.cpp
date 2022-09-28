@@ -29,5 +29,9 @@ public:
 		this->contacts[i].set_secrect(input);
 	};
 	void search();
-	int	exit();
+	int	exit()
+	{
+		std::cout << "Program finished ..." << std::endl;
+		return 0;
+	};
 };
