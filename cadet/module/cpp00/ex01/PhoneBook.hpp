@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 18:54:56 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/10 19:31:19 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/11/14 16:15:10 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/11/14 17:48:40 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PHONE_BOOK_H
 
 #include <iostream>
+#include <iomanip>
 
 class Contact
 {
@@ -24,11 +25,17 @@ private:
 	std::string nick;
 	std::string secret;
 public:
-	void	set_number(std::string number);
-	void	set_first(std::string first);
-	void	set_last(std::string last);
-	void	set_nick(std::string nick);
-	void	set_secrect(std::string secret);
+	void		setNumber(std::string number);
+	void		setFirst(std::string first);
+	void		setLast(std::string last);
+	void		setNick(std::string nick);
+	void		setSecrect(std::string secret);
+	
+	std::string	getNumber();
+	std::string	getFirst();
+	std::string	getLast();
+	std::string	getNick();
+	std::string	getSecrect();
 
 };
 #include <iostream>
@@ -36,12 +43,11 @@ public:
 class PhoneBook
 {
 private:
-	int		i;
 	Contact contacts[8];
 public:
-	void 	add(std::string input);
+	void 	add(std::string input, int idx);
 	void	search();
-	int		exit();
+	int		exit(std::string input);
 };
 
 #endif
