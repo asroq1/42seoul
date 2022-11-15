@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:15:08 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/14 17:47:39 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:57:06 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,28 @@ int main()
 	PhoneBook phoneBook;
 	std::string cmd;
 	int idx = 0;
-
-	std::cout << "Program started ...." << std::endl;
+	int i = 1;
 	while (true)
 	{
-		std::cin >> cmd;
-		if (cmd == "add")
+		std::cout << i << "i is" << std::endl;
+		std::cout << "There are three options [ADD, SEARCH, EXIT]" << std::endl;
+		if (cmd == "ADD")
 		{
-			phoneBook.add(cmd, idx);
-			idx++;
+			phoneBook.add(idx);
+			idx++;c
 		}
-		else if (cmd == "search")
+		else if (cmd == "SEARCH")
 		{
 			phoneBook.search();
 		}
-		else if (cmd == "exit")
+		else if (cmd == "EXIT")
 		{
-			phoneBook.exit(cmd);
+			phoneBook.exit();
 			break;
 		}
 		else
 		{
-			std::cout << "wrong command" << std::endl;
+			std::cout << "ONLY USE [ADD, SEARCH, EXIT]" << std::endl;
 		}
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');

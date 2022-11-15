@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:15:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/14 17:41:05 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:15:17 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void Contact::setNick(std::string nick)
 {
 	this->nick = nick;
 }
-void Contact::setSecrect(std::string secret)
+void Contact::setSecret(std::string secret)
 {
 	this->secret = secret;
 }
@@ -50,7 +50,7 @@ std::string Contact::getNick()
 {
 	return this->nick;
 }
-std::string Contact::getSecrect()
+std::string Contact::getSecret()
 {
 	return this->secret;
 }

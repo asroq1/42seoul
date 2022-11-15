@@ -6,11 +6,11 @@
 #    By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/14 16:15:51 by hyunjung          #+#    #+#              #
-#    Updated: 2022/11/14 16:15:52 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/11/15 15:31:27 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= test
+NAME	= phonebook
 
 CPP =  c++
 RM = rm -rf
