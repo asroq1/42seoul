@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:15:10 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/15 15:19:01 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:28:06 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ std::string PhoneBook::validate_cmd(std::string cmd)
 {
 	if (cmd.length() > 10)
 	{
-		cmd = cmd.substr(0, 9);
-		cmd += ".";
+		cmd = cmd.substr(0, 9).append(".");
 	}
 	return (cmd);
 }
@@ -78,7 +77,10 @@ void PhoneBook::search()
 		std::cout << "Number : " << this->contacts[idx - 1].getNumber() << std::endl;
 		std::cout << "Secret : " << this->contacts[idx - 1].getSecret() << std::endl;	
 	}
-	// }
+	else
+	{
+		std::cout << "Wrong Index" << std::endl;
+	}
 }
 
 void PhoneBook::exit()

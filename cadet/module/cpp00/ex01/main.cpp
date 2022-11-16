@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:15:08 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/15 15:57:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/16 14:23:19 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@ int main()
 	PhoneBook phoneBook;
 	std::string cmd;
 	int idx = 0;
-	int i = 1;
 	while (true)
 	{
-		std::cout << i << "i is" << std::endl;
 		std::cout << "There are three options [ADD, SEARCH, EXIT]" << std::endl;
+		std::cin >> cmd;
 		if (cmd == "ADD")
 		{
 			phoneBook.add(idx);
-			idx++;c
+			idx++;
 		}
 		else if (cmd == "SEARCH")
 		{
