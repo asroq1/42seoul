@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:35:50 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/17 11:42:07 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:27:31 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ Account::Account(int initial_deposit)
 
 Account::~Account(void)
 {
+	Account::_nbAccounts--;
+	Account::_totalAmount -= this->_amount;
+	Account::_totalNbDeposits -= this->_nbDeposits;
+	Account::_totalNbWithdrawals -= this->_nbWithdrawals;
 	_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
