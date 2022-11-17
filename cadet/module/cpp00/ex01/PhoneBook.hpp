@@ -6,12 +6,9 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:15:10 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/15 14:05:20 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/17 13:00:46 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef PHONE_BOOK_H
-#define PHONE_BOOK_H
 
 #include "Contact.hpp"
 
@@ -22,10 +19,7 @@ private:
 
 public:
 	std::string validate_cmd(std::string cmd);
-	void 		add(int idx);
-	void 		search();
-	void 		exit();
-
+	void add(int idx);
+	void search();
+	void exit();
 };
-
-#endif
