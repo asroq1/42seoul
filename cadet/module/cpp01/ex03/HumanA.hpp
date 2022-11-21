@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:43:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/21 15:46:35 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/11/21 17:39:57 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/11/21 18:37:03 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMAN_A_HPP
+#define HUMAN_A_HPP
 
-int main()
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA
 {
-	Zombie originZombie("ORIGIN");
-	originZombie.announce();
+private:
+	std::string name;
+	Weapon weapon;
 
-	Zombie *heapZombie = newZombie("HEAP");
-	heapZombie->announce();
+public:
+	HumanA(std::string name, Weapon weapon);
+	~HumanA();
+	void attack();
+};
 
-	delete heapZombie;
-
-	randomChump("STACK");
-	return 0;
-}
+#endif

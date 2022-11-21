@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:43:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/21 15:46:35 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:17:34 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 int main()
 {
-	Zombie originZombie("ORIGIN");
-	originZombie.announce();
+	Zombie *horde;
+	int n;
 
-	Zombie *heapZombie = newZombie("HEAP");
-	heapZombie->announce();
-
-	delete heapZombie;
-
-	randomChump("STACK");
+	n = 7;
+	horde = zombieHorde(n, "zombie");
+	for (int i = 0; i < n; i++)
+	{
+		horde[i].announce();
+	}
+	delete[] horde;
 	return 0;
 }

@@ -1,11 +1,9 @@
 SRCS = ./main.cpp \
-	./newZombie.cpp \
-	./Zombie.cpp \
-	./randomChump.cpp \
-
+		./HumanA.cpp HumanB.cpp \
+		./Weapon.cpp \
 
 CC = clang++
-NAME = zombie
+NAME = main
 
 CFLANG = -Wall -Wextra -Werror -std=c++98
 OBJS = $(SRCS:.cpp=.o)

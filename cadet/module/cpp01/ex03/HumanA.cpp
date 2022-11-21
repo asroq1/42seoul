@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:43:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/21 15:46:35 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/11/21 17:39:58 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/11/21 18:44:14 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-int main()
+HumanA::HumanA(std::string name, Weapon weapon)
 {
-	Zombie originZombie("ORIGIN");
-	originZombie.announce();
+	this->name = name;
+	this->weapon = weapon;
+}
 
-	Zombie *heapZombie = newZombie("HEAP");
-	heapZombie->announce();
+HumanA::~HumanA()
+{
+}
 
-	delete heapZombie;
-
-	randomChump("STACK");
-	return 0;
+void HumanA::attack()
+{
+	std::cout << "test attact" << this->weapon.getType() << std::endl;
+	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
 }

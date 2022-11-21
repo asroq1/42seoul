@@ -1,8 +1,6 @@
 SRCS = ./main.cpp \
-	./newZombie.cpp \
 	./Zombie.cpp \
-	./randomChump.cpp \
-
+	./ZombieHorde.cpp \
 
 CC = clang++
 NAME = zombie

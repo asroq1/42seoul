@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:43:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/21 15:46:35 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/11/17 16:43:00 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/11/21 16:35:49 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_H
+#define ZOMBIE_H
 
-int main()
+#include <iostream>
+
+class Zombie
 {
-	Zombie originZombie("ORIGIN");
-	originZombie.announce();
+private:
+	std::string name;
 
-	Zombie *heapZombie = newZombie("HEAP");
-	heapZombie->announce();
+public:
+	Zombie(void);
+	Zombie(std::string name);
+	~Zombie(void);
 
-	delete heapZombie;
+	void setName(std::string name);
+	void announce(void);
+};
 
-	randomChump("STACK");
-	return 0;
-}
+Zombie *zombieHorde(int N, std::string name);
+
+#endif

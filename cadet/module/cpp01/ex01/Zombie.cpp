@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 16:43:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/21 15:46:35 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/11/17 16:43:02 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/11/21 16:42:03 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie::Zombie()
 {
-	Zombie originZombie("ORIGIN");
-	originZombie.announce();
+	this->name = "";
+}
 
-	Zombie *heapZombie = newZombie("HEAP");
-	heapZombie->announce();
+Zombie::Zombie(std::string name)
+{
+	this->name = name;
+}
 
-	delete heapZombie;
+Zombie::~Zombie()
+{
+	std::cout << this->name << " is dead" << std::endl;
+}
 
-	randomChump("STACK");
-	return 0;
+void Zombie::announce(void)
+{
+	std::cout << this->name << " : "
+			  << "BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->name = name;
 }
