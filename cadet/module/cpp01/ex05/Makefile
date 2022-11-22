@@ -5,14 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/22 16:26:23 by hyunjung          #+#    #+#              #
-#    Updated: 2022/11/22 16:26:23 by hyunjung         ###   ########.fr        #
+#    Created: 2022/11/22 16:26:18 by hyunjung          #+#    #+#              #
+#    Updated: 2022/11/22 18:43:26 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ./main.cpp \
-		./HumanA.cpp HumanB.cpp \
-		./Weapon.cpp \
+	   ./Harl.cpp \
 
 CC = clang++
 NAME = main

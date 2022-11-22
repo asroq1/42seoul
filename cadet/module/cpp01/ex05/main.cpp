@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 17:40:07 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/22 15:04:59 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/11/22 18:44:24 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/11/22 19:13:15 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-
-Weapon::Weapon()
+int main()
 {
-}
-
-Weapon::Weapon(std::string type)
-{
-	this->type = type;
-}
-
-Weapon::~Weapon()
-{
-}
-
-const std::string &Weapon::getType(void) const
-{
-	return this->type;
-}
-
-void Weapon::setType(std::string type)
-{
-	this->type = type;
+	Harl harl;
+	
+	return 0;
 }
