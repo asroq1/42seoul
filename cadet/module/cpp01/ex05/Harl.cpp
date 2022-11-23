@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:13 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/22 19:54:37 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:50:32 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 Harl::Harl(/* args */)
 {
+	this->strArr[0] = "DEBUG";
+	this->strArr[1] = "INFO";
+	this->strArr[2] = "WARNING";
+	this->strArr[3] = "ERROR";
 }
+
 Harl::~Harl()
 {
 }
@@ -39,9 +44,11 @@ void error(void)
 
 void complain(std::string level)
 {
-	std::string strArr[4] = {"debug", "info", "warning", "error"};
-	void (Harl::*p)(void) = {&Harl::debug,
-							 &Harl::info,
-							 &Harl::warning,
-							 &Harl::error};
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == Harl::strArr[i])
+		{
+			(this->*Harl::strArr[i])();
+		}
+	}
 }

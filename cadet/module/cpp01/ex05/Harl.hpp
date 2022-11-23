@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:43:11 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/22 19:02:25 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:20:52 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	Harl(/* args */);
 	~Harl();
 	void complain(std::string level);
+	std::string strArr[4];
 };
 
 #endif
