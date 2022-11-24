@@ -6,11 +6,10 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:40:04 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/22 15:08:58 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:14:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 int main()

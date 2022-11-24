@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:43:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/21 15:46:35 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:04:51 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	Zombie originZombie("ORIGIN");
+	Zombie originZombie("First Stack");
 	originZombie.announce();
 
 	Zombie *heapZombie = newZombie("HEAP");
@@ -22,6 +22,6 @@ int main()
 
 	delete heapZombie;
 
-	randomChump("STACK");
+	randomChump("Second Stack");
 	return 0;
 }
