@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:43:15 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/24 15:13:03 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:32:31 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	std::cout << "----------------------------" << std::endl;
 	std::cout << "var :" << &var << std::endl;
 	std::cout << "stringPtr : " << stringPtr << std::endl;
-	std::cout << "stringRef : " << &var << std::endl;
+	std::cout << "stringRef : " << &stringRef << std::endl;
 
 	std::cout << "----------------------------" << std::endl;
 	std::cout << "var : " << var << std::endl;
