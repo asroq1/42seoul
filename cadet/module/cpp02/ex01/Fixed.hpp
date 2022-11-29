@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:00:39 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/28 19:49:11 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:12:14 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private:
 	int _value;
-	static const int _base = 8;
+	static const int _bit = 8;
 
 public:
 	Fixed();
@@ -36,5 +36,6 @@ public:
 	float toFloat(void) const;
 	int toInt(void) const;
 };
+std::ostream &operator<<(std::ostream &os, const Fixed &obj);
 
 #endif
