@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:26:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/11/28 16:01:23 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/11/30 19:43:42 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS = ./main.cpp \
 	   ./Fixed.cpp \
 
 CC = clang++
-NAME = main
+NAME = a.out
 
 CFLANG = -Wall -Wextra -Werror -std=c++98
 OBJS = $(SRCS:.cpp=.o)

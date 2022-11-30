@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:00:39 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/30 19:44:55 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:25:43 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cmath>
+
 class Fixed
 {
 private:
@@ -26,15 +27,31 @@ public:
 	Fixed(int _value);
 	Fixed(const float _value);
 	~Fixed();
-	// 	◦ A copy constructor.
 	Fixed(const Fixed &obj);
-	// ◦ A copy assignment operator overload.~Fixed();
 	Fixed &operator=(const Fixed &obj);
 	Fixed &operator<<(const Fixed &obj);
+	bool operator>(const Fixed &obj);
+	bool operator<(const Fixed &obj);
+	bool operator>=(const Fixed &obj);
+	bool operator<=(const Fixed &obj);
+	bool operator==(const Fixed &obj);
+	bool operator!=(const Fixed &obj);
+	Fixed &operator+(const Fixed &obj);
+	Fixed &operator-(const Fixed &obj);
+	Fixed &operator*(const Fixed &obj);
+	Fixed &operator/(const Fixed &obj);
+	Fixed &operator++(void);
+	Fixed &operator++(int);
+	Fixed &operator--(void);
+	Fixed &operator--(int val);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
+	static Fixed min(Fixed &obj1, Fixed &obj2);
+	static Fixed min(const Fixed &obj1, const Fixed &obj2);
+	static Fixed max(Fixed &obj1, Fixed &obj2);
+	static Fixed max(const Fixed &obj1, const Fixed &obj2);
 };
 std::ostream &operator<<(std::ostream &os, const Fixed &obj);
 
