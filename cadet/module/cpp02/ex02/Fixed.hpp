@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:00:39 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/30 21:25:43 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/01 11:54:37 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ public:
 	bool operator<=(const Fixed &obj);
 	bool operator==(const Fixed &obj);
 	bool operator!=(const Fixed &obj);
-	Fixed &operator+(const Fixed &obj);
-	Fixed &operator-(const Fixed &obj);
-	Fixed &operator*(const Fixed &obj);
-	Fixed &operator/(const Fixed &obj);
-	Fixed &operator++(void);
-	Fixed &operator++(int);
-	Fixed &operator--(void);
-	Fixed &operator--(int val);
+	Fixed operator+(const Fixed &obj);
+	Fixed operator-(const Fixed &obj);
+	Fixed operator*(const Fixed &obj);
+	Fixed operator/(const Fixed &obj);
+	Fixed operator++(void);
+	Fixed operator++(int);
+	Fixed operator--(void);
+	Fixed operator--(int val);
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;

@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:00:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/30 19:16:42 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/01 12:09:58 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed()
 	this->_value = 0;
 }
 
-Fixed::Fixed(int _value)
+Fixed::Fixed(const int _value)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_value = _value << this->_bit;

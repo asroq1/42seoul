@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:00:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/30 21:31:21 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/01 11:58:59 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,53 +101,57 @@ bool Fixed::operator!=(const Fixed &obj)
 	return this->getRawBits() != obj.getRawBits() ? true : false;
 }
 
-Fixed &Fixed::operator+(const Fixed &obj)
-{
-	Fixed tmp = this->toFloat() + obj.toFloat();
-	return tmp;
-}
-
-Fixed &Fixed::operator-(const Fixed &obj)
-{
-	Fixed tmp = this->toFloat() - obj.toFloat();
-	return tmp;
-}
-
-Fixed &Fixed::operator++(void)
+Fixed Fixed::operator++(void)
 {
 	this->_value++;
 	return *this;
 }
 
-Fixed &Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
 	Fixed tmp(*this);
 	this->_value++;
 	return tmp;
 }
 
-Fixed &Fixed::operator--(void)
+Fixed Fixed::operator--(void)
 {
 	this->_value--;
 	return *this;
 }
 
-Fixed &Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
 	Fixed tmp(*this);
 	this->_value--;
 	return tmp;
 }
 
-Fixed &Fixed::operator*(const Fixed &obj)
+Fixed Fixed::operator+(const Fixed &obj)
 {
-	Fixed tmp = this->toFloat() * obj.toFloat();
+	float result = this->toFloat() + obj.toFloat();
+	Fixed tmp(result);
 	return tmp;
 }
 
-Fixed &Fixed::operator/(const Fixed &obj)
+Fixed Fixed::operator-(const Fixed &obj)
 {
-	Fixed tmp = this->toFloat() / obj.toFloat();
+	float result = this->toFloat() - obj.toFloat();
+	Fixed tmp(result);
+	return tmp;
+}
+
+Fixed Fixed::operator*(const Fixed &obj)
+{
+	float result = this->toFloat() * obj.toFloat();
+	Fixed tmp(result);
+	return tmp;
+}
+
+Fixed Fixed::operator/(const Fixed &obj)
+{
+	float result = this->toFloat() / obj.toFloat();
+	Fixed tmp(result);
 	return tmp;
 }
 

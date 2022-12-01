@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:00:39 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/11/30 19:44:55 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/01 12:09:52 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 
 public:
 	Fixed();
-	Fixed(int _value);
+	Fixed(const int _value);
 	Fixed(const float _value);
 	~Fixed();
 	// 	◦ A copy constructor.
