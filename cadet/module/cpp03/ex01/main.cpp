@@ -3,25 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 13:08:46 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/02 14:58:17 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:15:41 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap korea("Korea");
-	ClapTrap portugal("Portugal");
-
-	korea.attack("Portugal");
-	portugal.takeDamage(3);
-	portugal.takeDamage(7);
-	portugal.attack("Korea");
-	portugal.beRepaired(7);
+	ScavTrap sung("sung");
+	sung.attack("jung");
 
 	return 0;
 }

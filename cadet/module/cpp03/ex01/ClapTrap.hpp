@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:20:17 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/02 14:29:46 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:15:31 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 #define CLAP_TRAP_HPP
 
 #include <iostream>
-
 class ClapTrap
 {
-private:
+protected:
 	std::string _name;
 	unsigned int _hitPoint;
 	unsigned int _energyPoints;

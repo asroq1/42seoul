@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 15:02:47 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/05 18:44:55 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/12/02 13:08:46 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/02 14:58:17 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAV_TRAP_HPP
-#define SCAV_TRAP_HPP
-
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int main(void)
 {
-private:
-public:
-	ScavTrap();
-	~ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &obj);
-	void attack(const std::string &target);
-	void guardGate();
-};
+	ClapTrap korea("Korea");
+	ClapTrap portugal("Portugal");
 
-#endif
+	korea.attack("Portugal");
+	portugal.takeDamage(3);
+	portugal.takeDamage(7);
+	portugal.attack("Korea");
+	portugal.beRepaired(7);
+
+	return 0;
+}
