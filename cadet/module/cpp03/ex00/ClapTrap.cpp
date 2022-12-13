@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:20:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/02 14:29:35 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:36:51 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	//정확히 0이 아니면 최댓값 되버림 ??
+	// 정확히 0이 아니면 최댓값 되버림 ??
 	if (this->_hitPoint == 0 || this->_hitPoint < amount)
 	{
 		std::cout << "It already died" << std::endl;
@@ -83,6 +83,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		return;
 	}
 	this->_hitPoint -= amount;
+	std::cout << "You got " << amount << " Now your HP : " << this->_hitPoint << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -99,9 +100,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	this->_hitPoint += amount;
 	--this->_energyPoints;
-}
-
-void ClapTrap::getHp(void)
-{
-	std::cout << this->_hitPoint << std::endl;
+	std::cout << "You repaired " << amount << " Now your HP : " << this->_hitPoint << std::endl;
 }

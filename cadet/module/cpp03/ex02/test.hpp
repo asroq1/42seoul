@@ -1,0 +1,1 @@
+__has_cpp_attribute

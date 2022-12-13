@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:20:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/13 13:49:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:27:13 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Clap Default constructor called" << std::endl;
 	this->_name = "Default";
 	this->_hitPoint = 10;
 	this->_energyPoints = 10;
