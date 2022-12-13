@@ -3,6 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:17:25 by hyunjung          #+#    #+#             */
@@ -48,3 +49,12 @@ void FragTrap::highFivesGuys(void)
 		std::cout << "Frag Trap high five guys!" << std::endl;
 	}
 }
+=======
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 18:35:12 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/05 18:35:12 by hyunjung         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638

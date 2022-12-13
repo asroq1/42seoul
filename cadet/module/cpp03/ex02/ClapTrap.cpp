@@ -6,7 +6,11 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:20:51 by hyunjung          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/12/13 15:27:13 by hyunjung         ###   ########.fr       */
+=======
+/*   Updated: 2022/12/02 14:29:35 by hyunjung         ###   ########.fr       */
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +18,11 @@
 
 ClapTrap::ClapTrap(void)
 {
+<<<<<<< HEAD
 	std::cout << "Clap Default constructor called" << std::endl;
+=======
+	std::cout << "Default constructor called" << std::endl;
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 	this->_name = "Default";
 	this->_hitPoint = 10;
 	this->_energyPoints = 10;
@@ -75,7 +83,11 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+<<<<<<< HEAD
 	// 정확히 0이 아니면 최댓값 되버림 ??
+=======
+	//정확히 0이 아니면 최댓값 되버림 ??
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 	if (this->_hitPoint == 0 || this->_hitPoint < amount)
 	{
 		std::cout << "It already died" << std::endl;
@@ -83,7 +95,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 		return;
 	}
 	this->_hitPoint -= amount;
+<<<<<<< HEAD
 	std::cout << "You got dameged " << amount << " Points!  Now your HP : " << this->_hitPoint << std::endl;
+=======
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -100,5 +115,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	this->_hitPoint += amount;
 	--this->_energyPoints;
+<<<<<<< HEAD
 	std::cout << "You repaired " << amount << " Now your HP : " << this->_hitPoint << std::endl;
+=======
+}
+
+void ClapTrap::getHp(void)
+{
+	std::cout << this->_hitPoint << std::endl;
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 }

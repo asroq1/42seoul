@@ -1,12 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+<<<<<<< HEAD
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+=======
+/*   ScavTrap.cPP                                       :+:      :+:    :+:   */
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 15:02:49 by hyunjung          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/12/13 13:27:26 by hyunjung         ###   ########.fr       */
+=======
+/*   Updated: 2022/12/02 15:32:05 by hyunjung         ###   ########.fr       */
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +31,27 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name)
 {
+<<<<<<< HEAD
 	std::cout << name << "Scav constructor called" << std::endl;
+=======
+	std::cout << name << " constructor called" << std::endl;
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 	this->_name = name;
 	this->_hitPoint = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 ScavTrap::~ScavTrap()
 {
 	std::cout << "Scav Destructor called" << std::endl;
 }
 
+<<<<<<< HEAD
 void ScavTrap::attack(const std::string &target)
 {
 	if (this->_energyPoints == 0)
@@ -69,3 +86,9 @@ void ScavTrap::guardGate()
 		std::cout << "guradGate is working !" << std::endl;
 	}
 }
+=======
+ void ScavTrap::guardGate()
+ {
+	 std::cout << "guradGate is working..." << std::endl;
+ }
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638

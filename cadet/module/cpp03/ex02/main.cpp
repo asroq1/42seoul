@@ -6,6 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 13:08:46 by hyunjung          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/12/13 15:22:28 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -47,5 +48,24 @@ int main(void)
 	// std::cout << std::endl;
 
 	// delete a;
+=======
+/*   Updated: 2022/12/02 14:58:17 by hyunjung         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+
+int main(void)
+{
+	ClapTrap korea("Korea");
+	ClapTrap portugal("Portugal");
+
+	korea.attack("Portugal");
+	portugal.takeDamage(3);
+	portugal.takeDamage(7);
+	portugal.attack("Korea");
+	portugal.beRepaired(7);
+
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 	return 0;
 }

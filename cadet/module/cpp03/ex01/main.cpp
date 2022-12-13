@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 13:08:46 by hyunjung          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/12/13 14:57:06 by hyunjung         ###   ########.fr       */
+=======
+/*   Updated: 2022/12/05 19:15:41 by hyunjung         ###   ########.fr       */
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +19,15 @@
 
 int main(void)
 {
+<<<<<<< HEAD
 	ClapTrap a("A ");
 	ScavTrap b("B ");
 
 	std::cout << std::endl;
+=======
+	ScavTrap sung("sung");
+	sung.attack("jung");
+>>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 
 	a.attack("B");
 	b.takeDamage(20);
