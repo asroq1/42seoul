@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 14:11:30 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 16:51:07 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/12/15 12:50:40 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/15 17:34:26 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
+
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-Brain::Brain()
+class Dog : public Animal
 {
-	std::cout << "Brain Default Construct Called" << std::endl;
-}
+private:
+	Brain *_brain;
 
-Brain::Brain(const Brain &ref)
-{
-	*this = ref;
-	std::cout << "Brain Copy Assignment Called" << std::endl;
-}
+public:
+	Dog();
+	Dog(const Dog &ref);
+	~Dog();
 
-Brain::~Brain()
-{
-	std::cout << "Brain Destruct Called" << std::endl;
-}
+	Dog &operator=(const Dog &ref);
+	void makeSound() const;
+	std::string getIdeas(int q) const;
+	void setIdeas(int q, std::string str);
+};
 
-Brain &Brain::operator=(const Brain &ref)
-{
-	if (this != &ref)
-	{
-		for (int i = 0; i < 100; i++)
-		{
-			this->_ideas[i] = ref._ideas[i];
-		}
-	}
-	return *this;
-}
+#endif

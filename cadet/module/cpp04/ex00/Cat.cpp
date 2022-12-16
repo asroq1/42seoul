@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:43:39 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/15 13:15:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:30:24 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat::Cat()
 {
 	this->type = "Cat";
+	std::cout << this->type << " Default Construct Called" << std::endl;
 }
 
 Cat::Cat(const Cat &ref)
@@ -24,6 +25,7 @@ Cat::Cat(const Cat &ref)
 
 Cat::~Cat()
 {
+	std::cout << "Cat Destruct Called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &ref)

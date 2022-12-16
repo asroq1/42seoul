@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:33:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/15 17:51:55 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:11:08 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ Animal::Animal()
 Animal::Animal(const Animal &ref)
 {
 	this->type = ref.getType();
-	std::cout << "Copy assignment Called" << std::endl;
+	std::cout << "Animal Copy assignment Called" << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Destruct Called" << std::endl;
+	std::cout << "Animal Destruct Called" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &ref)

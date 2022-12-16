@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 14:11:30 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 16:51:07 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/12/15 12:33:51 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/16 15:07:21 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Animal.hpp"
 
-Brain::Brain()
+Animal::Animal()
 {
-	std::cout << "Brain Default Construct Called" << std::endl;
+	this->type = "Animal";
+	std::cout << this->type << " Default Construct Called" << std::endl;
 }
 
-Brain::Brain(const Brain &ref)
+Animal::Animal(const Animal &ref)
 {
-	*this = ref;
-	std::cout << "Brain Copy Assignment Called" << std::endl;
+	this->type = ref.getType();
+	std::cout << "Animal Copy assignment Called" << std::endl;
 }
 
-Brain::~Brain()
+Animal::~Animal()
 {
-	std::cout << "Brain Destruct Called" << std::endl;
+	std::cout << "Animal Destruct Called" << std::endl;
 }
 
-Brain &Brain::operator=(const Brain &ref)
+Animal &Animal::operator=(const Animal &ref)
 {
 	if (this != &ref)
 	{
-		for (int i = 0; i < 100; i++)
-		{
-			this->_ideas[i] = ref._ideas[i];
-		}
+		this->type = ref.getType();
 	}
 	return *this;
+}
+
+std::string Animal::getType() const
+{
+	return this->type;
 }

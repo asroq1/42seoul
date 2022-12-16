@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 12:43:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 15:55:08 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/12/15 12:33:52 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/16 15:06:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
 
-class Cat : public Animal
+class Animal
 {
-private:
-	Brain *_brain;
+protected:
+	std::string type;
 
 public:
-	Cat();
-	Cat(const Cat &ref);
-	~Cat();
-
-	Cat &operator=(const Cat &ref);
-	void makeSound() const;
-	Brain *getBrain() const;
-	std::string getIdeas(int q) const;
-	void setIdeas(int q, std::string str);
+	Animal();
+	Animal(const Animal &ref);
+	virtual ~Animal();
+	Animal &operator=(const Animal &ref);
+	std::string getType() const;
+	virtual void makeSound() const = 0;
 };
 
 #endif

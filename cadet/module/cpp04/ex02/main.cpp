@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 12:43:37 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 15:55:08 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/12/15 12:30:40 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/16 17:14:10 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
 #include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+int main()
 {
-private:
-	Brain *_brain;
+	// const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	std::cout << std::endl;
 
-public:
-	Cat();
-	Cat(const Cat &ref);
-	~Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << std::endl;
 
-	Cat &operator=(const Cat &ref);
-	void makeSound() const;
-	Brain *getBrain() const;
-	std::string getIdeas(int q) const;
-	void setIdeas(int q, std::string str);
-};
+	i->makeSound(); // will output the cat sound!
+	j->makeSound();
+	// meta->makeSound();
 
-#endif
+	std::cout << std::endl;
+
+	return 0;
+}

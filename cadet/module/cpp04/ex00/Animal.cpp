@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:33:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/15 13:03:24 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:28:40 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Animal::Animal()
 {
 	this->type = "Animal";
+	std::cout << this->type << " Default Construct Called" << std::endl;
 }
 
 Animal::Animal(const Animal &ref)
@@ -24,6 +25,7 @@ Animal::Animal(const Animal &ref)
 
 Animal::~Animal()
 {
+	std::cout << "Animal Destruct Called" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &ref)

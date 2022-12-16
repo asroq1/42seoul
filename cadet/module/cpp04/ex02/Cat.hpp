@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 14:11:30 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 16:51:07 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/12/15 12:43:37 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/16 14:08:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CAT_HPP
+#define CAT_HPP
+
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-Brain::Brain()
+class Cat : public Animal
 {
-	std::cout << "Brain Default Construct Called" << std::endl;
-}
+private:
+	Brain *_brain;
 
-Brain::Brain(const Brain &ref)
-{
-	*this = ref;
-	std::cout << "Brain Copy Assignment Called" << std::endl;
-}
+public:
+	Cat();
+	Cat(const Cat &ref);
+	~Cat();
 
-Brain::~Brain()
-{
-	std::cout << "Brain Destruct Called" << std::endl;
-}
+	Cat &operator=(const Cat &ref);
+	void makeSound() const;
+	Brain *getBrain() const;
+	std::string getIdeas(int q) const;
+	void setIdeas(int q, std::string str);
+};
 
-Brain &Brain::operator=(const Brain &ref)
-{
-	if (this != &ref)
-	{
-		for (int i = 0; i < 100; i++)
-		{
-			this->_ideas[i] = ref._ideas[i];
-		}
-	}
-	return *this;
-}
+#endif

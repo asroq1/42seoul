@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:50:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/15 18:08:10 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/16 17:12:53 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ Dog::Dog()
 
 Dog::Dog(const Dog &ref)
 {
-	this->type = ref.getType();
-	std::cout << "Copy assignment Called" << std::endl;
+	this->_brain = new Brain();
+	*this = ref;
+	std::cout << "Dog Copy assignment Called" << std::endl;
 }
 
 Dog::~Dog()
 {
 	delete this->_brain;
-	std::cout << "Destruct Called" << std::endl;
+	std::cout << "Dog Destruct Called" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &ref)
@@ -36,6 +37,7 @@ Dog &Dog::operator=(const Dog &ref)
 	if (this != &ref)
 	{
 		this->type = ref.getType();
+		*(this->_brain) = *(ref._brain);
 	}
 	return *this;
 }
