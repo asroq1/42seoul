@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:43:09 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 15:32:05 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/20 10:52:00 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongAnimal::WrongAnimal()
 {
 	this->type = "WrongAnimall";
-	std::cout << this->type << " Default Construct Called" << std::endl;
+	std::cout << "WrongAnimall Default Construct Called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &ref)
