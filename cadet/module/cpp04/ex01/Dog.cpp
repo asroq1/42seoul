@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:50:38 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 17:12:53 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/20 10:57:37 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog()
 
 Dog::Dog(const Dog &ref)
 {
-	this->_brain = new Brain();
+	this->_brain = new Brain(*ref._brain);
 	*this = ref;
 	std::cout << "Dog Copy assignment Called" << std::endl;
 }

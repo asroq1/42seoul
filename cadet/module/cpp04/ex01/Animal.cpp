@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:33:51 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/16 12:11:08 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/20 11:01:15 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Animal::Animal()
 {
 	this->type = "Animal";
-	std::cout << this->type << " Default Construct Called" << std::endl;
+	std::cout << "Animal Construct Called" << std::endl;
 }
 
 Animal::Animal(const Animal &ref)
