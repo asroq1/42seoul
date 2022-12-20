@@ -6,21 +6,14 @@
 #    By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:26:18 by hyunjung          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2022/12/13 15:16:18 by hyunjung         ###   ########.fr        #
-=======
-#    Updated: 2022/12/02 15:16:26 by hyunjung         ###   ########.fr        #
->>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
+#    Updated: 2022/12/15 12:26:43 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ./main.cpp  \
 	   ./ClapTrap.cpp \
 	   ./ScavTrap.cpp \
-<<<<<<< HEAD
 	   ./FragTrap.cpp
-=======
->>>>>>> e3f6eb98eedb67ea9e9aba103d97d83045846638
 
 CXX = c++
 NAME = a.out
