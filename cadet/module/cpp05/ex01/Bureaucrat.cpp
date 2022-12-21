@@ -6,11 +6,12 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:29:23 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/21 11:31:31 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:35:05 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(){};
 
@@ -58,5 +59,16 @@ void Bureaucrat::decreaseGrade(int grade) {
     this->_grade += grade;
     if (this->getGrade() > 150) {
         throw Bureaucrat::GradeTooLowException();
+    }
+}
+
+void Bureaucrat::signForm(Form &form) const {
+    try {
+        form.beSigned(*this);
+        std::cout << this->getName() << " signed " << form.getName()
+                  << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << this->getName() << " couldn’t sign" << form.getName()
+                  << " because " << e.what() << std::endl;
     }
 }

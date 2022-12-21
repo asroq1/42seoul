@@ -6,43 +6,33 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:29:18 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/21 11:42:45 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:50:46 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() {
-    try {
-        Bureaucrat cadet(200, "hyunjung");
-    } catch (const std::exception &e) {
-        std::cerr << e.what() << '\n';
-    }
+
+    Bureaucrat citizen(150, "a");
+    Bureaucrat president(1, "b");
+    Form c("c", 50, 50);
+
+    std::cout << citizen << std::endl;
+    std::cout << president << std::endl;
+    std::cout << c << std::endl;
     std::cout << std::endl;
 
-    try {
-        Bureaucrat a(150, "a");
-        Bureaucrat b(1, "b");
+    citizen.signForm(c);
+    std::cout << citizen << std::endl;
+    std::cout << c << std::endl;
+    std::cout << std::endl;
 
-        std::cout << a << std::endl;
-        std::cout << b << std::endl;
-        std::cout << std::endl;
+    president.signForm(c);
+    std::cout << president << std::endl;
+    std::cout << c << std::endl;
+    std::cout << std::endl;
 
-        a.increaseGrade(5);
-        b.decreaseGrade(5);
-
-        std::cout << a << std::endl;
-        std::cout << b << std::endl;
-        std::cout << std::endl;
-
-        a.decreaseGrade(6);
-        b.increaseGrade(7);
-
-        std::cout << a << std::endl;
-        std::cout << b << std::endl;
-        std::cout << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << e.what() << '\n';
-    }
-    return 0;
+    return (0);
 }

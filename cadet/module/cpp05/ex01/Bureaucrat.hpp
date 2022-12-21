@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:29:21 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/21 14:04:52 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:54:02 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 
+class Form;
 class Bureaucrat {
   private:
     const std::string _name;
@@ -44,6 +45,7 @@ class Bureaucrat {
     int getGrade() const;
     void increaseGrade(int grade);
     void decreaseGrade(int grade);
+    void signForm(Form &form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &obj);
