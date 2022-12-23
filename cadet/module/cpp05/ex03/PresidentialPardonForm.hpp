@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:40:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 13:52:21 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/23 16:18:55 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class PresidentialPardonForm : public AForm {
 
     PresidentialPardonForm &operator=(const PresidentialPardonForm &ref);
     void execute(const Bureaucrat &executor) const;
+    AForm *copy(const std::string type) const;
 };
-
 #endif

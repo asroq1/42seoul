@@ -6,14 +6,14 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:51:04 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/21 17:54:23 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/22 14:57:02 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-// Form::Form(){};
+Form::Form() : _name(), _signGrade(), _executeGrade() {}
 
 Form::Form(std::string name, int signGrade, int executeGrade)
     : _name(name), _signGrade(signGrade), _executeGrade(executeGrade) {

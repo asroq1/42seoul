@@ -6,7 +6,7 @@
 #    By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 16:26:18 by hyunjung          #+#    #+#              #
-#    Updated: 2022/12/22 17:49:06 by hyunjung         ###   ########.fr        #
+#    Updated: 2022/12/23 13:57:56 by hyunjung         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@ SRCS = ./main.cpp  \
 	   ./Bureaucrat.cpp \
 	   ./AForm.cpp \
 	   ./ShrubberyCreationForm.cpp \
-	#    ./PresidentialPardonForm.cpp \
-	#    ./RobotomyRequestForm.cpp \
+	   ./RobotomyRequestForm.cpp \
+	   ./PresidentialPardonForm.cpp \
+	   
 CXX = c++
 NAME = a.out
 

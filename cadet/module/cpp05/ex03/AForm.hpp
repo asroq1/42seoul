@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:40:35 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 13:19:58 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/23 17:29:11 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AForm {
     AForm();
     AForm(std::string name, int signGrade, int executeGrade);
     AForm(const AForm &ref);
-    ~AForm();
+    virtual ~AForm();
 
     class GradeTooHighException : public std::exception {
       public:
@@ -53,6 +53,7 @@ class AForm {
     int getExecuteGrade() const;
     bool getSigned() const;
     virtual void execute(const Bureaucrat &executor) const = 0;
+    virtual AForm *copy(const std::string type) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const AForm &obj);

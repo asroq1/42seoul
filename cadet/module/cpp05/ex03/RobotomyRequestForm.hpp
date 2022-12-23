@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 14:40:32 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 13:52:21 by hyunjung         ###   ########.fr       */
+/*   Created: 2022/12/23 12:45:11 by hyunjung          #+#    #+#             */
+/*   Updated: 2022/12/23 16:21:47 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include <stdlib.h>
 
-class PresidentialPardonForm : public AForm {
+class RobotomyRequestForm : public AForm {
   private:
   public:
-    PresidentialPardonForm();
-    PresidentialPardonForm(std::string target);
-    PresidentialPardonForm(const PresidentialPardonForm &ref);
-    ~PresidentialPardonForm();
+    RobotomyRequestForm();
+    RobotomyRequestForm(std::string target);
+    RobotomyRequestForm(const RobotomyRequestForm &ref);
+    ~RobotomyRequestForm();
 
-    PresidentialPardonForm &operator=(const PresidentialPardonForm &ref);
+    RobotomyRequestForm &operator=(const RobotomyRequestForm &ref);
     void execute(const Bureaucrat &executor) const;
+    AForm *copy(const std::string type) const;
 };
 
 #endif

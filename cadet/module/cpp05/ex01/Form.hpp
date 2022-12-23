@@ -13,7 +13,7 @@ class Form {
     bool _isSigned;
 
   public:
-    // Form();
+    Form();
     Form(std::string name, int signGrade, int executeGrade);
     Form(const Form &ref);
     ~Form();

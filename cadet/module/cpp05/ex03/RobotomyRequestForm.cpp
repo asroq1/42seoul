@@ -6,20 +6,26 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:45:13 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 13:24:57 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/23 17:28:19 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
-    : AForm("RobotomyRequestForm", 72, 45) {}
+    : AForm("RobotomyRequestForm", 72, 45) {
+    std::cout << "RobotomyRequestForm Construct called" << std::endl;
+}
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-    : AForm(target, 72, 45) {}
+    : AForm(target, 72, 45) {
+    std::cout << "Target RobotomyRequestForm Construct called" << std::endl;
+}
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &ref) {
     *this = ref;
 }
-RobotomyRequestForm::~RobotomyRequestForm() {}
+RobotomyRequestForm::~RobotomyRequestForm() {
+    std::cout << "RobotomyRequestForm Destruct called" << std::endl;
+}
 
 RobotomyRequestForm &
 RobotomyRequestForm::operator=(const RobotomyRequestForm &ref) {
@@ -40,4 +46,8 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
     } else {
         std::cout << "Drilling was totally failed !";
     }
+}
+
+AForm *RobotomyRequestForm::copy(const std::string type) const {
+    return new RobotomyRequestForm(type);
 }
