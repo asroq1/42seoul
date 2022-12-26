@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:29:18 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 17:27:00 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:13:34 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main() {
     AForm *shrubbery;
     AForm *presidential;
     AForm *robotot;
-    // AForm *wrongForm;
+    AForm *wrongForm;
 
     std::cout << std::endl;
 
@@ -36,13 +36,14 @@ int main() {
         std::cout << robotot->getName() << std::endl;
         std::cout << std::endl;
 
-        presidential = someRandomIntern.makeForm("wrong request", "avatar");
+        presidential =
+            someRandomIntern.makeForm("presidential request", "avatar");
         std::cout << presidential->getName() << std::endl;
         std::cout << std::endl;
 
-        // wrongForm = someRandomIntern.makeForm("wrong request", "mistake");
-        // std::cout << wrongForm->getName() << std::endl;
-        // std::cout << std::endl;
+        wrongForm = someRandomIntern.makeForm("wrong request", "mistake");
+        std::cout << wrongForm->getName() << std::endl;
+        std::cout << std::endl;
     } catch (const std::exception &e) {
 
         std::cerr << e.what() << '\n';

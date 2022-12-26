@@ -6,13 +6,15 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:51:04 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 12:53:27 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/26 12:08:51 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
-AForm::AForm() : _name(), _signGrade(), _executeGrade() {}
+AForm::AForm() : _name(), _signGrade(), _executeGrade() {
+    std::cout << "AForm Construct called" << std::endl;
+}
 
 AForm::AForm(std::string name, int signGrade, int executeGrade)
     : _name(name), _signGrade(signGrade), _executeGrade(executeGrade) {
@@ -21,8 +23,9 @@ AForm::AForm(std::string name, int signGrade, int executeGrade)
     } else if (signGrade > 150 || executeGrade > 150) {
         throw AForm::GradeTooLowException();
     }
+    std::cout << "Extend AForm Construct called" << std::endl;
 };
-
+    
 AForm::AForm(const AForm &ref)
     : _name(ref._name), _signGrade(ref._signGrade),
       _executeGrade(ref._executeGrade) {

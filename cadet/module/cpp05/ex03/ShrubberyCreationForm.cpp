@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 15:16:35 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 17:28:35 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:12:41 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shurberry", 145, 37) {
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
     : AForm(target, 145, 37) {
+
     std::cout << "Target ShrubberyCreationForm Construct called" << std::endl;
 }
 
