@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:40:30 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/23 17:27:49 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:39:27 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ PresidentialPardonForm::PresidentialPardonForm()
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
     : AForm(target, 25, 5) {
+    std::cout << "444" << std::endl;
+
     std::cout << "Target PresidentialPardonForm Construct called" << std::endl;
 }
 
@@ -48,5 +50,7 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
 }
 
 AForm *PresidentialPardonForm::copy(const std::string type) const {
+    std::cout << "333" << std::endl;
+
     return new PresidentialPardonForm(type);
 }

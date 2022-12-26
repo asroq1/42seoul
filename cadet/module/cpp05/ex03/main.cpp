@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 12:29:18 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/26 14:13:34 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/26 14:38:05 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main() {
 
     Intern someRandomIntern;
     AForm *shrubbery;
-    AForm *presidential;
-    AForm *robotot;
-    AForm *wrongForm;
+    // AForm *presidential;
+    // AForm *robotot;
+    // AForm *wrongForm;
 
     std::cout << std::endl;
 
@@ -32,18 +32,18 @@ int main() {
         std::cout << shrubbery->getName() << std::endl;
         std::cout << std::endl;
 
-        robotot = someRandomIntern.makeForm("robotomy request", "hyunjung");
-        std::cout << robotot->getName() << std::endl;
-        std::cout << std::endl;
+        // robotot = someRandomIntern.makeForm("robotomy request", "hyunjung");
+        // std::cout << robotot->getName() << std::endl;
+        // std::cout << std::endl;
 
-        presidential =
-            someRandomIntern.makeForm("presidential request", "avatar");
-        std::cout << presidential->getName() << std::endl;
-        std::cout << std::endl;
+        // presidential =
+        //     someRandomIntern.makeForm("presidential request", "avatar");
+        // std::cout << presidential->getName() << std::endl;
+        // std::cout << std::endl;
 
-        wrongForm = someRandomIntern.makeForm("wrong request", "mistake");
-        std::cout << wrongForm->getName() << std::endl;
-        std::cout << std::endl;
+        // wrongForm = someRandomIntern.makeForm("wrong request", "mistake");
+        // std::cout << wrongForm->getName() << std::endl;
+        // std::cout << std::endl;
     } catch (const std::exception &e) {
 
         std::cerr << e.what() << '\n';

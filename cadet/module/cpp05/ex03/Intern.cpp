@@ -16,6 +16,7 @@ Intern::Intern() {
     formArr[0] = new ShrubberyCreationForm();
     formArr[1] = new RobotomyRequestForm();
     formArr[2] = new PresidentialPardonForm();
+    std::cout << "111" << std::endl;
 };
 
 Intern::Intern(const Intern &ref) { *this = ref; };
@@ -38,6 +39,8 @@ const char *Intern::bigMistakeExecption::what() const throw() {
 AForm *Intern::makeForm(std::string form, std::string target) {
     std::string formBox[3] = {"shrubbery request", "robotomy request",
                               "presidential request"};
+    std::cout << "222" << std::endl;
+
     for (int i = 0; i < 3; i++) {
         if (form == formBox[i]) {
             return this->formArr[i]->copy(target);
