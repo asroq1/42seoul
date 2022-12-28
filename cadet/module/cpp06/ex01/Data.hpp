@@ -2,19 +2,15 @@
 #define DATA_HPP
 
 #include <iostream>
-#include <stdint.h>
 
-class Data {
-  private:
-    /* data */
+typedef struct Data {
+    int a;
+    double b;
+    char c;
 
-  public:
-    Data();
-    Data(const Data &ref);
-    ~Data();
+} Data;
 
-    Data &operator=(const Data &ref);
-    Data *deserialize(uintptr_t raw) {}
-};
+uintptr_t serialize(Data *ptr) { return reinterpret_cast<uintptr_t>(ptr); }
+Data *deserialize(uintptr_t raw) { return reinterpret_cast<Data *>(raw); }
 
 #endif
