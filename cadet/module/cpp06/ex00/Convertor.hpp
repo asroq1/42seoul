@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convertor.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 11:40:10 by hyunjung          #+#    #+#             */
-/*   Updated: 2022/12/28 17:54:46 by hyunjung         ###   ########.fr       */
+/*   Updated: 2022/12/30 12:14:22 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Convertor {
     char *_value;
     char _charValue;
     int _intValue;
-    float _floatValue;
-    double _doubleValue;
+    // float _floatValue;
+    // double _doubleValue;
     double _parsedValue;
     char *_pos;
 
@@ -36,13 +36,15 @@ class Convertor {
     Convertor &operator=(const Convertor &ref);
     void setValue(std::string input, char *av);
     bool isChar(std::string input);
-    bool isInt();
-    bool isFloat(std::string input);
-    bool isDouble(std::string input);
+    bool isInt(std::string input);
+    bool isFloat();
+    bool isDouble();
     bool isNan();
     bool isInf();
     void printChar(char c);
     void printInt(int n);
+    void printFloat();
+    void printDouble();
     void printNan();
     void printInf();
 };
