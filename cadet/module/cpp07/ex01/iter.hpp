@@ -3,33 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:57:53 by hyunjung          #+#    #+#             */
-/*   Updated: 2023/01/02 18:14:04 by hyunjung         ###   ########.fr       */
+/*   Updated: 2023/01/03 18:11:32 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ITER_HPP
 #define ITER_HPP
 
-class iter {
-  private:
-    /* data */
+#include <iostream>
 
-  public:
-    iter();
-    iter(const iter &ref);
-    ~iter();
-
-    iter &operator=(const iter &ref);
-
-    template <typename T>
-    T iters(T *arr, unsigned int length, void (*f)(T &arr)) {
-        for (int i = 0; i < length; i++) {
-            f(arr[i]);
-        }
+template <typename T> void iter(T *arr, int length, void (*f)(T &arr)) {
+    for (int i = 0; i < length; i++) {
+        f(arr[i]);
     }
-};
+}
+
+template <typename T> void print(T &obj) { std::cout << "[" << obj << "] "; }
 
 #endif

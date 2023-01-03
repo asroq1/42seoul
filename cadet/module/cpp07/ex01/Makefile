@@ -1,31 +1,35 @@
-NAME		= a.out
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/22 16:26:18 by hyunjung          #+#    #+#              #
+#    Updated: 2023/01/03 17:54:10 by hyunjung         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-CC			= c++
-RM			= rm -f
-CFLAGS		= -Wall -Werror -Wextra -std=c++98
+SRCS = ./main.cpp  \
 
-HEADER		= ./
-SRCS_DIR	= ./
-SRCS		= main.cpp \
-			 
+CXX = c++
+NAME = a.out
 
-ALLSRCS	= $(addprefix $(SRCS_DIR), $(SRCS))
-OBJS	= $(ALLSRCS:.cpp=.o)
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+OBJS = $(SRCS:.cpp=.o)
 
-all	: $(NAME)
 
-%.o		: %.cpp
-	$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
+all: $(NAME)
 
-$(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-clean :
-	$(RM) $(OBJS)
+clean:
+	rm -f $(OBJS)
 
-fclean : clean
-	$(RM) $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
-.PHONY  :	all clean fclean re
+.PHONY: all clean fclean re
