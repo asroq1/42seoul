@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyunjung <hyunjung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:27:28 by hyunjung          #+#    #+#             */
-/*   Updated: 2023/01/03 17:49:28 by hyunjung         ###   ########.fr       */
+/*   Updated: 2023/01/04 16:21:12 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 #include <iostream>
-#include <string.h>
 
 int main(void) {
 
