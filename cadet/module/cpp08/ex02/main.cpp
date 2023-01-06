@@ -5,11 +5,9 @@ int main() {
     mstack.push(5);
     mstack.push(17);
     std::cout << "mstack.top() : " << mstack.top() << std::endl;
-    std::cout << mstack.top() << std::endl;
 
     mstack.pop();
     std::cout << "mstack.size() : " << mstack.size() << std::endl;
-    std::cout << mstack.size() << std::endl;
 
     mstack.push(3);
     mstack.push(5);
@@ -21,10 +19,11 @@ int main() {
     ++it;
     --it;
     while (it != ite) {
-        std::cout << *it << std::endl;
+        int i = 0;
+        std::cout << "stack[" << i << "] :" << *it << std::endl;
         ++it;
     }
-
+    std::cout << std::endl;
     std::cout << "another stack" << std::endl;
     MutantStack<int> s(mstack);
 
@@ -33,7 +32,8 @@ int main() {
     ++anotherIt;
     --anotherIt;
     while (anotherIt != anotherIte) {
-        std::cout << *anotherIt << std::endl;
+        int i = 0;
+        std::cout << "stack[" << i << "] :" << *anotherIt << std::endl;
         ++anotherIt;
     }
     return 0;

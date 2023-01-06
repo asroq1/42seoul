@@ -26,7 +26,7 @@ const char *Span::TooMuchSizeException::what() const throw() {
 const char *Span::NotEnoughException::what() const throw() {
     return "Not Enough elements!";
 }
-void Span::addNumber(unsigned int n) {
+void Span::addNumber(int n) {
     if (this->_v.size() == this->_maxSize) {
         throw Span::TooMuchSizeException();
     }
@@ -35,7 +35,7 @@ void Span::addNumber(unsigned int n) {
 
 void Span::addNumber(std::vector<int> v, unsigned int size) {
 
-    if (size > this->_maxSize) {
+    if (size + this->_v.size() > this->_maxSize) {
         throw Span::TooMuchSizeException();
     }
     this->_v.insert(this->_v.end(), v.begin(), v.end());
