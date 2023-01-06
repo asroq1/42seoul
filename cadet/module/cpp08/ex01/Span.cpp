@@ -3,10 +3,7 @@
 
 Span::Span() { throw std::exception(); };
 
-Span::Span(unsigned int n) {
-    this->_maxSize = n;
-    std::cout << "CONS SIZE :" << this->_v.size() << std::endl;
-};
+Span::Span(unsigned int n) { this->_maxSize = n; };
 Span::~Span(){};
 
 Span::Span(const Span &ref) {
@@ -22,30 +19,31 @@ Span &Span::operator=(const Span &ref) {
     return *this;
 };
 
+const char *Span::TooMuchSizeException::what() const throw() {
+    return "It has too much size !";
+}
+
+const char *Span::NotEnoughException::what() const throw() {
+    return "Not Enough elements!";
+}
 void Span::addNumber(unsigned int n) {
-    if (this->_v.size() > this->_maxSize) {
-        throw std::exception();
+    if (this->_v.size() == this->_maxSize) {
+        throw Span::TooMuchSizeException();
     }
     this->_v.push_back(n);
 };
 
-void Span::addNumber(std::vector<int>::iterator start,
-                     std::vector<int>::iterator end) {
-    std::vector<int> tmp;
-    // if (this->_v.size() < v.size()) {
-    //     std::cout << "Extra" << this->_v.size() << std::endl;
-    //     std::cout << "tmp" << v.size() << std::endl;
+void Span::addNumber(std::vector<int> v, unsigned int size) {
 
-    //     std::cout << "test" << std::endl;
-    // }
-
-    this->_v.insert(this->_v.end(), start, end);
-    std::cout << "zise :" << this->_v.size() << std::endl;
+    if (size > this->_maxSize) {
+        throw Span::TooMuchSizeException();
+    }
+    this->_v.insert(this->_v.end(), v.begin(), v.end());
 };
 
 unsigned int Span::shortestSpan() {
     if (this->_v.size() <= 1) {
-        throw std::exception();
+        throw Span::NotEnoughException();
     }
     unsigned int result;
     unsigned int min;
@@ -63,7 +61,7 @@ unsigned int Span::shortestSpan() {
 
 unsigned int Span::longestSpan() {
     if (this->_v.size() <= 1) {
-        throw std::exception();
+        throw Span::NotEnoughException();
     }
     unsigned int result;
     sort(this->_v.begin(), this->_v.end());
