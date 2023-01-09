@@ -6,7 +6,7 @@
 /*   By: hyunjung <hyunjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:57:53 by hyunjung          #+#    #+#             */
-/*   Updated: 2023/01/04 16:59:06 by hyunjung         ###   ########.fr       */
+/*   Updated: 2023/01/04 17:48:53 by hyunjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,9 @@ template <typename T> void print(const T &obj) {
 template <typename T> void increaotr(T &obj) { obj = obj + 1; }
 
 #endif
+
+int add(int a, int b) { return a + b; };
+
+double add(double a, double b) { return a + b; }
+
+template

@@ -35,7 +35,7 @@ void Span::addNumber(unsigned int n) {
 
 void Span::addNumber(std::vector<int> v, unsigned int size) {
 
-    if (size > this->_maxSize) {
+    if (size + v.size() > this->_maxSize) {
         throw Span::TooMuchSizeException();
     }
     this->_v.insert(this->_v.end(), v.begin(), v.end());

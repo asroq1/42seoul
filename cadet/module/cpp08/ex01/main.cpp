@@ -14,18 +14,20 @@ int main() {
         Span sp = Span(5);
         sp.addNumber(6);
         sp.addNumber(3);
+        std::cout << sp.longestSpan() << std::endl;
+        std::cout << sp.shortestSpan() << std::endl;
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
-        std::cout << sp.shortestSpan() << std::endl;
-        std::cout << sp.longestSpan() << std::endl;
+        sp.addNumber(11);
+
 
         Span extra = Span(11000);
         std::vector<int> tmp(10000);
         std::vector<int>::iterator itr;
         std::generate(tmp.begin(), tmp.end(), randomf);
-
         extra.addNumber(tmp, 10000);
+        extra.addNumber(tmp,10000);
         std::cout << extra.shortestSpan() << std::endl;
         std::cout << extra.longestSpan() << std::endl;
     } catch (const std::exception &e) {
