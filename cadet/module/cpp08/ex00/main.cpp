@@ -1,4 +1,5 @@
 #include "easyfind.hpp"
+#include <iostream>
 #include <iterator>
 #include <list>
 #include <vector>
@@ -47,6 +48,9 @@ int main(void) {
     } catch (const std::exception &e) {
         std::cerr << e.what() << '\n';
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dcaf7d81b3613f90e638aa3f6f0d17ca28390fae
     return 0;
 }

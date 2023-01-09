@@ -1,8 +1,14 @@
 {
 	"files.associations": {
+<<<<<<< HEAD
 		"exception": "cpp",
 		"list": "cpp",
 		"iostream": "cpp",
+=======
+		"vector": "cpp",
+		"iostream": "cpp",
+		"ostream": "cpp",
+>>>>>>> dcaf7d81b3613f90e638aa3f6f0d17ca28390fae
 		"__bit_reference": "cpp",
 		"__config": "cpp",
 		"__debug": "cpp",
@@ -35,6 +41,10 @@
 		"ctime": "cpp",
 		"cwchar": "cpp",
 		"cwctype": "cpp",
+<<<<<<< HEAD
+=======
+		"exception": "cpp",
+>>>>>>> dcaf7d81b3613f90e638aa3f6f0d17ca28390fae
 		"functional": "cpp",
 		"initializer_list": "cpp",
 		"ios": "cpp",
@@ -42,12 +52,19 @@
 		"istream": "cpp",
 		"iterator": "cpp",
 		"limits": "cpp",
+<<<<<<< HEAD
+=======
+		"list": "cpp",
+>>>>>>> dcaf7d81b3613f90e638aa3f6f0d17ca28390fae
 		"locale": "cpp",
 		"memory": "cpp",
 		"mutex": "cpp",
 		"new": "cpp",
 		"optional": "cpp",
+<<<<<<< HEAD
 		"ostream": "cpp",
+=======
+>>>>>>> dcaf7d81b3613f90e638aa3f6f0d17ca28390fae
 		"ratio": "cpp",
 		"sstream": "cpp",
 		"stdexcept": "cpp",
@@ -59,9 +76,13 @@
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
 		"unordered_map": "cpp",
+<<<<<<< HEAD
 		"utility": "cpp",
 		"vector": "cpp",
 		"deque": "cpp",
 		"stack": "cpp"
+=======
+		"utility": "cpp"
+>>>>>>> dcaf7d81b3613f90e638aa3f6f0d17ca28390fae
 	}
 }

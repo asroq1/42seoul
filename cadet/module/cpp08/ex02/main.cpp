@@ -19,11 +19,17 @@ int main() {
     ++it;
     --it;
     while (it != ite) {
-        std::cout << *it << std::endl;
+        int i = 0;
+        std::cout << "stack[" << i << "] :" << *it << std::endl;
         ++it;
     }
+<<<<<<< HEAD
 
     std::cout << "Another stack" << std::endl;
+=======
+    std::cout << std::endl;
+    std::cout << "another stack" << std::endl;
+>>>>>>> dcaf7d81b3613f90e638aa3f6f0d17ca28390fae
     MutantStack<int> s(mstack);
 
     MutantStack<int>::iterator anotherIt = s.begin();
@@ -31,7 +37,8 @@ int main() {
     ++anotherIt;
     --anotherIt;
     while (anotherIt != anotherIte) {
-        std::cout << *anotherIt << std::endl;
+        int i = 0;
+        std::cout << "stack[" << i << "] :" << *anotherIt << std::endl;
         ++anotherIt;
     }
 
