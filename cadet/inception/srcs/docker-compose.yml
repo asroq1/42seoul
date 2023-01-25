@@ -1,0 +1,77 @@
+version: '3'
+
+services:
+  mariadb:
+    build:
+      context: ./requirements/mariadb
+      dockerfile: ./Dockerfile
+    image: mariadb
+    restart: always
+    expose:
+      - "3306"
+    volumes:
+      - database-volumeName:/var/lib/mysql #데이터 유지를 위해 mysql 설치되는 곳을 볼륨으로 설정
+    env_file:
+      - .env
+    networks:
+      - root-network
+  nginx:
+    build:
+      #빌드하는 위치 설정
+      context: ./requirements/nginx
+      dockerfile: ./Dockerfile
+    image: nginx
+    restart: always #컨테이너가 비정상 종료될 시 재부팅
+    ports:
+      # 왼 : host, 오른쪽 guest 포트 번호, 두 개를 포트포워딩 해준다.
+      - "443:443"
+    volumes:
+      # 볼륨으로 wordpress 사용하기 위함
+      - wordpress-volume:/var/www/html/wordpress
+    depends_on:
+      # wordpress 컨테이너 먼저 만들고 동작
+      - wordpress
+    env_file:
+      # 환경변수 루트
+      - .env
+    networks:
+      - root-network #네트워크 이름. 세 개의 컨테이너를 이용해 서버를 만들기 위해
+  wordpress:
+    build:
+      context: ./requirements/wordpress
+      dockerfile: ./Dockerfile
+    image: wordpress
+    restart: always
+    expose:
+      #네트워크 내부에서 접근하는 포트, expose는 해당 네트워크 내의 서비스끼리만 연결 설정
+      - "9000"
+    volumes:
+      #wordpress 설치 위치는 볼륨으로 한다. 데이터 유지를 위해
+      - wordpress-volume:/var/www/html/wordpress
+    depends_on:
+      - mariadb
+    env_file:
+      - .env
+    networks:
+      - root-network
+
+networks:
+  root-network:
+    #네트워크 이름
+    driver: bridge #driver는 hostm none, bridge 중 선택, default는 bridge
+
+volumes:
+  #볼륨 설정
+  wordpress-volume: #워드프레스 볼륨
+  driver: local
+  driver_opts:
+    #driver 옵션 설정
+    type: none
+    device: /home/hyunjung/data/wordpress #host 환경 내에서의 경로
+    o: bind #docker-compse가 볼륨 위치를 모르니 알 수 있도록 바인딩
+  database-volumes:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/hyunjung/data/mariadb
+      o: bind

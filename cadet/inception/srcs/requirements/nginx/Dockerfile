@@ -5,10 +5,19 @@ RUN apt-get update -y && apt-get upgrade -y && \
 	apt-get -y install nginx openssl vim
 
 RUN	mkdir /etc/nginx/ssl
+RUN openssl req -newkey rsa:2048 -nodes -x509 \
+	-subj "/C=KR/ST=Seoul/L=Gangnam/O=Gaepodong/OU=42Seoul/CN=hyunjung.42.fr" \
+	-keyout /etc/nginx/ssl/hyunjung.42.fr.key \
+	-out /etc/nginx/ssl/hyunjung.42.fr.crt
 
-COPY /conf/default /etc/nginx/sites-available/default
+COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
+COPY ./tools/setting.sh ./
+
+RUN chmod +x ./setting.sh
 
 EXPOSE 443
 
-CMD [ "service nginx start" ]
-# ENTRYPOINT [ "sh", '-c', "/setting.sh" ]
+# ENTRYPOINT [ "var/www/setting.sh" ]
+
+# CMD [ "service nginx start" ]
+ENTRYPOINT [ "sh", "-c", "./setting.sh" ]

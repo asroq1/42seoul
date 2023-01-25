@@ -1,13 +1,16 @@
 
 # --build : doesn't matter about cached data. it must rebuild the source
 
-all : docker-compose -f ./srcs/docker-compose.yml up --build -d
+all : 
+	mkdir -p /home/hyunjung/data/wordpress
+	mkdir -p /home/hyunjung/data/mariadb
+	docker-compose -f ./srcs/docker-compose.yml up --build -d
 
 clean : docker-compose ./srcs/docker-compose.yml down
 		docker image prune -a
 
 # re : docker-compose -f ./srcs/docker-compose.yml up --build
 
-vclean : 
+# vclean : 
 
 .PHONY : all clean vclean 
