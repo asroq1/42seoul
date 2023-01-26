@@ -1,7 +1,22 @@
 version: '3'
 
+volumes:
+  wordpress-volume:
+    driver: local
+    driver_opts:
+      #driver 옵션 설정
+      type: none
+      device: /Users/devicii/data/wordpress #host 환경 내에서의 경로
+      o: bind #docker-compse가 볼륨 위치를 모르니 알 수 있도록 바인딩
+  database-volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/devicii/data/mariadb
+      o: bind
+
 services:
-  mariadb:
+  parc_mariadb:
     build:
       context: ./requirements/mariadb
       dockerfile: ./Dockerfile
@@ -10,12 +25,12 @@ services:
     expose:
       - "3306"
     volumes:
-      - database-volumeName:/var/lib/mysql #데이터 유지를 위해 mysql 설치되는 곳을 볼륨으로 설정
+      - database-volume:/var/lib/mysql #데이터 유지를 위해 mysql 설치되는 곳을 볼륨으로 설정
     env_file:
       - .env
     networks:
       - root-network
-  nginx:
+  parc_nginx:
     build:
       #빌드하는 위치 설정
       context: ./requirements/nginx
@@ -30,13 +45,13 @@ services:
       - wordpress-volume:/var/www/html/wordpress
     depends_on:
       # wordpress 컨테이너 먼저 만들고 동작
-      - wordpress
+      - parc_wordpress
     env_file:
       # 환경변수 루트
       - .env
     networks:
       - root-network #네트워크 이름. 세 개의 컨테이너를 이용해 서버를 만들기 위해
-  wordpress:
+  parc_wordpress:
     build:
       context: ./requirements/wordpress
       dockerfile: ./Dockerfile
@@ -47,9 +62,9 @@ services:
       - "9000"
     volumes:
       #wordpress 설치 위치는 볼륨으로 한다. 데이터 유지를 위해
-      - wordpress-volume:/var/www/html/wordpress
+      - wordpress-volume:/var/www/html/
     depends_on:
-      - mariadb
+      - parc_mariadb
     env_file:
       - .env
     networks:
@@ -59,19 +74,3 @@ networks:
   root-network:
     #네트워크 이름
     driver: bridge #driver는 hostm none, bridge 중 선택, default는 bridge
-
-volumes:
-  #볼륨 설정
-  wordpress-volume: #워드프레스 볼륨
-  driver: local
-  driver_opts:
-    #driver 옵션 설정
-    type: none
-    device: /home/hyunjung/data/wordpress #host 환경 내에서의 경로
-    o: bind #docker-compse가 볼륨 위치를 모르니 알 수 있도록 바인딩
-  database-volumes:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/hyunjung/data/mariadb
-      o: bind
