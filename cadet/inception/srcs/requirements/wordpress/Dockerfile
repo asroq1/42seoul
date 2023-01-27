@@ -12,7 +12,7 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 	chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp
 
 # working dir 위치 설정
-WORKDIR /var/www/html/wordpress
+WORKDIR /var/www/html/
 
 # 해당 wordpress /run/php 생성 이후 setting.sh 등록
 RUN mkdir -p /run/php && \
@@ -21,6 +21,7 @@ RUN mkdir -p /run/php && \
 # wordpress 설치
 RUN wget https://wordpress.org/latest.tar.gz && \
 	tar -xvf latest.tar.gz 
+
 EXPOSE 9000
 
 

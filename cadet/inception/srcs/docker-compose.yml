@@ -20,7 +20,8 @@ services:
     build:
       context: ./requirements/mariadb
       dockerfile: ./Dockerfile
-    image: mariadb
+    container_name: con_mariadb
+    hostname: mariadb
     restart: always
     expose:
       - "3306"
@@ -35,7 +36,8 @@ services:
       #빌드하는 위치 설정
       context: ./requirements/nginx
       dockerfile: ./Dockerfile
-    image: nginx
+    container_name: con_nginx
+    hostname: nginx
     restart: always #컨테이너가 비정상 종료될 시 재부팅
     ports:
       # 왼 : host, 오른쪽 guest 포트 번호, 두 개를 포트포워딩 해준다.
@@ -55,7 +57,8 @@ services:
     build:
       context: ./requirements/wordpress
       dockerfile: ./Dockerfile
-    image: wordpress
+    container_name: con_wordpress
+    hostname: wordpress
     restart: always
     expose:
       #네트워크 내부에서 접근하는 포트, expose는 해당 네트워크 내의 서비스끼리만 연결 설정
