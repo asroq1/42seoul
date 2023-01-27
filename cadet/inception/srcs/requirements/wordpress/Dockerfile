@@ -19,8 +19,8 @@ RUN mkdir -p /run/php && \
 	chmod +x /setting.sh
 
 # wordpress 설치
-RUN wget https://wordpress.org/latest.tar.gz && \
-	tar -xvf latest.tar.gz 
+# RUN wget https://wordpress.org/latest.tar.gz && \
+# 	tar -xvf latest.tar.gz 
 
 EXPOSE 9000
 

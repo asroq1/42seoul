@@ -44,7 +44,7 @@ services:
       - "443:443"
     volumes:
       # 볼륨으로 wordpress 사용하기 위함
-      - wordpress-volume:/var/www/html/wordpress
+      - wordpress-volume:/var/www/html/
     depends_on:
       # wordpress 컨테이너 먼저 만들고 동작
       - parc_wordpress
