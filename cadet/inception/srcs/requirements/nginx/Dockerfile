@@ -14,7 +14,8 @@ RUN chmod +x /var/www/setting.sh
 # 외부로 443포트 개방
 EXPOSE 443
 
-# ENTRYPOINT [ "/var/www/setting.sh" ]
+# openssl 실행
+ENTRYPOINT [ "/var/www/setting.sh" ]
 
 # -g 글로벌, daemon을 꺼준다.
 CMD [ "nginx", "-g", "daemon off;" ]
