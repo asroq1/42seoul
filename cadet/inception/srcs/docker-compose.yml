@@ -1,12 +1,16 @@
+# 도커 컴포즈를 이용하면 손쉽게 여러 컨테이너를 자기가 원하는대로 커스텀할 수  있다 
+#(모든 세팅을 컴포즈로 도커 컴포즈로 가능).
+
 version: '3'
 
 volumes:
   wordpress-volume:
-    driver: local
+    #워드프레스 볼륨 설정
+    driver: local #동일한 host에 생성되는 것을 의미한다.
     driver_opts:
-      #driver 옵션 설정
+      #워드프레스 볼륨에 전달할 옵션 목록
       type: none
-      device: /Users/devicii/data/wordpress #host 환경 내에서의 경로
+      device: /Users/devicii/data/wordpress #host 환경 내에서의 경로를 지정해준다.
       o: bind #docker-compse가 볼륨 위치를 모르니 알 수 있도록 바인딩
   database-volume:
     driver: local
@@ -18,19 +22,19 @@ volumes:
 services:
   parc_mariadb:
     build:
-      context: ./requirements/mariadb
-      dockerfile: ./Dockerfile
-    container_name: con_mariadb
-    hostname: mariadb
-    restart: always
+      context: ./requirements/mariadb #도커 파일 위치
+      dockerfile: ./Dockerfile #해당 컨텍스트 도커 확장자 이름
+    container_name: con_mariadb #컨테이너 이름 설정
+    hostname: mariadb #nginx세팅에서 고정 ip주소를 대체하기 위해 사용함
+    restart: always #비정상 종료에도 리부팅
     expose:
-      - "3306"
+      - "3306" # 같은 네트워크에서 접근하는 포트 번호. expose는 같은 네트워크를 공유하는 컨테이너끼리만 공유가 가능하다.
     volumes:
       - database-volume:/var/lib/mysql #데이터 유지를 위해 mysql 설치되는 곳을 볼륨으로 설정
     env_file:
-      - .env
+      - .env # 환경변수
     networks:
-      - root-network
+      - root-network #한 개의 네트워크로 세 개의 컨테이너를 통합
   parc_nginx:
     build:
       #빌드하는 위치 설정
@@ -40,7 +44,7 @@ services:
     hostname: nginx
     restart: always #컨테이너가 비정상 종료될 시 재부팅
     ports:
-      # 왼 : host, 오른쪽 guest 포트 번호, 두 개를 포트포워딩 해준다.
+      # 왼 : host, 오른쪽 guest 포트 번호, 두 개를 포트포워딩 해준다. expose와 다르게 외부에서도 접근이 가능. HTTPS는 전용포트가 443으로 고정
       - "443:443"
     volumes:
       # 볼륨으로 wordpress 사용하기 위함
@@ -76,4 +80,4 @@ services:
 networks:
   root-network:
     #네트워크 이름
-    driver: bridge #driver는 hostm none, bridge 중 선택, default는 bridge
+    driver: bridge #driver는 host, none, bridge 중 선택, default는 bridge

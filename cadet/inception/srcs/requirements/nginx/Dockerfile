@@ -4,22 +4,17 @@ FROM debian:buster
 RUN apt-get update -y && apt-get upgrade -y && \
 	apt-get -y install nginx openssl vim
 
-# RUN	mkdir /etc/nginx/ssl
-
-# RUN openssl req -newkey rsa:2048 -nodes -x509 \
-# 	-subj "/C=KR/ST=Seoul/L=Gangnam/O=Gaepodong/OU=42Seoul/CN=hyunjung.42.fr" \
-# 	-keyout /etc/nginx/ssl/hyunjung.42.fr.key \
-# 	-out /etc/nginx/ssl/hyunjung.42.fr.crt
-
+# nginx설정 파일 수정 및 openssl설정 cli파일 넘기기
 COPY ./conf/default /etc/nginx/sites-enabled/default
 COPY ./tools/setting.sh /var/www
 
+# opensll cli 적용
 RUN chmod +x /var/www/setting.sh
 
+# 외부로 443포트 개방
 EXPOSE 443
 
-ENTRYPOINT [ "/var/www/setting.sh" ]
+# ENTRYPOINT [ "/var/www/setting.sh" ]
 
-# CMD tail -f /dev/null
-
+# -g 글로벌, daemon을 꺼준다.
 CMD [ "nginx", "-g", "daemon off;" ]
