@@ -6,9 +6,12 @@ all :
 	mkdir -p /Users/devicii/data/mariadb
 
 	docker-compose -f ./srcs/docker-compose.yml up --build -d
+	
+re : 
+	docker-compose build ./srcs/docker-compose.yml --no-cache
 
-clean : docker-compose ./srcs/docker-compose.yml down
-		docker image prune -a
+clean : 
+		docker system prune -a
 
 # re : docker-compose -f ./srcs/docker-compose.yml up --build
 

@@ -20,13 +20,13 @@ volumes:
       o: bind
 
 services:
-  parc_mariadb:
+  prac_mariadb:
     build:
       context: ./requirements/mariadb #도커 파일 위치
       dockerfile: ./Dockerfile #해당 컨텍스트 도커 확장자 이름
     container_name: con_mariadb #컨테이너 이름 설정
     hostname: mariadb #nginx세팅에서 고정 ip주소를 대체하기 위해 사용함
-    restart: always #비정상 종료에도 리부팅
+    # restart: always #비정상 종료에도 리부팅
     expose:
       - "3306" # 같은 네트워크에서 접근하는 포트 번호. expose는 같은 네트워크를 공유하는 컨테이너끼리만 공유가 가능하다.
     volumes:
@@ -35,7 +35,7 @@ services:
       - .env # 환경변수
     networks:
       - root-network #한 개의 네트워크로 세 개의 컨테이너를 통합
-  parc_nginx:
+  prac_nginx:
     build:
       #빌드하는 위치 설정
       context: ./requirements/nginx
@@ -51,13 +51,13 @@ services:
       - wordpress-volume:/var/www/html/
     depends_on:
       # wordpress 컨테이너 먼저 만들고 동작
-      - parc_wordpress
+      - prac_wordpress
     env_file:
       # 환경변수 루트
       - .env
     networks:
       - root-network #네트워크 이름. 세 개의 컨테이너를 이용해 서버를 만들기 위해
-  parc_wordpress:
+  prac_wordpress:
     build:
       context: ./requirements/wordpress
       dockerfile: ./Dockerfile
@@ -71,7 +71,7 @@ services:
       #wordpress 설치 위치는 볼륨으로 한다. 데이터 유지를 위해
       - wordpress-volume:/var/www/html/
     depends_on:
-      - parc_mariadb
+      - prac_mariadb
     env_file:
       - .env
     networks:
