@@ -3,8 +3,8 @@ FROM debian:buster
 RUN  apt-get update -y && apt-get upgrade -y \
 	&& apt-get install -y mariadb-server  mariadb-client
 
-
-ENV DOMAIN_NAME=hyunjung.42.kr
+ENV MYSQL_ALLOW_EMPTY_PASSWORD=no
+ENV DOMAIN_NAME=hyunjung.42.fr
 ENV MYSQL_DB=wordpress_db
 ENV MYSQL_USER=asroq1
 ENV MYSQL_PW=1234
@@ -30,7 +30,7 @@ RUN set -ex ; \
 	echo "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PW}';" >> /root/init_db.sql ; \
 	echo "GRANT ALL PRIVILEGES ON ${MYSQL_DB}.* TO '${MYSQL_USER}'@'%';" >> /root/init_db.sql ; \
 	echo "FLUSH PRIVILEGES;" >> /root/init_db.sql ; \
-	echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${YSQL_ROOT_PW}';" >> /root/init_db.sql ; \
+	echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PW}';" >> /root/init_db.sql ; \
 	mysql -hlocalhost -u root -p${MYSQL_ROOT_PW} -e "source /root/init_db.sql;" && \
 	rm /root/init_db.sql
 # mysql 명령문을 통해서 미리 만들어둔 sql문을 적x용시켜 db를 만들어준다.
