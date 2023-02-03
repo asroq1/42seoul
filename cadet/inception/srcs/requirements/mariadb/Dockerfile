@@ -5,7 +5,6 @@ RUN  apt-get update -y && apt-get upgrade -y \
 
 
 ENV DOMAIN_NAME=hyunjung.42.kr
-ENV MYSQL_HOST=mariadb
 ENV MYSQL_DB=wordpress_db
 ENV MYSQL_USER=asroq1
 ENV MYSQL_PW=1234
@@ -25,13 +24,15 @@ COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/
 # sql문을 이동해준다.
 COPY ./tools/setting.sh ./
 
-RUN service mysql start; \
-	echo "CREATE DATABASE IF NOT EXISTS ${MYSQL_DB};" > ./init.sql ; \
-	echo "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PW}';"  >> ./test.sql ; \
-	echo "GRANT ALL PRIVILEGES ON ${MYSQL_DB}.* TO '${MYSQL_USER}'@'%';"  >> ./test.sql && echo "FLUSH PRIVILEGES;"  >> test.sql ; \
-	echo "ALTER USER '${MYSQL_ROOT}'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PW}';"  >> ./test.sql ; \
-	echo "FLUSH PRIVILEGES;"  >> ./test.sql ; \
-	mysql -u root -p${MYSQL_ROOT_PASSWORD} -e "source /root/init_db.sql;" || echo "alert!!!!" > /root/test.txt
+RUN set -ex ; \
+	service mysql start ; \
+	echo "CREATE DATABASE IF NOT EXISTS ${MYSQL_DB};" > /root/init_db.sql ; \
+	echo "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PW}';" >> /root/init_db.sql ; \
+	echo "GRANT ALL PRIVILEGES ON ${MYSQL_DB}.* TO '${MYSQL_USER}'@'%';" >> /root/init_db.sql ; \
+	echo "FLUSH PRIVILEGES;" >> /root/init_db.sql ; \
+	echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${YSQL_ROOT_PW}';" >> /root/init_db.sql ; \
+	mysql -hlocalhost -u root -p${MYSQL_ROOT_PW} -e "source /root/init_db.sql;" && \
+	rm /root/init_db.sql
 # mysql 명령문을 통해서 미리 만들어둔 sql문을 적x용시켜 db를 만들어준다.
 # RUN service mysql start && mysql < /var/www/initial_db.sql && rm -f /var/www/initial_db.sql;
 # RUN chmod +x ./setting.sh
