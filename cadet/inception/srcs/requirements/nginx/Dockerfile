@@ -17,7 +17,6 @@ EXPOSE 443
 # openssl 실행
 ENTRYPOINT [ "/var/www/setting.sh" ]
 
-# RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
 RUN	chown -R www-data:www-data /var/lib/nginx
 # -g 글로벌, daemon을 꺼준다.
 CMD [ "nginx", "-g", "daemon off;" ]

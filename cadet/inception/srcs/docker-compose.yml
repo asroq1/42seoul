@@ -31,7 +31,7 @@ services:
       - "3306" # 같은 네트워크에서 접근하는 포트 번호. expose는 같은 네트워크를 공유하는 컨테이너끼리만 공유가 가능하다.
     volumes:
       - database-volume:/var/lib/mysql #데이터 유지를 위해 mysql 설치되는 곳을 볼륨으로 설정
-    # env_file:
+    # e nv_file:
     #   - .env # 환경변수
     networks:
       - root-network #한 개의 네트워크로 세 개의 컨테이너를 통합

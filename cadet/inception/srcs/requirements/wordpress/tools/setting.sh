@@ -19,7 +19,7 @@ if [ ! -f "/var/www/html/index.php" ]; then # 워드프레스가 설치 및 초�
     # 5. wp user create : 워드프레스 유저 설정
     set -ex
     sudo -u www-data sh -c " \
-    wp core download --locale=ko_KR && \
+    wp core download --locale=ko_KR  && \
     wp config create --dbname=$MYSQL_DB --dbhost=$MYSQL_HOST --dbuser=$MYSQL_USER --dbpass=$MYSQL_PW && \
     wp core install --url=$DOMAIN_NAME --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PW --admin_email=$WP_EMAIL && \
     wp user create $WP_USER $WP_EMAIL --role=author --user_pass=$WP_PASS

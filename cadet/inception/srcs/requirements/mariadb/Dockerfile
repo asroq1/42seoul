@@ -26,23 +26,27 @@ COPY ./tools/setting.sh ./
 
 RUN set -ex ; \
 	service mysql start ; \
-	echo "CREATE DATABASE IF NOT EXISTS ${MYSQL_DB};" > /root/init_db.sql ; \
+	echo "CREATE DATABASE IF NOT EXISTS ${MYSQL_DB};" > /root/init_db.sql ; \ 
 	echo "CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PW}';" >> /root/init_db.sql ; \
 	echo "GRANT ALL PRIVILEGES ON ${MYSQL_DB}.* TO '${MYSQL_USER}'@'%';" >> /root/init_db.sql ; \
 	echo "FLUSH PRIVILEGES;" >> /root/init_db.sql ; \
 	echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PW}';" >> /root/init_db.sql ; \
 	mysql -hlocalhost -u root -p${MYSQL_ROOT_PW} -e "source /root/init_db.sql;" && \
 	rm /root/init_db.sql
-# mysql 명령문을 통해서 미리 만들어둔 sql문을 적x용시켜 db를 만들어준다.
-# RUN service mysql start && mysql < /var/www/initial_db.sql && rm -f /var/www/initial_db.sql;
-# RUN chmod +x ./setting.sh
-# ENTRYPOINT ["sh", "./setting.sh"]
-# mysql : 백그라운드에서 돌아가는 프로세스. mysql서버를 의미
-# mysqld : mysql + d (d는 daemon의 약어) 터미널처럼 sql을 실행시켜주는 command-line clinet이다.
-# CMD ["mysqld"] 
+
+# 1.새로운 DB 생성 (기존에 존재하지 않을 경우) >> 문자열을 init.sql에 쓰기
+# 2. 유저 생성 '%'는 내부가 아닌 어디에서나 접근이 가능함을 의미한다
+# 3. 생성된 유저에 DB (내의 모든 테이블) 의 모든 권한 부여 (원격 접속 권한 포함)
+# 4. 그리고 권한 변경사항을 전부 즉시 적용
+# 5. 초기에 생성되는 루트 비밀번호를 새롭게 초기화 해준다.
+# 6. 그리고 권한 변경사항을 전부 즉시 적용
+# 7. -h는 연결할 호스트 이름. mysql 명령어로 루트로 로그인 후 해당 sql문을 실행시킨다.
 
 EXPOSE 3306 
 CMD [ "mysqld" ]
+# mysql : 백그라운드에서 돌아가는 프로세스. mysql서버를 의미
+# mysqld : mysql + d (d는 daemon의 약어) 터미널처럼 sql을 실행시켜주는 command-line clinet이다.
+
 # CMD와 entrypoint의 차이점
 # CMD: 명령 및 인자값이 변경될 수 있음. 컨테이너에서 명령을 따로 설정하지 않을 시 CMD에 기재한 명령을 기본값으로 실행
 # entrypoint : CMD와 다르게 명령 수정이 불가능하다.

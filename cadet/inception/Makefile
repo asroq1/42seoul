@@ -14,8 +14,5 @@ clean :
 		docker-compose -f ./srcs/docker-compose.yml down
 		docker system prune -a
 		rm -rf /Users/devicii/data
-# re : docker-compose -f ./srcs/docker-compose.yml up --build
 
-# vclean : 
-
-.PHONY : all clean vclean 
+.PHONY : all re clean
