@@ -72,15 +72,19 @@ int main(int argc, char **argv, char **env) {
         return (0);
     argv[argc] = 0;
     while (argv[i - 1] && argv[i]) {
+
         argv = argv + i;
         i = 0;
         while (argv[i] && strcmp(argv[i], "|") != 0 &&
-               strcmp(argv[i], ";") != 0)
+               strcmp(argv[i], ";") != 0) {
             i++;
-        if (!strcmp(*argv, "cd"))
+        }
+        if (!strcmp(*argv, "cd")) {
             builtin_cd(argv);
-        else
+        } else {
+
             executor(argv, i, env);
+        }
         i++;
     }
 }

@@ -10,13 +10,13 @@ volumes:
     driver_opts:
       #워드프레스 볼륨에 전달할 옵션 목록
       type: none
-      device: /Users/devicii/data/wordpress #host 환경 내에서의 경로를 지정해준다.
+      device: /home/hyunjung/data/wordpress #host 환경 내에서의 경로를 지정해준다.
       o: bind #docker-compse가 볼륨 위치를 모르니 알 수 있도록 바인딩
   database-volume:
     driver: local
     driver_opts:
       type: none
-      device: /Users/devicii/data/mariadb
+      device: /home/hyunjung/data/mariadb
       o: bind
 
 services:
