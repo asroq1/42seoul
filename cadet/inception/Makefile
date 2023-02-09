@@ -1,6 +1,4 @@
 
-# --build : doesn't matter about cached data. it must rebuild the source
-
 all : 
 	mkdir -p /home/hyunjung/data/wordpress
 	mkdir -p /home/hyunjung/data//mariadb
