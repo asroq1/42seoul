@@ -4,6 +4,8 @@
 mkdir /etc/nginx/certificate
 cd /etc/nginx/certificate
 
+sleep 5
+
 openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out nginx-certificate.crt -keyout nginx.key -subj "/C=RU/ST=Moscow/L=Moscow/O=wordpress/CN=hyunjung.42.fr";
  
 # req : 인증서를 생성하는 요청
