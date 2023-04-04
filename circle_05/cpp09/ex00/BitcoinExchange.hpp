@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
-
+#include <sstream>
 class BitcoinExchange {
    private:
    public:
@@ -17,7 +17,7 @@ class BitcoinExchange {
 
     BitcoinExchange& operator=(const BitcoinExchange& ref);
     void setText(std::string argv);
-    void setPrice(std::string data, float price);
+    void setPrice();
     std::map<std::string, float> getPrice();
     std::map<std::string, float> getText();
 
