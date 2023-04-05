@@ -12,7 +12,9 @@ void BitcoinExchange::setText(std::string argv) {
     std::string str;
     float price;
 
-    // float value;
+
+    // 1. 음수 처리
+    // 2. 없는 날짜 처리
 
     std::map<std::string, float>::iterator it;
     std::ifstream textFile(argv);
@@ -24,22 +26,67 @@ void BitcoinExchange::setText(std::string argv) {
 
     std::getline(textFile, line);
     while (std::getline(textFile, line)) {
-        // std::cout << "line :" << line << std::endl;
         std::stringstream ss(line);
         std::string date, quantity;
         std::getline(ss, date, ',');
         std::getline(ss, quantity, ',');
-        // std::cout << "Date is: " << date << std::endl;
 
         it = _data.lower_bound(date);
         --it;
         price = atof(quantity.c_str());
 
-        // std::cout << "what is it: " << it->first << std::endl;
         if (it == _data.end()) {
             std::cout << "Can't find date" << std::endl;
             return;
         }
+        checkQuantity(quantity);
+        bool checkQuantity(float quantity)
+        {
+            if(quantity < 0)
+            {
+                std::cout << "Error: not a positive number." << std::endl;
+            }
+            else if(quantity > 1000)
+            {
+                std::cout << "Error: bigger than maximum." << std::endl;
+            }
+        }
+        checkdate(date)
+        bool checkdate(std::string date)
+        {
+            unsigned int year;
+        unsigned int month;
+        unsigned int day;
+        unsigned int dayMax;
+
+        bool         flag;
+       
+        year = getline(date, year, '-');
+        month = getline(date, month, '-');
+        day = getline(date, day, '-');
+        flat = false;
+        
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            if(month == 2)
+            {
+                dayMax = 29;
+            }
+            else
+            {
+                dayMax = 31;
+            }
+        } 
+        else if(month < 1 && month > 12)
+        {
+            return false;
+        }
+        else if(day < 1 && day > dayMax)
+        {
+            return false;
+        }
+        }
+        
+
         std::cout << date << " "
                   << "=>" << quantity << " = " << (price * it->second)
                   << std::endl;
