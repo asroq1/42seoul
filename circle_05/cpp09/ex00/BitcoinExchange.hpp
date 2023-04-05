@@ -18,10 +18,10 @@ class BitcoinExchange {
     BitcoinExchange& operator=(const BitcoinExchange& ref);
     void setText(std::string argv);
     void setPrice();
-    std::map<std::string, float> getPrice();
-    std::map<std::string, float> getText();
-
-    void printPrice();
+    std::map<std::string, float> getPrice() const;
+    std::map<std::string, float> getText() const;
+    bool checkQuantity(std::string quantity);
+    bool checkdate(std::string date);
 };
 
 #endif

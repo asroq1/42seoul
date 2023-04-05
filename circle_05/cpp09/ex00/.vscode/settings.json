@@ -59,6 +59,13 @@
 		"type_traits": "cpp",
 		"typeinfo": "cpp",
 		"variant": "cpp",
-		"sstream": "cpp"
+		"sstream": "cpp",
+		"__hash_table": "cpp",
+		"array": "cpp",
+		"cmath": "cpp",
+		"complex": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"algorithm": "cpp"
 	}
 }
