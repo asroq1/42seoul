@@ -9,6 +9,7 @@ class RPN {
    public:
     std::stack<int> _myStacks;
     std::stringstream _ss;
+    bool _flag;
 
     RPN();
     RPN(const RPN& ref);

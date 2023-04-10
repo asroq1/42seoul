@@ -12,9 +12,8 @@ int main(int argc, const char** argv) {
         tempStack.push(polish._myStacks.top());
         polish._myStacks.pop();
     }
-    while (!tempStack.empty()) {
+    while (!tempStack.empty() && !polish._flag) {
         std::cout << tempStack.top() << std::endl;
-
         tempStack.pop();
     }
 

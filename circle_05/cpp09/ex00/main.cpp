@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 
 int main(int argc, const char** argv) {
     BitcoinExchange coinMap;
