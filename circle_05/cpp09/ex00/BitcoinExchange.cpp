@@ -3,12 +3,15 @@
 
 BitcoinExchange::BitcoinExchange() {}
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange& ref) {
-    this->_data = ref.getPrice();
-    this->_text = ref.getText();
-}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& ref) { *this = ref; }
 
 BitcoinExchange::~BitcoinExchange() {}
+
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& ref) {
+    _text = ref._text;
+    _data = ref._data;
+    return *this;
+}
 
 void BitcoinExchange::setText(std::string argv) {
     std::string line;

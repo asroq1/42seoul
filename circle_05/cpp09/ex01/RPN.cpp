@@ -2,9 +2,16 @@
 
 RPN::RPN() {}
 
-RPN::RPN(const RPN& ref) { _myStacks = ref._myStacks; }
+RPN::RPN(const RPN& ref) { *this = ref; }
 
 RPN::~RPN() {}
+
+RPN& RPN::operator=(const RPN& ref) {
+    _myStacks = ref._myStacks;
+    _ss << ref._ss.str();
+    _flag = ref._flag;
+    return *this;
+}
 
 void RPN::parseArgv(std::string argv) {
     _ss << argv;
