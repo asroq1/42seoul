@@ -2,21 +2,19 @@
 
 PmergeMe::PmergeMe() {}
 
-// PmergeMe::PmergeMe(argv) {}
-
 PmergeMe::PmergeMe(const PmergeMe &ref) { *this = ref; }
 
 PmergeMe::~PmergeMe() {}
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &ref) {
     this->_vector = ref._vector;
-    this->_list = ref._list;
+    this->_deque = ref._deque;
 
     return *this;
 }
 
-std::vector<int> PmergeMe::insertionSortVector(std::vector<int> &vec) {
-    int j, key;  // 현재 키값의 인덱스 -1
+void PmergeMe::insertionSortVector(std::vector<int> &vec) {
+    int j, key = 0;  // 현재 키값의 인덱스 -1
     for (int i = 1; i < vec.size(); i++) {
         key = vec[i];
         j = i - 1;
@@ -24,120 +22,111 @@ std::vector<int> PmergeMe::insertionSortVector(std::vector<int> &vec) {
             vec[j + 1] = vec[j];
             j--;
         }
+        vec[j + 1] = key;
     }
-    vec[j + 1] = key;
-    return vec;
 }
 
-std::vector<int> PmergeMe::mergeVector(std::vector<int> &vec, int left, int mid,
-                                       int right) {
-    int leftSize = mid - left + 1;  // 왼쪽 벡터 크기
-    int rightSize = right - mid;    // 오른쪽 벡터 크기
+void PmergeMe::mergeSortVector(std::vector<int> &vec, std::vector<int> &left,
+                               std::vector<int> &right) {
+    int i = 0;
+    int j = 0;
+    int k = 0;  // i 왼쪽 벡터 j오른쪽 벡터 k 병합된 벡터
 
-    // 값을 임시로 저장할 tmp 벡터
-    std::vector<int> leftVector(leftSize);
-    std::vector<int> rightVector(rightSize);
-
-    // 왼쪽 벡터 부분 복사
-    for (int i = 0; i < leftSize; i++) {
-        leftVector[i] = vec[left + i];
-    }
-    // 오른쪽 벡터 부분 복사
-    for (int i = 0; i < rightSize; i++) {
-        rightVector[i] = vec[right + i];
-    }
-
-    int i, j = 0;  // i는 왼쪽 임시 벡터 인덱스, j는 오른쪽
-    int k = left;  // 오리지널 벡터의 인덱스
-
-    // 두 tmp의 값을 비교해 오리지널 벡터에 저장
-    while (i < leftSize && j < rightSize) {
-        if (leftVector[i] <= rightVector[j]) {
-            vec[k++] = leftVector[i++];
+    // 왼쪽 벡터와 오른쪽 벡터 원소를 비교해 작은 원소를 병합된 벡터에 삽입
+    while (i < left.size() && j < right.size()) {
+        if (left[i] <= right[j]) {
+            vec[k++] = left[i++];
         } else {
-            vec[k++] = rightVector[j++];
+            vec[k++] = right[j++];
         }
     }
 
-    // 왼쪽 임시 벡터의 값을 오리지널에 저장
-    while (i < leftSize) {
-        vec[k++] = leftVector[i++];
+    // 왼쪽 벡터에 남은 나머지 값 복사
+    while (i < left.size()) {
+        vec[k++] = left[i++];
     }
-    // 오른쪽 임시 벡터의 값을 오리지널에 저장
-    while (j < rightSize) {
-        vec[k++] = rightVector[j++];
+    // 오른쪽 벡터에 남은 나머지 값 복사
+    while (j < right.size()) {
+        vec[k++] = right[j++];
     }
-    return vec;
 }
 
-// std::vector<int> PmergeMe::mergeSortVector(std::vector<int> &vec) {
-//     int size = vec.size();
-//     int mid = size / 2;
-//     if (size <= 1) {
-//         return;
-//     }
-
-//    std::vector<int> left(vec.begin(), vec.begin() + mid);
-//    std::vector<int> right(vec.begin() + mid, vec.end());
-
-//    mergeSortVector(left);
-//    mergeSortVector(right);
-
-//    return mergeVector(ve);
-//}
-
-std::vector<int> PmergeMe::mergeInsertionSort(std::vector<int> &vec, int left,
-                                              int right) {
-    if (right - left + 1 <= 10) {  // elements가 10개 이하는 inserction
+void PmergeMe::mergeInsertionSort(std::vector<int> &vec) {
+    if (vec.size() <= 1) {
+        std::cout << "not a numbers" << std::endl;
+        return;
+    }
+    if (vec.size() <= 10) {  // elements가 10개 이하는 inserction
         insertionSortVector(vec);
     } else {
-        int mid = (left + right) / 2;
-        mergeInsertionSort(vec, left, mid);
-        mergeInsertionSort(vec, mid + 1, right);
-        mergeVector(vec, left, mid, right);
-    }
-    return vec;
-}
-std::list<int> PmergeMe::insertionSortList(std::list<int> &lst) {
-    int key;
-    std::list<int>::iterator itr = ++lst.begin();
+        int mid = vec.size() / 2;
+        std::vector<int> left(vec.begin(), vec.begin() + mid);
+        std::vector<int> right(vec.begin() + mid, vec.end());
 
-    for (; itr != lst.end(); itr++) {
-        key = *itr;
-        std::list<int>::iterator j = prev(itr);
-        while (j != lst.begin() && *j > key) {
-            *next(j) = *j;
+        mergeInsertionSort(left);
+        mergeInsertionSort(right);
+        mergeSortVector(vec, left, right);
+    }
+}
+
+void PmergeMe::insertionSortDeque(std::deque<int> &deq) {
+    int j, key = 0;  // 현재 키값의 인덱스 -1
+    for (int i = 1; i < deq.size(); i++) {
+        key = deq[i];
+        j = i - 1;
+        while (j >= 0 && deq[j] > key) {
+            deq[j + 1] = deq[j];
             j--;
         }
-        if (*j > key) {
-            lst.front() = key;
+        deq[j + 1] = key;
+    }
+}
+
+void PmergeMe::mergeSortDeque(std::deque<int> &deq, std::deque<int> &left,
+                              std::deque<int> &right) {
+    while (!left.empty() && !right.empty()) {
+        if (left.front() < right.front()) {
+            deq.push_back(left.front());
+            left.pop_front();
         } else {
-            *next(j) = key;
+            deq.push_back(right.front());
+            right.pop_front();
         }
     }
 
-    return lst;
+    while (!left.empty()) {
+        deq.push_back(left.front());
+        left.pop_front();
+    }
+    while (!right.empty()) {
+        deq.push_back(right.front());
+        right.pop_front();
+    }
 }
 
-// original
-// void insertionSort(list<int> &lst) {
-//    list<int>::iterator it = ++lst.begin();
-//    for (; it != lst.end(); ++it) {
-//        int key = *it;
-//        list<int>::iterator j = prev(it);
-//        while (j != lst.begin() && *j > key) {
-//            *(next(j)) = *j;
-//            --j;
-//        }
-//        if (*j > key) {
-//            lst.front() = key;
-//        } else {
-//            *(next(j)) = key;
-//        }
-//    }
-//}
+void PmergeMe::mergeInsertionSortDeque(std::deque<int> &deq) {
+    // 2개 이상의 정렬이 아닌 경우 종료
+    if (deq.size() <= 1) {
+        return;
+    }
+    if (deq.size() <= 2) {  // elements가 10개 이하는 inserction
+        insertionSortDeque(deq);
+    } else {
+        int mid = deq.size() / 2;
+        std::deque<int> left;
+        std::deque<int> right;
 
-std::list<int> PmergeMe::mergeSortList(std::list<int> &lst, int left,
-                                       int middle, int right) {
-    return lst;
+        for (int i = 0; i < mid; ++i) {
+            left.push_back(deq[i]);
+        }
+
+        for (int j = mid; j < deq.size(); ++j) {
+            right.push_back(deq[j]);
+        }
+        mergeInsertionSortDeque(left);
+        mergeInsertionSortDeque(right);
+        // 기존 deque에 쌓인 값때문에 비워주고 merge해야함
+        deq.clear();
+        mergeSortDeque(deq, left, right);
+    }
 }
