@@ -6,6 +6,10 @@ int main(int argc, const char** argv) {
     RPN polish;
     std::stack<int> tempStack;
 
+    if (argc == 0) {
+        return 0;
+    }
+
     polish.parseArgv(argv[1]);
 
     while (!polish._myStacks.empty()) {

@@ -8,20 +8,20 @@
 class BitcoinExchange {
    private:
    public:
-    std::map<std::string, float> _text;
-    std::map<std::string, float> _data;
+    std::map<std::string, float> _purchaseList;
+    std::map<std::string, float> _priceList;
 
     BitcoinExchange();
     BitcoinExchange(const BitcoinExchange& ref);
     ~BitcoinExchange();
 
     BitcoinExchange& operator=(const BitcoinExchange& ref);
-    void setText(std::string argv);
-    void setPrice();
+    void setPurchaseList(std::string argv);
+    void setPriceList(std::ifstream& infile);
     std::map<std::string, float> getPrice() const;
     std::map<std::string, float> getText() const;
     bool checkQuantity(std::string quantity);
-    bool checkdate(std::string date);
+    bool checkDate(std::string date);
 };
 
 #endif
