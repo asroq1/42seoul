@@ -8,61 +8,50 @@
 int main(int argc, const char** argv) {
     PmergeMe tester;
 
+    if (argc == 1) {
+        return 1;
+    }
+
     for (int i = 1; i < argc; i++) {
+        if (!isdigit(argv[i][0])) {
+            std::cout << "Error" << std::endl;
+            return 1;
+        }
         int value = std::atoi(argv[i]);
         tester._vector.push_back(value);
         tester._deque.push_back(value);
+        tester.set_vector(pu)
     }
 
+    std::cout << "Before : ";
+    for (int i = 0; i < tester._vector.size(); i++) {
+        std::cout << tester._vector[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // vector
     clock_t start = clock();
-
-    tester.mergeInsertionSortDeque(tester._deque);
-
+    tester.mergeInsertionSort(tester._vector);
     clock_t end = clock();
 
+    std::cout << "After : ";
+    for (int i = 0; i < tester._vector.size(); i++) {
+        std::cout << tester._vector[i] << " ";
+    }
+
+    std::cout << std::endl;
     double time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
-    // 너무 짧은 값은 지수 표기법으로 나오기 때문에 fixed 플래그로 바꿔준다.
-    std::cout << "deque : " << std::fixed << std::setprecision(6) << time
-              << std::endl;
-
-    start = clock();
-
-    tester.mergeInsertionSort(tester._vector);
-
-    end = clock();
-
-    time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
     // 너무 짧은 값은 지수 표기법으로 나오기 때문에 fixed 플래그로 바꿔준다.
     std::cout << "vector : " << std::fixed << std::setprecision(6) << time
               << std::endl;
 
-    // std::cout << "=========tester============" << std::endl;
-    // for (int value : tester._vector) {
-    //     std::cout << value << " ";
-    // }
-    // std::cout << "original" << std::endl;
-
-    // tester.mergeInsertionSort(tester._vector);
-
-    // for (int value : tester._vector) {
-    //     std::cout << value << " ";
-    // }
-    // std::cout << "after" << std::endl;
-    // std::cout << "=========tester============" << std::endl;
-
-    // std::cout << "=========deque============" << std::endl;
-    // for (int value : tester._deque) {
-    //     std::cout << value << " ";
-    // }
-    // std::cout << "original" << std::endl;
-
-    // tester.mergeInsertionSortDeque(tester._deque);
-
-    // for (int value : tester._deque) {
-    //     std::cout << value << " ";
-    // }
-    // std::cout << "after" << std::endl;
-    // std::cout << "=========deque============" << std::endl;
+    // deque
+    start = clock();
+    tester.mergeInsertionSortDeque(tester._deque);
+    end = clock();
+    time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+    std::cout << "deque : " << std::fixed << std::setprecision(6) << time
+              << std::endl;
 
     return 0;
 }
