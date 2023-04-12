@@ -15,7 +15,7 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &ref) {
 
 void PmergeMe::insertionSortVector(std::vector<int> &vec) {
     int j, key = 0;  // 현재 키값의 인덱스 -1
-    for (int i = 1; i < vec.size(); i++) {
+    for (size_t i = 1; i < vec.size(); i++) {
         key = vec[i];
         j = i - 1;
         while (j >= 0 && vec[j] > key) {
@@ -26,12 +26,11 @@ void PmergeMe::insertionSortVector(std::vector<int> &vec) {
     }
 }
 
- 
 void PmergeMe::mergeSortVector(std::vector<int> &vec, std::vector<int> &left,
                                std::vector<int> &right) {
-    int i = 0;
-    int j = 0;
-    int k = 0;  // i 왼쪽 벡터 j오른쪽 벡터 k 병합된 벡터
+    size_t i = 0;
+    size_t j = 0;
+    size_t k = 0;  // i 왼쪽 벡터 j오른쪽 벡터 k 병합된 벡터
 
     // 왼쪽 벡터와 오른쪽 벡터 원소를 비교해 작은 원소를 병합된 벡터에 삽입
     while (i < left.size() && j < right.size()) {
@@ -72,7 +71,7 @@ void PmergeMe::mergeInsertionSort(std::vector<int> &vec) {
 
 void PmergeMe::insertionSortDeque(std::deque<int> &deq) {
     int j, key = 0;  // 현재 키값의 인덱스 -1
-    for (int i = 1; i < deq.size(); i++) {
+    for (size_t i = 1; i < deq.size(); i++) {
         key = deq[i];
         j = i - 1;
         while (j >= 0 && deq[j] > key) {
@@ -121,7 +120,7 @@ void PmergeMe::mergeInsertionSortDeque(std::deque<int> &deq) {
             left.push_back(deq[i]);
         }
 
-        for (int j = mid; j < deq.size(); ++j) {
+        for (size_t j = mid; j < deq.size(); ++j) {
             right.push_back(deq[j]);
         }
         mergeInsertionSortDeque(left);

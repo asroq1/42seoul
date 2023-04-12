@@ -20,11 +20,10 @@ int main(int argc, const char** argv) {
         int value = std::atoi(argv[i]);
         tester._vector.push_back(value);
         tester._deque.push_back(value);
-        tester.set_vector(pu)
     }
 
     std::cout << "Before : ";
-    for (int i = 0; i < tester._vector.size(); i++) {
+    for (size_t i = 0; i < tester._vector.size(); i++) {
         std::cout << tester._vector[i] << " ";
     }
     std::cout << std::endl;
@@ -35,7 +34,7 @@ int main(int argc, const char** argv) {
     clock_t end = clock();
 
     std::cout << "After : ";
-    for (int i = 0; i < tester._vector.size(); i++) {
+    for (size_t i = 0; i < tester._vector.size(); i++) {
         std::cout << tester._vector[i] << " ";
     }
 
@@ -50,7 +49,7 @@ int main(int argc, const char** argv) {
     tester.mergeInsertionSortDeque(tester._deque);
     end = clock();
     time = static_cast<double>(end - start) / CLOCKS_PER_SEC;
-    std::cout << "deque : " << std::fixed << std::setprecision(6) << time
+    std::cout << "deque  : " << std::fixed << std::setprecision(6) << time
               << std::endl;
 
     return 0;
