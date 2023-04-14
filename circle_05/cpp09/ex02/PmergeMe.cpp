@@ -109,7 +109,7 @@ void PmergeMe::mergeInsertionSortDeque(std::deque<int> &deq) {
     if (deq.size() <= 1) {
         return;
     }
-    if (deq.size() <= 2) {  // elements가 10개 이하는 inserction
+    if (deq.size() <= 10) {  // elements가 10개 이하는 inserction
         insertionSortDeque(deq);
     } else {
         int mid = deq.size() / 2;
