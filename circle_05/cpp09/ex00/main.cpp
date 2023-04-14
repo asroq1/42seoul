@@ -11,7 +11,7 @@ int main(int argc, const char** argv) {
         std::cout << "Error: could not open file." << std::endl;
         return 1;
     }
-    ifstream infile("./data.csv");
+    std::ifstream infile("./data.csv");
     if (!infile.is_open()) {
         std::cerr << "Failed to open csv file" << std::endl;
         return 1;

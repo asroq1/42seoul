@@ -49,8 +49,7 @@ void BitcoinExchange::setPurchaseList(std::string argv) {
             return;
         }
 
-        if (checkQuantity(quantity)) {
-        } else if (checkDate(date)) {
+        if (checkQuantity(quantity) || checkDate(date)) {
         } else {
             std::cout << date << " "
                       << "=>" << quantity << " = " << (price * it->second)
@@ -103,6 +102,11 @@ bool BitcoinExchange::checkDate(std::string date) {
     unsigned int dayMax;
     std::stringstream ss(date);
 
+    // 정상적인 포맷이 아니면 에러
+    if (date.size() != 11) {
+        std::cout << "Error: bad input => " << date << std::endl;
+        return true;
+    }
     std::getline(ss, year, '-');
     std::getline(ss, month, '-');
     std::getline(ss, day, '-');
@@ -110,19 +114,19 @@ bool BitcoinExchange::checkDate(std::string date) {
     unsigned n_year = std::atoi(year.c_str());
     unsigned n_month = std::atoi(month.c_str());
     unsigned n_day = std::atoi(day.c_str());
-    // 위 조건은 윤년
-
     dayMax = 31;
     if (n_month == 4 || n_month == 6 || n_month == 9 || n_month == 11) {
         dayMax = 30;
     } else if (n_month == 2) {
         dayMax = 28;
+        // 위 조건은 윤년
         if ((n_year % 4 == 0 && n_year % 100 != 0) || n_year % 400 == 0) {
             dayMax = 29;
         }
     }
 
-    if ((n_month < 1 || n_month > 12) || (n_day < 1 || n_day > dayMax)) {
+    if (((n_year < 2009 || n_year > 2022) || (n_month > 12) || (n_month < 1) ||
+         (n_month > 12) || (n_day < 1 || n_day > dayMax))) {
         std::cout << "Error: bad input => " << n_year << "-" << n_month << "-"
                   << n_day << std::endl;
         return true;
