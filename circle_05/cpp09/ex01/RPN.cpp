@@ -69,7 +69,6 @@ void RPN::parseArgv(std::string argv) {
         }
     }
     if (_myStacks.size() != 1) {
-        std::cout << "here?" << std::endl;
         std::cout << "Error : wrong expression" << std::endl;
         _flag = true;
         exit(1);
