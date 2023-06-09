@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import UnmountTest from './UnmountTest'
+// import UnmountTest from './UnmountTest'
 
 export default function LifeCycle() {
   const [isVisible, setIsvisible] = useState(false)
@@ -10,7 +10,7 @@ export default function LifeCycle() {
   return (
     <div style={{ padding: 20 }}>
       <button onClick={toggle}>ON/OFF</button>
-      {isVisible && <UnmountTest />}
+      {/* {isVisible && <UnmountTest />} */}
     </div>
   )
 }
