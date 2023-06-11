@@ -2,42 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import DiaryEdit from './DiaryEdit'
 import DiaryList from './DiaryList'
-import LifeCycle from './LifeCycle'
-
-// const dummyList = [
-//   {
-//     id: 1,
-//     author: 'js',
-//     content: 'hello world',
-//     emotion: 5,
-//     created_date: new Date().getTime(),
-//   },
-//   {
-//     id: 2,
-//     author: 'hello',
-//     content: 'hello world',
-//     emotion: 2,
-//     created_date: new Date().getTime(),
-//   },
-//   {
-//     id: 3,
-//     author: 'babo',
-//     content: 'hello world',
-//     emotion: 5,
-//     created_date: new Date().getTime(),
-//   },
-//   {
-//     id: 4,
-//     author: 'jjj',
-//     content: 'hello world',
-//     emotion: 1,
-//     created_date: new Date().getTime(),
-//   },
-// ]
 
 function App() {
   const [data, setData] = useState([])
   const itemId = useRef(0)
+
   const getData = async () => {
     const res = await fetch(
       'https://jsonplaceholder.typicode.com/comments'
