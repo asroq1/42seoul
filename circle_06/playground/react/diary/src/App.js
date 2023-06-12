@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import DiaryEdit from './DiaryEdit'
 import DiaryList from './DiaryList'
+import OptimizeTest from './OptimizeTest'
 
 function App() {
   const [data, setData] = useState([])
@@ -51,10 +52,24 @@ function App() {
       data.map(itr => (itr.id === id ? { ...itr, content: newContent } : itr))
     )
   }
+
+  const getDiaryAnaylsis = useMemo(() => {
+    const goodCount = data.filter(e => e.emotion >= 3).length
+    const badCount = data.filter(e => e.emotion < 3).length
+    const goodRatio = (100 / data.length) * goodCount
+    return { goodCount, badCount, goodRatio }
+  }, [data.length])
+
+  const { goodCount, badCount, goodRatio } = getDiaryAnaylsis
   return (
     <div className='App'>
       {/* <LifeCycle /> */}
+      <OptimizeTest />
       <DiaryEdit onCreate={onCreate} />
+      <p>전체 일기 : {data.length}</p>
+      <p>기분 좋은 갯수 : {goodCount}</p>
+      <p>기분 나쁜 갯수 : {badCount}</p>
+      <p>좋은 갯수 비율 : {goodRatio}%</p>
       <DiaryList diaryList={data} onRemove={onRemove} onEdit={onEdit} />
     </div>
   )
