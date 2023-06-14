@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
+import { TodosContext } from '../store/todos-context'
 
-const NewToDo: React.FC<{ addTodoHandler: (text: string) => void }> = ({
-  addTodoHandler,
-}) => {
+const NewToDo: React.FC = () => {
+  const todosContext = useContext(TodosContext)
   const todoTextInputRef = useRef<HTMLInputElement>(null)
   const submitHandler = (evt: React.FormEvent) => {
     evt.preventDefault()
@@ -13,7 +13,7 @@ const NewToDo: React.FC<{ addTodoHandler: (text: string) => void }> = ({
       return
     }
 
-    addTodoHandler(enteredText)
+    todosContext.addTodo(enteredText)
   }
 
   return (
