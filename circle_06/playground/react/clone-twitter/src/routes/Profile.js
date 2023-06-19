@@ -31,9 +31,6 @@ export default function Profile({ userObj, newName, refreshUser }) {
     if (userObj.displayName !== newDisplayName) {
       await updateProfile(userObj, { displayName: newDisplayName })
     }
-    // if (newName !== userObj.displayName) {
-    //   await updateProfile(userObj, { displayName: newName })
-    // }
     refreshUser()
   }
   const changeHandler = evt => {
@@ -41,16 +38,28 @@ export default function Profile({ userObj, newName, refreshUser }) {
   }
   return (
     <>
-      <form onSubmit={submitHandler}>
-        <input
-          onChange={changeHandler}
-          type='text'
-          placeholder='Display name '
-          value={newDisplayName}
-        />
-        <input type='submit' value='Update Profile' />
-      </form>
-      <button onClick={handleLogOutClick}>Log Out</button>
+      <div className='container'>
+        <form onSubmit={submitHandler} className='profileForm'>
+          <input
+            onChange={changeHandler}
+            type='text'
+            placeholder='Display name '
+            value={newDisplayName}
+            className='formInput'
+          />
+          <input
+            type='submit'
+            value='Update Profile'
+            className='formBtn'
+            style={{
+              marginTop: 10,
+            }}
+          />
+        </form>
+        <span onClick={handleLogOutClick} className='formBtn cancelBtn logOut'>
+          Log Out
+        </span>
+      </div>
     </>
   )
 }

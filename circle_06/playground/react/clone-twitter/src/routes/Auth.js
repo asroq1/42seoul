@@ -1,91 +1,32 @@
-import React, { useState } from 'react'
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from 'firebase/auth'
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 import { authService } from '../firebase'
+import AuthForm from '../components/AuthForm'
 export default function Auth() {
-  const [value, setValue] = useState({
-    email: '',
-    password: '',
-  })
-  const [newAccount, setNewAccount] = useState(true)
-  const [error, setError] = useState('')
-  const handleValue = e => {
-    const { name, value } = e.target
-    if (name === 'email') {
-      setValue(prev => ({
-        ...prev,
-        email: value,
-      }))
-    } else if (name === 'password') {
-      setValue(prev => ({
-        ...prev,
-        password: value,
-      }))
-    }
-  }
   const handlerSocial = async e => {
     let provider = new GoogleAuthProvider()
 
     await signInWithPopup(authService, provider)
   }
 
-  const handleSubmit = async e => {
-    e.preventDefault()
-    try {
-      let data
-      const auth = getAuth()
-      if (newAccount) {
-        data = await createUserWithEmailAndPassword(
-          auth,
-          value.email,
-          value.password
-        )
-      } else {
-        data = await signInWithEmailAndPassword(
-          auth,
-          value.email,
-          value.password
-        )
-      }
-    } catch (err) {
-      setError(err.message)
-    }
-  }
-  const toggleAccount = () => {
-    setNewAccount(prev => !prev)
-  }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleValue}
-          value={value.email}
-          required
-          placeholder='email'
-          name='email'
-          type='email'
-        />
-        <input
-          onChange={handleValue}
-          value={value.password}
-          required
-          placeholder='password'
-          name='password'
-          type='password'
-        />
-        <input type='submit' value={newAccount ? 'Creat Account' : 'Log In'} />
-        {error}
-      </form>
-      <span onClick={toggleAccount}>
-        {newAccount ? 'Create Account' : 'Log in'}
-      </span>
-      <button onClick={handlerSocial}>Continue with google </button>
+    <div className='authContainer'>
+      <FontAwesomeIcon
+        icon={faTwitter}
+        color={'#04AAFF'}
+        size='3x'
+        style={{ marginBottom: 30 }}
+      />
+      <AuthForm />
+      <div className='authBtns'>
+        <button onClick={handlerSocial} className='authBtn'>
+          Continue with google{' '}
+        </button>
+      </div>
     </div>
   )
 }

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import AppRouter from './Router'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import { authService } from '../firebase'
 
 function App() {
   const [init, setInit] = useState(false)
@@ -11,8 +10,6 @@ function App() {
   const [newName, setNewName] = useState('')
 
   const refreshUser = () => {
-    // const user = authService.currentUser
-    // setNewName(user.displayName)
     setNewName(userObj.displayName)
   }
 
