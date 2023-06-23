@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true, 
+    "moduleResolution": "nodenext",
+    "paths": {
+      "socket.io-client": ["node_modules/socket.io-client"]
+    }
+  }
+  },
+  "exclude": ["node_modules"],
+}

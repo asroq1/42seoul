@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="chatform">
+      <div style="display: inline-block">
+        <input
+          type="text"
+          id="input_box"
+          contenteditable="true"
+          autocomplete="off"
+        />
+      </div>
+      <input
+        type="submit"
+        id="sendmsg"
+        class="btn btn-warning btn-sm"
+        value="Send"
+      />
+    </form>
+    <div id="msg"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io('http://localhost:9000') // Socket.IO 서버 주소로 대체해야합니다.
+      var chatForm = document.getElementById('chatform')
+      var chatView = document.getElementById('msg')
+
+      chatForm.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        var msgText = document.getElementById('input_box')
+
+        if (msgText.value === '') {
+          return
+        } else {
+          socket.emit('SEND', msgText.value)
+          var msgLine = document.createElement('div')
+          msgLine.className = 'msgLine'
+          var msgBox = document.createElement('div')
+          msgBox.className = 'me'
+
+          msgBox.appendChild(document.createTextNode(msgText.value))
+          msgBox.style.display = 'inline-block'
+          msgLine.style.textAlign = 'right'
+          msgLine.appendChild(msgBox)
+
+          chatView.appendChild(msgLine)
+          msgText.value = ''
+          chatView.scrollTop = chatView.scrollHeight
+        }
+      })
+
+      socket.on('SEND', function (msg) {
+        var msgLine = document.createElement('div')
+        msgLine.className = 'msgLine'
+        var msgBox = document.createElement('div')
+        msgBox.className = 'msgBox'
+
+        msgBox.appendChild(document.createTextNode(msg))
+        msgBox.style.display = 'inline-block'
+        msgLine.appendChild(msgBox)
+        chatView.appendChild(msgLine)
+
+        chatView.scrollTop = chatView.scrollHeight
+      })
+    </script>
+  </body>
+</html>
