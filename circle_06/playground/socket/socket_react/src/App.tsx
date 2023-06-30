@@ -1,8 +1,22 @@
 import { io } from 'socket.io-client'
 import './App.css'
-import { FormEvent, useCallback, useEffect, useRef, useState } from 'react'
+import {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import IChat from './models/IChat'
+import {
+  ChatContainer,
+  Message,
+  MessageBox,
+  MessageForm,
+} from './styles/app.styles'
 
+// 웹소켓 연결 및 인스턴스 생성, /chat은 namespace
 const socket = io('http://localhost:4000/chat')
 
 function App() {
@@ -39,6 +53,10 @@ function App() {
     }
   }, [])
 
+  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setMessage(e.target.value)
+  }, [])
+
   const onSendMsg = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
@@ -53,8 +71,35 @@ function App() {
     },
     [message]
   )
-
-  return <div className='App'>Hello</div>
+  return (
+    <>
+      <h1>WebSocket Chat</h1>
+      <ChatContainer ref={chatContainerEl}>
+        {chats.map((chat, index) => (
+          <MessageBox
+            key={index}
+            className={classNames({
+              my_message: socket.id === chat.username,
+              alarm: !chat.username,
+            })}
+          >
+            <span>
+              {chat.username
+                ? socket.id === chat.username
+                  ? ''
+                  : chat.username
+                : ''}
+            </span>
+            <Message className='message'>{chat.message}</Message>
+          </MessageBox>
+        ))}
+      </ChatContainer>
+      <MessageForm onSubmit={onSendMessage}>
+        <input type='text' onChange={onChange} value={message} />
+        <button>보내기</button>
+      </MessageForm>
+    </>
+  )
 }
 
 export default App
